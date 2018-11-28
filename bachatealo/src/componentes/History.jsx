@@ -12,7 +12,7 @@ class History extends Component {
     return (
       <section className="History">
         <div className="history-container">
-          <p>Esto es un parrafo</p>
+          <p></p>
           <div>
             <img
               className="history-img"
