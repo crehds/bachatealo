@@ -1,7 +1,7 @@
 {
   "main.css": "/bachatealo/static/css/main.9b2048f4.chunk.css",
-  "main.js": "/bachatealo/static/js/main.2e639158.chunk.js",
-  "main.js.map": "/bachatealo/static/js/main.2e639158.chunk.js.map",
+  "main.js": "/bachatealo/static/js/main.6595d0cb.chunk.js",
+  "main.js.map": "/bachatealo/static/js/main.6595d0cb.chunk.js.map",
   "static/js/1.63ba697a.chunk.js": "/bachatealo/static/js/1.63ba697a.chunk.js",
   "static/js/1.63ba697a.chunk.js.map": "/bachatealo/static/js/1.63ba697a.chunk.js.map",
   "runtime~main.js": "/bachatealo/static/js/runtime~main.e4287331.js",
@@ -19,6 +19,6 @@
   "static/media/1.jpg": "/bachatealo/static/media/1.beb651e2.jpg",
   "static/css/main.9b2048f4.chunk.css.map": "/bachatealo/static/css/main.9b2048f4.chunk.css.map",
   "index.html": "/bachatealo/index.html",
-  "precache-manifest.69913cd0deb37e17024cd4cc7a64219e.js": "/bachatealo/precache-manifest.69913cd0deb37e17024cd4cc7a64219e.js",
+  "precache-manifest.99907e0236a9e170b9f0e5109ca208e9.js": "/bachatealo/precache-manifest.99907e0236a9e170b9f0e5109ca208e9.js",
   "service-worker.js": "/bachatealo/service-worker.js"
 }
