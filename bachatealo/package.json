@@ -1,5 +1,5 @@
 {
-  "homepage":"http://gitname.github.io/bachatealo",
+  "homepage": "http://crehds.github.io/bachatealo",
   "name": "bachatealo",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +11,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build:css": "postcss src/App.css -o src/css/index.css",
     "watch:css": "postcss src/App.css -o src/css/index.css -w",
     "start": "npm-run-all -p watch:css start-js",
