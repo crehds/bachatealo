@@ -15,7 +15,7 @@ import imagen6 from './images/paraHero/6.png';
 import imagen7 from './images/paraHero/7.png';
 import imagen8 from './images/paraHero/8.png';
 import imagen9 from './images/paraHero/9.png';
-import practica from './images/paraHistory/practica.jpg';
+import alameda from './images/paraHistory/alameda.png';
 
 // import imagen10 from './images/paraHero/10.jpg';
 const initialState = {
@@ -46,7 +46,7 @@ const initialState = {
   imagen7: imagen2,
   imagen8: imagen8,
   imagen9: imagen4,
-  practica: practica,
+  alameda: alameda,
 
   // imagen10: imagen10,
 };

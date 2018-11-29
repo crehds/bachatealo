@@ -3,7 +3,7 @@ import { connect } from  'react-redux';
 
 function mapStateToProps(state) {
   return {
-    src: state.practica,
+    src: state.alameda,
   };
 }
 
