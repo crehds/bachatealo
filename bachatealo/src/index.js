@@ -12,7 +12,7 @@ import imagen3 from './images/paraHero/3.jpg';
 import imagen4 from './images/paraHero/4.jpg';
 import imagen5 from './images/paraHero/5.jpg';
 import imagen6 from './images/paraHero/6.jpg';
-import imagen7 from './images/paraHero/7.jpg';
+import imagen7 from './images/paraHero/7.png';
 import imagen8 from './images/paraHero/8.jpg';
 import imagen9 from './images/paraHero/9.jpg';
 import practica from './images/paraHistory/practica.jpg';

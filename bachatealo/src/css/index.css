@@ -53,6 +53,7 @@
 
 .menu {
   /* border: solid 2px red; */
+  /* position: fixed; */
   font-size: 19px;
   display: flex;
   /* align-items: center; */
@@ -83,7 +84,7 @@
   text-decoration: none;
 }
 .Portada {
-  display: fixed;
+  /* position: fixed; */
   padding: 20px;
   padding-top: 0;
   padding-bottom: 0;
