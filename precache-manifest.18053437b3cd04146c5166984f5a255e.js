@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/logo.2d57c362.svg"
   },
   {
-    "revision": "de598a80956d3fb072a4",
-    "url": "/bachatealo/static/css/main.80121db4.chunk.css"
+    "revision": "c5c4f730f2f0b3ccf43e",
+    "url": "/bachatealo/static/css/main.0a8adbce.chunk.css"
   },
   {
-    "revision": "eed4465230153598bbc5",
-    "url": "/bachatealo/static/js/1.eed44652.chunk.js"
+    "revision": "5366ac0353a94402a52a",
+    "url": "/bachatealo/static/js/1.5366ac03.chunk.js"
   },
   {
     "revision": "e4287331d59858531c4c",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/9.0a703782.png"
   },
   {
-    "revision": "de598a80956d3fb072a4",
-    "url": "/bachatealo/static/js/main.de598a80.chunk.js"
+    "revision": "c5c4f730f2f0b3ccf43e",
+    "url": "/bachatealo/static/js/main.c5c4f730.chunk.js"
   },
   {
     "revision": "f256d213968bafebaaa201d09a839011",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/alameda.545aeb9e.png"
   },
   {
-    "revision": "380ba24abc390ada9a275fd5f3814702",
+    "revision": "c25bf8b9ad3eb5fc58a6e4a4038d69a6",
     "url": "/bachatealo/index.html"
   }
 ];
