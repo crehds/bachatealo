@@ -1,3 +1,9 @@
+.Portada {
+  @apply --component;
+  padding-bottom: 5px;
+  align-items: center;
+}
+
 .logotipo {
   padding: 0;
   margin: 0;
@@ -8,13 +14,7 @@
   }
 }
 
-/* .logotipo img {
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-} */
-
-.header.contenedor {
+.header.container {
   max-height: 100%;
   display: flex;
   padding: 20px;
@@ -45,15 +45,19 @@
   display:inline-block;
   margin-left:90px;
   margin-right:90px;
+  @media (--small) {
+    display:inline-block;
+    margin-left:30px;
+    margin-right:30px;
+  }
+  @media (--extra-small) {
+    display:inline-block;
+    margin-left:8px;
+    margin-right:8px
+  }
 }
 
 .menu a {
   color: gray;
   text-decoration: none;
-}
-
-.Portada {
-  @apply --component;
-  background-color: lightgray;
-  align-items: center;
 }

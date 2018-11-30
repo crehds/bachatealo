@@ -12,7 +12,7 @@ class Portada extends Component {
   render() {
     return (
       <section id="Portada" className="Portada">
-        <header id="header" className="header contenedor">
+        <header id="header" className="header container">
           <figure className="logotipo">
             <img src={this.props.logo} alt="logotipo de Bachatealo"/>
           </figure>

@@ -1,23 +1,18 @@
 .Hero {
-  padding:10px;
-  padding-top: 2px;
-  padding-bottom: 30px;
+  @apply --component;
 }
 
 .hero-container {
   display: grid;
-  border:solid rgba(111, 115, 114, 0.7) 5px;
+  @apply --containerGrid;
+  border:solid var(--gray) 5px;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, 296px);
   grid-gap: 1px;
-  max-width: 100%;
-  height: 100%;
-  justify-content: center;
-  background: black;
 }
 
 .hero-container div {
-  border:solid rgba(210, 6, 6, 0.4) 3px;
+  border:solid var(--redLow) 3px;
   max-width: inherit;
   max-height: inherit;
 }

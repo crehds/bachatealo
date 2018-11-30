@@ -1,17 +1,16 @@
 .History {
-  padding:10px;
-  padding-top: 30px;
-  color: white;
+  @apply --component;
 }
 
 .history-container {
   border: solid 2px red;
   display: grid;
+  @apply --containerGrid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 400px);
   grid-column-gap: 10px;
   grid-row-gap: 20px;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
@@ -22,7 +21,7 @@
 }
 
 .history-img {
-  width: inherit;
-  height: inherit;
+  max-width: 100%;
+  height: 100%;
   object-fit: cover;
 }
