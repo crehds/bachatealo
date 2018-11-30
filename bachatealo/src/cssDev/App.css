@@ -3,6 +3,7 @@
 @import "./history.css";
 @import "./fotos.css";
 @import "./video.css";
+@import "./vars.css";
 
 @media screen and (max-width: 768px) {
   .menu li {
