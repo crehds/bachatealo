@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Portada from './componentes/Portada.jsx';
 import Hero from './componentes/Hero.jsx';
 import History from './componentes/History.jsx';
+import Fotos from './componentes/Fotos.jsx';
 import './css/index.css';
 
 class App extends Component {
@@ -12,9 +13,10 @@ class App extends Component {
           href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro"
           rel="stylesheet"
         />
-        <Portada />
-        <Hero />
-        <History />
+        <Portada id="portada"/>
+        <Hero id="hero"/>
+        <History id="history"/>
+        <Fotos id="fotos"/>
       </section>
     );
   }

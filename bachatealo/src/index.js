@@ -15,25 +15,31 @@ import imagen6 from './images/paraHero/6.png';
 import imagen7 from './images/paraHero/7.png';
 import imagen8 from './images/paraHero/8.png';
 import imagen9 from './images/paraHero/9.png';
+import rotonda from './images/paraHistory/rotonda.png';
 import alameda from './images/paraHistory/alameda.png';
 
 // import imagen10 from './images/paraHero/10.jpg';
 const initialState = {
   menu: [
     {
+      href: '#history',
+      title: 'Historia',
+      id: '1',
+    },
+    {
       href: '#fotos',
       title: 'Fotos',
-      id: '1',
+      id: '2',
     },
     {
       href: '#videos',
       title: 'Videos',
-      id: '2',
+      id: '3',
     },
     {
       href: '#eventos',
       title: 'Eventos',
-      id: '3',
+      id: '4',
     },
   ],
   logoPortada: logo,
@@ -46,7 +52,27 @@ const initialState = {
   imagen7: imagen2,
   imagen8: imagen8,
   imagen9: imagen4,
+  rotonda: rotonda,
   alameda: alameda,
+
+  album: [
+    {
+      foto: imagen7,
+      id: '1',
+    },
+    {
+      foto: imagen8,
+      id: '2',
+    },
+    {
+      foto: imagen9,
+      id: '3',
+    },
+    {
+      foto: imagen4,
+      id: '4',
+    },
+  ],
 
   // imagen10: imagen10,
 };
