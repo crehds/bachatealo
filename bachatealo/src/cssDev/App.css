@@ -1,0 +1,32 @@
+@import "./portada.css";
+@import "./hero.css";
+@import "./history.css";
+@import "./fotos.css";
+@import "./video.css";
+
+@media screen and (max-width: 768px) {
+  .menu li {
+    display:inline-block;
+    margin-left:30px;
+    margin-right:30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Video {
+    display:none;
+  }
+  .menu li {
+    display:inline-block;
+    margin-left:8px;
+    margin-right:8px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: black;
+  font-family: 'Fjalla One',sans-serif;
+}

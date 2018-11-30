@@ -1,0 +1,22 @@
+.Video {
+  padding:10px;
+  padding-top: 30px;
+  color: white;
+}
+
+.video.container {
+  border: solid green 2px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+
+.video.container figure {
+  border: solid brown 2px;
+  max-width: inherit;
+  max-height: inherit;
+}
