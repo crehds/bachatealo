@@ -12,8 +12,8 @@ class Video extends Component {
               style={{
                 border: 'none',
                 overflow: 'hidden',
-                width: 600,
-                height: 260,
+                width: 'inherit',
+                height: 'inherit',
               }}
               scrolling="no"
               frameBorder="0"
@@ -27,7 +27,7 @@ class Video extends Component {
               style={{
                 border: 'none',
                 overflow: 'hidden',
-                width: 600,
+                width: 'inherit',
                 height: 260,
               }}
               scrolling="no"
