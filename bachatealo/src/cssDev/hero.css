@@ -1,0 +1,24 @@
+.Hero {
+  @apply --component;
+}
+
+.hero-container {
+  display: grid;
+  @apply --containerGrid;
+  border:solid var(--gray) 5px;
+  grid-template-columns: repeat(3, minmax(80px, 1fr));
+  grid-template-rows: repeat(3, 296px);
+  grid-gap: 1px;
+}
+
+.hero-container div {
+  border:solid var(--redLow) 3px;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.hero-container div img {
+  max-width:100%;
+  height: 100%;
+  vertical-align: top;
+}

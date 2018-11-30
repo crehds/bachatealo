@@ -1,0 +1,19 @@
+:root {
+  --gray: rgba(111, 115, 114, 0.7);
+  --redLow: rgba(210, 6, 6, 0.4);ç
+  --containerGrid: {
+    max-width: 100%;
+    height: 100%;
+  }
+  --component: {
+    padding:10px;
+    padding-top: 2px;
+    padding-bottom: 30px;
+    color: white;
+  };
+}
+
+@custom-media --extra-small screen and (width <= 480px);
+@custom-media --small screen and (width <= 768px);
+@custom-media --medium screen and (width > 768px);
+@custom-media --large screen (width >= 1024px);

@@ -12,9 +12,6 @@ function mapStateToProps(state) {
     imagen7: state.imagen7,
     imagen8: state.imagen8,
     imagen9: state.imagen9,
-    practica: state.practica,
-
-    // imagen10: state.imagen10,
   };
 }
 
@@ -51,9 +48,6 @@ class Hero extends Component {
           <div>
             <img src={this.props.imagen9} alt="9"/>
           </div>
-          {/* {<div>
-            <img src={this.props.imagen10} width="300" height="220" alt="10"/>
-          </div>/} */}
         </div>
       </section>
     );
