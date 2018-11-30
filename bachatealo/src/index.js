@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
+import './cssProd/index.css';
 import Bachatealo from './Bachatealo';
 import * as serviceWorker from './serviceWorker';
 import logo from './images/logo.svg';

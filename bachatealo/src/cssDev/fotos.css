@@ -1,0 +1,25 @@
+.Fotos {
+  padding:10px;
+  padding-top: 2px;
+  padding-bottom: 30px;
+}
+
+.fotos.container {
+  border: solid green 2px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  width: 100%;
+  height: 100%;
+}
+
+.fotos.container div {
+  border: solid brown 2px;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.fotos.container div img {
+  max-width:100%;
+  height: 100%;
+}

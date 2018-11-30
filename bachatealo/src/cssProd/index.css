@@ -22,10 +22,6 @@
   padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .menu {
   font-size: 19px;
   display: flex;
@@ -59,33 +55,6 @@
   background-color: lightgray;
   align-items: center;
   background: black;
-}
-
-@media screen and (max-width: 768px) {
-  .menu li {
-    display:inline-block;
-    margin-left:30px;
-    margin-right:30px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .Video {
-    display:none;
-  }
-  .menu li {
-    display:inline-block;
-    margin-left:8px;
-    margin-right:8px;
-  }
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  background: black;
-  font-family: 'Fjalla One',sans-serif;
 }
 
 .Hero {
@@ -195,4 +164,31 @@ body {
   border: solid brown 2px;
   max-width: inherit;
   max-height: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .menu li {
+    display:inline-block;
+    margin-left:30px;
+    margin-right:30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Video {
+    display:none;
+  }
+  .menu li {
+    display:inline-block;
+    margin-left:8px;
+    margin-right:8px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: black;
+  font-family: 'Fjalla One',sans-serif;
 }
