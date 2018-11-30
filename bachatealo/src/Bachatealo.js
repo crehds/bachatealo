@@ -4,6 +4,7 @@ import Hero from './componentes/Hero.jsx';
 import History from './componentes/History.jsx';
 import Fotos from './componentes/Fotos.jsx';
 import './css/index.css';
+import Video from './componentes/Video.jsx';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Hero id="hero"/>
         <History id="history"/>
         <Fotos id="fotos"/>
+        <Video id="videos"/>
       </section>
     );
   }
