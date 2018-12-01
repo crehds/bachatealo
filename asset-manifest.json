@@ -1,7 +1,7 @@
 {
-  "main.css": "/bachatealo/static/css/main.f1e362e1.chunk.css",
-  "main.js": "/bachatealo/static/js/main.8c9e02a9.chunk.js",
-  "main.js.map": "/bachatealo/static/js/main.8c9e02a9.chunk.js.map",
+  "main.css": "/bachatealo/static/css/main.b1060b12.chunk.css",
+  "main.js": "/bachatealo/static/js/main.4135b41b.chunk.js",
+  "main.js.map": "/bachatealo/static/js/main.4135b41b.chunk.js.map",
   "static/js/1.4326ec03.chunk.js": "/bachatealo/static/js/1.4326ec03.chunk.js",
   "static/js/1.4326ec03.chunk.js.map": "/bachatealo/static/js/1.4326ec03.chunk.js.map",
   "runtime~main.js": "/bachatealo/static/js/runtime~main.e4287331.js",
@@ -18,8 +18,8 @@
   "static/media/6.png": "/bachatealo/static/media/6.890625d7.png",
   "static/media/rotonda.png": "/bachatealo/static/media/rotonda.e867045a.png",
   "static/media/7.png": "/bachatealo/static/media/7.3a52366d.png",
-  "static/css/main.f1e362e1.chunk.css.map": "/bachatealo/static/css/main.f1e362e1.chunk.css.map",
+  "static/css/main.b1060b12.chunk.css.map": "/bachatealo/static/css/main.b1060b12.chunk.css.map",
   "index.html": "/bachatealo/index.html",
-  "precache-manifest.62f4d89b58fa10705bf587d9c07ba31e.js": "/bachatealo/precache-manifest.62f4d89b58fa10705bf587d9c07ba31e.js",
+  "precache-manifest.6072f30c6eb9ed8c6952c9db3b1aadef.js": "/bachatealo/precache-manifest.6072f30c6eb9ed8c6952c9db3b1aadef.js",
   "service-worker.js": "/bachatealo/service-worker.js"
 }
