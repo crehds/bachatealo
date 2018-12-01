@@ -9,6 +9,9 @@
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, 296px);
   grid-gap: 1px;
+  @media (--extra-small) {
+    grid-template-rows: repeat(3, 150px);
+  }
 }
 
 .hero-container div {

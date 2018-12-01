@@ -10,14 +10,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  width: 100%;
-  height: 100%;
+  @apply --component;
   padding:0;
   margin:0;
-}
-
-.video.container figure {
-  border: solid brown 2px;
-  max-width: inherit;
-  max-height: inherit;
+  & figure {
+    border: solid brown 2px;
+    max-width: inherit;
+    max-height: inherit;
+  }
 }
