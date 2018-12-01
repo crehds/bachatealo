@@ -149,7 +149,8 @@
     max-width: inherit;
     max-height: inherit;
     /* align-items:center; */
-    justify-content: center
+    justify-content: center;
+    text-align: center
   }
 
 .fotos.container div figure {
@@ -166,6 +167,13 @@
         width:100%;
         height: 100%;
       }
+
+.fotos.container div .fotos-description {
+      margin:0px;
+      padding:5px;
+      align-items: center;
+      border: solid blue 2px;
+    }
 
 .Video {
   padding:10px;

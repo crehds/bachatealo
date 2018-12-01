@@ -61,7 +61,7 @@ const initialState = {
       id: '1',
     },
     {
-      foto: imagen8,
+      foto: imagen6,
       id: '2',
     },
     {
