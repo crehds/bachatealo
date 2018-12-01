@@ -36,6 +36,7 @@
   @media (--extra-small) {
     font-size: 14px;
   }
+  position: fixed;
 }
 
 .menu ul {
