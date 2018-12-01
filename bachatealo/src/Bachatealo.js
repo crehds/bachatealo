@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import Portada from './componentes/Portada.jsx';
-import Hero from './componentes/Hero.jsx';
-import History from './componentes/History.jsx';
-import Fotos from './componentes/Fotos.jsx';
-import Video from './componentes/Video.jsx';
+import Portada from './containers/Portada.jsx';
+import Hero from './containers/Hero.jsx';
+import History from './containers/History.jsx';
+import Fotos from './containers/Fotos.jsx';
+import Video from './containers/Video.jsx';
+import HandleError from './containers/Handle-error.jsx';
 
-class App extends Component {
+class Bachatealo extends Component {
   render() {
     return (
-      <section className="Bachatealo">
-        <link
-          href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro"
-          rel="stylesheet"
-        />
-        <Portada id="portada"/>
-        <Hero id="hero"/>
-        <History id="history"/>
-        <Fotos id="fotos"/>
-        <Video id="videos"/>
-      </section>
+      <HandleError>
+          {/*<link
+            href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro"
+            rel="stylesheet"
+            />*/}
+            <Portada id="portada"/>
+            <Hero id="hero"/>
+            <History id="history"/>
+            <Fotos id="fotos"/>
+            <Video id="videos"/>
+      </HandleError>
     );
   }
 }
 
-export default App;
+export default Bachatealo;
