@@ -1,6 +1,6 @@
 :root {
   --gray: rgba(111, 115, 114, 0.7);
-  --redLow: rgba(210, 6, 6, 0.4);ç
+  --redLow: rgba(210, 6, 6, 0.4);
   --containerGrid: {
     max-width: 100%;
     height: 100%;
@@ -13,7 +13,8 @@
   };
 }
 
-@custom-media --extra-small screen and (width <= 480px);
-@custom-media --small screen and (width <= 768px);
-@custom-media --medium screen and (width > 768px);
-@custom-media --large screen (width >= 1024px);
+@custom-media --large screen (width > 1025px);
+@custom-media --medium screen and (width < 1025);
+@custom-media --small (min-width: 481px) and (width <= 768px);
+/* @custom-media --small screen and (480 <= width <= 768); */
+@custom-media --extra-small screen and (max-width: 480px);
