@@ -4,11 +4,15 @@
 
 .hero-container {
   display: grid;
-  @apply --containerGrid;
+  max-width: 100%;
+  height: 100%;
   border:solid var(--gray) 5px;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, 296px);
   grid-gap: 1px;
+  @media (--extra-small) {
+    grid-template-rows: repeat(3, 150px);
+  }
 }
 
 .hero-container div {
