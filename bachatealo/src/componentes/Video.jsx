@@ -9,6 +9,7 @@ class Video extends Component {
           <figure>
             <iframe
               src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F303067066926144%2F&show_text=0&width=560"
+              title='video1'
               style={{
                 border: 'none',
                 overflow: 'hidden',
@@ -24,6 +25,7 @@ class Video extends Component {
           <figure>
             <iframe
               src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225816234651228%2F&show_text=0&width=560"
+              title='video2'
               style={{
                 border: 'none',
                 overflow: 'hidden',

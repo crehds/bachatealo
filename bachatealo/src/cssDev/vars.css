@@ -1,6 +1,10 @@
 :root {
   --gray: rgba(111, 115, 114, 0.7);
   --redLow: rgba(210, 6, 6, 0.4);
+  --containerGrid: {
+    max-width: 100%;
+    height: 100%;
+  }
   --component: {
     padding:10px;
     padding-top: 2px;

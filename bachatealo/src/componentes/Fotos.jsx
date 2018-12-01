@@ -15,7 +15,10 @@ class Fotos extends Component {
           {
             this.props.album.map((item) =>
             <div key={item.id}>
-              <img src={item.foto} alt={item.id}/>
+              <figure>
+                <img src={item.foto} alt={item.id}/>
+              </figure>
+              <p className="fotos-description">Descripción</p>
             </div>
             )
           }
