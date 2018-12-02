@@ -17,6 +17,7 @@ import imagen8 from './images/paraHero/8.png';
 import imagen9 from './images/paraHero/9.png';
 import rotonda from './images/paraHistory/rotonda.png';
 import alameda from './images/paraHistory/alameda.png';
+import evento from './images/paraEventos/eventos.png';
 import error from './images/paraError/error.jpg';
 
 const initialState = {
@@ -44,9 +45,10 @@ const initialState = {
   ],
 
   logoPortada: logo,
-  rotonda: rotonda,
-  alameda: alameda,
-  error: error,
+  rotonda,
+  alameda,
+  evento,
+  error,
 
   fotosPortada: [
     {
