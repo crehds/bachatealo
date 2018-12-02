@@ -17,8 +17,8 @@ import imagen8 from './images/paraHero/8.png';
 import imagen9 from './images/paraHero/9.png';
 import rotonda from './images/paraHistory/rotonda.png';
 import alameda from './images/paraHistory/alameda.png';
+import error from './images/paraError/error.jpg';
 
-// import imagen10 from './images/paraHero/10.jpg';
 const initialState = {
   menu: [
     {
@@ -74,7 +74,8 @@ const initialState = {
     },
   ],
 
-  // imagen10: imagen10,
+  error: error,
+
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -89,7 +90,11 @@ function reducer(state, action) {
   }
 }
 
-const store = createStore(reducer, initialState);
+const store = createStore(
+  reducer,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 ReactDOM.render(
   <Provider store={store}>
     <Bachatealo />
