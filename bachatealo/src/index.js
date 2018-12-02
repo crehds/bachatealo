@@ -42,18 +42,50 @@ const initialState = {
       id: '4',
     },
   ],
+
   logoPortada: logo,
-  imagen1: imagen7,
-  imagen2: imagen3,
-  imagen3: imagen9,
-  imagen4: imagen5,
-  imagen5: imagen1,
-  imagen6: imagen6,
-  imagen7: imagen2,
-  imagen8: imagen8,
-  imagen9: imagen4,
   rotonda: rotonda,
   alameda: alameda,
+  error: error,
+
+  fotosPortada: [
+    {
+      foto: imagen7,
+      id: '1',
+    },
+    {
+      foto: imagen3,
+      id: '2',
+    },
+    {
+      foto: imagen9,
+      id: '3',
+    },
+    {
+      foto: imagen5,
+      id: '4',
+    },
+    {
+      foto: imagen1,
+      id: '5',
+    },
+    {
+      foto: imagen6,
+      id: '6',
+    },
+    {
+      foto: imagen2,
+      id: '7',
+    },
+    {
+      foto: imagen8,
+      id: '8',
+    },
+    {
+      foto: imagen4,
+      id: '9',
+    },
+  ],
 
   album: [
     {
@@ -73,8 +105,6 @@ const initialState = {
       id: '4',
     },
   ],
-
-  error: error,
 
 };
 function reducer(state, action) {

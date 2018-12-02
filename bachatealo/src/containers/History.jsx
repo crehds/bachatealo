@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from  'react-redux';
 
-function mapStateToProps(state) {
+function mapStateToProps({ rotonda, alameda }) {
   return {
-    src: state.rotonda,
-    src1: state.alameda,
+    rotonda,
+    alameda,
   };
 }
 
@@ -17,14 +17,14 @@ class History extends Component {
           <div>
             <img
               className="history-img"
-              src={this.props.src}
+              src={this.props.rotonda}
               alt="imagen de practica"
               />
           </div>
           <div>
             <img
               className="history-img"
-              src={this.props.src1}
+              src={this.props.alameda}
               alt="imagen de practica"
               />
           </div>

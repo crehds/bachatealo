@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
+function mapStateToProps({ logoPortada, menu }) {
   return {
-    logo: state.logoPortada,
-    menu: state.menu,
+    logo: logoPortada,
+    menu,
   };
 }
 
