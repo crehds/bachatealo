@@ -17,7 +17,6 @@ function mapStateToProps(state) {
 
 class Hero extends Component {
   render () {
-    console.log('hola');
     return (
       <section id="hero" className="Hero">
         <div className="hero-container">
