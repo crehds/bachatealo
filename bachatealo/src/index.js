@@ -28,18 +28,18 @@ const initialState = {
       id: '1',
     },
     {
+      href: '#eventos',
+      title: 'Eventos',
+      id: '2',
+    },
+    {
       href: '#fotos',
       title: 'Fotos',
-      id: '2',
+      id: '3',
     },
     {
       href: '#videos',
       title: 'Videos',
-      id: '3',
-    },
-    {
-      href: '#eventos',
-      title: 'Eventos',
       id: '4',
     },
   ],

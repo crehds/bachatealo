@@ -16,5 +16,6 @@
 @custom-media --large screen (width > 1025px);
 @custom-media --medium screen and (width < 1025);
 @custom-media --small (min-width: 481px) and (width <= 768px);
+@custom-media --event screen and (width <= 645px);
 /* @custom-media --small screen and (480 <= width <= 768); */
 @custom-media --extra-small screen and (max-width: 480px);

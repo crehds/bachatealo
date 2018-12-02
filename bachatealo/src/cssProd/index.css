@@ -4,6 +4,8 @@
 
 @custom-media --small (min-width: 481px) and (max-width: 768px);
 
+@custom-media --event screen and (max-width: 645px);
+
 /* @custom-media --small screen and (480 <= width <= 768); */
 
 @custom-media --extra-small screen and (max-width: 480px);
@@ -254,7 +256,7 @@ body {
     text-align: center;
     grid-column: 2 / 3;
     grid-row: 1/ 3;
-    width: 100%;
+    max-width: 100%;
   }
 
 @media screen and (max-width: 480px) {
@@ -308,3 +310,17 @@ body {
     margin-right:28px
 }
   }
+
+@media screen and (max-width: 645px) {
+
+.event-container .event img {
+        width: 100%
+  }
+    }
+
+@media (--event) {
+
+.event-container .event img {
+        width: 100%
+  }
+    }

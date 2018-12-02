@@ -19,6 +19,11 @@
     text-align: center;
     grid-column: 2 / 3;
     grid-row: 1/ 3;
-    width: 100%;
+    max-width: 100%;
+  }
+  & .event img {
+      @media (--event) {
+        width: 100%;
+    }
   }
 }
