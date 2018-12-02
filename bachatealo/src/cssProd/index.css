@@ -179,7 +179,7 @@
   padding:10px;
   padding-top: 2px;
   padding-bottom: 30px;
-  color: white
+  color: white;
 }
 
 .video.container {
@@ -194,7 +194,6 @@
 }
 
 .video.container figure {
-    /* border: solid brown 2px; */
     max-width: 100%;
     height: 100% ;
     margin:0
@@ -242,10 +241,6 @@ body {
 .hero-container {
     grid-template-rows: repeat(3, 150px)
 }
-
-.Video {
-    display: none
-}
   }
 
 @media (--extra-small) {
@@ -262,10 +257,6 @@ body {
 
 .hero-container {
     grid-template-rows: repeat(3, 150px)
-}
-
-.Video {
-    display: none
 }
   }
 
