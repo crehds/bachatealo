@@ -4,21 +4,19 @@ import Hero from './containers/Hero.jsx';
 import History from './containers/History.jsx';
 import Fotos from './containers/Fotos.jsx';
 import Video from './containers/Video.jsx';
+import Event from './containers/Eventos.jsx';
 import HandleError from './containers/Handle-error.jsx';
 
 class Bachatealo extends Component {
   render() {
     return (
       <HandleError>
-          {/*<link
-            href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro"
-            rel="stylesheet"
-            />*/}
-            <Portada id="portada"/>
-            <Hero id="hero"/>
-            <History id="history"/>
-            <Fotos id="fotos"/>
-            <Video id="videos"/>
+        <Portada id="portada"/>
+        <Hero id="hero"/>
+        <History id="history"/>
+        <Event id="eventos"/>
+        <Fotos id="fotos"/>
+        <Video id="videos"/>
       </HandleError>
     );
   }

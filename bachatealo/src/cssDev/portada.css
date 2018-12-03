@@ -46,8 +46,8 @@
 
 .menu li {
   display:inline-block;
-  margin-left:90px;
-  margin-right:90px;
+  margin-left:88px;
+  margin-right:88px;
   @media (--small) {
     display:inline-block;
     margin-left:28px;
@@ -56,7 +56,11 @@
   @media (--extra-small) {
     display:inline-block;
     margin-left:13px;
-    margin-right:13px
+    margin-right:13px;
+  }
+  @media (--nano) {
+    margin-left:5px;
+    margin-right:9px;
   }
 }
 

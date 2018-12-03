@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
+function mapStateToProps({ album }) {
   return {
-    album: state.album,
+    album,
   };
 }
 
