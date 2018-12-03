@@ -13,8 +13,8 @@ class Bachatealo extends Component {
       <HandleError>
         <Portada id="portada"/>
         <Hero id="hero"/>
-        <Event id="eventos"/>
         <History id="history"/>
+        <Event id="eventos"/>
         <Fotos id="fotos"/>
         <Video id="videos"/>
       </HandleError>

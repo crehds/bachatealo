@@ -24,7 +24,7 @@ const initialState = {
   menu: [
     {
       href: '#history',
-      title: 'Historia',
+      title: '¿Quiénes somos?',
       id: '1',
     },
     {
