@@ -48,7 +48,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  /* color: var(--white); */
   margin: 0;
   padding: 0;
 }
@@ -77,7 +76,6 @@
 
 .menu a {
   color: #A7A9AC;
-  /* font-weight: lighter; */
   text-decoration: none;
 }
 
@@ -163,14 +161,11 @@
     grid-template-rows: repeat(2, calc(100% - 50%));
     max-width: inherit;
     max-height: inherit;
-    /* align-items:center; */
     justify-content: center;
     text-align: center
   }
 
 .fotos.container div figure {
-      /* align-items: center; */
-      /* justify-content: center; */
       margin: 0;
       padding:0;
       border: solid blue 2px;
@@ -253,7 +248,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(2,auto);
-  /* justify-content: center; */
   text-align: center
 }
 

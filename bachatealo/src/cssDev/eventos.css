@@ -7,7 +7,6 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(2,auto);
-  /* justify-content: center; */
   text-align: center;
   & .event:nth-of-type(1) {
     border: 1px solid red;
