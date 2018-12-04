@@ -1,12 +1,20 @@
+:root {
+  /* 4E5050 */
+}
+
 @custom-media --large screen (min-width: 1026px);
 
-@custom-media --medium screen and (max-width: 1024.999);
+@custom-media --medium (min-width: 769px) and (max-width: 1025px);
 
 @custom-media --small (min-width: 481px) and (max-width: 768px);
+
+/* @custom-media --small screen and (width <= 768px); */
 
 @custom-media --event screen and (max-width: 645px);
 
 /* @custom-media --small screen and (480 <= width <= 768); */
+
+@custom-media --menuli (min-width: 480px) and (max-width: 567px);
 
 @custom-media --extra-small screen and (max-width: 480px);
 
@@ -40,7 +48,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: var(--white); */
   margin: 0;
   padding: 0;
 }
@@ -55,18 +63,21 @@
 
 .menu ul {
   padding:0;
-  margin: 10px;
-  /* justify-content: space-around; */
+  margin: 10px
+
 }
 
 .menu li {
+  font-family: 'Source Sans Pro', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   display:inline-block;
-  margin-left:88px;
-  margin-right:88px
+  margin-left:84px;
+  margin-right:84px;
+  font-weight: bold
 }
 
 .menu a {
-  color: gray;
+  color: #A7A9AC;
+  /* font-weight: lighter; */
   text-decoration: none;
 }
 
@@ -81,14 +92,14 @@
   display: grid;
   max-width: 100%;
   height: 100%;
-  border:solid rgba(111, 115, 114, 0.7) 5px;
+  border:groove #A1A1A1 5px;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
-  grid-template-rows: repeat(3, 296px);
+  grid-template-rows: repeat(3, auto);
   grid-gap: 1px
 }
 
 .hero-container div {
-  border:solid rgba(210, 6, 6, 0.4) 3px;
+  border:outset #a41f28 3px;
   max-width: inherit;
   max-height: inherit;
 }
@@ -226,8 +237,8 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background: black;
-  font-family: 'Fjalla One',sans-serif;
+  background: #0a0b0f;
+  font-family: 'Fjalla One', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 
 .Event {
@@ -264,11 +275,16 @@ body {
 @media screen and (max-width: 480px) {
 
 .menu {
-    font-size: 14px
+    font-size: 13px
+}
+
+.menu ul {
+    margin-top:10px;
+    margin-bottom: 10px
+
 }
 
 .menu li {
-    display:inline-block;
     margin-left:13px;
     margin-right:13px
 }
@@ -281,11 +297,16 @@ body {
 @media (--extra-small) {
 
 .menu {
-    font-size: 14px
+    font-size: 13px
+}
+
+.menu ul {
+    margin-top:10px;
+    margin-bottom: 10px
+
 }
 
 .menu li {
-    display:inline-block;
     margin-left:13px;
     margin-right:13px
 }
@@ -297,8 +318,13 @@ body {
 
 @media (min-width: 481px) and (max-width: 768px) {
 
+.menu ul {
+    margin-left: 5px;
+    margin-right: 5px
+
+}
+
 .menu li {
-    display:inline-block;
     margin-left:28px;
     margin-right:28px
 }
@@ -306,8 +332,13 @@ body {
 
 @media (--small) {
 
+.menu ul {
+    margin-left: 5px;
+    margin-right: 5px
+
+}
+
 .menu li {
-    display:inline-block;
     margin-left:28px;
     margin-right:28px
 }
@@ -315,17 +346,61 @@ body {
 
 @media screen and (max-width: 345px) {
 
+.menu ul {
+    margin-left: 0;
+    margin-right: 0
+
+}
+
 .menu li {
-    margin-left:5px;
-    margin-right:9px
+    margin-left:7px;
+    margin-right:7px
 }
   }
 
 @media (--nano) {
 
+.menu ul {
+    margin-left: 0;
+    margin-right: 0
+
+}
+
 .menu li {
-    margin-left:5px;
-    margin-right:9px
+    margin-left:7px;
+    margin-right:7px
+}
+  }
+
+@media (min-width: 769px) and (max-width: 1025px) {
+
+.menu li {
+    margin-left:50px;
+    margin-right:50px
+}
+  }
+
+@media (--medium) {
+
+.menu li {
+    margin-left:50px;
+    margin-right:50px
+}
+  }
+
+@media (min-width: 480px) and (max-width: 567px) {
+
+.menu li {
+    margin-left: 18px;
+    margin-right: 18px
+}
+  }
+
+@media (--menuli) {
+
+.menu li {
+    margin-left: 18px;
+    margin-right: 18px
 }
   }
 
