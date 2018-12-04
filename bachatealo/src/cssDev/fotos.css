@@ -15,12 +15,9 @@
     grid-template-rows: repeat(2, calc(100% - 50%));
     max-width: inherit;
     max-height: inherit;
-    /* align-items:center; */
     justify-content: center;
     text-align: center;
     & figure {
-      /* align-items: center; */
-      /* justify-content: center; */
       margin: 0;
       padding:0;
       border: solid blue 2px;

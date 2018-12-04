@@ -22,7 +22,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  /* color: var(--white); */
   margin: 0;
   padding: 0;
 }
@@ -86,6 +85,5 @@
 
 .menu a {
   color: var(--white);
-  /* font-weight: lighter; */
   text-decoration: none;
 }
