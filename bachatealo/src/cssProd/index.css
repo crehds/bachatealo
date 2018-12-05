@@ -327,9 +327,18 @@ body {
     margin-right:28px
 }
 
-.hero-container {
-    grid-template-rows: repeat(3, auto)
-}
+.history-container .history-div .history-title {
+          margin-left: 27%;
+          margin-right: 27%
+    }
+
+.history-container .history-div .history-title h1 {
+           font-size: 90%
+        }
+
+.history-container .history-div p {
+        font-size: 70%
+    }
   }
 
 @media (--small) {
@@ -348,6 +357,19 @@ body {
     margin-left:28px;
     margin-right:28px
 }
+
+.history-container .history-div .history-title {
+          margin-left: 27%;
+          margin-right: 27%
+    }
+
+.history-container .history-div .history-title h1 {
+           font-size: 90%
+        }
+
+.history-container .history-div p {
+        font-size: 70%
+    }
   }
 
 @media screen and (max-width: 480px) {
@@ -377,41 +399,9 @@ body {
     margin-right:13px
 }
 
-.history-container .history-div .history-title {
-          margin-left: 27%;
-          margin-right: 27%
-    }
-
-.history-container .history-div .history-title h1 {
-           font-size: 90%
-        }
-
-.history-container .history-div p {
-        font-size: 70%
-    }
-  }
-
 .hero-container {
-    grid-template-rows: repeat(3, 150px)
+    grid-template-rows: repeat(3, auto)
 }
-
-.menu li {
-    margin-left:28px;
-    margin-right:28px
-}
-
-.history-container .history-div .history-title {
-          margin-left: 27%;
-          margin-right: 27%
-    }
-
-.history-container .history-div .history-title h1 {
-           font-size: 90%
-        }
-
-.history-container .history-div p {
-        font-size: 70%
-    }
   }
 
 @media screen and (max-width: 345px) {
