@@ -17,43 +17,77 @@ import imagen8 from './images/paraHero/8.png';
 import imagen9 from './images/paraHero/9.png';
 import rotonda from './images/paraHistory/rotonda.png';
 import alameda from './images/paraHistory/alameda.png';
+import evento from './images/paraEventos/eventos.png';
+import error from './images/paraError/error.jpg';
 
-// import imagen10 from './images/paraHero/10.jpg';
 const initialState = {
   menu: [
     {
       href: '#history',
-      title: 'Historia',
+      title: '¿Quiénes somos?',
       id: '1',
-    },
-    {
-      href: '#fotos',
-      title: 'Fotos',
-      id: '2',
-    },
-    {
-      href: '#videos',
-      title: 'Videos',
-      id: '3',
     },
     {
       href: '#eventos',
       title: 'Eventos',
+      id: '2',
+    },
+    {
+      href: '#fotos',
+      title: 'Fotos',
+      id: '3',
+    },
+    {
+      href: '#videos',
+      title: 'Videos',
       id: '4',
     },
   ],
+
   logoPortada: logo,
-  imagen1: imagen7,
-  imagen2: imagen3,
-  imagen3: imagen9,
-  imagen4: imagen5,
-  imagen5: imagen1,
-  imagen6: imagen6,
-  imagen7: imagen2,
-  imagen8: imagen8,
-  imagen9: imagen4,
-  rotonda: rotonda,
-  alameda: alameda,
+  rotonda,
+  alameda,
+  evento,
+  error,
+
+  fotosPortada: [
+    {
+      foto: imagen7,
+      id: '1',
+    },
+    {
+      foto: imagen3,
+      id: '2',
+    },
+    {
+      foto: imagen9,
+      id: '3',
+    },
+    {
+      foto: imagen5,
+      id: '4',
+    },
+    {
+      foto: imagen1,
+      id: '5',
+    },
+    {
+      foto: imagen6,
+      id: '6',
+    },
+    {
+      foto: imagen2,
+      id: '7',
+    },
+    {
+      foto: imagen8,
+      id: '8',
+    },
+    {
+      foto: imagen4,
+      id: '9',
+    },
+  ],
 
   album: [
     {
@@ -61,7 +95,7 @@ const initialState = {
       id: '1',
     },
     {
-      foto: imagen8,
+      foto: imagen6,
       id: '2',
     },
     {
@@ -74,7 +108,6 @@ const initialState = {
     },
   ],
 
-  // imagen10: imagen10,
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -89,7 +122,11 @@ function reducer(state, action) {
   }
 }
 
-const store = createStore(reducer, initialState);
+const store = createStore(
+  reducer,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 ReactDOM.render(
   <Provider store={store}>
     <Bachatealo />
