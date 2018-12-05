@@ -1,5 +1,6 @@
 .Event {
   @apply --component;
+  padding-top: 51px;
 }
 
 .event-container {

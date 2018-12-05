@@ -10,7 +10,7 @@
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
   @media (--extra-small) {
-    grid-template-rows: repeat(3, 150px);
+    grid-template-rows: repeat(3, auto);
   }
 }
 
