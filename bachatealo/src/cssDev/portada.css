@@ -32,6 +32,9 @@
   justify-content: center;
   padding: 0;
   font-family: 'Fjalla One',sans-serif;
+  @media (--small) {
+    font-size: 16px;
+  }
   @media (--extra-small) {
     font-size: 13px;
   }
@@ -43,10 +46,6 @@
   @media (--small) {
     margin-left: 5px;
     margin-right: 5px;
-  }
-  @media (--extra-small) {
-    margin-top:10px;
-    margin-bottom: 10px;
   }
   @media (--nano) {
     margin-left: 0;
