@@ -310,16 +310,50 @@ body {
     max-width: 100%;
   }
 
+@media (min-width: 481px) and (max-width: 768px) {
+
+.menu {
+    font-size: 16px
+}
+
+.menu ul {
+    margin-left: 5px;
+    margin-right: 5px
+
+}
+
+.menu li {
+    margin-left:28px;
+    margin-right:28px
+}
+
+.hero-container {
+    grid-template-rows: repeat(3, auto)
+}
+  }
+
+@media (--small) {
+
+.menu {
+    font-size: 16px
+}
+
+.menu ul {
+    margin-left: 5px;
+    margin-right: 5px
+
+}
+
+.menu li {
+    margin-left:28px;
+    margin-right:28px
+}
+  }
+
 @media screen and (max-width: 480px) {
 
 .menu {
     font-size: 13px
-}
-
-.menu ul {
-    margin-top:10px;
-    margin-bottom: 10px
-
 }
 
 .menu li {
@@ -338,33 +372,9 @@ body {
     font-size: 13px
 }
 
-.menu ul {
-    margin-top:10px;
-    margin-bottom: 10px
-
-}
-
 .menu li {
     margin-left:13px;
     margin-right:13px
-}
-
-.hero-container {
-    grid-template-rows: repeat(3, auto)
-}
-  }
-
-@media (min-width: 481px) and (max-width: 768px) {
-
-.menu ul {
-    margin-left: 5px;
-    margin-right: 5px
-
-}
-
-.menu li {
-    margin-left:28px;
-    margin-right:28px
 }
 
 .history-container .history-div .history-title {
@@ -381,12 +391,8 @@ body {
     }
   }
 
-@media (--small) {
-
-.menu ul {
-    margin-left: 5px;
-    margin-right: 5px
-
+.hero-container {
+    grid-template-rows: repeat(3, 150px)
 }
 
 .menu li {
