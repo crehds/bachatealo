@@ -21,7 +21,6 @@ class Fotos extends Component {
               <figure>
                 <img src={item.foto} alt={item.id}/>
               </figure>
-              {/*<p className="fotos-description">Descripción</p>*/}
             </div>
             )
           }
