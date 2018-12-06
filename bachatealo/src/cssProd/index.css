@@ -10,6 +10,8 @@
 
 /* @custom-media --small screen and (width <= 768px); */
 
+@custom-media --video screen and (max-width: 768px);
+
 @custom-media --event screen and (max-width: 645px);
 
 /* @custom-media --small screen and (480 <= width <= 768); */
@@ -249,31 +251,54 @@
   padding-top: 2px;
   padding-bottom: 40px;
   color: white;
-  padding-top: 51px;
+  padding-top: 20px;
 }
 
+.video-title {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 26px;
+  margin-top: 25px;
+  font-family: 'Pacifico',system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif
+}
+
+.video-title h1 {
+    margin-top: 0px
+  }
+
 .video.container {
-  border: solid green 2px;
+  /* border: solid red 2px; */
+  border-radius: 35px;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  grid-gap: 10px;
   max-width: 100%;
   height: 100%;
   padding:0;
-  margin:0
+  margin:0;
+  background: #212226
 }
 
 .video.container figure {
-    max-width: 100%;
+    max-width: 90%;
     height: 100% ;
+    position: relative;
+    left:5%;
     margin:0
   }
 
 .video.container figure div {
-      border: solid brown 2px;
+      border-radius: 10px;
+      border-left: groove #0a0b0f 35px;
+      border-top: groove #0a0b0f 35px;
+      border-right: ridge #0a0b0f 35px;
+      border-bottom: ridge #0a0b0f 35px;
+      overflow: hidden;
       max-width: 100%;
       position:relative;
-      padding-top: 56.25%
+      padding-top: 56%
     }
 
 .video.container figure div iframe {
@@ -619,6 +644,40 @@ body {
         font-size: 50%
     }
         }
+
+@media screen and (max-width: 768px){
+
+.video-title h1 {
+      margin-bottom: 15px
+  }
+
+.video.container {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto)
+}
+    .video.container figure {
+      max-width: 70%;
+      /* position: relative; */
+      left: 15%;
+    }
+    }
+
+@media (--video){
+
+.video-title h1 {
+      margin-bottom: 15px
+  }
+
+.video.container {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto)
+}
+    .video.container figure {
+      max-width: 70%;
+      /* position: relative; */
+      left: 15%;
+    }
+    }
 
 @media screen and (max-width: 645px) {
 

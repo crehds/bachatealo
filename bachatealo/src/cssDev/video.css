@@ -1,25 +1,59 @@
 .Video {
   @apply --component;
-  padding-top: 51px;
+  padding-top: 20px;
+}
+
+.video-title {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 26px;
+  margin-top: 25px;
+  font-family: 'Pacifico',system-ui;
+  & h1 {
+    margin-top: 0px;
+    @media (--video){
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .video.container {
-  border: solid green 2px;
+  /* border: solid red 2px; */
+  border-radius: 35px;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  grid-gap: 10px;
   @apply --containerGrid;
   padding:0;
   margin:0;
+  background: #212226;
+  @media (--video) {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    & figure {
+      max-width: 70%;
+      /* position: relative; */
+      left: 15%;
+    }
+  }
   & figure {
-    max-width: 100%;
+    max-width: 90%;
     height: 100% ;
+    position: relative;
+    left:5%;
     margin:0;
     & div {
-      border: solid brown 2px;
+      border-radius: 10px;
+      border-left: groove var(--negroprueba1) 35px;
+      border-top: groove var(--negroprueba1) 35px;
+      border-right: ridge var(--negroprueba1) 35px;
+      border-bottom: ridge var(--negroprueba1) 35px;
+      overflow: hidden;
       max-width: 100%;
       position:relative;
-      padding-top: 56.25%;
+      padding-top: 56%;
       & iframe {
         border: none;
         overflow: hidden;
