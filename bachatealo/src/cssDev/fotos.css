@@ -24,7 +24,6 @@
 
 .fotos.container {
   display: grid;
-  /* overflow: hidden; */
   @apply --containerGrid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
