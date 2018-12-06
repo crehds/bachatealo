@@ -1,7 +1,6 @@
 .Portada {
   @apply --component;
   padding-bottom: 5px;
-  /* align-items: center; */
   text-align: center;
 }
 
