@@ -69,12 +69,14 @@
 }
 
 .menu ul li a {
-  cursor:pointer;
-  color: gray;
+  /* cursor:pointer; */
+  color: #a7a9ac;
   text-decoration: none;
 }
 
 .menu ul li:hover {
   box-shadow: 0px 0px 10px 10px #ff0018;
-  /* background: green; */
+  & a {
+    background: #590f15;
+  }
 }
