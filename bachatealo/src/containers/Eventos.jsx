@@ -31,7 +31,7 @@ class Event extends Component {
           </div>
         </div>
         <div className="event">
-          <img className="event-image" src={this.props.evento} alt="evento"/>
+            <img className="event-image" src={this.props.evento} alt="evento"/>
         </div>
       </div>
     </section>
