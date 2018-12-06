@@ -54,6 +54,8 @@
   width:100%;
   position: fixed;
   top:0;
+  left:0;
+  right:0;
   z-index: 1000;
   background: rgba(0,0,0, 0.8);
   max-height: 100%;
@@ -89,10 +91,12 @@
 }
 
 .menu ul li:hover {
-  box-shadow: 0px 0px 10px 10px #ff0018
+  box-shadow: 0px 0px 8px 10px #ff0018
 }
 
 .menu ul li:hover a {
+    border:outset #ff0018 5px;
+    border-radius: 3px;
     background: #590f15;
   }
 
@@ -342,7 +346,7 @@ body {
   padding-top: 2px;
   padding-bottom: 40px;
   color: white;
-  padding-top: 51px;
+  padding-top: 98px;
   padding-bottom: 80px;
 }
 
