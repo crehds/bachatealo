@@ -1,6 +1,7 @@
 .Event {
   @apply --component;
   padding-top: 51px;
+  padding-bottom: 80px;
 }
 
 .event-container {
@@ -14,8 +15,9 @@
   vertical-align: bottom;
   font-family: 'Source Sans Pro', system-ui;
   grid-gap: 3px;
+  /* div imagen*/
   & .event .event-image {
-    box-shadow: 0px 5px 30px #a41f28;
+    box-shadow: 0px 5px 30px 5px #a41f28;
     border-top: 5px ridge #2e2324;
     @media (--event) {
       width: 100%;

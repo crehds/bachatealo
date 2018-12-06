@@ -9,17 +9,23 @@
   font-size: 26px;
   margin-top: 25px;
   font-family: 'Pacifico',system-ui;
+  box-shadow: 0px -10px 20px 5px #ff0018;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #212226;
   & h1 {
+    border-bottom: groove #a41f28 10px;
     margin-top: 0px;
     @media (--video){
       margin-bottom: 15px;
+      font-size: 27px;
     }
   }
 }
 
 .video.container {
   /* border: solid red 2px; */
-  border-radius: 35px;
+  /* border-radius: 35px; */
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -29,6 +35,8 @@
   padding:0;
   margin:0;
   background: #212226;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   @media (--video) {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto);
