@@ -1,5 +1,6 @@
 .Video {
   @apply --component;
+  padding-top:98px;
 }
 
 .video.container {
