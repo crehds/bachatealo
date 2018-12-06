@@ -23,7 +23,6 @@
 }
 
 .fotos.container {
-  /* border: solid green 2px; */
   display: grid;
   /* overflow: hidden; */
   @apply --containerGrid;
@@ -38,25 +37,13 @@
   & div {
     border: ridge #56575b 4px;
     display: flex;
-    /* display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, calc(100% - 50%)); */
     max-width: inherit;
     max-height: inherit;
-    /* justify-content: space-between; */
-    /* position: relative;
-    left: 15%; */
-    /* right:7.5%; */
-    /* left:3.5%;
-    right:3.5%; */
     box-shadow: 3px 3px 30px 10px #56575b;
-    /* align-items: center; */
-    /* vertical-align: center; */
     width:70%;
     & figure {
       margin: 0;
       padding:0;
-      /* border: solid blue 2px; */
       max-width: 100%;
       max-height: 100%;
       & img {

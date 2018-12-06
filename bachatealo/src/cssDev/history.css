@@ -4,7 +4,6 @@
 }
 
 .history-container {
-  /* border: solid 2px red; */
   border-radius: 10px;
   display: grid;
   @apply --containerGrid;
@@ -41,7 +40,6 @@
           margin-right: 11%;
         }
         & h1 {
-          /* border-top: ridge #DB2530 10px; */
           border-left: 10px;
           border-left-style: groove ;
           border-left-color: #FF0018;
@@ -89,7 +87,6 @@
   & .history-div:nth-of-type(3) {
     &  .history-title h1 {
       border-left: none;
-      /* border-right: ridge #DB2530 10px; */
       border-right: 10px;
       border-right-style: ridge ;
       border-right-color: #FF0018;

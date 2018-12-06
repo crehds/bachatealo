@@ -16,7 +16,6 @@
 
 .hero-container div {
   border:outset var(--redprueba) 3px;
-  /* box-shadow: auto auto var(--redprueba); */
   max-width: inherit;
   max-height: inherit;
 }
