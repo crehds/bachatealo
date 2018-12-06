@@ -5,6 +5,9 @@ class Video extends Component {
   render() {
     return (
       <section id={this.props.id} className="Video">
+        <div className="video-title">
+          <h1>Recuerdos...</h1>
+        </div>
         <div className="video container">
           <figure>
             <div>
@@ -16,7 +19,7 @@ class Video extends Component {
                 scrolling="no"
                 frameBorder="0"
                 allowtransparency="true"
-                allowFullScreen={true}>
+                allowFullScreen={false}>
               </iframe>
             </div>
           </figure>
@@ -30,7 +33,7 @@ class Video extends Component {
                 scrolling="no"
                 frameBorder="0"
                 allowtransparency="true"
-                allowFullScreen={true}>
+                allowFullScreen={false}>
               </iframe>
             </div>
           </figure>
