@@ -19,7 +19,7 @@ class Video extends Component {
                 scrolling="no"
                 frameBorder="0"
                 allowtransparency="true"
-                allowFullScreen={false}>
+                allowFullScreen={true}>
               </iframe>
             </div>
           </figure>
@@ -33,7 +33,7 @@ class Video extends Component {
                 scrolling="no"
                 frameBorder="0"
                 allowtransparency="true"
-                allowFullScreen={false}>
+                allowFullScreen={true}>
               </iframe>
             </div>
           </figure>
