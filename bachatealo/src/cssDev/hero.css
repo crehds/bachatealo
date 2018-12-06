@@ -10,7 +10,7 @@
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
   @media (--extra-small) {
-    grid-template-rows: repeat(3, 150px);
+    grid-template-rows: repeat(3, auto);
   }
 }
 
@@ -21,6 +21,7 @@
 }
 
 .hero-container div img {
+  box-shadow: 3px 3px 10px var(--redprueba);
   width:100%;
   height: 100%;
   vertical-align: top;

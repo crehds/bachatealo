@@ -11,6 +11,9 @@ class Fotos extends Component {
   render() {
     return (
       <section id={this.props.id} className="Fotos">
+        <div className="fotos-title">
+          <h1>Momentos Destacados...</h1>
+        </div>
         <div className="fotos container">
           {
             this.props.album.map((item) =>
@@ -18,7 +21,6 @@ class Fotos extends Component {
               <figure>
                 <img src={item.foto} alt={item.id}/>
               </figure>
-              <p className="fotos-description">Descripción</p>
             </div>
             )
           }
