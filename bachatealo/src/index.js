@@ -106,6 +106,14 @@ const initialState = {
       foto: imagen4,
       id: '4',
     },
+    {
+      foto: imagen5,
+      id: '5',
+    },
+    {
+      foto: imagen2,
+      id: '6',
+    },
   ],
 
 };
