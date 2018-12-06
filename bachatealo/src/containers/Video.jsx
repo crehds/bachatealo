@@ -5,6 +5,9 @@ class Video extends Component {
   render() {
     return (
       <section id={this.props.id} className="Video">
+        <div className="video-title">
+          <h1>Recuerdos...</h1>
+        </div>
         <div className="video container">
           <figure>
             <div>

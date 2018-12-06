@@ -4,21 +4,92 @@
 }
 
 .history-container {
-  border: solid 2px red;
+  border-radius: 10px;
   display: grid;
   @apply --containerGrid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 400px);
+  grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  grid-row-gap: 20px;
-  & div {
-    border: solid red 2px;
+  grid-row-gap: 80px;
+  text-align: center;
+  & .history-div {
+    overflow: hidden;
+    border: inset #898A8E 3px;
+    border-radius: 10px;
     max-width: inherit;
-    max-height: inherit;
+    max-height: 100%;
+    & .history-title {
+        padding-bottom: 5px;
+        border: ridge #A41F28 5px;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 8px;
+        background: #A3000F;
+        @media (--small) {
+          margin-left: 27%;
+          margin-right: 27%;
+        }
+        @media (--history-title){
+          margin-left: 20%;
+          margin-right: 20%;
+          padding: 5px;
+        }
+        @media (--nano) {
+          padding: 3px;
+          margin-left: 11%;
+          margin-right: 11%;
+        }
+        & h1 {
+          border-left: 10px;
+          border-left-style: groove ;
+          border-left-color: #FF0018;
+          margin:0;
+          padding: 5px;
+          color: #f0f1f1;
+          @media (--medium) {
+            font-size: 95%;
+          }
+          @media (--small) {
+           font-size: 90%;
+          }
+          @media (--history-title) {
+            font-size: 80%;
+          }
+          @media (--nano) {
+            font-size: 70%;
+          }
+        }
+    }
+    & p {
+      border: solid brown 2px;
+      margin:8px;
+      background: #212226;
+      color: #D4D5D6;
+      @media (--small) {
+        font-size: 70%;
+      }
+      @media (--history-title) {
+        font-size: 50%;
+      }
+      @media (--nano) {
+        font-size: 30%;
+      }
+    }
     & .history-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+    }
+  }
+  & .history-div:nth-of-type(4) {
+    grid-column:1 / 2;
+    grid-row:2 / 3;
+  }
+  & .history-div:nth-of-type(3) {
+    &  .history-title h1 {
+      border-left: none;
+      border-right: 10px;
+      border-right-style: ridge ;
+      border-right-color: #FF0018;
     }
   }
 }

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RegularError from '../components/Regular-error.jsx';
 
-function mapStateToProps(state) {
+function mapStateToProps(error) {
   return {
-    error: state.error,
+    error,
   };
 }
 
