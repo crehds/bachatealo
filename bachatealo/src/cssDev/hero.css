@@ -1,5 +1,6 @@
 .Hero {
   @apply --component;
+  padding-top:98px;
 }
 
 .hero-container {
