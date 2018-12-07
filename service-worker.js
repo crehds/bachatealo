@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bachatealo/precache-manifest.c13b6a41a7d9693f035fcba1212e0c61.js"
+  "/bachatealo/precache-manifest.d8568be2808e4fe608c20fbe269d2965.js"
 );
 
 workbox.clientsClaim();
