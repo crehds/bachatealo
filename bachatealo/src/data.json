@@ -23,27 +23,25 @@
           "id": "2",
           "description": "Datos del programador",
           "title": "Programador",
-          "datos": {
-            "name":"Carlos Rodríguez",
-            "numero": "960265942",
-            "redesSociales": [
-              {
-                "id":1,
-                "description": "Facebook",
-                "src":"https://www.facebook.com/checa.rh"
-              },
-              {
-                "id":2,
-                "description": "twitter",
-                "src":"https://twitter.com/crehds1"
-              },
-              {
-                "id":3,
-                "description": "github",
-                "src":"https://github.com/crehds"
-              }
-            ]
-          }
+          "name":"Carlos Rodríguez",
+          "numero": "960265942",
+          "redesSociales": [
+            {
+              "id":1,
+              "description": "Facebook",
+              "src":"https://www.facebook.com/checa.rh"
+            },
+            {
+              "id":2,
+              "description": "twitter",
+              "src":"https://twitter.com/crehds1"
+            },
+            {
+              "id":3,
+              "description": "github",
+              "src":"https://github.com/crehds"
+            }
+          ]
         }
       ]
     }

@@ -7,6 +7,7 @@ import Video from '../containers/Video.jsx';
 import Event from '../containers/Eventos.jsx';
 import HandleError from '../containers/Handle-error.jsx';
 import Details from '../containers/Details.jsx';
+import Footer from '../containers/Footer.jsx';
 
 class Bachatealo extends Component {
   render() {
@@ -19,6 +20,7 @@ class Bachatealo extends Component {
         <Event id="eventos"/>
         <Fotos id="fotos"/>
         <Video id="videos"/>
+        <Footer id="footer"/>
       </HandleError>
     );
   }
