@@ -1,0 +1,51 @@
+{
+  "section": [
+    {
+      "id": 1,
+      "description": "Pie de página",
+      "title": "Details",
+      "datos": [
+        {
+          "id": 1,
+          "description":"Datos de bachatealo",
+          "title":"Bachatealo",
+          "datos": {
+            "name": "bachatealo",
+            "generos": " bachata, salsa",
+            "horario": "  8 pm a 12 pm",
+            "direccion": "  Municipalidad de los olivos, Rotonda",
+            "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
+            "Facebook": "bachatealo",
+            "Dias": "  Martes, Jueves, Sábado"
+          }
+        },
+        {
+          "id": "2",
+          "description": "Datos del programador",
+          "title": "Programador",
+          "datos": {
+            "name":"Carlos Rodríguez",
+            "numero": "960265942",
+            "redesSociales": [
+              {
+                "id":1,
+                "description": "Facebook",
+                "src":"https://www.facebook.com/checa.rh"
+              },
+              {
+                "id":2,
+                "description": "twitter",
+                "src":"https://twitter.com/crehds1"
+              },
+              {
+                "id":3,
+                "description": "github",
+                "src":"https://github.com/crehds"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import Fotos from '../containers/Fotos.jsx';
 import Video from '../containers/Video.jsx';
 import Event from '../containers/Eventos.jsx';
 import HandleError from '../containers/Handle-error.jsx';
+import Details from '../containers/Details.jsx';
 
 class Bachatealo extends Component {
   render() {
@@ -14,6 +15,7 @@ class Bachatealo extends Component {
         <Portada id="portada"/>
         <Hero id="hero"/>
         <History id="history"/>
+        <Details id="footer"/>
         <Event id="eventos"/>
         <Fotos id="fotos"/>
         <Video id="videos"/>

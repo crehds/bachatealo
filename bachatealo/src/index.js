@@ -19,6 +19,7 @@ import rotonda from './images/paraHistory/rotonda.png';
 import alameda from './images/paraHistory/alameda.png';
 import evento from './images/paraEventos/eventos.png';
 import error from './images/paraError/error.jpg';
+import data from './data.json';
 
 const initialState = {
   menu: [
@@ -115,7 +116,7 @@ const initialState = {
       id: '6',
     },
   ],
-
+  data,
 };
 function reducer(state, action) {
   switch (action.type) {
