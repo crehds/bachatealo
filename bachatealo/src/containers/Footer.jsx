@@ -17,11 +17,11 @@ class Footer extends Component {
           <div className="footer-icons">
             {this.props.redesSociales.map((red) =>
               <a
-              key={red.id}
-              href={red.href}
-              className={red.description}
-              target="_blank"
-              rel="noopener noreferrer"
+                key={red.id}
+                href={red.href}
+                className={red.description}
+                target="_blank"
+                rel="noopener noreferrer"
               >
               </a>
             )}
