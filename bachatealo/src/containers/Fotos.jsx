@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-//
-// function mapStateToProps({ album }) {
-//   return {
-//     album,
-//   };
-// }
 
 class Fotos extends Component {
   render() {
     return (
       <section id={this.props.id} className="Fotos">
+        {/*Titulo independiente del contenedor*/}
         <div className="fotos-title">
           <h1>{this.props.titleFotos}</h1>
         </div>
+        {/*Contenedor de las fotos*/}
         <div className="fotos container">
           {
             this.props.imgFotos.map((item) =>

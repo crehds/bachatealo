@@ -12,14 +12,18 @@ import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
   return {
+    //Portada
     imgPortada: state.data.section[0].imgPortada,
     menu: state.data.section[0].menu,
 
+    //Hero
     fotosPortada: state.data.section[1].imgPortada,
 
+    //History
     rotonda: state.data.section[2].rotonda,
     alameda: state.data.section[2].alameda,
 
+    //Ubicación
     googleMap: state.data.section[3].googleMap,
     titleLocation: state.data.section[3].titleLocation,
     direccion: state.data.section[3].direccion,
@@ -28,16 +32,20 @@ function mapStateToProps(state, props) {
     horario: state.data.section[3].horario,
     generos: state.data.section[3].generos,
 
+    //Evento
     titleEvent: state.data.section[4].titleEvent,
     imgEvento: state.data.section[4].imgEvento,
     details: state.data.section[4].details,
 
+    //Fotos
     titleFotos: state.data.section[5].titleFotos,
     imgFotos: state.data.section[5].imgFotos,
 
+    //Video
     titleVideo: state.data.section[6].titleVideo,
     srcVideo: state.data.section[6].srcVideo,
 
+    //Footer
     titleFooter: state.data.section[7].titleFooter,
     name: state.data.section[7].name,
     numero: state.data.section[7].numero,

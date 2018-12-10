@@ -4,10 +4,13 @@ class Portada extends Component {
   render() {
     return (
       <section id="Portada" className="Portada">
+        {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
+          {/*Logotipo*/}
           <figure className="logotipo">
             <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
           </figure>
+          {/* Menú*/}
           <nav className="menu">
             <ul>
               {this.props.menu.map((item) =>
