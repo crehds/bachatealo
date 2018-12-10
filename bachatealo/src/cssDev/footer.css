@@ -1,0 +1,41 @@
+
+
+.Footer {
+  @apply --component ;
+  /* padding-top: 98px; */
+  /* padding-bottom: 80px; */
+  padding-bottom: 10px;
+  background: #2e2324;
+}
+
+.footer-container {
+  display:flex;
+  justify-content: space-around;
+  /* border: solid red 5px; */
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  align-items: center;
+  text-align: center;
+
+  & .footer-details {
+    padding: 10px;
+    font-size: 12px;
+
+    & h1 {
+      margin-top: 0px;
+    }
+
+    & p {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+  }
+
+  @media (--extra-small) {
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,48 @@
+@font-face {
+ font-family: 'icomoon';
+ src:  url('../icomoon2/fonts/icomoon.eot?ygvxp7');
+ src:  url('../icomoon2/fonts/icomoon.eot?ygvxp7#iefix') format('embedded-opentype'),
+   url('../icomoon2/fonts/icomoon.ttf?ygvxp7') format('truetype'),
+   url('../icomoon2/fonts/icomoon.woff?ygvxp7') format('woff'),
+   url('../icomoon2/fonts/icomoon.svg?ygvxp7#icomoon') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+[class^="icon1-"], [class*="icon1-"] {
+ /* use !important to prevent issues with browser extensions that change fonts */
+ font-family: 'icomoon' !important;
+ speak: none;
+ font-style: normal;
+ font-weight: normal;
+ font-variant: normal;
+ text-transform: none;
+ line-height: 1;
+ /* Líneas agregadas por mi */
+ text-decoration: none;
+ font-size: 50px;
+ color: white;
+ width: 40px;
+ height: 40px;
+ background-size: 100%;
+ margin:5px 9px 5px 9px;
+ /* display:block; */
+
+
+ /* Better Font Rendering =========== */
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
+.icon1-facebook:before {
+ content: "\ea90";
+}
+.icon1-instagram:before {
+ content: "\ea92";
+}
+.icon1-twitter:before {
+ content: "\ea96";
+}
+.icon1-github:before {
+ content: "\eab0";
+}
