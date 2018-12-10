@@ -84,7 +84,7 @@ class Bachatealo extends Component {
         <Location
           id={this.props.idLocation}
           googleMap={this.props.googleMap}
-          titleDetails={this.props.titleDetails}
+          titleLocation={this.props.titleLocation}
           direccion={this.props.direccion}
           referencia={this.props.referencia}
           Dias={this.props.Dias}
