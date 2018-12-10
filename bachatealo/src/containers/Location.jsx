@@ -4,7 +4,9 @@ class Location extends Component {
   render () {
     return (
       <section className="Location">
+        {/*Contenedor de la ubicación*/}
         <div className="location-container">
+          {/*contenedor del mapa*/}
           <div className="location-container-map">
             <figure className="location-map">
               <iframe className="flexible-map"
@@ -18,6 +20,7 @@ class Location extends Component {
               </iframe>
             </figure>
           </div>
+          {/*contenedor de los detalles de la ubicación*/}
           <div className="location-description">
               <div className="description-left">
                 <p>{this.props.titleLocation}</p>

@@ -4,9 +4,11 @@ class Video extends Component {
   render() {
     return (
       <section className="Video">
+        {/*Titulo independiente del contenedor*/}
         <div className="video-title">
           <h1>{this.props.titleVideo}</h1>
         </div>
+        {/*Contenedor de los videos*/}
         <div className="video container">
           {this.props.srcVideo.map((video) => (
               <div key={video.id}>
