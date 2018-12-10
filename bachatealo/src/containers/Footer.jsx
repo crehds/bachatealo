@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Footer extends Component {
   render() {
     return (
-      <section className="Footer">
+      <section className="Footer" id={this.props.id}>
         {/*Contenedor del pie de página*/}
         <div className="footer-container">
           {/*Datos del programador*/}

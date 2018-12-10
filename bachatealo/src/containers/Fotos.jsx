@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Fotos extends Component {
   render() {
     return (
-      <section id={this.props.id} className="Fotos">
+      <section className="Fotos" id={this.props.id}>
         {/*Titulo independiente del contenedor*/}
         <div className="fotos-title">
           <h1>{this.props.titleFotos}</h1>

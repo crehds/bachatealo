@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Video extends Component {
   render() {
     return (
-      <section className="Video">
+      <section className="Video" id={this.props.id}>
         {/*Titulo independiente del contenedor*/}
         <div className="video-title">
           <h1>{this.props.titleVideo}</h1>
