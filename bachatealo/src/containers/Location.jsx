@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Location extends Component {
   render () {
     return (
-      <section className="Location">
+      <section className="Location" id={this.props.id}>
         {/*Contenedor de la ubicación*/}
         <div className="location-container">
           {/*contenedor del mapa*/}

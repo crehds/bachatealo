@@ -7,22 +7,22 @@
       "menu": [
         {
           "id": 1,
-          "href": "#history",
+          "href": "#History",
           "title": "¿Quiénes somos?"
         },
         {
           "id": 2,
-          "href": "#eventos",
+          "href": "#Eventos",
           "title": "Eventos"
         },
         {
           "id": 3,
-          "href": "#fotos",
+          "href": "#Fotos",
           "title": "Fotos"
         },
         {
           "id": 4,
-          "href": "#videos",
+          "href": "#Videos",
           "title": "Videos"
         }
       ]
@@ -71,7 +71,7 @@
     },
     {
       "id": 3,
-      "description":"Hero",
+      "description":"History",
       "rotonda": "./images/paraHistory/rotonda.png",
       "alameda": "./images/paraHistory/alameda.png"
     },
@@ -112,6 +112,7 @@
     },
     {
       "id": 6,
+      "description":"Fotos",
       "titleFotos": "Momentos Destacados...",
       "imgFotos": [
         {
@@ -142,6 +143,7 @@
     },
     {
       "id": 7,
+      "description":"Videos",
       "titleVideo": "Recuerdos...",
       "srcVideo": [
         {
