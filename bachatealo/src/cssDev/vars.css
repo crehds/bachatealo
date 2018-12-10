@@ -29,7 +29,7 @@
 @custom-media --video screen and (max-width: 975px);
 @custom-media --event screen and (width <= 645px);
 /* @custom-media --small screen and (480 <= width <= 768); */
-@custom-media --details (min-width: 480px) and (width <= 645px);
+@custom-media --location (min-width: 480px) and (width <= 645px);
 @custom-media --menuli (min-width: 480px) and (max-width: 567px);
 @custom-media --history-title (min-width: 346px) and (max-width: 567px);
 @custom-media --extra-small1 (min-width: 300px) and (width <= 480px);

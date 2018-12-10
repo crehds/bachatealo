@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps({ data }) {
-  return {
-    redesSociales: data.section[0].datos[1].redesSociales,
-  };
-}
 
 class Footer extends Component {
   render() {
     return (
-      <section className="Footer" id={this.props.id}>
+      <section className="Footer">
         <div className="footer-container">
           <div className="footer-details">
-            <p>dato</p>
-            <p>dato</p>
-            <p>dato</p>
+            <h1>{this.props.titleFooter}</h1>
+            <p>{this.props.name}</p>
+            <p>{this.props.numero}</p>
+            <p>{this.props.correo}</p>
           </div>
           <div className="footer-icons">
             {this.props.redesSociales.map((red) =>
-              <a href={red.src}>{red.description}</a>
+              <a
+              key={red.id}
+              href={red.href}
+              className={red.description}
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              </a>
             )}
           </div>
         </div>
@@ -28,4 +29,4 @@ class Footer extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Footer);
+export default Footer;

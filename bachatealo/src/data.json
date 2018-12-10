@@ -2,46 +2,182 @@
   "section": [
     {
       "id": 1,
-      "description": "Pie de página",
-      "title": "Details",
-      "datos": [
+      "description":"Portada",
+      "imgPortada": "./images/paraPortada/logo.svg",
+      "menu": [
         {
           "id": 1,
-          "description":"Datos de bachatealo",
-          "title":"Bachatealo",
-          "datos": {
-            "name": "bachatealo",
-            "generos": " bachata, salsa",
-            "horario": "  8 pm a 12 pm",
-            "direccion": "  Municipalidad de los olivos, Rotonda",
-            "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
-            "Facebook": "bachatealo",
-            "Dias": "  Martes, Jueves, Sábado"
-          }
+          "href": "#history",
+          "title": "¿Quiénes somos?"
         },
         {
-          "id": "2",
-          "description": "Datos del programador",
-          "title": "Programador",
-          "name":"Carlos Rodríguez",
-          "numero": "960265942",
-          "redesSociales": [
-            {
-              "id":1,
-              "description": "Facebook",
-              "src":"https://www.facebook.com/checa.rh"
-            },
-            {
-              "id":2,
-              "description": "twitter",
-              "src":"https://twitter.com/crehds1"
-            },
-            {
-              "id":3,
-              "description": "github",
-              "src":"https://github.com/crehds"
-            }
-          ]
+          "id": 2,
+          "href": "#eventos",
+          "title": "Eventos"
+        },
+        {
+          "id": 3,
+          "href": "#fotos",
+          "title": "Fotos"
+        },
+        {
+          "id": 4,
+          "href": "#videos",
+          "title": "Videos"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description":"Hero",
+      "imgPortada": [
+        {
+          "foto": "./images/paraHero/7.png",
+          "id": 1
+        },
+        {
+          "foto": "./images/paraHero/3.png",
+          "id": 2
+        },
+        {
+          "foto": "./images/paraHero/9.png",
+          "id": 3
+        },
+        {
+          "foto": "./images/paraHero/5.png",
+          "id": 4
+        },
+        {
+          "foto": "./images/paraHero/1.png",
+          "id": 5
+        },
+        {
+          "foto": "./images/paraHero/6.png",
+          "id": 6
+        },
+        {
+          "foto": "./images/paraHero/2.png",
+          "id": 7
+        },
+        {
+          "foto": "./images/paraHero/8.png",
+          "id": 8
+        },
+        {
+          "foto": "./images/paraHero/4.png",
+          "id": 9
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description":"Hero",
+      "rotonda": "./images/paraHistory/rotonda.png",
+      "alameda": "./images/paraHistory/alameda.png"
+    },
+    {
+      "id": 4,
+      "description":"Location",
+      "titleLocation": "Ubicación",
+      "googleMap":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
+      "direccion": "  Municipalidad de los olivos, Rotonda",
+      "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
+      "Dias": "  Martes, Jueves, Sábado",
+      "horario": "  8 pm a 12 pm",
+      "generos": " bachata, salsa"
+    },
+    {
+      "id": 5,
+      "description":"Eventos",
+      "titleEvent": "Chocolatada",
+      "imgEvento": "./images/paraEventos/eventos.png",
+      "details": [
+        {
+          "id": 1,
+          "description": "left",
+          "linea1": "Fecha",
+          "linea2": "Lugar",
+          "linea3": "Hora de Inicio",
+          "linea4": "Donaciones al"
+        },
+        {
+          "id": 2,
+          "description": "right",
+          "linea1": "16 de diciembre",
+          "linea2": "Municipalidad de los olivos",
+          "linea3": "7:00 pm",
+          "linea4": "993-382-261"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titleFotos": "Momentos Destacados...",
+      "imgFotos": [
+        {
+          "foto": "./images/paraHero/7.png",
+          "id": 1
+        },
+        {
+          "foto": "./images/paraHero/6.png",
+          "id": 2
+        },
+        {
+          "foto": "./images/paraHero/9.png",
+          "id": 3
+        },
+        {
+          "foto": "./images/paraHero/4.png",
+          "id": 4
+        },
+        {
+          "foto": "./images/paraHero/5.png",
+          "id": 5
+        },
+        {
+          "foto": "./images/paraHero/2.png",
+          "id": 6
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titleVideo": "Recuerdos...",
+      "srcVideo": [
+        {
+          "id": 1,
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F303067066926144%2F&show_text=0&width=560"
+        },
+        {
+          "id": 2,
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225816234651228%2F&show_text=0&width=560"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "description": "Footer",
+      "titleFooter": "Programación y diseño",
+      "name": "Carlos Rodríguez",
+      "numero": "960265942",
+      "correo": "carlos15erh@gmail.com",
+      "redesSociales": [
+        {
+          "id": 1,
+          "description": "icon1-facebook",
+          "href": "https://www.facebook.com/checa.rh"
+        },
+        {
+          "id": 2,
+          "description": "icon1-twitter",
+          "href": "https://twitter.com/crehds1"
+        },
+        {
+          "id": 3,
+          "description": "icon1-github",
+          "href": "https://github.com/crehds/bachatealo"
         }
       ]
     }

@@ -1,16 +1,16 @@
-.Details {
+.Location {
   @apply --component;
   padding-top: 98px;
 }
 
-.footer-container {
+.location-container {
   display: grid;
   grid-template-columns: 45% 55%;
   border: inset #f0f1f1 3px;
   border-radius: 10px;
   overflow: hidden;
 
-  & .footer-map {
+  & .location-map {
     padding-top:56%;
     max-width: 100%;
     max-height: 100%;
@@ -26,7 +26,7 @@
       height: 100%;
     }
   }
-  & .footer-details {
+  & .location-description {
     display: grid;
     max-width: 100%;
     /* max-height: 100%; */
@@ -43,7 +43,7 @@
     font-family:'Fjalla One', system-ui;
     margin: 3px;
 
-    & .details-description {
+    & .location-description {
       /* justify-content: center; */
 
       & .description-left {
@@ -68,9 +68,9 @@
     grid-template-rows: auto auto;
     /* text-align: center; */
     /* justify-items:center; */
-    & .footer-container-map {
+    & .location-container-map {
       /* height: 100%; */
-      & .footer-map {
+      & .location-map {
         left:20%;
         right:20%;
         width: 60%;
@@ -79,12 +79,12 @@
     }
   }
   @media (--small) {
-    & .footer-container-map .footer-map {
+    & .location-container-map .location-map {
       padding-top: 40%;
     }
   }
-  @media (--details) {
-    & .footer-container-map .footer-map {
+  @media (--location) {
+    & .location-container-map .location-map {
       left: 15%;
       right:15%;
       width: 70%;
@@ -92,7 +92,7 @@
     }
   }
   @media (--extra-small1) {
-    & .footer-container-map .footer-map {
+    & .location-container-map .location-map {
       padding-top: 50%;
       left: 15%;
       right:15%;

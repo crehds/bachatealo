@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from  'react-redux';
-
-function mapStateToProps({ fotosPortada }) {
-  return {
-    fotosPortada,
-  };
-}
 
 class Hero extends Component {
   render () {
@@ -24,4 +17,4 @@ class Hero extends Component {
     );
   }
 }
-export default connect(mapStateToProps)(Hero);
+export default Hero;
