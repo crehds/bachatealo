@@ -12,7 +12,8 @@ class Event extends Component {
           <div className="event">
             {this.props.details.map((details) => (
               <div
-                className="event-flexcontainer" key={details.id}
+                className="event-flexcontainer"
+                key={details.id}
               >
                 <p>{details.linea1}</p>
                 <p>{details.linea2}</p>
@@ -22,7 +23,11 @@ class Event extends Component {
             ))}
           </div>
           <div className="event">
-            <img className="event-image" src={this.props.imgEvento} alt="evento"/>
+            <img
+              className="event-image"
+              src={this.props.imgEvento}
+              alt="evento"
+            />
           </div>
         </div>
       </section>
