@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps({ logoPortada, menu }) {
-  return {
-    logo: logoPortada,
-    menu,
-  };
-}
 
 class Portada extends Component {
   render() {
     return (
       <section id="Portada" className="Portada">
+        {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
+          {/*Logotipo*/}
           <figure className="logotipo">
-            <img src={this.props.logo} alt="logotipo de Bachatealo"/>
+            <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
           </figure>
+          {/* Menú*/}
           <nav className="menu">
             <ul>
               {this.props.menu.map((item) =>
@@ -33,4 +28,4 @@ class Portada extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Portada);
+export default Portada;

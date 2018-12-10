@@ -1,6 +1,6 @@
 .Video {
   @apply --component;
-  padding-top: 20px;
+  padding-top:98px;
 }
 
 .video-title {
@@ -43,32 +43,35 @@
       left: 15%;
     }
   }
-  & figure {
-    max-width: 90%;
-    height: 100% ;
-    position: relative;
-    left:5%;
-    margin:0;
-    & div {
-      border-radius: 10px;
-      border-left: groove var(--negroprueba1) 35px;
-      border-top: groove var(--negroprueba1) 35px;
-      border-right: ridge var(--negroprueba1) 35px;
-      border-bottom: ridge var(--negroprueba1) 35px;
-      overflow: hidden;
-      max-width: 100%;
-      position:relative;
-      padding-top: 56%;
-      & iframe {
-        border: none;
+  & div {
+    max-width: 100%;
+    & figure {
+      max-width: 90%;
+      height: 100% ;
+      position: relative;
+      left:5%;
+      margin:0;
+      & div {
+        border-radius: 10px;
+        border-left: groove var(--negroprueba1) 35px;
+        border-top: groove var(--negroprueba1) 35px;
+        border-right: ridge var(--negroprueba1) 35px;
+        border-bottom: ridge var(--negroprueba1) 35px;
         overflow: hidden;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        position:relative;
+        padding-top: 56%;
+        & iframe {
+          border: none;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
