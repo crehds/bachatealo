@@ -14,7 +14,10 @@ class Fotos extends Component {
             this.props.imgFotos.map((item) =>
               <div key={item.id}>
                 <figure>
-                  <img src={item.foto} alt={item.id}/>
+                  <img
+                    src={item.foto}
+                    alt={item.id}
+                  />
                 </figure>
               </div>
             )

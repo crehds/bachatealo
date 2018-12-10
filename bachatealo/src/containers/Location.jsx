@@ -16,18 +16,19 @@ class Location extends Component {
                 height="450"
                 frameBorder="0"
                 style={{ border: 0 }}
-                allowFullScreen>
+                allowFullScreen
+              >
               </iframe>
             </figure>
           </div>
           {/*contenedor de los detalles de la ubicación*/}
           <div className="location-description">
-              <div className="description-left">
-                <p>{this.props.titleLocation}</p>
-              </div>
-              <div className="description-right">
-                <p>:&nbsp;&nbsp;{this.props.direccion}</p>
-              </div>
+            <div className="description-left">
+              <p>{this.props.titleLocation}</p>
+            </div>
+            <div className="description-right">
+              <p>:&nbsp;&nbsp;{this.props.direccion}</p>
+            </div>
             <div className="description-left">
               <p>Referencia</p>
             </div>
