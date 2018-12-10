@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Hero extends Component {
   render () {
     return (
-      <section id="hero" className="Hero">
+      <section className="Hero" id={this.props.id}>
         {/*Contenedor de las fotos iniciales*/}
         <div className="hero-container">
           {
