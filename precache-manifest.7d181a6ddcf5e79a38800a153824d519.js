@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/js/runtime~main.e4287331.js"
   },
   {
-    "revision": "335a8dfc12d6694aa8ad",
-    "url": "/bachatealo/static/js/main.335a8dfc.chunk.js"
+    "revision": "6c439ee3bc697ae69a7b",
+    "url": "/bachatealo/static/js/main.6c439ee3.chunk.js"
   },
   {
     "revision": "c23befee655710b4615d",
     "url": "/bachatealo/static/js/1.c23befee.chunk.js"
   },
   {
-    "revision": "335a8dfc12d6694aa8ad",
+    "revision": "6c439ee3bc697ae69a7b",
     "url": "/bachatealo/static/css/main.abf08864.chunk.css"
   },
   {
-    "revision": "a936fe7424b4dc862ff79fa6242beb38",
+    "revision": "71d937e16ca04e210c572c1ce7ddeeac",
     "url": "/bachatealo/index.html"
   }
 ];
