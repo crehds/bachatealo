@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  return {
+    idVideo: state.data.section[6].description,
+    titleVideo: state.data.section[6].titleVideo,
+    srcVideo: state.data.section[6].srcVideo,
+  };
+}
 
 class Video extends Component {
   render() {
     return (
-      <section className="Video" id={this.props.id}>
+      <section className="Video" id={this.props.idVideo}>
         {/*Titulo independiente del contenedor*/}
         <div className="video-title">
           <h1>{this.props.titleVideo}</h1>
@@ -35,4 +44,4 @@ class Video extends Component {
   }
 }
 
-export default Video;
+export default connect(mapStateToProps)(Video);

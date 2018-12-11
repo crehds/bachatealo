@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  return {
+    idEvento: state.data.section[4].description,
+    titleEvent: state.data.section[4].titleEvent,
+    imgEvento: state.data.section[4].imgEvento,
+    details: state.data.section[4].details,
+  };
+}
 
 class Event extends Component {
   render() {
     return (
-      <section className="Event" id={this.props.id}>
+      <section className="Event" id={this.props.idEvento}>
         <div className="event-container">
           <div className="event">
             <h1>{this.props.titleEvent}</h1>
@@ -35,4 +45,4 @@ class Event extends Component {
   }
 }
 
-export default Event;
+export default connect(mapStateToProps)(Event);

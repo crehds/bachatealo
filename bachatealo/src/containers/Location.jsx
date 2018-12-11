@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  return {
+    idLocation: state.data.section[3].description,
+    googleMap: state.data.section[3].googleMap,
+    titleLocation: state.data.section[3].titleLocation,
+    direccion: state.data.section[3].direccion,
+    referencia: state.data.section[3].referencia,
+    Dias: state.data.section[3].Dias,
+    horario: state.data.section[3].horario,
+    generos: state.data.section[3].generos,
+  };
+}
 
 class Location extends Component {
   render () {
     return (
-      <section className="Location" id={this.props.id}>
+      <section className="Location" id={this.props.idLocation}>
         {/*Contenedor de la ubicación*/}
         <div className="location-container">
           {/*contenedor del mapa*/}
@@ -61,4 +75,4 @@ class Location extends Component {
   }
 }
 
-export default Location;
+export default connect(mapStateToProps)(Location);
