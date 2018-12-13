@@ -17,7 +17,6 @@ const mapDispatchToProps = {
 
 class Portada extends Component {
   handleAddClass = (event) => {
-    // const action = event;
     this.props.addClass(this.nav);
   };
 

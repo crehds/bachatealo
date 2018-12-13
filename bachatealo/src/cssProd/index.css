@@ -153,14 +153,7 @@
   justify-content: center;
   padding: 0;
   font-family: 'Fjalla One',sans-serif
-}
-.menu {
-  /* @media (--small) {
-    font-size: 14px;
-  }
-  @media (--extra-small) {
-    font-size: 13px;
-  } */
+
 }
 .menu ul {
   padding:0;
@@ -173,32 +166,15 @@
   margin-left: 70px;
   margin-right: 70px;
   font-weight: bold
-}
-.menu li {
-  /* @media (--small) {
-    margin-left:28px;
-    margin-right:28px;
-  }
-  @media (--menuli) {
-    margin-left: 18px;
-    margin-right: 18px;
-  }
-  @media (--extra-small) {
-    margin-left:13px;
-    margin-right:13px;
-  }
-  @media (--nano) {
-    margin-left:7px;
-    margin-right:7px;
-  } */
+
 }
 .menu ul li a {
-  /* cursor:pointer; */
   color: #a7a9ac;
   text-decoration: none;
 }
 .menu ul li:hover {
   box-shadow: 0px 0px 8px 10px #ff0018
+
 }
 .menu ul li:hover a {
     border:outset #ff0018 5px;
@@ -220,6 +196,7 @@
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px
+
 }
 .hero-container div {
   border:outset #a41f28 3px;
@@ -249,6 +226,7 @@
   grid-column-gap: 10px;
   grid-row-gap: 80px;
   text-align: center
+
 }
 .history-container .history-div {
     overflow: hidden;
@@ -256,6 +234,7 @@
     border-radius: 10px;
     max-width: inherit;
     max-height: 100%
+
   }
 .history-container .history-div .history-title {
         padding-bottom: 5px;
@@ -264,6 +243,7 @@
         margin-right: 30%;
         padding: 8px;
         background: #A3000F
+
     }
 .history-container .history-div .history-title h1 {
           border-left: 10px;
@@ -272,12 +252,14 @@
           margin:0;
           padding: 5px;
           color: #f0f1f1
+
         }
 .history-container .history-div p {
       border: solid brown 2px;
       margin:8px;
       background: #212226;
       color: #D4D5D6
+
     }
 .history-container .history-div .history-img {
       width: 100%;
@@ -326,6 +308,7 @@
   border-bottom-right-radius: 10px;
   background: #0a0b0f;
   justify-items: center
+
 }
 .fotos.container div {
     border: ridge #56575b 4px;
@@ -334,12 +317,14 @@
     max-height: inherit;
     box-shadow: 3px 3px 30px 10px #56575b;
     width:70%
+
   }
 .fotos.container div figure {
       margin: 0;
       padding:0;
       max-width: 100%;
       max-height: 100%
+
     }
 .fotos.container div figure img {
         width:100%;
@@ -362,10 +347,12 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: #212226
+
 }
 .video-title h1 {
     border-bottom: groove #a41f28 10px;
     margin-top: 0px
+
   }
 .video.container {
   overflow: hidden;
@@ -380,9 +367,11 @@
   background: #212226;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px
+
 }
 .video.container div {
     max-width: 100%
+
   }
 .video.container div figure {
       max-width: 90%;
@@ -390,6 +379,7 @@
       position: relative;
       left:5%;
       margin:0
+
     }
 .video.container div figure div {
         border-radius: 10px;
@@ -401,6 +391,7 @@
         max-width: 100%;
         position:relative;
         padding-top: 56%
+
       }
 .video.container div figure div iframe {
           border: none;
@@ -439,14 +430,18 @@ body {
   vertical-align: bottom;
   font-family: 'Source Sans Pro', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   grid-gap: 3px
+
   /* div imagen*/
+
 }
 .event-container .event .event-image {
     box-shadow: 0px 5px 30px 5px #a41f28;
     border-top: 5px ridge #2e2324
   }
 .event-container {
+
   /* div del titulo */
+
 }
 .event-container .event:nth-of-type(1) {
     border: 5px ridge #2e2324;
@@ -459,12 +454,16 @@ body {
     font-family: 'Pacifico';
     font-size: 28px;
     max-height: 100%
+
   }
 .event-container .event:nth-of-type(1) h1 {
       color: #f0becb
+
     }
 .event-container {
+
   /* div de la descripción */
+
 }
 .event-container .event:nth-of-type(2) {
 
@@ -479,9 +478,11 @@ body {
     background-color: #590f15;
     border-left: 5px ridge #2e2324;
     max-height: 100%
+
   }
 .event-container .event:nth-of-type(2) .event-flexcontainer:nth-of-type(2) {
       padding-left: 8px
+
     }
 .event-container .event:nth-of-type(3) {
     grid-column: 2 / 3;
@@ -490,6 +491,7 @@ body {
 .event-container .event .event-flexcontainer {
     font-size: 20px;
     max-height: 100%
+
   }
 .menu ul li:hover {
   -webkit-animation-name: prueba;
@@ -580,6 +582,7 @@ body {
   border: inset #f0f1f1 3px;
   border-radius: 10px;
   overflow: hidden
+  
 }
 .location-container .location-map {
     padding-top:56%;
@@ -587,6 +590,7 @@ body {
     max-height: 100%;
     position: relative;
     margin:0
+
   }
 .location-container .location-map .flexible-map {
       position: absolute;
@@ -596,6 +600,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
+
     }
 .location-container .location-description {
     display: grid;
@@ -613,9 +618,11 @@ body {
     border-bottom: hidden;
     font-family:'Fjalla One', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
     margin: 3px
+
   }
 .location-container .location-description .location-description {
       /* justify-content: center; */
+
     }
 .location-container .location-description .location-description .description-left {
         justify-content: left;
@@ -626,27 +633,26 @@ body {
 .location-container {
 
   /*Media of the container*/
+  
 }
 .Footer {
   padding:10px;
   padding-top: 2px;
   padding-bottom: 40px;
   color: white;
-  /* padding-top: 98px; */
-  /* padding-bottom: 80px; */
   padding-bottom: 10px;
   background: #2e2324;
 }
 .footer-container {
   display:flex;
   justify-content: space-around;
-  /* border: solid red 5px; */
   flex-wrap: wrap;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   align-items: center;
   text-align: center
+  
 }
 .footer-container .footer-details {
     padding: 10px;
@@ -667,7 +673,6 @@ body {
     background-size: 50px 50px;
     margin: 0 10px;
     background-image: url("../asset/platzilogo.svg");
-    /* background-color: red; */
   }
 @media screen and (max-width: 768px) {
 .menu {
@@ -683,6 +688,7 @@ body {
     justify-content: center;
     -webkit-transition:.3s;
     transition:.3s
+
 }
 
     .menu .burguer-button {
@@ -696,6 +702,7 @@ body {
     display:block;
     margin-left:0px;
     margin-right:0px
+
 }
 
     .menu li a:hover {
@@ -703,7 +710,9 @@ body {
     }
 .menu ul li:hover {
     box-shadow: none
+
 }
+
   }
 @media (--small1) {
 .menu {
@@ -719,6 +728,7 @@ body {
     justify-content: center;
     -webkit-transition:.3s;
     transition:.3s
+
 }
 
     .menu .burguer-button {
@@ -732,6 +742,7 @@ body {
     display:block;
     margin-left:0px;
     margin-right:0px
+
 }
 
     .menu li a:hover {
@@ -739,16 +750,20 @@ body {
     }
 .menu ul li:hover {
     box-shadow: none
+
 }
+
   }
 @media screen and (max-width: 1025px) {
 .menu {
     font-size: 15px
+
 }
   }
 @media (--medium1) {
 .menu {
     font-size: 15px
+
 }
   }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -760,16 +775,21 @@ body {
 .history-container .history-div .history-title {
           margin-left: 27%;
           margin-right: 27%
+
     }
 .history-container .history-div .history-title h1 {
            font-size: 90%
+
         }
 .history-container .history-div p {
         font-size: 70%
+
     }
 .event-container .event:nth-of-type(1) h1 {
         font-size:35px
+
     }
+
     .location-container .location-container-map .location-map {
       padding-top: 40%;
     }
@@ -783,16 +803,21 @@ body {
 .history-container .history-div .history-title {
           margin-left: 27%;
           margin-right: 27%
+
     }
 .history-container .history-div .history-title h1 {
            font-size: 90%
+
         }
 .history-container .history-div p {
         font-size: 70%
+
     }
 .event-container .event:nth-of-type(1) h1 {
         font-size:35px
+
     }
+
     .location-container .location-container-map .location-map {
       padding-top: 40%;
     }
@@ -807,12 +832,15 @@ body {
           padding: 3px;
           margin-left: 11%;
           margin-right: 11%
+
     }
 .history-container .history-div .history-title h1 {
             font-size: 70%
+
         }
 .history-container .history-div p {
         font-size: 30%
+
     }
   }
 @media (--nano) {
@@ -825,104 +853,127 @@ body {
           padding: 3px;
           margin-left: 11%;
           margin-right: 11%
+
     }
 .history-container .history-div .history-title h1 {
             font-size: 70%
+
         }
 .history-container .history-div p {
         font-size: 30%
+
     }
   }
 @media (min-width:1206px) and (max-width: 1326px) {
 .menu li {
     margin-left: 60px;
     margin-right: 60px
+
 }
   }
 @media (--prueba) {
 .menu li {
     margin-left: 60px;
     margin-right: 60px
+
 }
   }
 @media (min-width: 1024px) and (max-width:1205px){
 .menu li {
     margin-left: 40px;
     margin-right: 40px
+
 }
   }
 @media (--prueba2){
 .menu li {
     margin-left: 40px;
     margin-right: 40px
+
 }
   }
 @media (min-width: 769px) and (max-width: 1025px) {
 .menu li {
     margin-left: 30px;
     margin-right: 30px
+
 }
 .history-container .history-div .history-title h1 {
             font-size: 95%
+
         }
   }
 @media (--medium) {
 .menu li {
     margin-left: 30px;
     margin-right: 30px
+
 }
 .history-container .history-div .history-title h1 {
             font-size: 95%
+
         }
   }
 @media screen and (max-width: 480px) {
 .hero-container {
     grid-template-rows: repeat(3, auto)
+
 }
 .event-container .event .event-flexcontainer {
       font-size: 11px
+
   }
 .footer-container {
     justify-content: center;
     text-align: center
+  
 }
   }
 @media (--extra-small) {
 .hero-container {
     grid-template-rows: repeat(3, auto)
+
 }
 .event-container .event .event-flexcontainer {
       font-size: 11px
+
   }
 .footer-container {
     justify-content: center;
     text-align: center
+  
 }
   }
-@media (min-width: 346px) and (max-width: 567px){
+@media (min-width: 346px) and (max-width: 567px) {
 .history-container .history-div .history-title {
           margin-left: 20%;
           margin-right: 20%;
           padding: 5px
+
     }
 .history-container .history-div .history-title h1 {
             font-size: 80%
+
         }
 .history-container .history-div p {
         font-size: 50%
+
     }
         }
-@media (--history-title){
+@media (--history-title) {
 .history-container .history-div .history-title {
           margin-left: 20%;
           margin-right: 20%;
           padding: 5px
+
     }
 .history-container .history-div .history-title h1 {
             font-size: 80%
+
         }
 .history-container .history-div p {
         font-size: 50%
+
     }
         }
 @media screen and (max-width: 975px){
@@ -933,11 +984,14 @@ body {
 .video-title h1 {
       margin-bottom: 15px;
       font-size: 27px
+
   }
 .video.container {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto)
+
 }
+
     .video.container figure {
       max-width: 70%;
       left: 15%;
@@ -945,12 +999,9 @@ body {
 .location-container {
     grid-template-columns: auto;
     grid-template-rows: auto auto
-    /* text-align: center; */
-    /* justify-items:center; */
+  
 }
-    .location-container .location-container-map {
-      /* height: 100%; */
-    }
+
       .location-container .location-container-map .location-map {
         left:20%;
         right:20%;
@@ -966,11 +1017,14 @@ body {
 .video-title h1 {
       margin-bottom: 15px;
       font-size: 27px
+
   }
 .video.container {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto)
+
 }
+
     .video.container figure {
       max-width: 70%;
       left: 15%;
@@ -978,12 +1032,9 @@ body {
 .location-container {
     grid-template-columns: auto;
     grid-template-rows: auto auto
-    /* text-align: center; */
-    /* justify-items:center; */
+  
 }
-    .location-container .location-container-map {
-      /* height: 100%; */
-    }
+
       .location-container .location-container-map .location-map {
         left:20%;
         right:20%;
@@ -1000,18 +1051,19 @@ body {
         margin-top: 25px;
         margin-bottom: 25px;
         font-size:28px
+
     }
 .event-container .event:nth-of-type(2) .event-flexcontainer:nth-of-type(2) p {
           padding-top: 3px
+
       }
-.event-container .event .event-flexcontainer {
-      font-size:13px
-  }
 .event-container {
     border-top-left-radius: 50px
+
 }
 .location-container .location-description {
       font-size: 12px
+
   }
     }
 @media (--event) {
@@ -1023,23 +1075,51 @@ body {
         margin-top: 25px;
         margin-bottom: 25px;
         font-size:28px
+
     }
 .event-container .event:nth-of-type(2) .event-flexcontainer:nth-of-type(2) p {
           padding-top: 3px
+
       }
-.event-container .event .event-flexcontainer {
-      font-size:13px
-  }
 .event-container {
     border-top-left-radius: 50px
+
 }
 .location-container .location-description {
       font-size: 12px
+
   }
+    }
+@media (min-width: 480px) and (max-width: 645px) {
+.event-container .event .event-flexcontainer {
+      font-size:13px
+
+  }
+
+    .location-container .location-container-map .location-map {
+      left: 15%;
+      right:15%;
+      width: 70%;
+      padding-top: 40%;
+    }
+    }
+@media (--location) {
+.event-container .event .event-flexcontainer {
+      font-size:13px
+
+  }
+
+    .location-container .location-container-map .location-map {
+      left: 15%;
+      right:15%;
+      width: 70%;
+      padding-top: 40%;
+    }
     }
 @media (min-width: 300px) and (max-width: 480px) {
 .location-container .location-description {
       font-size: 10px
+
   }
     .location-container .location-container-map .location-map {
       padding-top: 50%;
@@ -1051,6 +1131,7 @@ body {
 @media (--extra-small1) {
 .location-container .location-description {
       font-size: 10px
+
   }
     .location-container .location-container-map .location-map {
       padding-top: 50%;
@@ -1059,19 +1140,3 @@ body {
       width: 70%;
     }
     }
-@media (min-width: 480px) and (max-width: 645px) {
-    .location-container .location-container-map .location-map {
-      left: 15%;
-      right:15%;
-      width: 70%;
-      padding-top: 40%;
-    }
-  }
-@media (--location) {
-    .location-container .location-container-map .location-map {
-      left: 15%;
-      right:15%;
-      width: 70%;
-      padding-top: 40%;
-    }
-  }

@@ -1,9 +1,5 @@
-
-
 .Footer {
   @apply --component ;
-  /* padding-top: 98px; */
-  /* padding-bottom: 80px; */
   padding-bottom: 10px;
   background: #2e2324;
 }
@@ -11,7 +7,6 @@
 .footer-container {
   display:flex;
   justify-content: space-around;
-  /* border: solid red 5px; */
   flex-wrap: wrap;
   padding-left: 10px;
   padding-right: 10px;
@@ -41,11 +36,11 @@
     background-size: 50px 50px;
     margin: 0 10px;
     background-image: url("../asset/platzilogo.svg");
-    /* background-color: red; */
   }
 
   @media (--extra-small) {
     justify-content: center;
     text-align: center;
   }
+  
 }
