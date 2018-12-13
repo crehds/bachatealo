@@ -11,6 +11,7 @@ function mapStateToProps(state, props) {
     Dias: state.data.section[3].Dias,
     horario: state.data.section[3].horario,
     generos: state.data.section[3].generos,
+    facebook: state.data.section[3].facebook,
   };
 }
 
@@ -66,6 +67,12 @@ class Location extends Component {
             </div>
             <div className="description-right">
               <p>:&nbsp;&nbsp;{this.props.generos}</p>
+            </div>
+            <div className="description-left">
+              <p>Facebook</p>
+            </div>
+            <div className="description-right">
+              <p>:&nbsp;&nbsp;{this.props.facebook}</p>
             </div>
 
           </div>

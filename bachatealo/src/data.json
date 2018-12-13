@@ -94,7 +94,8 @@
       "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
       "Dias": "  Martes, Jueves, Sábado",
       "horario": "  8 pm a 12 pm",
-      "generos": " bachata, salsa"
+      "generos": " bachata, salsa",
+      "facebook": " bachatealo"
     },
     {
       "id": 5,
@@ -113,7 +114,7 @@
         {
           "id": 2,
           "description": "right",
-          "linea1": "16 de diciembre",
+          "linea1": "21 de diciembre",
           "linea2": "Municipalidad de los olivos",
           "linea3": "7:00 pm",
           "linea4": "993-382-261"
@@ -189,7 +190,12 @@
         {
           "id": 3,
           "description": "icon1-github",
-          "href": "https://github.com/crehds/bachatealo"
+          "href": "https://github.com/crehds"
+        },
+        {
+          "id": 4,
+          "description": "platzi",
+          "href": "https://platzi.com/@Crehds/"
         }
       ]
     }

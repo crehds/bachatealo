@@ -19,7 +19,7 @@ class History extends Component {
             <div className="history-title">
               <h1>¿Cómo empezamos?</h1>
             </div>
-            <p>Esto es otro párrafo</p>
+            <p>Aún en desarrollo</p>
           </div>
           <div className="history-div">
             <img
@@ -33,11 +33,7 @@ class History extends Component {
             <div className="history-title">
               <h1>Actualidad</h1>
             </div>
-            <p>Esto es otro párrafo
-              <br/>otra linea
-              <br/>otra linea
-              <br/>otra linea
-              <br/>otra linea
+            <p>Aún en desarrollo
             </p>
           </div>
           <div className="history-div">

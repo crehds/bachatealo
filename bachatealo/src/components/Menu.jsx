@@ -4,6 +4,8 @@ function Menu(props) {
   return (
     <nav
       className="menu"
+      onClick={props.handleAddClass}
+      ref={props.setRef}
     >
       <i className="icon-menu burguer-button" id="burguer-menu">
       </i>

@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 // import logo from './images/logo.svg';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import reducer from './reducers/menu';
+
 // import imagen1 from './images/paraHero/1.png';
 // import imagen2 from './images/paraHero/2.png';
 // import imagen3 from './images/paraHero/3.png';
@@ -19,7 +21,7 @@ import { createStore } from 'redux';
 // import alameda from './images/paraHistory/alameda.png';
 // import evento from './images/paraEventos/eventos.png';
 // import error from './images/paraError/error.jpg';
-import data from './data.json';
+// import data from './data.json';
 
 // const initialState = {
 //   menu: [
@@ -118,28 +120,28 @@ import data from './data.json';
 //   ],
 //   data,
 // };
-const initialState = {
-  data: {
-    ...data,
-  },
-};
+// const initialState = {
+//   data: {
+//     ...data,
+//   },
+// };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'UPDATE_PROPS': {
-      const newProps = action.payload.props;
-      return { ...state, ...newProps,
-      };
-    }
-
-    default:
-      return state;
-  }
-}
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'UPDATE_PROPS': {
+//       const newProps = action.payload.props;
+//       return { ...state, ...newProps,
+//       };
+//     }
+//
+//     default:
+//       return state;
+//   }
+// }
 
 const store = createStore(
   reducer,
-  initialState,
+  {},
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 ReactDOM.render(

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Menu from '../components/Menu.jsx';
 import { connect } from 'react-redux';
+import { addClass } from '../actions/index';
 
 function mapStateToProps(state, props) {
   return {
@@ -10,7 +11,20 @@ function mapStateToProps(state, props) {
   };
 }
 
+const mapDispatchToProps = {
+  addClass,
+};
+
 class Portada extends Component {
+  handleAddClass = (event) => {
+    // const action = event;
+    this.props.addClass(this.nav);
+  };
+
+  setNavRef = element => (
+    this.nav = element
+  );
+
   render() {
     return (
       <section className="Portada" id={this.props.idPortada}>
@@ -23,6 +37,8 @@ class Portada extends Component {
           {/* Menú*/}
           <Menu
             menu={this.props.menu}
+            handleAddClass={this.handleAddClass}
+            setRef={this.setNavRef}
           />
         </header>
       </section>
@@ -30,4 +46,4 @@ class Portada extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Portada);
+export default connect(mapStateToProps, mapDispatchToProps)(Portada);
