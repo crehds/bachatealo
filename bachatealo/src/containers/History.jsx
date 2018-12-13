@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
+import  { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  return {
+    idHistory: state.data.section[2].description,
+    rotonda: state.data.section[2].rotonda,
+    alameda: state.data.section[2].alameda,
+  };
+}
 
 class History extends Component {
   render() {
     return (
-      <section className="History" id={this.props.id}>
+      <section className="History" id={this.props.idHistory}>
         <div className="history-container">
           {/*Inicia primera parte*/}
           <div className="history-div">
             <div className="history-title">
               <h1>¿Cómo empezamos?</h1>
             </div>
-            <p>Esto es otro párrafo</p>
+            <p>Aún en desarrollo</p>
           </div>
           <div className="history-div">
             <img
@@ -24,11 +33,7 @@ class History extends Component {
             <div className="history-title">
               <h1>Actualidad</h1>
             </div>
-            <p>Esto es otro párrafo
-              <br/>otra linea
-              <br/>otra linea
-              <br/>otra linea
-              <br/>otra linea
+            <p>Aún en desarrollo
             </p>
           </div>
           <div className="history-div">
@@ -44,4 +49,4 @@ class History extends Component {
   }
 }
 
-export default History;
+export default connect(mapStateToProps)(History);
