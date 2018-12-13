@@ -31,6 +31,7 @@
 }
 
 .menu {
+
   @media (--small1) {
     position:fixed;
     background: rgba(33,34,38,.9);
@@ -51,7 +52,9 @@
     & li {
       margin-top: 30px;
     }
+
   }
+
 }
 
 .menu.is-active {

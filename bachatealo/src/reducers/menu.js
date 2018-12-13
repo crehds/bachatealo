@@ -27,24 +27,13 @@ const validation = (event, burguerButton) => {
 function data(state = { ...initialState }, action) {
   switch (action.type) {
     case 'ADD_CLASS': {
-      // let menu = Array.from(state);
-      // const ipad = window.matchMedia('screen and (max-width: 767px)');
+
       const query = action.payload.classL;
-      const menu = document.querySelector('.menu');
       const burguerButton = document.querySelector('#burguer-menu');
-
       const media = window.matchMedia('screen and (max-width: 767px)');
+
       media.addListener(validation(query, burguerButton));
-      console.log(media.addListener);
 
-      // validation(, burguerButton);
-      console.log(menu);
-      console.log(burguerButton);
-
-      // const copy = state.data;
-      console.log(action.payload.classL);
-
-      // console.log(copy);
       return {
         ...state,
       };

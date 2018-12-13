@@ -40,24 +40,22 @@
   justify-content: center;
   padding: 0;
   font-family: 'Fjalla One',sans-serif;
+
   @media (--medium1) {
     font-size: 15px
   }
-  /* @media (--small) {
-    font-size: 14px;
-  }
-  @media (--extra-small) {
-    font-size: 13px;
-  } */
+
 }
 
 .menu ul {
   padding:0;
   margin: 10px;
+
   @media (--small) {
     margin-left: 5px;
     margin-right: 5px;
   }
+
   @media (--nano) {
     margin-left: 0;
     margin-right: 0;
@@ -71,18 +69,22 @@
   margin-left: 70px;
   margin-right: 70px;
   font-weight: bold;
+
   @media (--prueba) {
     margin-left: 60px;
     margin-right: 60px;
   }
+
   @media (--prueba2){
     margin-left: 40px;
     margin-right: 40px;
   }
+
   @media (--medium) {
     margin-left: 30px;
     margin-right: 30px
   }
+
   @media (--small1) {
     display:block;
     margin-left:0px;
@@ -91,39 +93,27 @@
     & a:hover {
       box-shadow: 0px 0px 8px 8px rgba(255,0,24,.7);
     }
+
   }
-  /* @media (--small) {
-    margin-left:28px;
-    margin-right:28px;
-  }
-  @media (--menuli) {
-    margin-left: 18px;
-    margin-right: 18px;
-  }
-  @media (--extra-small) {
-    margin-left:13px;
-    margin-right:13px;
-  }
-  @media (--nano) {
-    margin-left:7px;
-    margin-right:7px;
-  } */
+
 }
 
 .menu ul li a {
-  /* cursor:pointer; */
   color: #a7a9ac;
   text-decoration: none;
 }
 
 .menu ul li:hover {
   box-shadow: 0px 0px 8px 10px #ff0018;
+
   & a {
     border:outset #ff0018 5px;
     border-radius: 3px;
     background: #590f15;
   }
+
   @media (--small1) {
     box-shadow: none;
   }
+
 }
