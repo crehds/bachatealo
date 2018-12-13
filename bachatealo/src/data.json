@@ -2,34 +2,44 @@
   "section": [
     {
       "id": 1,
-      "description":"Portada",
+      "description": "Portada",
       "imgPortada": "./images/paraPortada/logo.svg",
       "menu": [
         {
           "id": 1,
-          "href": "#history",
-          "title": "¿Quiénes somos?"
+          "href": "#Portada",
+          "title": "Inicio"
         },
         {
           "id": 2,
-          "href": "#eventos",
-          "title": "Eventos"
+          "href": "#History",
+          "title": "¿Quiénes somos?"
         },
         {
           "id": 3,
-          "href": "#fotos",
-          "title": "Fotos"
+          "href": "#Location",
+          "title": "Encuéntranos"
         },
         {
           "id": 4,
-          "href": "#videos",
+          "href": "#Eventos",
+          "title": "Eventos"
+        },
+        {
+          "id": 5,
+          "href": "#Fotos",
+          "title": "Fotos"
+        },
+        {
+          "id": 6,
+          "href": "#Videos",
           "title": "Videos"
         }
       ]
     },
     {
       "id": 2,
-      "description":"Hero",
+      "description": "Hero",
       "imgPortada": [
         {
           "foto": "./images/paraHero/7.png",
@@ -71,24 +81,25 @@
     },
     {
       "id": 3,
-      "description":"Hero",
+      "description": "History",
       "rotonda": "./images/paraHistory/rotonda.png",
       "alameda": "./images/paraHistory/alameda.png"
     },
     {
       "id": 4,
-      "description":"Location",
+      "description": "Location",
       "titleLocation": "Ubicación",
       "googleMap":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
       "direccion": "  Municipalidad de los olivos, Rotonda",
       "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
       "Dias": "  Martes, Jueves, Sábado",
       "horario": "  8 pm a 12 pm",
-      "generos": " bachata, salsa"
+      "generos": " bachata, salsa",
+      "facebook": " bachatealo"
     },
     {
       "id": 5,
-      "description":"Eventos",
+      "description": "Eventos",
       "titleEvent": "Chocolatada",
       "imgEvento": "./images/paraEventos/eventos.png",
       "details": [
@@ -103,7 +114,7 @@
         {
           "id": 2,
           "description": "right",
-          "linea1": "16 de diciembre",
+          "linea1": "21 de diciembre",
           "linea2": "Municipalidad de los olivos",
           "linea3": "7:00 pm",
           "linea4": "993-382-261"
@@ -112,6 +123,7 @@
     },
     {
       "id": 6,
+      "description": "Fotos",
       "titleFotos": "Momentos Destacados...",
       "imgFotos": [
         {
@@ -142,6 +154,7 @@
     },
     {
       "id": 7,
+      "description": "Videos",
       "titleVideo": "Recuerdos...",
       "srcVideo": [
         {
@@ -177,7 +190,12 @@
         {
           "id": 3,
           "description": "icon1-github",
-          "href": "https://github.com/crehds/bachatealo"
+          "href": "https://github.com/crehds"
+        },
+        {
+          "id": 4,
+          "description": "platzi",
+          "href": "https://platzi.com/@Crehds/"
         }
       ]
     }
