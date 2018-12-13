@@ -1,7 +1,7 @@
 # bachatealo
 Create-react-app    ||   Redux  ||   Postcss ||   Responsive Design and more
 
-#Proyecto en proceso de desarrollo
+# Proyecto en proceso de desarrollo
 
 # Antes de continuar
 Este Proyecto representará ,en la web, a un grupo de baile en Lima, Perú. Debido a ello no tiene fines de lucro, sólo de aprendizaje.
