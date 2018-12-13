@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  return {
+    idHero: state.data.section[1].description,
+    fotosPortada: state.data.section[1].imgPortada,
+  };
+}
 
 class Hero extends Component {
   render () {
     return (
-      <section className="Hero" id={this.props.id}>
+      <section className="Hero" id={this.props.idHero}>
         {/*Contenedor de las fotos iniciales*/}
         <div className="hero-container">
           {
@@ -18,4 +26,4 @@ class Hero extends Component {
     );
   }
 }
-export default Hero;
+export default connect(mapStateToProps)(Hero);

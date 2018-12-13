@@ -20,8 +20,11 @@
     color: white;
   };
 }
+@custom-media --prueba (min-width:1206px) and (max-width: 1326px);
 
-@custom-media --large screen (width > 1025px);
+@custom-media --prueba2 (min-width: 1024px) and (max-width:1205px);
+@custom-media --large screen (max-width: 1023px);
+@custom-media --medium1 screen and (max-width: 1025px);
 @custom-media --medium (min-width: 769px) and (width <=1025px);
 @custom-media --small (min-width: 481px) and (width <= 768px);
 @custom-media --small1 screen and (width <= 768px);
