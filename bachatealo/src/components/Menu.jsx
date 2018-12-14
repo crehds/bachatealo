@@ -7,7 +7,10 @@ function Menu(props) {
       onClick={props.handleAddClass}
       ref={props.setRef}
     >
-      <i className="icon-menu burguer-button" id="burguer-menu">
+      <i
+      className="icon-menu burguer-button"
+      id="burguer-menu"
+      >
       </i>
       <ul>
       {props.menu.map((item) =>

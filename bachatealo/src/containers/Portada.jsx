@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Menu from '../components/Menu.jsx';
 import { connect } from 'react-redux';
-import { addClass } from '../actions/index';
+import { addClass, addEvent } from '../actions/index';
 
 function mapStateToProps(state, props) {
   return {
@@ -13,11 +13,14 @@ function mapStateToProps(state, props) {
 
 const mapDispatchToProps = {
   addClass,
+  addEvent,
 };
 
 class Portada extends Component {
+
   handleAddClass = (event) => {
     this.props.addClass(this.nav);
+
   };
 
   setNavRef = element => (
