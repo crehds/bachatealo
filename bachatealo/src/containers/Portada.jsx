@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Menu from '../components/Menu.jsx';
 import { connect } from 'react-redux';
-import { addClass, addEvent } from '../actions/index';
+import { addClass } from '../actions/index';
 
 function mapStateToProps(state, props) {
   return {
@@ -13,7 +13,6 @@ function mapStateToProps(state, props) {
 
 const mapDispatchToProps = {
   addClass,
-  addEvent,
 };
 
 class Portada extends Component {
@@ -23,11 +22,25 @@ class Portada extends Component {
 
   };
 
+  handleIsActive = () => {
+    const media = window.matchMedia('screen and (min-width:769px)');
+    if (media.matches) {
+      if (this.nav.classList.contains('is-active')) {
+        this.nav.classList.remove('is-active');
+      }
+    }
+  };
+
   setNavRef = element => (
     this.nav = element
   );
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleIsActive);
+  }
+
   render() {
+    const d = window.innerWidth;
     return (
       <section className="Portada" id={this.props.idPortada}>
         {/*Contenedor del logotipo y el menú*/}
@@ -36,6 +49,7 @@ class Portada extends Component {
           <figure className="logotipo">
             <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
           </figure>
+          {console.log(d)}
           {/* Menú*/}
           <Menu
             menu={this.props.menu}
