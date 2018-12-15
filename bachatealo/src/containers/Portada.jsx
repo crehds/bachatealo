@@ -25,7 +25,7 @@ class Portada extends Component {
     const media = window.matchMedia('screen and (min-width:769px)');
     if (media.matches) {
       if (this.nav.classList.contains('is-active')) {
-        this.nav.classList.remove('is-active');
+        await this.nav.classList.remove('is-active');
       }
     }
   };
