@@ -5,19 +5,19 @@ const initialState = {
   ...datos,
 };
 
-const hideShow = (menu) => {
+const hideShow = async (menu) => {
   if (menu.classList.contains('is-active')) {
-    menu.classList.remove('is-active');
+    await menu.classList.remove('is-active');
   } else {
-    menu.classList.add('is-active');
+    await menu.classList.add('is-active');
   }
 };
 
-const validation = (event, burguerButton, classL) => {
+const validation = async (event, burguerButton, classL) => {
   if (event.matches) {
-    burguerButton.addEventListener('click', hideShow(classL));
+    await burguerButton.addEventListener('click', hideShow(classL));
   } else {
-    burguerButton.removeEventListener('click', hideShow);
+    await burguerButton.removeEventListener('click', hideShow);
   }
 
 };

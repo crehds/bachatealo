@@ -17,16 +17,15 @@ const mapDispatchToProps = {
 
 class Portada extends Component {
 
-  handleAddClass = (event) => {
-    this.props.addClass(this.nav);
-
+  handleAddClass = async (event) => {
+    await this.props.addClass(this.nav);
   };
 
-  handleIsActive = () => {
+  handleIsActive = async () => {
     const media = window.matchMedia('screen and (min-width:769px)');
     if (media.matches) {
       if (this.nav.classList.contains('is-active')) {
-        this.nav.classList.remove('is-active');
+        await this.nav.classList.remove('is-active');
       }
     }
   };
