@@ -6,33 +6,30 @@ const initialState = {
 };
 
 const hideShow = (menu) => {
-  console.log(menu);
-  if (menu.path[1].classList.contains('is-active')) {
-    menu.path[1].classList.remove('is-active');
+  if (menu.classList.contains('is-active')) {
+    menu.classList.remove('is-active');
   } else {
-    menu.path[1].classList.add('is-active');
+    menu.classList.add('is-active');
   }
 };
 
-const validation = (event, burguerButton) => {
+const validation = (event, burguerButton, classL) => {
   if (event.matches) {
-    burguerButton.addEventListener('click', hideShow);
+    burguerButton.addEventListener('click', hideShow(classL));
   } else {
     burguerButton.removeEventListener('click', hideShow);
   }
 
-  console.log('hola');
 };
 
 function data(state = { ...initialState }, action) {
   switch (action.type) {
     case 'ADD_CLASS': {
 
-      const query = action.payload.classL;
       const burguerButton = document.querySelector('#burguer-menu');
       const media = window.matchMedia('screen and (max-width: 767px)');
 
-      media.addListener(validation(query, burguerButton));
+      validation(media, burguerButton, action.payload.classL);
 
       return {
         ...state,
