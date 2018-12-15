@@ -42,39 +42,39 @@
       "description": "Hero",
       "imgPortada": [
         {
-          "foto": "./images/paraHero/7.png",
+          "foto": "./images/paraHero/7.webp",
           "id": 1
         },
         {
-          "foto": "./images/paraHero/3.png",
+          "foto": "./images/paraHero/3.webp",
           "id": 2
         },
         {
-          "foto": "./images/paraHero/9.png",
+          "foto": "./images/paraHero/9.webp",
           "id": 3
         },
         {
-          "foto": "./images/paraHero/5.png",
+          "foto": "./images/paraHero/5.webp",
           "id": 4
         },
         {
-          "foto": "./images/paraHero/1.png",
+          "foto": "./images/paraHero/1.webp",
           "id": 5
         },
         {
-          "foto": "./images/paraHero/6.png",
+          "foto": "./images/paraHero/6.webp",
           "id": 6
         },
         {
-          "foto": "./images/paraHero/2.png",
+          "foto": "./images/paraHero/2.webp",
           "id": 7
         },
         {
-          "foto": "./images/paraHero/8.png",
+          "foto": "./images/paraHero/8.webp",
           "id": 8
         },
         {
-          "foto": "./images/paraHero/4.png",
+          "foto": "./images/paraHero/4.webp",
           "id": 9
         }
       ]
@@ -82,8 +82,8 @@
     {
       "id": 3,
       "description": "History",
-      "rotonda": "./images/paraHistory/rotonda.png",
-      "alameda": "./images/paraHistory/alameda.png"
+      "rotonda": "./images/paraHistory/rotonda.webp",
+      "alameda": "./images/paraHistory/alameda.webp"
     },
     {
       "id": 4,
@@ -101,7 +101,7 @@
       "id": 5,
       "description": "Eventos",
       "titleEvent": "Chocolatada",
-      "imgEvento": "./images/paraEventos/eventos.png",
+      "imgEvento": "./images/paraEventos/eventos.webp",
       "details": [
         {
           "id": 1,
@@ -127,27 +127,27 @@
       "titleFotos": "Momentos Destacados...",
       "imgFotos": [
         {
-          "foto": "./images/paraHero/7.png",
+          "foto": "./images/paraHero/7.webp",
           "id": 1
         },
         {
-          "foto": "./images/paraHero/6.png",
+          "foto": "./images/paraHero/6.webp",
           "id": 2
         },
         {
-          "foto": "./images/paraHero/9.png",
+          "foto": "./images/paraHero/9.webp",
           "id": 3
         },
         {
-          "foto": "./images/paraHero/4.png",
+          "foto": "./images/paraHero/4.webp",
           "id": 4
         },
         {
-          "foto": "./images/paraHero/5.png",
+          "foto": "./images/paraHero/5.webp",
           "id": 5
         },
         {
-          "foto": "./images/paraHero/2.png",
+          "foto": "./images/paraHero/2.webp",
           "id": 6
         }
       ]
