@@ -14,7 +14,6 @@ const hideShow = (menu) => {
 };
 
 const validation = (event, burguerButton, classL) => {
-  console.log(classL);
   if (event.matches) {
     burguerButton.addEventListener('click', hideShow(classL));
   } else {

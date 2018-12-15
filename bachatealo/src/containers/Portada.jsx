@@ -40,7 +40,6 @@ class Portada extends Component {
   }
 
   render() {
-    const d = window.innerWidth;
     return (
       <section className="Portada" id={this.props.idPortada}>
         {/*Contenedor del logotipo y el menú*/}
@@ -51,7 +50,6 @@ class Portada extends Component {
               <img src={this.props.imgPortada} href="#Portada" alt="logotipo de Bachatealo"/>
             </figure>
           </a>
-          {console.log(d)}
           {/* Menú*/}
           <Menu
             menu={this.props.menu}
