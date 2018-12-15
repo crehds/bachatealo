@@ -16,13 +16,28 @@ const mapDispatchToProps = {
 };
 
 class Portada extends Component {
+
   handleAddClass = (event) => {
     this.props.addClass(this.nav);
+
+  };
+
+  handleIsActive = () => {
+    const media = window.matchMedia('screen and (min-width:769px)');
+    if (media.matches) {
+      if (this.nav.classList.contains('is-active')) {
+        this.nav.classList.remove('is-active');
+      }
+    }
   };
 
   setNavRef = element => (
     this.nav = element
   );
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleIsActive);
+  }
 
   render() {
     return (
@@ -30,9 +45,11 @@ class Portada extends Component {
         {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
           {/*Logotipo*/}
-          <figure className="logotipo">
-            <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
-          </figure>
+          <a href="#Portada" className="logotipo-link">
+            <figure className="logotipo">
+              <img src={this.props.imgPortada} href="#Portada" alt="logotipo de Bachatealo"/>
+            </figure>
+          </a>
           {/* Menú*/}
           <Menu
             menu={this.props.menu}
