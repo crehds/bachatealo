@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Media from '../components/Media.jsx';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
@@ -21,14 +22,11 @@ class Fotos extends Component {
         <div className="fotos container">
           {
             this.props.imgFotos.map((item) =>
-              <div key={item.id}>
-                <figure>
-                  <img
-                    src={item.foto}
-                    alt={item.id}
-                  />
-                </figure>
-              </div>
+            <Media
+              key={item.id}
+              src={item.foto}
+              alt={item.id}
+            />
             )
           }
         </div>

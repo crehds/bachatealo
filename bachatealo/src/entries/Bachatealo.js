@@ -8,19 +8,22 @@ import Event from '../containers/Eventos.jsx';
 import Fotos from '../containers/Fotos.jsx';
 import Video from '../containers/Video.jsx';
 import Footer from '../containers/Footer.jsx';
+import HomeLayout  from '../components/Home-layout.jsx';
 
 class Bachatealo extends Component {
   render() {
     return (
       <HandleError>
-        <Portada/>
-        <Hero/>
-        <History/>
-        <Location/>
-        <Event/>
-        <Fotos/>
-        <Video/>
-        <Footer/>
+        <HomeLayout>
+          <Portada/>
+          <Hero/>
+          <History/>
+          <Location/>
+          <Event/>
+          <Fotos/>
+          <Video/>
+          <Footer/>
+        </HomeLayout>
       </HandleError>
     );
   }

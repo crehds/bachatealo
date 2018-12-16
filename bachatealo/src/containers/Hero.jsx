@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Media from '../components/Media.jsx';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
@@ -16,9 +17,11 @@ class Hero extends Component {
         <div className="hero-container">
           {
             this.props.fotosPortada.map((item) =>
-              <div key={item.id}>
-                <img src={item.foto} alt={item.id}/>
-              </div>
+              <Media
+                key={item.id}
+                src={item.foto}
+                alt={item.id}
+              />
             )
           }
         </div>
