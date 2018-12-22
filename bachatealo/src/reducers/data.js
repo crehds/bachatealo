@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import datos from '../data.json';
+import schema from '../schemas/index';
 
 const initialState = {
-  ...datos,
+  entities: schema.entities,
+  sections: schema.result.sections,
 };
 
 const hideShow = async (menu) => {
