@@ -15,7 +15,6 @@ class Hero extends Component {
       <section className="Hero" id={this.props.hero.sectionId}>
         {/*Contenedor de las fotos iniciales*/}
         <div className="hero-container">
-          {console.log(this.props.album)}
           {
             this.props.album.map((item) =>
               <Media
