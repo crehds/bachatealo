@@ -5,7 +5,7 @@ import Bachatealo from './entries/Bachatealo';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducer from './reducers/menu';
+import reducer from './reducers/data';
 
 const store = createStore(
   reducer,

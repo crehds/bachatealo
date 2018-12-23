@@ -111,6 +111,10 @@
   top:5px;
   color: white;
 }
+.home-layout {
+  margin:0;
+  max-width: 100%; 
+}
 .Portada {
   padding:10px;
   padding-top: 2px;
@@ -308,28 +312,20 @@
   border-bottom-right-radius: 10px;
   background: #0a0b0f;
   justify-items: center
-
 }
 .fotos.container div {
     border: ridge #56575b 4px;
     display: flex;
-    max-width: inherit;
-    max-height: inherit;
-    box-shadow: 3px 3px 30px 10px #56575b;
-    width:70%
-
+    max-width: 70%;
+    max-height: 100%
   }
-.fotos.container div figure {
-      margin: 0;
-      padding:0;
-      max-width: 100%;
-      max-height: 100%
-
+.fotos.container div :hover {
+      box-shadow: 3px 3px 20px 10px #56575b;
     }
-.fotos.container div figure img {
-        width:100%;
-        height: 100%;
-      }
+.fotos.container div img {
+      width: 100%;
+      height: 100%;
+    }
 .Video {
   padding:10px;
   padding-top: 2px;
