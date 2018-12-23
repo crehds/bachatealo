@@ -36,8 +36,8 @@ class Portada extends Component {
     this.nav = element
   );
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleIsActive);
+  async componentDidMount() {
+    await window.addEventListener('resize', this.handleIsActive);
   }
 
   render() {
@@ -46,9 +46,9 @@ class Portada extends Component {
         {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
           {/*Logotipo*/}
-          <a href="#Portada" className="logotipo-link">
+          <a href="#1" className="logotipo-link">
             <figure className="logotipo">
-              <img src={this.props.imgPortada} href="#Portada" alt="logotipo de Bachatealo"/>
+              <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
             </figure>
           </a>
           {/* Menú*/}
