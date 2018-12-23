@@ -1,31 +1,66 @@
 import React, { Component } from 'react';
+import Menu from '../components/Menu.jsx';
+import { connect } from 'react-redux';
+import { addClass } from '../actions/index';
+
+function mapStateToProps(state, props) {
+  const menu = state.data.entities.data[props.portada.data].menu;
+  const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
+
+  return {
+    menu,
+    imgPortada,
+  };
+}
+
+const mapDispatchToProps = {
+  addClass,
+};
 
 class Portada extends Component {
+
+  handleAddClass = async (event) => {
+    await this.props.addClass(this.nav);
+  };
+
+  handleIsActive = async () => {
+    const media = window.matchMedia('screen and (min-width:769px)');
+    if (media.matches) {
+      if (this.nav.classList.contains('is-active')) {
+        await this.nav.classList.remove('is-active');
+      }
+    }
+  };
+
+  setNavRef = element => (
+    this.nav = element
+  );
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleIsActive);
+  }
+
   render() {
     return (
-      <section className="Portada" id={this.props.id}>
+      <section className="Portada" id={this.props.portada.sectionId}>
         {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
           {/*Logotipo*/}
-          <figure className="logotipo">
-            <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
-          </figure>
+          <a href="#Portada" className="logotipo-link">
+            <figure className="logotipo">
+              <img src={this.props.imgPortada} href="#Portada" alt="logotipo de Bachatealo"/>
+            </figure>
+          </a>
           {/* Menú*/}
-          <nav className="menu">
-            <ul>
-              {this.props.menu.map((item) =>
-                <li key={item.id}>
-                  <a
-                    href={item.href}>{item.title}
-                  </a>
-                </li>
-              )}
-            </ul>
-          </nav>
+          <Menu
+            menu={this.props.menu}
+            handleAddClass={this.handleAddClass}
+            setRef={this.setNavRef}
+          />
         </header>
       </section>
     );
   }
 }
 
-export default Portada;
+export default connect(mapStateToProps, mapDispatchToProps)(Portada);

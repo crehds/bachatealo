@@ -1,0 +1,203 @@
+{
+  "section": [
+    {
+      "id": 1,
+      "description": "Portada",
+      "imgPortada": "./images/paraPortada/logo.svg",
+      "menu": [
+        {
+          "id": 1,
+          "href": "#Portada",
+          "title": "Inicio"
+        },
+        {
+          "id": 2,
+          "href": "#History",
+          "title": "¿Quiénes somos?"
+        },
+        {
+          "id": 3,
+          "href": "#Location",
+          "title": "Encuéntranos"
+        },
+        {
+          "id": 4,
+          "href": "#Eventos",
+          "title": "Eventos"
+        },
+        {
+          "id": 5,
+          "href": "#Fotos",
+          "title": "Fotos"
+        },
+        {
+          "id": 6,
+          "href": "#Videos",
+          "title": "Videos"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "Hero",
+      "imgPortada": [
+        {
+          "foto": "./images/paraHero/7.webp",
+          "id": 1
+        },
+        {
+          "foto": "./images/paraHero/3.webp",
+          "id": 2
+        },
+        {
+          "foto": "./images/paraHero/9.webp",
+          "id": 3
+        },
+        {
+          "foto": "./images/paraHero/5.webp",
+          "id": 4
+        },
+        {
+          "foto": "./images/paraHero/1.webp",
+          "id": 5
+        },
+        {
+          "foto": "./images/paraHero/6.webp",
+          "id": 6
+        },
+        {
+          "foto": "./images/paraHero/2.webp",
+          "id": 7
+        },
+        {
+          "foto": "./images/paraHero/8.webp",
+          "id": 8
+        },
+        {
+          "foto": "./images/paraHero/4.webp",
+          "id": 9
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "description": "History",
+      "rotonda": "./images/paraHistory/rotonda.webp",
+      "alameda": "./images/paraHistory/alameda.webp"
+    },
+    {
+      "id": 4,
+      "description": "Location",
+      "titleLocation": "Ubicación",
+      "googleMap":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
+      "direccion": "  Municipalidad de los olivos, Rotonda",
+      "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
+      "Dias": "  Martes, Jueves, Sábado",
+      "horario": "  8 pm a 12 pm",
+      "generos": " bachata, salsa",
+      "facebook": " bachatealo"
+    },
+    {
+      "id": 5,
+      "description": "Eventos",
+      "titleEvent": "Chocolatada",
+      "imgEvento": "./images/paraEventos/eventos.webp",
+      "details": [
+        {
+          "id": 1,
+          "description": "left",
+          "linea1": "Fecha",
+          "linea2": "Lugar",
+          "linea3": "Hora de Inicio",
+          "linea4": "Donaciones al"
+        },
+        {
+          "id": 2,
+          "description": "right",
+          "linea1": "21 de diciembre",
+          "linea2": "Municipalidad de los olivos",
+          "linea3": "7:00 pm",
+          "linea4": "993-382-261"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "description": "Fotos",
+      "titleFotos": "Momentos Destacados...",
+      "imgFotos": [
+        {
+          "foto": "./images/paraHero/7.webp",
+          "id": 1
+        },
+        {
+          "foto": "./images/paraHero/6.webp",
+          "id": 2
+        },
+        {
+          "foto": "./images/paraHero/9.webp",
+          "id": 3
+        },
+        {
+          "foto": "./images/paraHero/4.webp",
+          "id": 4
+        },
+        {
+          "foto": "./images/paraHero/5.webp",
+          "id": 5
+        },
+        {
+          "foto": "./images/paraHero/2.webp",
+          "id": 6
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "description": "Videos",
+      "titleVideo": "Recuerdos...",
+      "srcVideo": [
+        {
+          "id": 1,
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F303067066926144%2F&show_text=0&width=560"
+        },
+        {
+          "id": 2,
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225816234651228%2F&show_text=0&width=560"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "description": "Footer",
+      "titleFooter": "Programación y diseño",
+      "name": "Carlos Rodríguez",
+      "numero": "960265942",
+      "correo": "carlos15erh@gmail.com",
+      "redesSociales": [
+        {
+          "id": 1,
+          "description": "icon1-facebook",
+          "href": "https://www.facebook.com/checa.rh"
+        },
+        {
+          "id": 2,
+          "description": "icon1-twitter",
+          "href": "https://twitter.com/crehds1"
+        },
+        {
+          "id": 3,
+          "description": "icon1-github",
+          "href": "https://github.com/crehds"
+        },
+        {
+          "id": 4,
+          "description": "platzi",
+          "href": "https://platzi.com/@Crehds/"
+        }
+      ]
+    }
+  ]
+}

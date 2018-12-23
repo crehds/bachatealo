@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state, props) {
+  const title = state.data.entities.data[props.videos.data].title;
+  const album = props.videos.media.map((videoId) => state.data.entities.media[videoId]);
+  return {
+    title,
+    album,
+  };
+}
 
 class Video extends Component {
   render() {
     return (
-      <section className="Video" id={this.props.id}>
+      <section className="Video" id={this.props.videos.sectionId}>
         {/*Titulo independiente del contenedor*/}
         <div className="video-title">
-          <h1>{this.props.titleVideo}</h1>
+          <h1>{this.props.title}</h1>
         </div>
         {/*Contenedor de los videos*/}
         <div className="video container">
-          {this.props.srcVideo.map((video) => (
+          {this.props.album.map((video) => (
             <div key={video.id}>
               <figure>
                 <div>
@@ -35,4 +45,4 @@ class Video extends Component {
   }
 }
 
-export default Video;
+export default connect(mapStateToProps)(Video);
