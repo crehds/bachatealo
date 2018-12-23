@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "17a5367042854d680d46d1c2dd644444",
-    "url": "/bachatealo/static/media/icomoon.17a53670.ttf"
+    "revision": "2a6e9a99b5fce07c468a1493ec782ca1",
+    "url": "/bachatealo/static/media/icomoon.2a6e9a99.eot"
   },
   {
-    "revision": "2b221da9a6c9b51179d8",
-    "url": "/bachatealo/static/css/main.60d0242c.chunk.css"
+    "revision": "ec449aed8eb09c186d44",
+    "url": "/bachatealo/static/css/main.b222a29f.chunk.css"
   },
   {
-    "revision": "c5379f72285021b324c4",
-    "url": "/bachatealo/static/js/1.c5379f72.chunk.js"
+    "revision": "2e18d71fd96f47fc35f0",
+    "url": "/bachatealo/static/js/1.2e18d71f.chunk.js"
   },
   {
     "revision": "e4287331d59858531c4c",
@@ -20,16 +20,24 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/icomoon.6cc3639f.eot"
   },
   {
+    "revision": "741a58641627f05dad002a59f26a3949",
+    "url": "/bachatealo/static/media/icomoon.741a5864.woff"
+  },
+  {
     "revision": "afad00ebe1dbbbff5dc7b32574bf0fa2",
     "url": "/bachatealo/static/media/icomoon.afad00eb.ttf"
   },
   {
-    "revision": "2a6e9a99b5fce07c468a1493ec782ca1",
-    "url": "/bachatealo/static/media/icomoon.2a6e9a99.eot"
+    "revision": "ec449aed8eb09c186d44",
+    "url": "/bachatealo/static/js/main.ec449aed.chunk.js"
   },
   {
-    "revision": "2b221da9a6c9b51179d8",
-    "url": "/bachatealo/static/js/main.2b221da9.chunk.js"
+    "revision": "17a5367042854d680d46d1c2dd644444",
+    "url": "/bachatealo/static/media/icomoon.17a53670.ttf"
+  },
+  {
+    "revision": "e7618cbb2cc79c243e19cde653e76fc0",
+    "url": "/bachatealo/static/media/icomoon.e7618cbb.svg"
   },
   {
     "revision": "02419eb7ffbcbaaeac92bf424a64bb83",
@@ -40,19 +48,11 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/icomoon.c07379cc.svg"
   },
   {
-    "revision": "741a58641627f05dad002a59f26a3949",
-    "url": "/bachatealo/static/media/icomoon.741a5864.woff"
-  },
-  {
-    "revision": "e7618cbb2cc79c243e19cde653e76fc0",
-    "url": "/bachatealo/static/media/icomoon.e7618cbb.svg"
-  },
-  {
     "revision": "b70d1d48a0b157f61a3453b04ca34569",
     "url": "/bachatealo/static/media/platzilogo.b70d1d48.svg"
   },
   {
-    "revision": "923f13cdef0d82995e002588b7313c1d",
+    "revision": "457cf315720129f2a224e8a0d556b456",
     "url": "/bachatealo/index.html"
   }
 ];
