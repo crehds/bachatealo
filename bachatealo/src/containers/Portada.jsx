@@ -44,8 +44,7 @@ class Portada extends Component {
 
   render() {
     return (
-      <section className="Portada" id={this.props.portada.id}>
-        {console.log(this.props)}
+      <section className="Portada" id={this.props.portada.sectionId}>
         {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
           {/*Logotipo*/}

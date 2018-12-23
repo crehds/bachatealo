@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import HandleError from '../containers/Handle-error.jsx';
 import Portada from '../containers/Portada.jsx';
-// import Hero from '../containers/Hero.jsx';
-// import History from '../containers/History.jsx';
-// import Location from '../containers/Location.jsx';
-// import Event from '../containers/Eventos.jsx';
-// import Fotos from '../containers/Fotos.jsx';
-// import Video from '../containers/Video.jsx';
-// import Footer from '../containers/Footer.jsx';
+import Hero from '../containers/Hero.jsx';
+import History from '../containers/History.jsx';
+import Location from '../containers/Location.jsx';
+import Event from '../containers/Eventos.jsx';
+import Fotos from '../containers/Fotos.jsx';
+import Video from '../containers/Video.jsx';
+import Footer from '../containers/Footer.jsx';
 // import Portada from '../components/Portada.jsx';
 import HomeLayout  from '../components/Home-layout.jsx';
 import { connect } from 'react-redux';
@@ -20,7 +20,7 @@ function mapStateToProps(state, props) {
     hero: {},
     history: {},
     location: {},
-    event: {},
+    eventos: {},
     fotos: {},
     videos: {},
     footer: {},
@@ -39,18 +39,28 @@ function mapStateToProps(state, props) {
 
 class Bachatealo extends Component {
   render() {
+    const {
+      portada,
+      hero,
+      history,
+      location,
+      eventos,
+      fotos,
+      videos,
+      footer,
+    } = this.props.sections;
     return (
       <HandleError>
         <HomeLayout>
         { console.log(this.props.sections)}
-          <Portada portada={this.props.sections.portada}/>
-          {/*<Hero />
-          <History/>
-          <Location/>
-          <Event/>
-          <Fotos/>
-          <Video/>
-          <Footer/>*/}
+          <Portada portada={portada}/>
+          <Hero hero={hero}/>
+          <History history={history}/>
+          <Location location={location}/>
+          <Event eventos={eventos}/>
+          <Fotos fotos={fotos}/>
+          <Video videos={videos}/>
+          <Footer footer={footer}/>
         </HomeLayout>
       </HandleError>
     );

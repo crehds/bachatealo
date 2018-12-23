@@ -2,31 +2,36 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
+  const title = state.data.entities.data[props.location.data].title;
+  const details = state.data.entities.data[props.location.data].details;
   return {
-    idLocation: state.data.section[3].description,
-    googleMap: state.data.section[3].googleMap,
-    titleLocation: state.data.section[3].titleLocation,
-    direccion: state.data.section[3].direccion,
-    referencia: state.data.section[3].referencia,
-    Dias: state.data.section[3].Dias,
-    horario: state.data.section[3].horario,
-    generos: state.data.section[3].generos,
-    facebook: state.data.section[3].facebook,
+    title,
+    ...details,
   };
 }
 
 class Location extends Component {
   render () {
+    const {
+      googleMap,
+      direccion,
+      referencia,
+      dias,
+      horario,
+      generos,
+      facebook,
+    } = this.props;
     return (
-      <section className="Location" id={this.props.idLocation}>
+      <section className="Location" id={this.props.location.sectionId}>
         {/*Contenedor de la ubicación*/}
+        {console.log(this.props)}
         <div className="location-container">
           {/*contenedor del mapa*/}
           <div className="location-container-map">
             <figure className="location-map">
               <iframe className="flexible-map"
-                src={this.props.googleMap}
-                title={this.props.titleLocation}
+                src={googleMap}
+                title={this.props.title}
                 width="600"
                 height="450"
                 frameBorder="0"
@@ -39,40 +44,40 @@ class Location extends Component {
           {/*contenedor de los detalles de la ubicación*/}
           <div className="location-description">
             <div className="description-left">
-              <p>{this.props.titleLocation}</p>
+              <p>{this.props.title}</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.direccion}</p>
+              <p>:&nbsp;&nbsp;{direccion}</p>
             </div>
             <div className="description-left">
               <p>Referencia</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.referencia}</p>
+              <p>:&nbsp;&nbsp;{referencia}</p>
             </div>
             <div className="description-left">
               <p>Días</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.Dias}</p>
+              <p>:&nbsp;&nbsp;{dias}</p>
             </div>
             <div className="description-left">
               <p>Horario</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.horario}</p>
+              <p>:&nbsp;&nbsp;{horario}</p>
             </div>
             <div className="description-left">
               <p>Géneros</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.generos}</p>
+              <p>:&nbsp;&nbsp;{generos}</p>
             </div>
             <div className="description-left">
               <p>Facebook</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{this.props.facebook}</p>
+              <p>:&nbsp;&nbsp;{facebook}</p>
             </div>
 
           </div>

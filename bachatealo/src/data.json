@@ -9,32 +9,32 @@
         "menu": [
           {
             "id": "1",
-            "href": "#Portada",
+            "href": "#1",
             "title": "Inicio"
           },
           {
             "id": "2",
-            "href": "#History",
+            "href": "#2",
             "title": "¿Quiénes somos?"
           },
           {
             "id": "3",
-            "href": "#Location",
+            "href": "#3",
             "title": "Encuéntranos"
           },
           {
             "id": "4",
-            "href": "#Eventos",
+            "href": "#4",
             "title": "Eventos"
           },
           {
             "id": "5",
-            "href": "#Fotos",
+            "href": "#5",
             "title": "Fotos"
           },
           {
             "id": "6",
-            "href": "#Videos",
+            "href": "#6",
             "title": "Videos"
           }
         ],
@@ -50,40 +50,40 @@
       },
       "media": [
         {
-          "src": "./images/paraHero/7.png",
+          "src": "./images/paraHero/7.webp",
+          "id": "1"
+        },
+        {
+          "src": "./images/paraHero/3.webp",
           "id": "2"
         },
         {
-          "src": "./images/paraHero/3.png",
+          "src": "./images/paraHero/9.webp",
           "id": "3"
         },
         {
-          "src": "./images/paraHero/9.png",
+          "src": "./images/paraHero/5.webp",
           "id": "4"
         },
         {
-          "src": "./images/paraHero/5.png",
+          "src": "./images/paraHero/1.webp",
           "id": "5"
         },
         {
-          "src": "./images/paraHero/1.png",
+          "src": "./images/paraHero/6.webp",
           "id": "6"
         },
         {
-          "src": "./images/paraHero/6.png",
+          "src": "./images/paraHero/2.webp",
           "id": "7"
         },
         {
-          "src": "./images/paraHero/2.png",
+          "src": "./images/paraHero/8.webp",
           "id": "8"
         },
         {
-          "src": "./images/paraHero/8.png",
+          "src": "./images/paraHero/4.webp",
           "id": "9"
-        },
-        {
-          "src": "./images/paraHero/4.png",
-          "id": "10"
         }
       ]
     },
@@ -96,12 +96,12 @@
       },
       "media": [
         {
-          "src": "./images/paraHistory/rotonda.png",
-          "id": "11"
+          "src": "./images/paraHistory/rotonda.webp",
+          "id": "10"
         },
         {
-          "src": "./images/paraHistory/alameda.png",
-          "id": "12"
+          "src": "./images/paraHistory/alameda.webp",
+          "id": "11"
         }
       ]
     },
@@ -116,9 +116,10 @@
           "googleMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
           "direccion": "  Municipalidad de los olivos, Rotonda",
           "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
-          "Dias": "  Martes, Jueves, Sábado",
+          "dias": "  Martes, Jueves, Sábado",
           "horario": "  8 pm a 12 pm",
-          "generos": " bachata, salsa"
+          "generos": " bachata, salsa",
+          "facebook": " bachatealo"
         }
       }
     },
@@ -140,13 +141,13 @@
           {
             "id": "3",
             "description": "right",
-            "linea1": "16 de diciembre",
+            "linea1": "21 de diciembre",
             "linea2": "Municipalidad de los olivos",
             "linea3": "7:00 pm",
             "linea4": "993-382-261"
           }
         ],
-        "imgEvento": "./images/paraEventos/eventos.png"
+        "imgEvento": "./images/paraEventos/eventos.webp"
       }
     },
     {
@@ -158,28 +159,28 @@
       },
       "media": [
         {
-          "src": "./images/paraHero/7.png",
+          "src": "./images/paraHero/7.webp",
+          "id": "12"
+        },
+        {
+          "src": "./images/paraHero/6.webp",
+          "id": "13"
+        },
+        {
+          "src": "./images/paraHero/9.webp",
           "id": "14"
         },
         {
-          "src": "./images/paraHero/6.png",
+          "src": "./images/paraHero/4.webp",
           "id": "15"
         },
         {
-          "src": "./images/paraHero/9.png",
+          "src": "./images/paraHero/5.webp",
           "id": "16"
         },
         {
-          "src": "./images/paraHero/4.png",
+          "src": "./images/paraHero/2.webp",
           "id": "17"
-        },
-        {
-          "src": "./images/paraHero/5.png",
-          "id": "18"
-        },
-        {
-          "src": "./images/paraHero/2.png",
-          "id": "19"
         }
       ]
     },
@@ -192,12 +193,12 @@
       },
       "media": [
         {
-          "id": "20",
+          "id": "18",
           "title": "video",
           "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F303067066926144%2F&show_text=0&width=560"
         },
         {
-          "id": "21",
+          "id": "19",
           "title": "video",
           "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225816234651228%2F&show_text=0&width=560"
         }
