@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import { addClass } from '../actions/index';
 
 function mapStateToProps(state, props) {
+  const menu = state.data.entities.data[props.portada.data].menu;
+  const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
+
   return {
-    idPortada: state.data.section[0].description,
-    imgPortada: state.data.section[0].imgPortada,
-    menu: state.data.section[0].menu,
+    menu,
+    imgPortada,
   };
 }
 
@@ -40,7 +42,7 @@ class Portada extends Component {
 
   render() {
     return (
-      <section className="Portada" id={this.props.idPortada}>
+      <section className="Portada" id={this.props.portada.sectionId}>
         {/*Contenedor del logotipo y el menú*/}
         <header id="header" className="header container">
           {/*Logotipo*/}

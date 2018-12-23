@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import  { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
+  const images = props.history.media.map((mediaId) => state.data.entities.media[mediaId]);
   return {
-    idHistory: state.data.section[2].description,
-    rotonda: state.data.section[2].rotonda,
-    alameda: state.data.section[2].alameda,
+    ...images,
   };
 }
 
 class History extends Component {
   render() {
     return (
-      <section className="History" id={this.props.idHistory}>
+      <section className="History" id={this.props.history.sectionId}>
         <div className="history-container">
           {/*Inicia primera parte*/}
           <div className="history-div">
@@ -24,7 +23,7 @@ class History extends Component {
           <div className="history-div">
             <img
               className="history-img"
-              src={this.props.alameda}
+              src={this.props[0].src}
               alt="imagen de practica"
             />
           </div>
@@ -39,7 +38,7 @@ class History extends Component {
           <div className="history-div">
             <img
               className="history-img"
-              src={this.props.rotonda}
+              src={this.props[1].src}
               alt="imagen de practica"
             />
           </div>

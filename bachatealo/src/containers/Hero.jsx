@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
+import Media from '../components/Media.jsx';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
+  const album = props.hero.media.map((mediaId) => state.data.entities.media[mediaId]);
   return {
-    idHero: state.data.section[1].description,
-    fotosPortada: state.data.section[1].imgPortada,
+    album,
   };
 }
 
 class Hero extends Component {
   render () {
     return (
-      <section className="Hero" id={this.props.idHero}>
+      <section className="Hero" id={this.props.hero.sectionId}>
         {/*Contenedor de las fotos iniciales*/}
         <div className="hero-container">
           {
-            this.props.fotosPortada.map((item) =>
-              <div key={item.id}>
-                <img src={item.foto} alt={item.id}/>
-              </div>
+            this.props.album.map((item) =>
+              <Media
+                {...item}
+                key={item.id}
+              />
             )
           }
         </div>

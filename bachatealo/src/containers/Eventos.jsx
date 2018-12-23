@@ -2,21 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state, props) {
+  const title = state.data.entities.data[props.eventos.data].title;
+  const imgEvento = state.data.entities.data[props.eventos.data].imgEvento;
+  const details = state.data.entities.data[props.eventos.data].details;
   return {
-    idEvento: state.data.section[4].description,
-    titleEvent: state.data.section[4].titleEvent,
-    imgEvento: state.data.section[4].imgEvento,
-    details: state.data.section[4].details,
+    title,
+    details,
+    imgEvento,
   };
 }
 
 class Event extends Component {
   render() {
     return (
-      <section className="Event" id={this.props.idEvento}>
+      <section className="Event" id={this.props.eventos.sectionId}>
         <div className="event-container">
           <div className="event">
-            <h1>{this.props.titleEvent}</h1>
+            <h1>{this.props.title}</h1>
           </div>
           {/*Este event tiene display de flex*/}
           <div className="event">
