@@ -5,8 +5,6 @@ import { addClass } from '../actions/index';
 
 function mapStateToProps(state, props) {
   const menu = state.data.entities.data[props.portada.data].menu;
-
-  // const imgPortada = props.portada.media.map((mediaId) => state.data.entities.media[mediaId]);
   const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
 
   return {

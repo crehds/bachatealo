@@ -14,7 +14,6 @@ class History extends Component {
       <section className="History" id={this.props.history.sectionId}>
         <div className="history-container">
           {/*Inicia primera parte*/}
-          {console.log(this.props)}
           <div className="history-div">
             <div className="history-title">
               <h1>¿Cómo empezamos?</h1>

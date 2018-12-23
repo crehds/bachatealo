@@ -24,7 +24,6 @@ class Location extends Component {
     return (
       <section className="Location" id={this.props.location.sectionId}>
         {/*Contenedor de la ubicación*/}
-        {console.log(this.props)}
         <div className="location-container">
           {/*contenedor del mapa*/}
           <div className="location-container-map">

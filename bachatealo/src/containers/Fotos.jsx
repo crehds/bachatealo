@@ -20,7 +20,6 @@ class Fotos extends Component {
           <h1>{this.props.title}</h1>
         </div>
         {/*Contenedor de las fotos*/}
-        {console.log(this.props.album[0].id)}
         <div className="fotos container">
           {
             this.props.album.map((item) =>
