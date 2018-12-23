@@ -36,8 +36,8 @@ class Portada extends Component {
     this.nav = element
   );
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleIsActive);
+  async componentDidMount() {
+    await window.addEventListener('resize', this.handleIsActive);
   }
 
   render() {
