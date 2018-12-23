@@ -33,7 +33,7 @@ function mapStateToProps(state, props) {
   }
 
   return {
-    sections,
+    ...sections,
   };
 }
 
@@ -48,11 +48,10 @@ class Bachatealo extends Component {
       fotos,
       videos,
       footer,
-    } = this.props.sections;
+    } = this.props;
     return (
       <HandleError>
         <HomeLayout>
-        { console.log(this.props.sections)}
           <Portada portada={portada}/>
           <Hero hero={hero}/>
           <History history={history}/>
