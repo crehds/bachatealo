@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './cssProd/index.css';
+// import './cssProd/index.css';
 import Bachatealo from './entries/Bachatealo';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
