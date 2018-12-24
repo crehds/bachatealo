@@ -26,10 +26,12 @@ const mapDispatchToProps = {
 
 class Header extends Component {
 
+  //interactividad del burguer menu
   handleAddClass = async (event) => {
     await this.props.addClass(this.nav);
   };
 
+  //Elimina el 'is-active' si deja activado al hacer un resize
   handleIsActive = async () => {
     const media = window.matchMedia('screen and (min-width:769px)');
     if (media.matches) {
@@ -39,10 +41,13 @@ class Header extends Component {
     }
   };
 
+  //referenciando el menu
   setNavRef = element => (
     this.nav = element
   );
 
+  //Por si no carga la página en tamaño de móvil
+  //al realizar resize se añadirá la interactividad
   async componentDidMount() {
     await window.addEventListener('resize', this.handleIsActive);
   }
