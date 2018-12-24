@@ -3,7 +3,7 @@
     {
       "sectionId": "1",
       "data": {
-        "id": "portada",
+        "id": "Portada",
         "description": "Portada",
         "title": "Portada",
         "menu": [
@@ -44,7 +44,7 @@
     {
       "sectionId": "2",
       "data": {
-        "id": "hero",
+        "id": "Hero",
         "description": "Hero",
         "title": "Hero"
       },
