@@ -115,7 +115,7 @@
 }
 .home-layout {
   margin:0;
-  max-width: 100%; 
+  max-width: 100%;
 }
 .Portada {
   padding:10px;
@@ -580,7 +580,7 @@ body {
   border: inset #f0f1f1 3px;
   border-radius: 10px;
   overflow: hidden
-  
+
 }
 .location-container .location-map {
     padding-top:56%;
@@ -631,7 +631,7 @@ body {
 .location-container {
 
   /*Media of the container*/
-  
+
 }
 .Footer {
   padding:10px;
@@ -650,7 +650,7 @@ body {
   padding-top: 10px;
   align-items: center;
   text-align: center
-  
+
 }
 .footer-container .footer-details {
     padding: 10px;
@@ -924,7 +924,7 @@ body {
 .footer-container {
     justify-content: center;
     text-align: center
-  
+
 }
   }
 @media (--extra-small) {
@@ -939,7 +939,7 @@ body {
 .footer-container {
     justify-content: center;
     text-align: center
-  
+
 }
   }
 @media (min-width: 346px) and (max-width: 567px) {
@@ -997,7 +997,7 @@ body {
 .location-container {
     grid-template-columns: auto;
     grid-template-rows: auto auto
-  
+
 }
 
       .location-container .location-container-map .location-map {
@@ -1030,7 +1030,7 @@ body {
 .location-container {
     grid-template-columns: auto;
     grid-template-rows: auto auto
-  
+
 }
 
       .location-container .location-container-map .location-map {
