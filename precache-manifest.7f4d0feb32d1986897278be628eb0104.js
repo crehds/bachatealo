@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2a6e9a99b5fce07c468a1493ec782ca1",
-    "url": "/bachatealo/static/media/icomoon.2a6e9a99.eot"
+    "revision": "e7618cbb2cc79c243e19cde653e76fc0",
+    "url": "/bachatealo/static/media/icomoon.e7618cbb.svg"
   },
   {
-    "revision": "ec449aed8eb09c186d44",
-    "url": "/bachatealo/static/css/main.b222a29f.chunk.css"
+    "revision": "8009dbf3872ceb214bb1",
+    "url": "/bachatealo/static/css/main.3aa8f42f.chunk.css"
   },
   {
     "revision": "2e18d71fd96f47fc35f0",
@@ -20,24 +20,24 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/icomoon.6cc3639f.eot"
   },
   {
-    "revision": "741a58641627f05dad002a59f26a3949",
-    "url": "/bachatealo/static/media/icomoon.741a5864.woff"
-  },
-  {
     "revision": "afad00ebe1dbbbff5dc7b32574bf0fa2",
     "url": "/bachatealo/static/media/icomoon.afad00eb.ttf"
   },
   {
-    "revision": "ec449aed8eb09c186d44",
-    "url": "/bachatealo/static/js/main.ec449aed.chunk.js"
+    "revision": "741a58641627f05dad002a59f26a3949",
+    "url": "/bachatealo/static/media/icomoon.741a5864.woff"
+  },
+  {
+    "revision": "8009dbf3872ceb214bb1",
+    "url": "/bachatealo/static/js/main.8009dbf3.chunk.js"
+  },
+  {
+    "revision": "2a6e9a99b5fce07c468a1493ec782ca1",
+    "url": "/bachatealo/static/media/icomoon.2a6e9a99.eot"
   },
   {
     "revision": "17a5367042854d680d46d1c2dd644444",
     "url": "/bachatealo/static/media/icomoon.17a53670.ttf"
-  },
-  {
-    "revision": "e7618cbb2cc79c243e19cde653e76fc0",
-    "url": "/bachatealo/static/media/icomoon.e7618cbb.svg"
   },
   {
     "revision": "02419eb7ffbcbaaeac92bf424a64bb83",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/bachatealo/static/media/platzilogo.b70d1d48.svg"
   },
   {
-    "revision": "457cf315720129f2a224e8a0d556b456",
+    "revision": "af977518364f1ae5fe474eb33a54e752",
     "url": "/bachatealo/index.html"
   }
 ];
