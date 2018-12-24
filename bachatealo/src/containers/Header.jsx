@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import Menu from '../components/Menu.jsx';
 import { connect } from 'react-redux';
+import Portada from '../components/Portada.jsx';
+import Hero from '../components/Hero.jsx';
+import HeaderLayout from '../components/Header-layout.jsx';
 import { addClass } from '../actions/index';
 
 function mapStateToProps(state, props) {
+  //datos de portada
   const menu = state.data.entities.data[props.portada.data].menu;
   const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
+
+  //datos de hero
+  const album = props.hero.media.map((mediaId) => state.data.entities.media[mediaId]);
 
   return {
     menu,
     imgPortada,
+    album,
   };
 }
 
@@ -17,7 +24,7 @@ const mapDispatchToProps = {
   addClass,
 };
 
-class Portada extends Component {
+class Header extends Component {
 
   handleAddClass = async (event) => {
     await this.props.addClass(this.nav);
@@ -41,26 +48,28 @@ class Portada extends Component {
   }
 
   render() {
+    const {
+      portada,
+      hero,
+    } = this.props;
     return (
-      <section className="Portada" id={this.props.portada.sectionId}>
-        {/*Contenedor del logotipo y el menú*/}
-        <header id="header" className="header container">
-          {/*Logotipo*/}
-          <a href="#1" className="logotipo-link">
-            <figure className="logotipo">
-              <img src={this.props.imgPortada} alt="logotipo de Bachatealo"/>
-            </figure>
-          </a>
-          {/* Menú*/}
-          <Menu
-            menu={this.props.menu}
-            handleAddClass={this.handleAddClass}
-            setRef={this.setNavRef}
-          />
-        </header>
-      </section>
+      <HeaderLayout>
+        <Portada
+          id={portada.sectionId}
+          class={portada.data}
+          menu={this.props.menu}
+          imgPortada={this.props.imgPortada}
+          handleAddClass={this.handleAddClass}
+          navRef={this.setNavRef}
+        />
+        <Hero
+          id={hero.sectionId}
+          class={hero.data}
+          album={this.props.album}
+        />
+      </HeaderLayout>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Portada);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

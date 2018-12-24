@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import HandleError from '../containers/Handle-error.jsx';
-import Portada from '../containers/Portada.jsx';
-import Hero from '../containers/Hero.jsx';
 import History from '../containers/History.jsx';
 import Location from '../containers/Location.jsx';
 import Event from '../containers/Eventos.jsx';
 import Fotos from '../containers/Fotos.jsx';
 import Video from '../containers/Video.jsx';
 import Footer from '../containers/Footer.jsx';
-// import Portada from '../components/Portada.jsx';
+import Header from '../containers/Header.jsx';
 import HomeLayout  from '../components/Home-layout.jsx';
 import { connect } from 'react-redux';
 
@@ -52,8 +50,10 @@ class Bachatealo extends Component {
     return (
       <HandleError>
         <HomeLayout>
-          <Portada portada={portada}/>
-          <Hero hero={hero}/>
+          <Header
+            portada={portada}
+            hero={hero}
+          />
           <History history={history}/>
           <Location location={location}/>
           <Event eventos={eventos}/>
