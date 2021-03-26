@@ -38,7 +38,7 @@
             "title": "Videos"
           }
         ],
-        "imgPortada": "./images/paraPortada/logo.svg"
+        "imgPortada": "/images/paraPortada/logo.svg"
       }
     },
     {
@@ -50,39 +50,39 @@
       },
       "media": [
         {
-          "src": "./images/paraHero/7.webp",
+          "src": "/images/paraHero/7.webp",
           "id": "1"
         },
         {
-          "src": "./images/paraHero/3.webp",
+          "src": "/images/paraHero/3.webp",
           "id": "2"
         },
         {
-          "src": "./images/paraHero/9.webp",
+          "src": "/images/paraHero/9.webp",
           "id": "3"
         },
         {
-          "src": "./images/paraHero/5.webp",
+          "src": "/images/paraHero/5.webp",
           "id": "4"
         },
         {
-          "src": "./images/paraHero/1.webp",
+          "src": "/images/paraHero/1.webp",
           "id": "5"
         },
         {
-          "src": "./images/paraHero/6.webp",
+          "src": "/images/paraHero/6.webp",
           "id": "6"
         },
         {
-          "src": "./images/paraHero/2.webp",
+          "src": "/images/paraHero/2.webp",
           "id": "7"
         },
         {
-          "src": "./images/paraHero/8.webp",
+          "src": "/images/paraHero/8.webp",
           "id": "8"
         },
         {
-          "src": "./images/paraHero/4.webp",
+          "src": "/images/paraHero/4.webp",
           "id": "9"
         }
       ]
@@ -96,11 +96,11 @@
       },
       "media": [
         {
-          "src": "./images/paraHistory/rotonda.webp",
+          "src": "/images/paraHistory/rotonda.webp",
           "id": "10"
         },
         {
-          "src": "./images/paraHistory/alameda.webp",
+          "src": "/images/paraHistory/alameda.webp",
           "id": "11"
         }
       ]
@@ -147,7 +147,7 @@
             "linea4": "993-382-261"
           }
         ],
-        "imgEvento": "./images/paraEventos/eventos.webp"
+        "imgEvento": "/images/paraEventos/eventos.webp"
       }
     },
     {
@@ -159,27 +159,27 @@
       },
       "media": [
         {
-          "src": "./images/paraHero/7.webp",
+          "src": "/images/paraHero/7.webp",
           "id": "12"
         },
         {
-          "src": "./images/paraHero/6.webp",
+          "src": "/images/paraHero/6.webp",
           "id": "13"
         },
         {
-          "src": "./images/paraHero/9.webp",
+          "src": "/images/paraHero/9.webp",
           "id": "14"
         },
         {
-          "src": "./images/paraHero/4.webp",
+          "src": "/images/paraHero/4.webp",
           "id": "15"
         },
         {
-          "src": "./images/paraHero/5.webp",
+          "src": "/images/paraHero/5.webp",
           "id": "16"
         },
         {
-          "src": "./images/paraHero/2.webp",
+          "src": "/images/paraHero/2.webp",
           "id": "17"
         }
       ]
@@ -195,7 +195,7 @@
         {
           "id": "18",
           "title": "video",
-          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F303067066926144%2F&show_text=0&width=560"
+          "src": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225802351319283%2F&show_text=false&width=560"
         },
         {
           "id": "19",

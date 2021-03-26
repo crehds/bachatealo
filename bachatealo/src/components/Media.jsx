@@ -9,7 +9,7 @@ class Media extends PureComponent {
     const { src, id } = this.state;
     return (
       <div key={id}>
-        <img src={src} alt={id}/>
+        <img src={process.env.PUBLIC_URL + src} alt={id}/>
       </div>
     );
   }
