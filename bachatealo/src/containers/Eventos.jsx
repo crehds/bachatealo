@@ -37,7 +37,7 @@ class Event extends Component {
           <div className="event">
             <img
               className="event-image"
-              src={this.props.imgEvento}
+              src={process.env.PUBLIC_URL + this.props.imgEvento}
               alt="evento"
             />
           </div>

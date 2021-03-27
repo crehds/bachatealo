@@ -21,6 +21,7 @@
   border:outset var(--redprueba) 3px;
   max-width: inherit;
   max-height: inherit;
+  /* animation: appear 2s ease-in; */
 }
 
 .hero-container div img {
@@ -28,4 +29,16 @@
   width:100%;
   height: 100%;
   vertical-align: top;
+}
+
+.photo__hero {
+  opacity: 0;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

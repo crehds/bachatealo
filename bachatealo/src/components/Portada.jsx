@@ -4,14 +4,14 @@ import Section from './Section.jsx';
 
 function Portada(props) {
   return (
-    <Section
-      id={props.id}
-      class={props.class}
-    >
-      <header id="header" className="header container">
-        <a href="#1" className="logotipo-link">
-          <figure className="logotipo">
-            <img src={props.imgPortada} alt="logotipo de Bachatealo"/>
+    <Section id={props.id} class={props.class}>
+      <header id='header' className='header container'>
+        <a href='#1' className='logotipo-link'>
+          <figure className='logotipo'>
+            <img
+              src={process.env.PUBLIC_URL + props.imgPortada}
+              alt='logotipo de Bachatealo'
+            />
           </figure>
         </a>
         <Menu

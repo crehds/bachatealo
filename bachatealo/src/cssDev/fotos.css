@@ -1,6 +1,6 @@
 .Fotos {
   @apply --component;
-  padding-top:98px;
+  padding-top: 98px;
 }
 
 .fotos-title {
@@ -15,7 +15,7 @@
   & h1 {
     margin-top: 0px;
     border-bottom: groove #a41f28 10px;
-    @media (--video){
+    @media (--video) {
       margin-bottom: 15px;
       font-size: 27px;
     }
@@ -34,11 +34,13 @@
   background: var(--negroprueba1);
   justify-items: center;
 
+  /*Fotos media component*/
   & div {
     border: ridge #56575b 4px;
     display: flex;
     max-width: 70%;
     max-height: 100%;
+    animation: appear 2s ease-in;
 
     & :hover {
       box-shadow: 3px 3px 20px 10px #56575b;
@@ -48,5 +50,14 @@
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
