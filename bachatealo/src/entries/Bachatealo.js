@@ -7,11 +7,14 @@ import Fotos from '../containers/Fotos.jsx';
 import Video from '../containers/Video.jsx';
 import Footer from '../containers/Footer.jsx';
 import Header from '../containers/Header.jsx';
-import HomeLayout  from '../components/Home-layout.jsx';
+import HomeLayout from '../components/Home-layout.jsx';
 import { connect } from 'react-redux';
+import '../cssProd/index.css';
 
 function mapStateToProps(state, props) {
-  const results = state.data.sections.map((sectionId) => state.data.entities.section[sectionId]);
+  const results = state.data.sections.map(
+    (sectionId) => state.data.entities.section[sectionId]
+  );
 
   const sections = {
     portada: {},
@@ -50,16 +53,13 @@ class Bachatealo extends Component {
     return (
       <HandleError>
         <HomeLayout>
-          <Header
-            portada={portada}
-            hero={hero}
-          />
-          <History history={history}/>
-          <Location location={location}/>
-          <Event eventos={eventos}/>
-          <Fotos fotos={fotos}/>
-          <Video videos={videos}/>
-          <Footer footer={footer}/>
+          <Header portada={portada} hero={hero} />
+          <History history={history} />
+          <Location location={location} />
+          <Event eventos={eventos} />
+          <Fotos fotos={fotos} />
+          <Video videos={videos} />
+          <Footer footer={footer} />
         </HomeLayout>
       </HandleError>
     );

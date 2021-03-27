@@ -18,11 +18,11 @@
 @font-face {
  font-family: 'icomoon';
  font-display: auto;
- src:  url('../icomoon2/fonts/icomoon.eot?ygvxp7');
- src:  url('../icomoon2/fonts/icomoon.eot?ygvxp7#iefix') format('embedded-opentype'),
-   url('../icomoon2/fonts/icomoon.ttf?ygvxp7') format('truetype'),
-   url('../icomoon2/fonts/icomoon.woff?ygvxp7') format('woff'),
-   url('../icomoon2/fonts/icomoon.svg?ygvxp7#icomoon') format('svg');
+ src:  url('../assets/icomoon2/fonts/icomoon.eot?ygvxp7');
+ src:  url('../assets/icomoon2/fonts/icomoon.eot?ygvxp7#iefix') format('embedded-opentype'),
+   url('../assets/icomoon2/fonts/icomoon.ttf?ygvxp7') format('truetype'),
+   url('../assets/icomoon2/fonts/icomoon.woff?ygvxp7') format('woff'),
+   url('../assets/icomoon2/fonts/icomoon.svg?ygvxp7#icomoon') format('svg');
  font-weight: normal;
  font-style: normal;
 }
@@ -66,11 +66,11 @@
 @font-face {
   font-family: 'icomoon';
   font-display: auto;
-  src:  url('../icomoon/fonts/icomoon.eot?i8tuuj');
-  src:  url('../icomoon/fonts/icomoon.eot?i8tuuj#iefix') format('embedded-opentype'),
-    url('../icomoon/fonts/icomoon.ttf?i8tuuj') format('truetype'),
-    url('../icomoon/fonts/icomoon.woff?i8tuuj') format('woff'),
-    url('../icomoon/fonts/icomoon.svg?i8tuuj#icomoon') format('svg');
+  src:  url('../assets/icomoon/fonts/icomoon.eot?i8tuuj');
+  src:  url('../assets/icomoon/fonts/icomoon.eot?i8tuuj#iefix') format('embedded-opentype'),
+    url('../assets/icomoon/fonts/icomoon.ttf?i8tuuj') format('truetype'),
+    url('../assets/icomoon/fonts/icomoon.woff?i8tuuj') format('woff'),
+    url('../assets/icomoon/fonts/icomoon.svg?i8tuuj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -703,7 +703,7 @@ body {
     height: 50px;
     background-size: 50px 50px;
     margin: 0 10px;
-    background-image: url("../asset/platzilogo.svg");
+    background-image: url("../assets/platzilogo.svg");
   }
 @media screen and (max-width: 768px) {
 .menu {
