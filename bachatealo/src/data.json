@@ -128,20 +128,20 @@
       "data": {
         "id": "eventos",
         "description": "Eventos",
-        "title": "Chocolatada",
+        "title": "Último evento",
         "details": [
           {
             "id": "2",
             "description": "left",
             "linea1": "Fecha",
             "linea2": "Lugar",
-            "linea3": "Hora de Inicio",
-            "linea4": "Donaciones al"
+            "linea3": "Inicio",
+            "linea4": "Donaciones"
           },
           {
             "id": "3",
             "description": "right",
-            "linea1": "21 de diciembre",
+            "linea1": "21 de diciembre - 2019",
             "linea2": "Municipalidad de los olivos",
             "linea3": "7:00 pm",
             "linea4": "993-382-261"
