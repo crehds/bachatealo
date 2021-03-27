@@ -238,7 +238,7 @@
   padding-top: 2px;
   padding-bottom: 40px;
   color: white;
-  padding-top:98px;
+  padding-top: 98px;
 }
 .history-container {
   border-radius: 10px;
@@ -250,54 +250,59 @@
   grid-column-gap: 10px;
   grid-row-gap: 80px;
   text-align: center
-
 }
 .history-container .history-div {
     overflow: hidden;
-    border: inset #898A8E 3px;
+    border: inset #898a8e 3px;
     border-radius: 10px;
     max-width: inherit;
     max-height: 100%
-
   }
+.history-container .history-div:nth-child(2n + 1) {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 .history-container .history-div .history-title {
-        padding-bottom: 5px;
-        border: ridge #A41F28 5px;
-        margin-left: 30%;
-        margin-right: 30%;
-        padding: 8px;
-        background: #A3000F
-
+      padding-bottom: 5px;
+      border: ridge #a41f28 5px;
+      margin-left: 30%;
+      margin-right: 30%;
+      padding: 8px;
+      background: #a3000f
     }
 .history-container .history-div .history-title h1 {
-          border-left: 10px;
-          border-left-style: groove ;
-          border-left-color: #FF0018;
-          margin:0;
-          padding: 5px;
-          color: #f0f1f1
-
-        }
+        border-left: 10px;
+        border-left-style: groove;
+        border-left-color: #ff0018;
+        margin: 0;
+        padding: 5px;
+        color: #f0f1f1
+      }
 .history-container .history-div p {
       border: solid brown 2px;
-      margin:8px;
+      border-radius: 4px;
+      margin: 8px;
       background: #212226;
-      color: #D4D5D6
-
+      color: #d4d5d6;
+      padding: 8px 10px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      text-align: justify;
+      align-self: center
     }
 .history-container .history-div .history-img {
       width: 100%;
       height: 100%;
     }
 .history-container .history-div:nth-of-type(4) {
-    grid-column:1 / 2;
-    grid-row:2 / 3;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
   }
-.history-container .history-div:nth-of-type(3)  .history-title h1 {
+.history-container .history-div:nth-of-type(3) .history-title h1 {
       border-left: none;
       border-right: 10px;
-      border-right-style: ridge ;
-      border-right-color: #FF0018;
+      border-right-style: ridge;
+      border-right-color: #ff0018;
     }
 .Fotos {
   padding:10px;
@@ -799,17 +804,14 @@ body {
 
 }
 .history-container .history-div .history-title {
-          margin-left: 27%;
-          margin-right: 27%
-
+        margin-left: 27%;
+        margin-right: 27%
     }
 .history-container .history-div .history-title h1 {
-           font-size: 90%
-
-        }
+          font-size: 90%
+      }
 .history-container .history-div p {
         font-size: 70%
-
     }
 .event-container .event:nth-of-type(1) h1 {
         font-size:35px
@@ -827,17 +829,14 @@ body {
 
 }
 .history-container .history-div .history-title {
-          margin-left: 27%;
-          margin-right: 27%
-
+        margin-left: 27%;
+        margin-right: 27%
     }
 .history-container .history-div .history-title h1 {
-           font-size: 90%
-
-        }
+          font-size: 90%
+      }
 .history-container .history-div p {
         font-size: 70%
-
     }
 .event-container .event:nth-of-type(1) h1 {
         font-size:35px
@@ -855,18 +854,15 @@ body {
 
 }
 .history-container .history-div .history-title {
-          padding: 3px;
-          margin-left: 11%;
-          margin-right: 11%
-
+        padding: 3px;
+        margin-left: 11%;
+        margin-right: 11%
     }
 .history-container .history-div .history-title h1 {
-            font-size: 70%
-
-        }
+          font-size: 70%
+      }
 .history-container .history-div p {
         font-size: 30%
-
     }
   }
 @media (--nano) {
@@ -876,18 +872,15 @@ body {
 
 }
 .history-container .history-div .history-title {
-          padding: 3px;
-          margin-left: 11%;
-          margin-right: 11%
-
+        padding: 3px;
+        margin-left: 11%;
+        margin-right: 11%
     }
 .history-container .history-div .history-title h1 {
-            font-size: 70%
-
-        }
+          font-size: 70%
+      }
 .history-container .history-div p {
         font-size: 30%
-
     }
   }
 @media (min-width:1206px) and (max-width: 1326px) {
@@ -925,9 +918,8 @@ body {
 
 }
 .history-container .history-div .history-title h1 {
-            font-size: 95%
-
-        }
+          font-size: 95%
+      }
   }
 @media (--medium) {
 .menu li {
@@ -936,9 +928,8 @@ body {
 
 }
 .history-container .history-div .history-title h1 {
-            font-size: 95%
-
-        }
+          font-size: 95%
+      }
   }
 @media screen and (max-width: 480px) {
 .hero-container {
@@ -972,36 +963,30 @@ body {
   }
 @media (min-width: 346px) and (max-width: 567px) {
 .history-container .history-div .history-title {
-          margin-left: 20%;
-          margin-right: 20%;
-          padding: 5px
-
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 5px
     }
 .history-container .history-div .history-title h1 {
-            font-size: 80%
-
-        }
+          font-size: 80%
+      }
 .history-container .history-div p {
         font-size: 50%
-
     }
-        }
+      }
 @media (--history-title) {
 .history-container .history-div .history-title {
-          margin-left: 20%;
-          margin-right: 20%;
-          padding: 5px
-
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 5px
     }
 .history-container .history-div .history-title h1 {
-            font-size: 80%
-
-        }
+          font-size: 80%
+      }
 .history-container .history-div p {
         font-size: 50%
-
     }
-        }
+      }
 @media screen and (max-width: 975px) {
 .fotos-title h1 {
       margin-bottom: 15px;

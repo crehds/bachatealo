@@ -1,6 +1,6 @@
 .History {
   @apply --component;
-  padding-top:98px;
+  padding-top: 98px;
 }
 
 .history-container {
@@ -15,70 +15,77 @@
 
   & .history-div {
     overflow: hidden;
-    border: inset #898A8E 3px;
+    border: inset #898a8e 3px;
     border-radius: 10px;
     max-width: inherit;
     max-height: 100%;
 
+    &:nth-child(2n + 1) {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     & .history-title {
-        padding-bottom: 5px;
-        border: ridge #A41F28 5px;
-        margin-left: 30%;
-        margin-right: 30%;
-        padding: 8px;
-        background: #A3000F;
+      padding-bottom: 5px;
+      border: ridge #a41f28 5px;
+      margin-left: 30%;
+      margin-right: 30%;
+      padding: 8px;
+      background: #a3000f;
+
+      @media (--small) {
+        margin-left: 27%;
+        margin-right: 27%;
+      }
+
+      @media (--history-title) {
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 5px;
+      }
+
+      @media (--nano) {
+        padding: 3px;
+        margin-left: 11%;
+        margin-right: 11%;
+      }
+
+      & h1 {
+        border-left: 10px;
+        border-left-style: groove;
+        border-left-color: #ff0018;
+        margin: 0;
+        padding: 5px;
+        color: #f0f1f1;
+
+        @media (--medium) {
+          font-size: 95%;
+        }
 
         @media (--small) {
-          margin-left: 27%;
-          margin-right: 27%;
+          font-size: 90%;
         }
 
         @media (--history-title) {
-          margin-left: 20%;
-          margin-right: 20%;
-          padding: 5px;
+          font-size: 80%;
         }
 
         @media (--nano) {
-          padding: 3px;
-          margin-left: 11%;
-          margin-right: 11%;
+          font-size: 70%;
         }
-
-        & h1 {
-          border-left: 10px;
-          border-left-style: groove ;
-          border-left-color: #FF0018;
-          margin:0;
-          padding: 5px;
-          color: #f0f1f1;
-
-          @media (--medium) {
-            font-size: 95%;
-          }
-
-          @media (--small) {
-           font-size: 90%;
-          }
-
-          @media (--history-title) {
-            font-size: 80%;
-          }
-
-          @media (--nano) {
-            font-size: 70%;
-          }
-
-        }
-
+      }
     }
 
     & p {
       border: solid brown 2px;
-      margin:8px;
+      border-radius: 4px;
+      margin: 8px;
       background: #212226;
-      color: #D4D5D6;
-
+      color: #d4d5d6;
+      padding: 8px 10px;
+      font-family: system-ui;
+      text-align: justify;
+      align-self: center;
       @media (--small) {
         font-size: 70%;
       }
@@ -90,30 +97,25 @@
       @media (--nano) {
         font-size: 30%;
       }
-
     }
 
     & .history-img {
       width: 100%;
       height: 100%;
     }
-
   }
 
   & .history-div:nth-of-type(4) {
-    grid-column:1 / 2;
-    grid-row:2 / 3;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
   }
 
   & .history-div:nth-of-type(3) {
-
-    &  .history-title h1 {
+    & .history-title h1 {
       border-left: none;
       border-right: 10px;
-      border-right-style: ridge ;
-      border-right-color: #FF0018;
+      border-right-style: ridge;
+      border-right-color: #ff0018;
     }
-
   }
-
 }
