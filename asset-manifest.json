@@ -1,11 +1,21 @@
 {
-  "main.js": "/bachatealo/static/js/main.dec1c4e3.chunk.js",
-  "main.js.map": "/bachatealo/static/js/main.dec1c4e3.chunk.js.map",
-  "static/js/1.68e7353f.chunk.js": "/bachatealo/static/js/1.68e7353f.chunk.js",
-  "static/js/1.68e7353f.chunk.js.map": "/bachatealo/static/js/1.68e7353f.chunk.js.map",
-  "runtime~main.js": "/bachatealo/static/js/runtime~main.e4287331.js",
-  "runtime~main.js.map": "/bachatealo/static/js/runtime~main.e4287331.js.map",
-  "index.html": "/bachatealo/index.html",
-  "precache-manifest.ee03fe648b467c26bb530e01d6155851.js": "/bachatealo/precache-manifest.ee03fe648b467c26bb530e01d6155851.js",
-  "service-worker.js": "/bachatealo/service-worker.js"
+  "files": {
+    "main.css": "/bachatealo/static/css/main.da5a635a.chunk.css",
+    "main.js": "/bachatealo/static/js/main.9053d322.chunk.js",
+    "main.js.map": "/bachatealo/static/js/main.9053d322.chunk.js.map",
+    "runtime-main.js": "/bachatealo/static/js/runtime-main.e32f14a0.js",
+    "runtime-main.js.map": "/bachatealo/static/js/runtime-main.e32f14a0.js.map",
+    "static/js/2.2bda5c15.chunk.js": "/bachatealo/static/js/2.2bda5c15.chunk.js",
+    "static/js/2.2bda5c15.chunk.js.map": "/bachatealo/static/js/2.2bda5c15.chunk.js.map",
+    "index.html": "/bachatealo/index.html",
+    "static/css/main.da5a635a.chunk.css.map": "/bachatealo/static/css/main.da5a635a.chunk.css.map",
+    "static/js/2.2bda5c15.chunk.js.LICENSE.txt": "/bachatealo/static/js/2.2bda5c15.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/bachatealo/static/media/platzilogo.a0f506b2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e32f14a0.js",
+    "static/js/2.2bda5c15.chunk.js",
+    "static/css/main.da5a635a.chunk.css",
+    "static/js/main.9053d322.chunk.js"
+  ]
 }
