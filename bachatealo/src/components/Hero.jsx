@@ -9,7 +9,7 @@ export default class Hero extends PureComponent {
         (e) => {
           e.style.animationName = 'appear';
           e.style.animationDuration = '1.5s';
-          e.style.aniamtionIterationCount = '1';
+          e.style.animationIterationCount = '1';
           e.style.animationTimingFunction = 'cubic-bezier(0.57, 0.07, 0.44, 2)';
           e.style.opacity = '1';
         },
