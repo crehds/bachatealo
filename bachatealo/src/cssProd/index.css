@@ -32,7 +32,8 @@
  speak: none;
  font-style: normal;
  font-weight: normal;
- font-feature-settings: normal;
+ -webkit-font-feature-settings: normal;
+         font-feature-settings: normal;
  font-variant: normal;
  text-transform: none;
  line-height: 1;
@@ -80,7 +81,8 @@
   speak: none;
   font-style: normal;
   font-weight: normal;
-  font-feature-settings: normal;
+  -webkit-font-feature-settings: normal;
+          font-feature-settings: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
