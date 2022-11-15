@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Section from './Section.jsx';
 import Media from './Media.jsx';
 
-export default class Hero extends Component {
+export default class Hero extends PureComponent {
   addAnimation = (elements) => {
-    console.log(elements);
     elements.forEach((e, i) =>
       setTimeout(
         (e) => {
@@ -38,18 +37,3 @@ export default class Hero extends Component {
     );
   }
 }
-
-// function Hero(props) {
-//   return (
-//     <Section id={props.id} class={props.class}>
-//       {/*Contenedor de las fotos iniciales*/}
-//       <div className='hero-container'>
-//         {props.album.map((item, i) => (
-//           <Media {...item} key={item.id} />
-//         ))}
-//       </div>
-//     </Section>
-//   );
-// }
-
-// export default Hero;
