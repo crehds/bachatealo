@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/bachatealo/static/css/main.da5a635a.chunk.css",
-    "main.js": "/bachatealo/static/js/main.9053d322.chunk.js",
-    "main.js.map": "/bachatealo/static/js/main.9053d322.chunk.js.map",
-    "runtime-main.js": "/bachatealo/static/js/runtime-main.e32f14a0.js",
-    "runtime-main.js.map": "/bachatealo/static/js/runtime-main.e32f14a0.js.map",
-    "static/js/2.2bda5c15.chunk.js": "/bachatealo/static/js/2.2bda5c15.chunk.js",
-    "static/js/2.2bda5c15.chunk.js.map": "/bachatealo/static/js/2.2bda5c15.chunk.js.map",
+    "main.css": "/bachatealo/static/css/main.c82ad10a.css",
+    "main.js": "/bachatealo/static/js/main.c9ca240b.js",
+    "static/media/platzilogo.svg": "/bachatealo/static/media/platzilogo.a0f506b2dc55a46e0f03.svg",
+    "static/media/icomoon.svg?ygvxp7": "/bachatealo/static/media/icomoon.9c02d168fd063047ddb1.svg",
+    "static/media/icomoon.eot?ygvxp7": "/bachatealo/static/media/icomoon.91917ed1e8de446efe3d.eot",
+    "static/media/icomoon.woff?ygvxp7": "/bachatealo/static/media/icomoon.849591a017c9867df958.woff",
+    "static/media/icomoon.ttf?ygvxp7": "/bachatealo/static/media/icomoon.db0af7f76f58743c5f09.ttf",
+    "static/media/icomoon.eot?i8tuuj": "/bachatealo/static/media/icomoon.c8c088f27171cbf18a47.eot",
+    "static/media/icomoon.woff?i8tuuj": "/bachatealo/static/media/icomoon.753da3de0b7c57e1d288.woff",
+    "static/media/icomoon.ttf?i8tuuj": "/bachatealo/static/media/icomoon.e444558e11139933aa7a.ttf",
     "index.html": "/bachatealo/index.html",
-    "static/css/main.da5a635a.chunk.css.map": "/bachatealo/static/css/main.da5a635a.chunk.css.map",
-    "static/js/2.2bda5c15.chunk.js.LICENSE.txt": "/bachatealo/static/js/2.2bda5c15.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/bachatealo/static/media/platzilogo.a0f506b2.svg"
+    "static/media/icomoon.svg?i8tuuj": "/bachatealo/static/media/icomoon.b72d3ea206672f906758.svg",
+    "main.c82ad10a.css.map": "/bachatealo/static/css/main.c82ad10a.css.map",
+    "main.c9ca240b.js.map": "/bachatealo/static/js/main.c9ca240b.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.e32f14a0.js",
-    "static/js/2.2bda5c15.chunk.js",
-    "static/css/main.da5a635a.chunk.css",
-    "static/js/main.9053d322.chunk.js"
+    "static/css/main.c82ad10a.css",
+    "static/js/main.c9ca240b.js"
   ]
 }
