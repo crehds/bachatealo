@@ -6,8 +6,11 @@ import { createStore } from 'redux';
 import Bachatealo from './Bachatealo';
 import reducer from '../reducers/data';
 
+let container = null;
+const realMatchMedia = window.matchMedia;
+
 function mount() {
-  const container = document.createElement('div');
+  container = document.createElement('div');
   document.body.appendChild(container);
 
   act(() => {
@@ -22,10 +25,17 @@ function mount() {
   return container;
 }
 
-function unmount(container) {
-  ReactDOM.unmountComponentAtNode(container);
-  document.body.removeChild(container);
-}
+// Teardown belongs here rather than at the end of each test: a failing
+// assertion throws, and an unmount that never runs would leak the tree and
+// its resize listener into the next test.
+afterEach(() => {
+  if (container) {
+    ReactDOM.unmountComponentAtNode(container);
+    container.remove();
+    container = null;
+  }
+  window.matchMedia = realMatchMedia;
+});
 
 function click(element) {
   act(() => {
@@ -34,19 +44,18 @@ function click(element) {
 }
 
 it('renders the landing page without crashing', () => {
-  const container = mount();
-  unmount(container);
+  expect(mount().querySelector('nav.menu')).not.toBeNull();
 });
 
 it('opens and closes the mobile menu, keeping aria-expanded honest', () => {
-  const container = mount();
-  const button = container.querySelector('#burguer-menu');
-  const nav = container.querySelector('nav.menu');
+  const root = mount();
+  const button = root.querySelector('#burguer-menu');
+  const nav = root.querySelector('nav.menu');
 
   // A real button is what makes the menu reachable by keyboard at all.
   expect(button.tagName).toBe('BUTTON');
   expect(button.getAttribute('aria-controls')).toBe('menu-list');
-  expect(container.querySelector('#menu-list')).not.toBeNull();
+  expect(root.querySelector('#menu-list')).not.toBeNull();
 
   expect(button.getAttribute('aria-expanded')).toBe('false');
   expect(nav.className).not.toContain('is-active');
@@ -58,20 +67,41 @@ it('opens and closes the mobile menu, keeping aria-expanded honest', () => {
   click(button);
   expect(button.getAttribute('aria-expanded')).toBe('false');
   expect(nav.className).not.toContain('is-active');
-
-  unmount(container);
 });
 
-it('exposes exactly one page heading', () => {
-  const container = mount();
+it('closes an open menu once the viewport grows past the breakpoint', () => {
+  const root = mount();
+  const button = root.querySelector('#burguer-menu');
 
-  const headings = container.querySelectorAll('h1');
-  expect(headings).toHaveLength(1);
-  expect(headings[0].textContent).toBe('Bachatealo');
+  click(button);
+  expect(button.getAttribute('aria-expanded')).toBe('true');
 
-  // Every section carries a heading, including the one whose title is only
-  // available to assistive technology.
-  expect(container.querySelectorAll('h2').length).toBeGreaterThan(0);
+  window.matchMedia = () => ({ matches: true });
+  act(() => {
+    window.dispatchEvent(new Event('resize'));
+  });
 
-  unmount(container);
+  expect(button.getAttribute('aria-expanded')).toBe('false');
+  expect(root.querySelector('nav.menu').className).not.toContain('is-active');
+});
+
+it('gives every section a heading under a single page heading', () => {
+  const root = mount();
+
+  const h1 = root.querySelectorAll('h1');
+  expect(h1).toHaveLength(1);
+  expect(h1[0].textContent).toBe('Bachatealo');
+
+  // Every section heading, in document order. Asserting the whole list
+  // catches a heading that goes missing and one that appears twice.
+  const headings = [...root.querySelectorAll('h2')].map((h) => h.textContent);
+  expect(headings).toEqual([
+    '¿Cómo empezamos?',
+    'Actualidad',
+    'Ubicación',
+    'Último evento',
+    'Momentos Destacados...',
+    'Recuerdos...',
+    'Programación y diseño',
+  ]);
 });
