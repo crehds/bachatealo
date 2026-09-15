@@ -9,6 +9,7 @@ import Footer from '../containers/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
 import { connect } from 'react-redux';
+import { isEventVisible } from '../utils/events';
 import '../cssProd/index.css';
 
 function mapStateToProps(state, props) {
@@ -35,6 +36,7 @@ function mapStateToProps(state, props) {
 
   return {
     ...sections,
+    showEvents: isEventVisible(state.data.entities.data[sections.eventos.data]),
   };
 }
 
@@ -49,6 +51,7 @@ class Bachatealo extends Component {
       fotos,
       videos,
       footer,
+      showEvents,
     } = this.props;
     return (
       <HandleError>
@@ -56,7 +59,7 @@ class Bachatealo extends Component {
           <Header portada={portada} hero={hero} />
           <History history={history} />
           <Location location={location} />
-          <Event eventos={eventos} />
+          {showEvents && <Event eventos={eventos} />}
           <Fotos fotos={fotos} />
           <Video videos={videos} />
           <Footer footer={footer} />

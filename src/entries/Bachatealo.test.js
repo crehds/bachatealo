@@ -99,9 +99,22 @@ it('gives every section a heading under a single page heading', () => {
     '¿Cómo empezamos?',
     'Actualidad',
     'Ubicación',
-    'Último evento',
     'Momentos Destacados...',
     'Recuerdos...',
     'Programación y diseño',
   ]);
+});
+
+it('hides the events section and its menu link while no event is announced', () => {
+  const root = mount();
+
+  // data.json currently has active: false, so neither may appear.
+  expect(root.querySelector('section.Event')).toBeNull();
+
+  const links = [...root.querySelectorAll('#menu-list a')];
+  expect(links.map((a) => a.textContent)).not.toContain('Eventos');
+  expect(links.map((a) => a.getAttribute('href'))).not.toContain('#5');
+
+  // The rest of the menu is untouched.
+  expect(links.map((a) => a.textContent)).toContain('Fotos');
 });

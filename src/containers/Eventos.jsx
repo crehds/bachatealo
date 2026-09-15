@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { formatEventDate } from '../utils/events';
 
 function mapStateToProps(state, props) {
-  const title = state.data.entities.data[props.eventos.data].title;
-  const imgEvento = state.data.entities.data[props.eventos.data].imgEvento;
-  const details = state.data.entities.data[props.eventos.data].details;
+  const { title, evento, imgEvento } = state.data.entities.data[
+    props.eventos.data
+  ];
+
   return {
     title,
-    details,
+    evento,
     imgEvento,
   };
 }
 
 class Event extends Component {
   render() {
+    const { evento } = this.props;
+
+    // Label and value are paired here rather than in two parallel arrays in
+    // data.json, where a field added to one side and not the other silently
+    // shifted every row out of alignment.
+    const rows = [
+      ['Fecha', formatEventDate(evento.fecha)],
+      ['Lugar', evento.lugar],
+      ['Inicio', evento.inicio],
+      ['Donaciones', evento.contacto],
+    ];
+
     return (
       <section className="Event" id={this.props.eventos.sectionId}>
         <div className="event-container">
@@ -22,17 +36,16 @@ class Event extends Component {
           </div>
           {/*Este event tiene display de flex*/}
           <div className="event">
-            {this.props.details.map((details) => (
-              <div
-                className="event-flexcontainer"
-                key={details.id}
-              >
-                <p>{details.linea1}</p>
-                <p>{details.linea2}</p>
-                <p>{details.linea3}</p>
-                <p>{details.linea4}</p>
-              </div>
-            ))}
+            <div className="event-flexcontainer">
+              {rows.map(([label]) => (
+                <p key={label}>{label}</p>
+              ))}
+            </div>
+            <div className="event-flexcontainer">
+              {rows.map(([label, value]) => (
+                <p key={label}>{value}</p>
+              ))}
+            </div>
           </div>
           <div className="event">
             <img

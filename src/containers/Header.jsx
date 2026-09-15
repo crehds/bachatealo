@@ -3,10 +3,18 @@ import { connect } from 'react-redux';
 import Portada from '../components/Portada.jsx';
 import Hero from '../components/Hero.jsx';
 import HeaderLayout from '../components/Header-layout.jsx';
+import { findEventSection, isEventVisible } from '../utils/events';
 
 function mapStateToProps(state, props) {
   //datos de portada
-  const menu = state.data.entities.data[props.portada.data].menu;
+  // The events link must disappear with the section it points at, or the
+  // menu offers a jump to an anchor that is no longer rendered.
+  const eventSection = findEventSection(state);
+  const menu = state.data.entities.data[props.portada.data].menu.filter(
+    (item) =>
+      isEventVisible(eventSection) ||
+      item.href !== "#" + eventSection.sectionId
+  );
   const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
 
   //datos de hero
