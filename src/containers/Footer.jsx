@@ -20,7 +20,7 @@ class Footer extends Component {
       redesSociales,
     } = this.props.details;
     return (
-      <section className="Footer" id={this.props.idFooter}>
+      <section className="Footer" id={this.props.footer.sectionId}>
         {/*Contenedor del pie de página*/}
         <div className="footer-container">
           {/*Datos del programador*/}

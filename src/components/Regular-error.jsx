@@ -1,9 +1,12 @@
 import React from 'react';
 
-function RegularError(props) {
+const errorImage = `${process.env.PUBLIC_URL}/images/paraError/error.jpg`;
+
+function RegularError() {
   return (
     <div>
-      <img src={props.src} alt=""/>
+      {/* Decorative: the heading below already carries the message. */}
+      <img src={errorImage} alt="" />
       <h1 style={ { color: 'white' } }>
         Ha ocurrido un error
       </h1>
