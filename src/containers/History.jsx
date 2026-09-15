@@ -18,7 +18,7 @@ class History extends Component {
           {/*Inicia primera parte*/}
           <div className='history-div'>
             <div className='history-title'>
-              <h1>¿Cómo empezamos?</h1>
+              <h2>¿Cómo empezamos?</h2>
             </div>
             <p>
               A inicios del año 2017 un grupo de amigos observaba a grupos de
@@ -55,7 +55,7 @@ class History extends Component {
           {/*Inicia segunda parte*/}
           <div className='history-div'>
             <div className='history-title'>
-              <h1>Actualidad</h1>
+              <h2>Actualidad</h2>
             </div>
             <p>
               Al pasar los años, siempre existen cambios entre los cuales nos

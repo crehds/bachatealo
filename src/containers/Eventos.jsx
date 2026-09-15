@@ -18,7 +18,7 @@ class Event extends Component {
       <section className="Event" id={this.props.eventos.sectionId}>
         <div className="event-container">
           <div className="event">
-            <h1>{this.props.title}</h1>
+            <h2>{this.props.title}</h2>
           </div>
           {/*Este event tiene display de flex*/}
           <div className="event">

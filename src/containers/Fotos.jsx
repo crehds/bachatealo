@@ -17,7 +17,7 @@ class Fotos extends Component {
       <section className="Fotos" id={this.props.fotos.sectionId}>
         {/*Titulo independiente del contenedor*/}
         <div className="fotos-title">
-          <h1>{this.props.title}</h1>
+          <h2>{this.props.title}</h2>
         </div>
         {/*Contenedor de las fotos*/}
         <div className="fotos container">

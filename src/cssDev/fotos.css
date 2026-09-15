@@ -12,7 +12,7 @@
   box-shadow: 0px -10px 20px 5px #ff0018;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  & h1 {
+  & h2 {
     margin-top: 0px;
     border-bottom: groove #a41f28 10px;
     @media (--video) {
