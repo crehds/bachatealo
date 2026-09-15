@@ -33,7 +33,12 @@ class Header extends Component {
   // Above the breakpoint the menu is laid out inline, so an open mobile menu
   // must not survive a resize past it.
   handleIsActive = () => {
-    if (window.matchMedia('screen and (min-width:769px)').matches) {
+    // Guarded: resize fires continuously, and setState on an already
+    // closed menu would re-render the header for nothing.
+    if (
+      this.state.isMenuOpen &&
+      window.matchMedia('screen and (min-width:769px)').matches
+    ) {
       this.setState({ isMenuOpen: false });
     }
   };
