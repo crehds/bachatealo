@@ -6,42 +6,11 @@ const initialState = {
   sections: schema.result.sections,
 };
 
-const hideShow = async (menu) => {
-  if (menu.classList.contains('is-active')) {
-    await menu.classList.remove('is-active');
-  } else {
-    await menu.classList.add('is-active');
-  }
-};
-
-const validation = async (event, burguerButton, classL) => {
-  if (event.matches) {
-    await burguerButton.addEventListener('click', hideShow(classL));
-  } else {
-    await burguerButton.removeEventListener('click', hideShow);
-  }
-
-};
-
-function data(state = { ...initialState }, action) {
-  switch (action.type) {
-    case 'ADD_CLASS': {
-
-      const burguerButton = document.querySelector('#burguer-menu');
-      const media = window.matchMedia('screen and (max-width: 767px)');
-
-      validation(media, burguerButton, action.payload.classL);
-
-      return {
-        ...state,
-      };
-    }
-
-    default:
-      return {
-        ...state,
-      };
-  }
+function data(state = initialState) {
+  // The store holds the normalized contents of data.json, which never change
+  // at runtime. Returning the same reference keeps connected containers from
+  // re-rendering on unrelated dispatches.
+  return state;
 }
 
 const handle = combineReducers({

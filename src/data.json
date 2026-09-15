@@ -220,22 +220,26 @@
             {
               "id": "1",
               "description": "icon1-facebook",
-              "href": "https://www.facebook.com/checa.rh"
+              "href": "https://www.facebook.com/checa.rh",
+              "name": "Facebook"
             },
             {
               "id": "2",
               "description": "icon1-twitter",
-              "href": "https://twitter.com/crehds1"
+              "href": "https://twitter.com/crehds1",
+              "name": "Twitter"
             },
             {
               "id": "3",
               "description": "icon1-github",
-              "href": "https://github.com/crehds/bachatealo"
+              "href": "https://github.com/crehds/bachatealo",
+              "name": "GitHub"
             },
             {
               "id": "4",
               "description": "platzi",
-              "href": "https://platzi.com/@Crehds/"
+              "href": "https://platzi.com/@Crehds/",
+              "name": "Platzi"
             }
           ]
         }

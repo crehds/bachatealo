@@ -39,7 +39,7 @@
     font-size: 28px;
     max-height: 100%;
 
-    & h1 {
+    & h2 {
       color: #f0becb;
 
       @media (--small) {

@@ -25,7 +25,7 @@ class Footer extends Component {
         <div className="footer-container">
           {/*Datos del programador*/}
           <div className="footer-details">
-            <h1>{titleFooter}</h1>
+            <h2>{titleFooter}</h2>
             <p>{name}</p>
             <p>{numero}</p>
             <p>{correo}</p>
@@ -37,6 +37,7 @@ class Footer extends Component {
                 key={red.id}
                 href={red.href}
                 className={red.description}
+                aria-label={red.name}
                 target="_blank"
                 rel="noopener noreferrer"
               >

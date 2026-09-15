@@ -50,7 +50,7 @@
         margin-right: 11%;
       }
 
-      & h1 {
+      & h2 {
         border-left: 10px;
         border-left-style: groove;
         border-left-color: #ff0018;
@@ -111,7 +111,7 @@
   }
 
   & .history-div:nth-of-type(3) {
-    & .history-title h1 {
+    & .history-title h2 {
       border-left: none;
       border-right: 10px;
       border-right-style: ridge;
