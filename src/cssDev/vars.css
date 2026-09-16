@@ -5,9 +5,7 @@
   --black: #2E2324;
   --redLow: rgba(210, 6, 6, 0.4);
   --redprueba: #a41f28;
-  --negroprueba: #212226;
   --negroprueba1: #0a0b0f;
-  --rojoframbuesa: #f0becb;
   --rojoapagado: #a41f28;
   --containerGrid: {
     max-width: 100%;
@@ -33,7 +31,6 @@
 @custom-media --event screen and (width <= 645px);
 /* @custom-media --small screen and (480 <= width <= 768); */
 @custom-media --location (min-width: 480px) and (width <= 645px);
-@custom-media --menuli (min-width: 480px) and (max-width: 567px);
 @custom-media --history-title (min-width: 346px) and (max-width: 567px);
 @custom-media --extra-small1 (min-width: 300px) and (width <= 480px);
 @custom-media --extra-small screen and (max-width: 480px);

@@ -129,24 +129,13 @@
         "id": "eventos",
         "description": "Eventos",
         "title": "Último evento",
-        "details": [
-          {
-            "id": "2",
-            "description": "left",
-            "linea1": "Fecha",
-            "linea2": "Lugar",
-            "linea3": "Inicio",
-            "linea4": "Donaciones"
-          },
-          {
-            "id": "3",
-            "description": "right",
-            "linea1": "21 de diciembre - 2019",
-            "linea2": "Municipalidad de los olivos",
-            "linea3": "7:00 pm",
-            "linea4": "993-382-261"
-          }
-        ],
+        "active": false,
+        "evento": {
+          "fecha": "2019-12-21",
+          "lugar": "Municipalidad de los olivos",
+          "inicio": "7:00 pm",
+          "contacto": "993-382-261"
+        },
         "imgEvento": "/images/paraEventos/eventos.webp"
       }
     },
@@ -220,22 +209,26 @@
             {
               "id": "1",
               "description": "icon1-facebook",
-              "href": "https://www.facebook.com/checa.rh"
+              "href": "https://www.facebook.com/checa.rh",
+              "name": "Facebook"
             },
             {
               "id": "2",
               "description": "icon1-twitter",
-              "href": "https://twitter.com/crehds1"
+              "href": "https://twitter.com/crehds1",
+              "name": "Twitter"
             },
             {
               "id": "3",
               "description": "icon1-github",
-              "href": "https://github.com/crehds/bachatealo"
+              "href": "https://github.com/crehds/bachatealo",
+              "name": "GitHub"
             },
             {
               "id": "4",
               "description": "platzi",
-              "href": "https://platzi.com/@Crehds/"
+              "href": "https://platzi.com/@Crehds/",
+              "name": "Platzi"
             }
           ]
         }

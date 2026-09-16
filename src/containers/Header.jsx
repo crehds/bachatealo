@@ -3,11 +3,18 @@ import { connect } from 'react-redux';
 import Portada from '../components/Portada.jsx';
 import Hero from '../components/Hero.jsx';
 import HeaderLayout from '../components/Header-layout.jsx';
-import { addClass } from '../actions/index';
+import { findEventSection, isEventVisible } from '../utils/events';
 
 function mapStateToProps(state, props) {
   //datos de portada
-  const menu = state.data.entities.data[props.portada.data].menu;
+  // The events link must disappear with the section it points at, or the
+  // menu offers a jump to an anchor that is no longer rendered.
+  const eventSection = findEventSection(state);
+  const menu = state.data.entities.data[props.portada.data].menu.filter(
+    (item) =>
+      isEventVisible(eventSection) ||
+      item.href !== "#" + eventSection.sectionId
+  );
   const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
 
   //datos de hero
@@ -20,36 +27,36 @@ function mapStateToProps(state, props) {
   };
 }
 
-const mapDispatchToProps = {
-  addClass,
-};
-
 class Header extends Component {
-
-  //interactividad del burguer menu
-  handleAddClass = async (event) => {
-    await this.props.addClass(this.nav);
+  // Whether the mobile menu is open is view state, so it lives here rather
+  // than as a class toggled on a DOM node from inside a reducer.
+  state = {
+    isMenuOpen: false,
   };
 
-  //Elimina el 'is-active' si deja activado al hacer un resize
-  handleIsActive = async () => {
-    const media = window.matchMedia('screen and (min-width:769px)');
-    if (media.matches) {
-      if (this.nav.classList.contains('is-active')) {
-        await this.nav.classList.remove('is-active');
-      }
+  toggleMenu = () => {
+    this.setState((previous) => ({ isMenuOpen: !previous.isMenuOpen }));
+  };
+
+  // Above the breakpoint the menu is laid out inline, so an open mobile menu
+  // must not survive a resize past it.
+  handleIsActive = () => {
+    // Guarded: resize fires continuously, and setState on an already
+    // closed menu would re-render the header for nothing.
+    if (
+      this.state.isMenuOpen &&
+      window.matchMedia('screen and (min-width:769px)').matches
+    ) {
+      this.setState({ isMenuOpen: false });
     }
   };
 
-  //referenciando el menu
-  setNavRef = element => (
-    this.nav = element
-  );
+  componentDidMount() {
+    window.addEventListener('resize', this.handleIsActive);
+  }
 
-  //Por si no carga la página en tamaño de móvil
-  //al realizar resize se añadirá la interactividad
-  async componentDidMount() {
-    await window.addEventListener('resize', this.handleIsActive);
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleIsActive);
   }
 
   render() {
@@ -64,8 +71,8 @@ class Header extends Component {
           class={portada.data}
           menu={this.props.menu}
           imgPortada={this.props.imgPortada}
-          handleAddClass={this.handleAddClass}
-          navRef={this.setNavRef}
+          isMenuOpen={this.state.isMenuOpen}
+          onToggleMenu={this.toggleMenu}
         />
         <Hero
           id={hero.sectionId}
@@ -77,4 +84,4 @@ class Header extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

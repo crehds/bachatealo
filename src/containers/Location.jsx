@@ -23,6 +23,7 @@ class Location extends Component {
     } = this.props;
     return (
       <section className="Location" id={this.props.location.sectionId}>
+        <h2 className="visually-hidden">{this.props.title}</h2>
         {/*Contenedor de la ubicación*/}
         <div className="location-container">
           {/*contenedor del mapa*/}

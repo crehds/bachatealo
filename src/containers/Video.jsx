@@ -18,7 +18,7 @@ class Video extends Component {
       <section className='Video' id={this.props.videos.sectionId}>
         {/*Titulo independiente del contenedor*/}
         <div className='video-title'>
-          <h1>{this.props.title}</h1>
+          <h2>{this.props.title}</h2>
         </div>
         {/*Contenedor de los videos*/}
         <div className='video container'>

@@ -1,15 +1,12 @@
 import React, { PureComponent } from 'react';
 
 class Media extends PureComponent {
-  state = {
-    ...this.props,
-  };
-
   render() {
-    const { src, id, className } = this.state;
+    const { src, className, alt } = this.props;
     return (
-      <div key={id} className={className}>
-        <img src={process.env.PUBLIC_URL + src} alt={id} />
+      <div className={className}>
+        {/* Per-image alt text belongs in src/data.json alongside each media entry once someone writes real descriptions */}
+        <img src={process.env.PUBLIC_URL + src} alt={alt || ''} />
       </div>
     );
   }

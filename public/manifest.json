@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bachatealo",
+  "name": "Bachatealo",
+  "description": "Bachatealo es una comunidad de baile de bachata y salsa en Los Olivos, Lima. Clases y prácticas los martes, jueves y sábados de 8 pm a 12 pm.",
+  "lang": "es",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +12,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0a0b0f",
+  "background_color": "#0a0b0f"
 }

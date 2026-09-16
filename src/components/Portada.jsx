@@ -6,6 +6,9 @@ function Portada(props) {
   return (
     <Section id={props.id} class={props.class}>
       <header id='header' className='header container'>
+        {/* The only h1 on the page: the logo is an image, so the page needs a
+            text heading that assistive technology and crawlers can read. */}
+        <h1 className='visually-hidden'>Bachatealo</h1>
         <a href='#1' className='logotipo-link'>
           <figure className='logotipo'>
             <img
@@ -16,8 +19,8 @@ function Portada(props) {
         </a>
         <Menu
           menu={props.menu}
-          handleAddClass={props.handleAddClass}
-          setRef={props.navRef}
+          isOpen={props.isMenuOpen}
+          onToggle={props.onToggleMenu}
         />
       </header>
     </Section>
