@@ -22,12 +22,17 @@ it('throws a clear error when used outside SiteDataProvider', () => {
     .spyOn(console, 'error')
     .mockImplementation(() => {});
 
-  expect(() => {
-    act(() => {
-      ReactDOM.render(<ReadsSiteData />, container);
-    });
-  }).toThrow('useSiteData must be used within a SiteDataProvider');
-
-  consoleError.mockRestore();
-  container.remove();
+  try {
+    expect(() => {
+      act(() => {
+        ReactDOM.render(<ReadsSiteData />, container);
+      });
+    }).toThrow('useSiteData must be used within a SiteDataProvider');
+  } finally {
+    // Unconditional: if the assertion above ever fails, the failure must
+    // not leave console.error mocked or an orphan node in document.body
+    // for the rest of the file to trip over.
+    consoleError.mockRestore();
+    container.remove();
+  }
 });
