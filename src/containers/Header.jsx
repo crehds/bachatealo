@@ -67,13 +67,18 @@ function HeaderContainer(props) {
 
   //datos de portada
   // The events link must disappear with the section it points at, or the
-  // menu offers a jump to an anchor that is no longer rendered.
+  // menu offers a jump to an anchor that is no longer rendered. When the
+  // eventos entity is missing entirely (as opposed to merely inactive),
+  // there is no sectionId to match against and nothing to filter — the
+  // menu passes through unchanged instead of dereferencing it.
   const eventSection = findEventSection(entities);
-  const menu = entities.data[props.portada.data].menu.filter(
-    (item) =>
-      isEventVisible(eventSection) ||
-      item.href !== "#" + eventSection.sectionId
-  );
+  const menu = eventSection
+    ? entities.data[props.portada.data].menu.filter(
+        (item) =>
+          isEventVisible(eventSection) ||
+          item.href !== "#" + eventSection.sectionId
+      )
+    : entities.data[props.portada.data].menu;
   const imgPortada = entities.data[props.portada.data].imgPortada;
 
   //datos de hero
