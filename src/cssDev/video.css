@@ -17,7 +17,7 @@
     border-bottom: groove #a41f28 10px;
     margin-top: 0px;
 
-    @media screen and (max-width: 975px){
+    @media screen and (max-width: 1024px){
       margin-bottom: 15px;
       font-size: 27px;
     }
@@ -38,7 +38,7 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
-  @media screen and (max-width: 975px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto);
 

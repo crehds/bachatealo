@@ -12,6 +12,7 @@
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(3, auto);
   }
+  /* Tier 480 — matches the old --extra-small (screen and (max-width: 480px)) exactly, same range, no change. */
 
 }
 

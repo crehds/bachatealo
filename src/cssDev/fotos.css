@@ -14,7 +14,7 @@
   & h2 {
     margin-top: 0px;
     border-bottom: groove #a41f28 10px;
-    @media screen and (max-width: 975px) {
+    @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
       font-size: 27px;
     }

@@ -31,7 +31,7 @@
       padding: 8px;
       background: #a3000f;
 
-      @media (min-width: 481px) and (width <= 768px) {
+      @media screen and (min-width: 481px) and (max-width: 768px) {
         margin-left: 27%;
         margin-right: 27%;
       }
@@ -56,11 +56,11 @@
         padding: 5px;
         color: #f0f1f1;
 
-        @media (min-width: 769px) and (width <=1025px) {
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
           font-size: 95%;
         }
 
-        @media (min-width: 481px) and (width <= 768px) {
+        @media screen and (min-width: 481px) and (max-width: 768px) {
           font-size: 90%;
         }
 
@@ -84,7 +84,7 @@
       font-family: system-ui;
       text-align: justify;
       align-self: center;
-      @media (min-width: 481px) and (width <= 768px) {
+      @media screen and (min-width: 481px) and (max-width: 768px) {
         font-size: 70%;
       }
 
