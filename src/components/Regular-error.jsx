@@ -1,6 +1,7 @@
 import React from 'react';
+import { BASE_URL } from '../utils/baseUrl';
 
-const errorImage = `${process.env.PUBLIC_URL}/images/paraError/error.jpg`;
+const errorImage = `${BASE_URL}/images/paraError/error.jpg`;
 
 function RegularError() {
   return (

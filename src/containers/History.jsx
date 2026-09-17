@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useSiteData } from '../context/SiteDataContext';
+import { BASE_URL } from '../utils/baseUrl';
 
 class History extends Component {
   render() {
@@ -39,7 +40,7 @@ class History extends Component {
           <div className='history-div'>
             <img
               className='history-img'
-              src={process.env.PUBLIC_URL + this.props[0].src}
+              src={BASE_URL + this.props[0].src}
               alt='imagen de practica'
             />
           </div>
@@ -67,7 +68,7 @@ class History extends Component {
           <div className='history-div'>
             <img
               className='history-img'
-              src={process.env.PUBLIC_URL + this.props[1].src}
+              src={BASE_URL + this.props[1].src}
               alt='imagen de practica'
             />
           </div>
