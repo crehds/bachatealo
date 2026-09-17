@@ -1,17 +1,15 @@
 .Hero {
-  @apply --component;
   padding-top:98px;
 }
 
 .hero-container {
   display: grid;
-  @apply --containerGrid;
   border:groove var(--prueba) 5px;
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
 
-  @media (--extra-small) {
+  @media screen and (max-width: 480px) {
     grid-template-rows: repeat(3, auto);
   }
 

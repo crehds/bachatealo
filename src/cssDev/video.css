@@ -1,5 +1,4 @@
 .Video {
-  @apply --component;
   padding-top:98px;
 }
 
@@ -18,7 +17,7 @@
     border-bottom: groove #a41f28 10px;
     margin-top: 0px;
 
-    @media (--video){
+    @media screen and (max-width: 975px){
       margin-bottom: 15px;
       font-size: 27px;
     }
@@ -33,14 +32,13 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-gap: 10px;
-  @apply --containerGrid;
   padding:0;
   margin:0;
   background: #212226;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
-  @media (--video) {
+  @media screen and (max-width: 975px) {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, auto);
 

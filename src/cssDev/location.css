@@ -1,5 +1,4 @@
 .Location {
-  @apply --component;
   padding-top: 98px;
 }
 
@@ -59,18 +58,18 @@
 
     }
 
-    @media (--event) {
+    @media screen and (width <= 645px) {
       font-size: 12px;
     }
 
-    @media (--extra-small1) {
+    @media (min-width: 300px) and (width <= 480px) {
       font-size: 10px;
     }
 
   }
 
   /*Media of the container*/
-  @media (--video) {
+  @media screen and (max-width: 975px) {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
 
@@ -86,7 +85,7 @@
     }
 
   }
-  @media (--small) {
+  @media (min-width: 481px) and (width <= 768px) {
 
     & .location-container-map .location-map {
       padding-top: 40%;
@@ -94,7 +93,7 @@
 
   }
 
-  @media (--location) {
+  @media (min-width: 480px) and (width <= 645px) {
 
     & .location-container-map .location-map {
       left: 15%;
@@ -105,7 +104,7 @@
 
   }
 
-  @media (--extra-small1) {
+  @media (min-width: 300px) and (width <= 480px) {
     & .location-container-map .location-map {
       padding-top: 50%;
       left: 15%;

@@ -33,7 +33,7 @@
 
 .menu {
 
-  @media (--small1) {
+  @media screen and (width <= 768px) {
     position:fixed;
     background: rgba(33,34,38,.9);
     z-index: 3;

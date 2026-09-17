@@ -1,12 +1,10 @@
 .History {
-  @apply --component;
   padding-top: 98px;
 }
 
 .history-container {
   border-radius: 10px;
   display: grid;
-  @apply --containerGrid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
@@ -33,18 +31,18 @@
       padding: 8px;
       background: #a3000f;
 
-      @media (--small) {
+      @media (min-width: 481px) and (width <= 768px) {
         margin-left: 27%;
         margin-right: 27%;
       }
 
-      @media (--history-title) {
+      @media (min-width: 346px) and (max-width: 567px) {
         margin-left: 20%;
         margin-right: 20%;
         padding: 5px;
       }
 
-      @media (--nano) {
+      @media screen and (width <= 345px) {
         padding: 3px;
         margin-left: 11%;
         margin-right: 11%;
@@ -58,19 +56,19 @@
         padding: 5px;
         color: #f0f1f1;
 
-        @media (--medium) {
+        @media (min-width: 769px) and (width <=1025px) {
           font-size: 95%;
         }
 
-        @media (--small) {
+        @media (min-width: 481px) and (width <= 768px) {
           font-size: 90%;
         }
 
-        @media (--history-title) {
+        @media (min-width: 346px) and (max-width: 567px) {
           font-size: 80%;
         }
 
-        @media (--nano) {
+        @media screen and (width <= 345px) {
           font-size: 70%;
         }
       }
@@ -86,15 +84,15 @@
       font-family: system-ui;
       text-align: justify;
       align-self: center;
-      @media (--small) {
+      @media (min-width: 481px) and (width <= 768px) {
         font-size: 70%;
       }
 
-      @media (--history-title) {
+      @media (min-width: 346px) and (max-width: 567px) {
         font-size: 50%;
       }
 
-      @media (--nano) {
+      @media screen and (width <= 345px) {
         font-size: 30%;
       }
     }

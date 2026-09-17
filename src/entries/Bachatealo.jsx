@@ -10,7 +10,7 @@ import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
 import { useSiteData } from '../context/SiteDataContext';
 import { isEventVisible } from '../utils/events';
-import '../cssProd/index.css';
+import '../cssDev/App.css';
 
 class Bachatealo extends Component {
   render() {
