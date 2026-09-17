@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { BASE_URL } from '../utils/baseUrl';
 
 class Media extends PureComponent {
   render() {
@@ -6,7 +7,7 @@ class Media extends PureComponent {
     return (
       <div className={className}>
         {/* Per-image alt text belongs in src/data.json alongside each media entry once someone writes real descriptions */}
-        <img src={process.env.PUBLIC_URL + src} alt={alt || ''} />
+        <img src={BASE_URL + src} alt={alt || ''} />
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { useSiteData } from '../context/SiteDataContext';
 import { formatEventDate } from '../utils/events';
+import { BASE_URL } from '../utils/baseUrl';
 
 class Event extends Component {
   render() {
@@ -38,7 +39,7 @@ class Event extends Component {
           <div className="event">
             <img
               className="event-image"
-              src={process.env.PUBLIC_URL + this.props.imgEvento}
+              src={BASE_URL + this.props.imgEvento}
               alt="evento"
             />
           </div>

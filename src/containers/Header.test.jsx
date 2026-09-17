@@ -18,15 +18,17 @@ const menu = [
   { id: '5', href: '#6', title: 'Fotos' },
 ];
 
-jest.mock('../schemas/index', () => ({
-  entities: {
-    data: {
-      Portada: { id: 'Portada', menu: [], imgPortada: '/images/logo.svg' },
+vi.mock('../schemas/index', () => ({
+  default: {
+    entities: {
+      data: {
+        Portada: { id: 'Portada', menu: [], imgPortada: '/images/logo.svg' },
+      },
+      media: {},
+      section: {},
     },
-    media: {},
-    section: {},
+    result: { sections: [] },
   },
-  result: { sections: [] },
 }));
 
 mockedSchema.entities.data.Portada.menu = menu;

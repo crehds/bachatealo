@@ -18,7 +18,7 @@ it('throws a clear error when used outside SiteDataProvider', () => {
   // console.error on top of the exception it rethrows. Silencing it here
   // keeps the test output clean without touching what's actually asserted
   // below.
-  const consoleError = jest
+  const consoleError = vi
     .spyOn(console, 'error')
     .mockImplementation(() => {});
 

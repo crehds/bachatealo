@@ -12,25 +12,27 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // supply a small, controlled fixture and mounts the container directly —
 // a missing entity or a renamed field now fails here instead of passing
 // the suite unnoticed.
-jest.mock('../schemas/index', () => ({
-  entities: {
-    data: {
-      eventos: {
-        id: 'eventos',
-        title: 'Próximo evento',
-        evento: {
-          fecha: '2030-06-15',
-          lugar: 'Test Venue',
-          inicio: '8:00 pm',
-          contacto: '999-999-999',
+vi.mock('../schemas/index', () => ({
+  default: {
+    entities: {
+      data: {
+        eventos: {
+          id: 'eventos',
+          title: 'Próximo evento',
+          evento: {
+            fecha: '2030-06-15',
+            lugar: 'Test Venue',
+            inicio: '8:00 pm',
+            contacto: '999-999-999',
+          },
+          imgEvento: '/images/test-event.webp',
         },
-        imgEvento: '/images/test-event.webp',
       },
+      media: {},
+      section: {},
     },
-    media: {},
-    section: {},
+    result: { sections: [] },
   },
-  result: { sections: [] },
 }));
 
 let container = null;
