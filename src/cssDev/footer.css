@@ -1,5 +1,4 @@
 .Footer {
-  @apply --component ;
   padding-bottom: 10px;
   background: #2e2324;
 }
@@ -38,7 +37,7 @@
     background-image: url("../assets/platzilogo.svg");
   }
 
-  @media (--extra-small) {
+  @media screen and (max-width: 480px) {
     justify-content: center;
     text-align: center;
   }

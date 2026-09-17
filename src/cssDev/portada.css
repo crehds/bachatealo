@@ -1,5 +1,4 @@
 .Portada {
-  @apply --component;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -41,7 +40,7 @@
   padding: 0;
   font-family: 'Fjalla One',sans-serif;
 
-  @media (--medium1) {
+  @media screen and (max-width: 1024px) {
     font-size: 15px
   }
 
@@ -51,12 +50,12 @@
   padding:0;
   margin: 10px;
 
-  @media (--small) {
+  @media screen and (min-width: 481px) and (max-width: 768px) {
     margin-left: 5px;
     margin-right: 5px;
   }
 
-  @media (--nano) {
+  @media screen and (max-width: 480px) {
     margin-left: 0;
     margin-right: 0;
   }
@@ -70,22 +69,23 @@
   margin-right: 70px;
   font-weight: bold;
 
-  @media (--prueba) {
-    margin-left: 60px;
-    margin-right: 60px;
-  }
-
-  @media (--prueba2){
+  /* --prueba2 (1024-1205, 40px) and --prueba (1206-1326, 60px) collided
+     here; the user picked 40px — the value tuned for the narrow end of
+     the merged band, so it can't overflow right after the 1024 tier
+     hands off, where 60px could. This now covers 1025px and up with no
+     cap, unlike the old --prueba's 1326px ceiling: past that width the
+     margin no longer reverts to the 70px base. */
+  @media (min-width: 1025px) and (max-width: 1280px) {
     margin-left: 40px;
     margin-right: 40px;
   }
 
-  @media (--medium) {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
     margin-left: 30px;
     margin-right: 30px
   }
 
-  @media (--small1) {
+  @media screen and (max-width: 768px) {
     display:block;
     margin-left:0px;
     margin-right:0px;
@@ -112,7 +112,7 @@
     background: #590f15;
   }
 
-  @media (--small1) {
+  @media screen and (max-width: 768px) {
     box-shadow: none;
   }
 
