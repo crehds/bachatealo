@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state, props) {
-  const images = props.history.media.map(
-    (mediaId) => state.data.entities.media[mediaId]
-  );
-  return {
-    ...images,
-  };
-}
+import { useSiteData } from '../context/SiteDataContext';
 
 class History extends Component {
   render() {
@@ -86,4 +77,12 @@ class History extends Component {
   }
 }
 
-export default connect(mapStateToProps)(History);
+function HistoryContainer(props) {
+  const { entities } = useSiteData();
+  const images = props.history.media.map(
+    (mediaId) => entities.media[mediaId]
+  );
+  return <History {...props} {...images} />;
+}
+
+export default HistoryContainer;

@@ -1,31 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { useSiteData } from '../context/SiteDataContext';
 import Portada from '../components/Portada.jsx';
 import Hero from '../components/Hero.jsx';
 import HeaderLayout from '../components/Header-layout.jsx';
 import { findEventSection, isEventVisible } from '../utils/events';
-
-function mapStateToProps(state, props) {
-  //datos de portada
-  // The events link must disappear with the section it points at, or the
-  // menu offers a jump to an anchor that is no longer rendered.
-  const eventSection = findEventSection(state);
-  const menu = state.data.entities.data[props.portada.data].menu.filter(
-    (item) =>
-      isEventVisible(eventSection) ||
-      item.href !== "#" + eventSection.sectionId
-  );
-  const imgPortada = state.data.entities.data[props.portada.data].imgPortada;
-
-  //datos de hero
-  const album = props.hero.media.map((mediaId) => state.data.entities.media[mediaId]);
-
-  return {
-    menu,
-    imgPortada,
-    album,
-  };
-}
 
 class Header extends Component {
   // Whether the mobile menu is open is view state, so it lives here rather
@@ -84,4 +62,26 @@ class Header extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Header);
+function HeaderContainer(props) {
+  const { entities } = useSiteData();
+
+  //datos de portada
+  // The events link must disappear with the section it points at, or the
+  // menu offers a jump to an anchor that is no longer rendered.
+  const eventSection = findEventSection(entities);
+  const menu = entities.data[props.portada.data].menu.filter(
+    (item) =>
+      isEventVisible(eventSection) ||
+      item.href !== "#" + eventSection.sectionId
+  );
+  const imgPortada = entities.data[props.portada.data].imgPortada;
+
+  //datos de hero
+  const album = props.hero.media.map((mediaId) => entities.media[mediaId]);
+
+  return (
+    <Header {...props} menu={menu} imgPortada={imgPortada} album={album} />
+  );
+}
+
+export default HeaderContainer;

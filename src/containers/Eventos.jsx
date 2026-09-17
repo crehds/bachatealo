@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { useSiteData } from '../context/SiteDataContext';
 import { formatEventDate } from '../utils/events';
-
-function mapStateToProps(state, props) {
-  const { title, evento, imgEvento } = state.data.entities.data[
-    props.eventos.data
-  ];
-
-  return {
-    title,
-    evento,
-    imgEvento,
-  };
-}
 
 class Event extends Component {
   render() {
@@ -60,4 +48,13 @@ class Event extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Event);
+function EventosContainer(props) {
+  const { entities } = useSiteData();
+  const { title, evento, imgEvento } = entities.data[props.eventos.data];
+
+  return (
+    <Event {...props} title={title} evento={evento} imgEvento={imgEvento} />
+  );
+}
+
+export default EventosContainer;

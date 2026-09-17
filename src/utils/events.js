@@ -59,8 +59,8 @@ export function formatEventDate(iso) {
 
 // The events entity is reached from two places that must agree on whether the
 // section exists at all, so the lookup lives here rather than in either.
-export function findEventSection(state) {
-  return Object.values(state.data.entities.data).find(
+export function findEventSection(entities) {
+  return Object.values(entities.data).find(
     (entity) => entity.id === 'eventos'
   );
 }
