@@ -69,12 +69,13 @@
   margin-right: 70px;
   font-weight: bold;
 
-  @media (min-width:1206px) and (max-width: 1326px) {
-    margin-left: 60px;
-    margin-right: 60px;
-  }
-
-  @media (min-width: 1024px) and (max-width:1205px){
+  /* --prueba2 (1024-1205, 40px) and --prueba (1206-1326, 60px) collided
+     here; the user picked 40px — the value tuned for the narrow end of
+     the merged band, so it can't overflow right after the 1024 tier
+     hands off, where 60px could. This now covers 1025px and up with no
+     cap, unlike the old --prueba's 1326px ceiling: past that width the
+     margin no longer reverts to the 70px base. */
+  @media (min-width: 1025px) and (max-width: 1280px) {
     margin-left: 40px;
     margin-right: 40px;
   }

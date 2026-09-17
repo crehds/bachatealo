@@ -36,16 +36,15 @@
         margin-right: 27%;
       }
 
-      @media (min-width: 346px) and (max-width: 567px) {
+      /* --history-title (346-567, 20%/20%/5px) and --nano (<=345,
+         11%/11%/3px) collided here; the user picked --history-title's
+         values — real phones cluster at 360-430px, inside its original
+         band, while <=345px is close to extinct. Trade-off: 320-345px now
+         gets margins/padding tuned for a wider phone than it is. */
+      @media screen and (max-width: 480px) {
         margin-left: 20%;
         margin-right: 20%;
         padding: 5px;
-      }
-
-      @media screen and (width <= 345px) {
-        padding: 3px;
-        margin-left: 11%;
-        margin-right: 11%;
       }
 
       & h2 {
@@ -64,12 +63,9 @@
           font-size: 90%;
         }
 
-        @media (min-width: 346px) and (max-width: 567px) {
+        /* Same --history-title vs --nano collision as above, same pick. */
+        @media screen and (max-width: 480px) {
           font-size: 80%;
-        }
-
-        @media screen and (width <= 345px) {
-          font-size: 70%;
         }
       }
     }
@@ -88,12 +84,9 @@
         font-size: 70%;
       }
 
-      @media (min-width: 346px) and (max-width: 567px) {
+      /* Same --history-title vs --nano collision as above, same pick. */
+      @media screen and (max-width: 480px) {
         font-size: 50%;
-      }
-
-      @media screen and (width <= 345px) {
-        font-size: 30%;
       }
     }
 

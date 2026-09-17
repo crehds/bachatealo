@@ -41,11 +41,13 @@
     & h2 {
       color: #f0becb;
 
-      @media (min-width: 481px) and (width <= 768px) {
-        font-size: 35px;
-      }
-
-      @media screen and (width <= 645px) {
+      /* --event (<=645, 28px) and --small (481-768, 35px) collided here;
+         the user picked 28px, the phone-safe value. Verified before
+         applying: --event's declaration already sat later in the source
+         than --small's, so 28px already won the 481-645px overlap today —
+         this pick only changes 646-768px, where 35px was previously the
+         only rule reaching that far. */
+      @media screen and (max-width: 768px) {
         margin-top: 25px;
         margin-bottom: 25px;
         font-size: 28px;
