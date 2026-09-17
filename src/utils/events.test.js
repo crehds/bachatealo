@@ -1,4 +1,9 @@
-import { isEventVisible, formatEventDate, parseEventDate } from './events';
+import {
+  isEventVisible,
+  formatEventDate,
+  parseEventDate,
+  findEventSection,
+} from './events';
 
 const section = (overrides) => ({
   active: true,
@@ -53,5 +58,31 @@ describe('formatEventDate', () => {
   it('returns nothing it cannot format', () => {
     expect(formatEventDate(undefined)).toBe('');
     expect(formatEventDate('cuando se pueda')).toBe('');
+  });
+});
+
+describe('findEventSection', () => {
+  it('returns the data entity whose id is "eventos"', () => {
+    const eventos = { id: 'eventos', title: 'Último evento' };
+    const entities = {
+      data: {
+        Portada: { id: 'Portada', title: 'Portada' },
+        eventos,
+        footer: { id: 'footer', title: 'Footer' },
+      },
+    };
+
+    expect(findEventSection(entities)).toBe(eventos);
+  });
+
+  it('returns undefined when no entity has id "eventos"', () => {
+    const entities = {
+      data: {
+        Portada: { id: 'Portada', title: 'Portada' },
+        footer: { id: 'footer', title: 'Footer' },
+      },
+    };
+
+    expect(findEventSection(entities)).toBeUndefined();
   });
 });

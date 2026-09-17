@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { useSiteData } from '../context/SiteDataContext';
 import { formatEventDate } from '../utils/events';
-
-function mapStateToProps(state, props) {
-  const { title, evento, imgEvento } = state.data.entities.data[
-    props.eventos.data
-  ];
-
-  return {
-    title,
-    evento,
-    imgEvento,
-  };
-}
+import { BASE_URL } from '../utils/baseUrl';
 
 class Event extends Component {
   render() {
@@ -50,7 +39,7 @@ class Event extends Component {
           <div className="event">
             <img
               className="event-image"
-              src={process.env.PUBLIC_URL + this.props.imgEvento}
+              src={BASE_URL + this.props.imgEvento}
               alt="evento"
             />
           </div>
@@ -60,4 +49,13 @@ class Event extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Event);
+function EventosContainer(props) {
+  const { entities } = useSiteData();
+  const { title, evento, imgEvento } = entities.data[props.eventos.data];
+
+  return (
+    <Event {...props} title={title} evento={evento} imgEvento={imgEvento} />
+  );
+}
+
+export default EventosContainer;

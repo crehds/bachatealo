@@ -1,16 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state, props) {
-  const title = state.data.entities.data[props.videos.data].title;
-  const album = props.videos.media.map(
-    (videoId) => state.data.entities.media[videoId]
-  );
-  return {
-    title,
-    album,
-  };
-}
+import { useSiteData } from '../context/SiteDataContext';
 
 class Video extends Component {
   render() {
@@ -47,4 +36,13 @@ class Video extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Video);
+function VideoContainer(props) {
+  const { entities } = useSiteData();
+  const title = entities.data[props.videos.data].title;
+  const album = props.videos.media.map(
+    (videoId) => entities.media[videoId]
+  );
+  return <Video {...props} title={title} album={album} />;
+}
+
+export default VideoContainer;

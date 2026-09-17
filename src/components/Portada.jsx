@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu.jsx';
 import Section from './Section.jsx';
+import { BASE_URL } from '../utils/baseUrl';
 
 function Portada(props) {
   return (
@@ -12,7 +13,7 @@ function Portada(props) {
         <a href='#1' className='logotipo-link'>
           <figure className='logotipo'>
             <img
-              src={process.env.PUBLIC_URL + props.imgPortada}
+              src={BASE_URL + props.imgPortada}
               alt='logotipo de Bachatealo'
             />
           </figure>
