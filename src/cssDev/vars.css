@@ -1,12 +1,20 @@
 :root {
-  --gray: rgba(111, 115, 114, 0.7);
-  --prueba: #A1A1A1;
-  --white: #A7A9AC;
-  --black: #2E2324;
-  --redLow: rgba(210, 6, 6, 0.4);
-  --redprueba: #a41f28;
-  --negroprueba1: #0a0b0f;
-  --rojoapagado: #a41f28;
+  /* Renamed from placeholder Spanish/Spanglish names (--gray, --prueba,
+     --white, --black, --redLow, --redprueba, --negroprueba1, --rojoapagado)
+     to names that tell the truth about the value. --white and --black were
+     outright false: #A7A9AC is a light grey, #2E2324 is a dark brown, not
+     white or black. --redprueba and --rojoapagado were the same value
+     (#a41f28) under two names in two languages — collapsed into one token,
+     --red-dark. --negroprueba1 (#0a0b0f) is the one that's actually
+     perceptually black, so it now carries that name. Values are unchanged;
+     only names and this token's identity moved. */
+  --gray-translucent: rgba(111, 115, 114, 0.7);
+  --gray-light: #A1A1A1;
+  --gray-lighter: #A7A9AC;
+  --brown-dark: #2E2324;
+  --red-translucent: rgba(210, 6, 6, 0.4);
+  --red-dark: #a41f28;
+  --black: #0a0b0f;
 }
 
 /* Was the --containerGrid custom property set, applied via `@apply

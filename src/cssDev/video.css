@@ -61,10 +61,10 @@
 
       & div {
         border-radius: 10px;
-        border-left: groove var(--negroprueba1) 35px;
-        border-top: groove var(--negroprueba1) 35px;
-        border-right: ridge var(--negroprueba1) 35px;
-        border-bottom: ridge var(--negroprueba1) 35px;
+        border-left: groove var(--black) 35px;
+        border-top: groove var(--black) 35px;
+        border-right: ridge var(--black) 35px;
+        border-bottom: ridge var(--black) 35px;
         overflow: hidden;
         max-width: 100%;
         position:relative;
