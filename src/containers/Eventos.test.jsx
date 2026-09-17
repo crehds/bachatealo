@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Eventos from './Eventos';
 import { SiteDataProvider } from '../context/SiteDataContext';
-import { formatEventDate } from '../utils/events';
 
 // Eventos is inactive in the shipped data.json, so mounting the full app
 // (Bachatealo.test.js) never exercises this container's own entity lookup
@@ -69,8 +68,13 @@ it("renders the looked-up entity's title, event details, and image", () => {
   ].map((el) => [...el.querySelectorAll('p')].map((p) => p.textContent));
 
   expect(labels).toEqual(['Fecha', 'Lugar', 'Inicio', 'Donaciones']);
+  // Literal, not a call to formatEventDate: that function is the code
+  // under test's own formatter, has its own direct coverage in
+  // events.test.js, and computing the expectation by calling it here would
+  // let a formatting regression move both sides of this assertion together
+  // and never fail this row.
   expect(values).toEqual([
-    formatEventDate('2030-06-15'),
+    '15 de junio de 2030',
     'Test Venue',
     '8:00 pm',
     '999-999-999',

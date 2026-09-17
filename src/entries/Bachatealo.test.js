@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Bachatealo from './Bachatealo';
 import { SiteDataProvider } from '../context/SiteDataContext';
+import rawData from '../data.json';
 
 let container = null;
 const realMatchMedia = window.matchMedia;
@@ -178,42 +179,35 @@ it('resolves media entities through the seam for hero, history, photo, and video
   // entities.media[mediaId] lookup off the redux store during the seam
   // refactor (Header.jsx, Fotos.jsx, Video.jsx, History.jsx). A wrong key
   // there resolves to undefined rather than throwing, so nothing before
-  // this asserted on the rendered result. Checking the src sequence pins
-  // both identity (the right media entity) and completeness (nothing
-  // dropped or duplicated) for every one of those lookups.
+  // this asserted on the rendered result.
+  //
+  // The expectation is read from data.json itself, fresh, rather than
+  // frozen as a literal catalogue: adding, removing or reordering a photo
+  // moves both sides of the comparison together, so this stays about
+  // whether the lookup resolves the declared entities in the declared
+  // order, not about how many photos the site happens to ship today.
   const root = mount();
 
   const srcsOf = (selector) =>
     [...root.querySelectorAll(selector)].map((el) => el.getAttribute('src'));
 
-  expect(srcsOf('.hero-container img')).toEqual([
-    expect.stringContaining('/images/paraHero/7.webp'),
-    expect.stringContaining('/images/paraHero/3.webp'),
-    expect.stringContaining('/images/paraHero/9.webp'),
-    expect.stringContaining('/images/paraHero/5.webp'),
-    expect.stringContaining('/images/paraHero/1.webp'),
-    expect.stringContaining('/images/paraHero/6.webp'),
-    expect.stringContaining('/images/paraHero/2.webp'),
-    expect.stringContaining('/images/paraHero/8.webp'),
-    expect.stringContaining('/images/paraHero/4.webp'),
-  ]);
+  const declaredSrcsFor = (sectionDataId) =>
+    rawData.sections
+      .find((section) => section.data.id === sectionDataId)
+      .media.map((item) => item.src);
 
-  expect(srcsOf('.history-img')).toEqual([
-    expect.stringContaining('/images/paraHistory/for_history.webp'),
-    expect.stringContaining('/images/paraHistory/history_actual.webp'),
-  ]);
+  const expectAlbumMatchesDeclaredOrder = (actualSrcs, sectionDataId) => {
+    actualSrcs.forEach((src) => expect(src).toBeTruthy());
+    expect(actualSrcs).toEqual(
+      declaredSrcsFor(sectionDataId).map((src) => expect.stringContaining(src))
+    );
+  };
 
-  expect(srcsOf('.fotos.container img')).toEqual([
-    expect.stringContaining('/images/paraHero/7.webp'),
-    expect.stringContaining('/images/paraHero/6.webp'),
-    expect.stringContaining('/images/paraHero/9.webp'),
-    expect.stringContaining('/images/paraHero/4.webp'),
-    expect.stringContaining('/images/paraHero/5.webp'),
-    expect.stringContaining('/images/paraHero/2.webp'),
-  ]);
-
-  expect(srcsOf('.video.container iframe')).toEqual([
-    expect.stringContaining('225802351319283'),
-    expect.stringContaining('225816234651228'),
-  ]);
+  expectAlbumMatchesDeclaredOrder(srcsOf('.hero-container img'), 'Hero');
+  // History renders exactly two images by fixed index
+  // (this.props[0]/this.props[1]), not a mapped list, but the declared
+  // order check is the same shape.
+  expectAlbumMatchesDeclaredOrder(srcsOf('.history-img'), 'history');
+  expectAlbumMatchesDeclaredOrder(srcsOf('.fotos.container img'), 'fotos');
+  expectAlbumMatchesDeclaredOrder(srcsOf('.video.container iframe'), 'videos');
 });
