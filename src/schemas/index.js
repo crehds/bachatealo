@@ -1,30 +1,32 @@
 import api from '../data.json';
-import { normalize, schema } from 'normalizr';
 
+// Rebuilds, without normalizr, the exact shape it used to produce here:
+// entities.data / entities.media keyed by their own id (each with the
+// parent section's sectionId copied in), entities.section keyed by
+// sectionId (data replaced by its id, media replaced by an array of ids,
+// omitted entirely when the section has none), and result.sections as the
+// ordered array of sectionId values.
+function normalizeSections(rawApi) {
+  const entities = { data: {}, media: {}, section: {} };
+  const sectionIds = [];
 
-const organizationData = {
-  idAttribute: 'id',
-  processStrategy: (value, parent, key) => ({
-    ...value,
-    sectionId: parent.sectionId,
-  }),
-};
+  rawApi.sections.forEach(({ sectionId, data, media }) => {
+    entities.data[data.id] = { ...data, sectionId };
 
-const data = new schema.Entity('data', {}, organizationData);
-const media = new schema.Entity('media', {}, organizationData);
+    const section = { sectionId, data: data.id };
 
-const section =  new schema.Entity('section',
-  {
-    data,
-    media: new schema.Array(media),
-  },
-  {
-    idAttribute: 'sectionId',
-  }
-);
+    if (media) {
+      section.media = media.map((item) => {
+        entities.media[item.id] = { ...item, sectionId };
+        return item.id;
+      });
+    }
 
-const sections = { sections: new schema.Array(section) };
+    entities.section[sectionId] = section;
+    sectionIds.push(sectionId);
+  });
 
-const normalizedData = normalize(api, sections);
+  return { entities, result: { sections: sectionIds } };
+}
 
-export default normalizedData;
+export default normalizeSections(api);
