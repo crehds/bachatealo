@@ -127,21 +127,85 @@ it('assigns each of the 8 sections to its fixed slot by position, not by name', 
   // wrapper <section>s never set an id), so a transposition anywhere in the
   // positional assignment shows up here even where it wouldn't change any
   // rendered text.
+  //
+  // The full contract below covers all 8 slots, including eventos
+  // (sectionId "5"), which data.json currently hides via active: false.
+  // Whether eventos is visible is a separate concern, already covered by
+  // "hides the events section..." below; hardcoding its absence here would
+  // fail this test the day someone announces a real event, for a reason
+  // that has nothing to do with the positional mapping it exists to guard.
+  // So instead of asserting a fixed visible subset, the expectation is the
+  // full contract filtered down to whichever ids actually rendered — this
+  // still fails on any transposition (a slot showing the wrong id and/or
+  // the wrong component's className) while staying silent on eventos'
+  // visibility either way.
   const root = mount();
 
-  const sections = [...root.querySelectorAll('section[id]')].map((el) => ({
-    id: el.id,
-    className: el.className,
-  }));
-
-  // Eventos (sectionId "5") is excluded: data.json currently has active: false.
-  expect(sections).toEqual([
+  const fullPositionalContract = [
     { id: '1', className: 'Portada' },
     { id: '2', className: 'Hero' },
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },
+    { id: '5', className: 'Event' },
     { id: '6', className: 'Fotos' },
     { id: '7', className: 'Video' },
     { id: '8', className: 'Footer' },
+  ];
+
+  const actual = [...root.querySelectorAll('section[id]')].map((el) => ({
+    id: el.id,
+    className: el.className,
+  }));
+
+  const actualIds = new Set(actual.map((section) => section.id));
+  const expected = fullPositionalContract.filter((section) =>
+    actualIds.has(section.id)
+  );
+
+  expect(actual).toEqual(expected);
+});
+
+it('resolves media entities through the seam for hero, history, photo, and video sections', () => {
+  // The hero/fotos/video albums and the two history images all moved their
+  // entities.media[mediaId] lookup off the redux store during the seam
+  // refactor (Header.jsx, Fotos.jsx, Video.jsx, History.jsx). A wrong key
+  // there resolves to undefined rather than throwing, so nothing before
+  // this asserted on the rendered result. Checking the src sequence pins
+  // both identity (the right media entity) and completeness (nothing
+  // dropped or duplicated) for every one of those lookups.
+  const root = mount();
+
+  const srcsOf = (selector) =>
+    [...root.querySelectorAll(selector)].map((el) => el.getAttribute('src'));
+
+  expect(srcsOf('.hero-container img')).toEqual([
+    expect.stringContaining('/images/paraHero/7.webp'),
+    expect.stringContaining('/images/paraHero/3.webp'),
+    expect.stringContaining('/images/paraHero/9.webp'),
+    expect.stringContaining('/images/paraHero/5.webp'),
+    expect.stringContaining('/images/paraHero/1.webp'),
+    expect.stringContaining('/images/paraHero/6.webp'),
+    expect.stringContaining('/images/paraHero/2.webp'),
+    expect.stringContaining('/images/paraHero/8.webp'),
+    expect.stringContaining('/images/paraHero/4.webp'),
+  ]);
+
+  expect(srcsOf('.history-img')).toEqual([
+    expect.stringContaining('/images/paraHistory/for_history.webp'),
+    expect.stringContaining('/images/paraHistory/history_actual.webp'),
+  ]);
+
+  expect(srcsOf('.fotos.container img')).toEqual([
+    expect.stringContaining('/images/paraHero/7.webp'),
+    expect.stringContaining('/images/paraHero/6.webp'),
+    expect.stringContaining('/images/paraHero/9.webp'),
+    expect.stringContaining('/images/paraHero/4.webp'),
+    expect.stringContaining('/images/paraHero/5.webp'),
+    expect.stringContaining('/images/paraHero/2.webp'),
+  ]);
+
+  expect(srcsOf('.video.container iframe')).toEqual([
+    expect.stringContaining('225802351319283'),
+    expect.stringContaining('225816234651228'),
   ]);
 });
