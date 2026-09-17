@@ -1,12 +1,10 @@
 .History {
-  @apply --component;
   padding-top: 98px;
 }
 
 .history-container {
   border-radius: 10px;
   display: grid;
-  @apply --containerGrid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
@@ -33,21 +31,20 @@
       padding: 8px;
       background: #a3000f;
 
-      @media (--small) {
+      @media screen and (min-width: 481px) and (max-width: 768px) {
         margin-left: 27%;
         margin-right: 27%;
       }
 
-      @media (--history-title) {
+      /* --history-title (346-567, 20%/20%/5px) and --nano (<=345,
+         11%/11%/3px) collided here; the user picked --history-title's
+         values — real phones cluster at 360-430px, inside its original
+         band, while <=345px is close to extinct. Trade-off: 320-345px now
+         gets margins/padding tuned for a wider phone than it is. */
+      @media screen and (max-width: 480px) {
         margin-left: 20%;
         margin-right: 20%;
         padding: 5px;
-      }
-
-      @media (--nano) {
-        padding: 3px;
-        margin-left: 11%;
-        margin-right: 11%;
       }
 
       & h2 {
@@ -58,20 +55,17 @@
         padding: 5px;
         color: #f0f1f1;
 
-        @media (--medium) {
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
           font-size: 95%;
         }
 
-        @media (--small) {
+        @media screen and (min-width: 481px) and (max-width: 768px) {
           font-size: 90%;
         }
 
-        @media (--history-title) {
+        /* Same --history-title vs --nano collision as above, same pick. */
+        @media screen and (max-width: 480px) {
           font-size: 80%;
-        }
-
-        @media (--nano) {
-          font-size: 70%;
         }
       }
     }
@@ -86,16 +80,13 @@
       font-family: system-ui;
       text-align: justify;
       align-self: center;
-      @media (--small) {
+      @media screen and (min-width: 481px) and (max-width: 768px) {
         font-size: 70%;
       }
 
-      @media (--history-title) {
+      /* Same --history-title vs --nano collision as above, same pick. */
+      @media screen and (max-width: 480px) {
         font-size: 50%;
-      }
-
-      @media (--nano) {
-        font-size: 30%;
       }
     }
 

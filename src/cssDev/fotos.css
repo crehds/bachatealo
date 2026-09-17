@@ -1,5 +1,4 @@
 .Fotos {
-  @apply --component;
   padding-top: 98px;
 }
 
@@ -15,7 +14,7 @@
   & h2 {
     margin-top: 0px;
     border-bottom: groove #a41f28 10px;
-    @media (--video) {
+    @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
       font-size: 27px;
     }
@@ -24,14 +23,13 @@
 
 .fotos.container {
   display: grid;
-  @apply --containerGrid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-row-gap: 25px;
   box-shadow: 0 15px 25px 5px #2e2324;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: var(--negroprueba1);
+  background: var(--black);
   justify-items: center;
 
   /*Fotos media component*/
