@@ -8,37 +8,9 @@ import Video from '../containers/Video.jsx';
 import Footer from '../containers/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
-import { connect } from 'react-redux';
+import { useSiteData } from '../context/SiteDataContext';
 import { isEventVisible } from '../utils/events';
 import '../cssProd/index.css';
-
-function mapStateToProps(state, props) {
-  const results = state.data.sections.map(
-    (sectionId) => state.data.entities.section[sectionId]
-  );
-
-  const sections = {
-    portada: {},
-    hero: {},
-    history: {},
-    location: {},
-    eventos: {},
-    fotos: {},
-    videos: {},
-    footer: {},
-  };
-
-  let cont = 0;
-  for (let i in sections) {
-    sections[i] = results[cont];
-    cont++;
-  }
-
-  return {
-    ...sections,
-    showEvents: isEventVisible(state.data.entities.data[sections.eventos.data]),
-  };
-}
 
 class Bachatealo extends Component {
   render() {
@@ -69,4 +41,31 @@ class Bachatealo extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Bachatealo);
+function BachatealoContainer(props) {
+  const { entities, sections: sectionIds } = useSiteData();
+
+  const results = sectionIds.map((sectionId) => entities.section[sectionId]);
+
+  const sections = {
+    portada: {},
+    hero: {},
+    history: {},
+    location: {},
+    eventos: {},
+    fotos: {},
+    videos: {},
+    footer: {},
+  };
+
+  let cont = 0;
+  for (let i in sections) {
+    sections[i] = results[cont];
+    cont++;
+  }
+
+  const showEvents = isEventVisible(entities.data[sections.eventos.data]);
+
+  return <Bachatealo {...props} {...sections} showEvents={showEvents} />;
+}
+
+export default BachatealoContainer;

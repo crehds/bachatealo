@@ -3,19 +3,12 @@ import ReactDOM from 'react-dom';
 // import './cssProd/index.css';
 import Bachatealo from './entries/Bachatealo';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from './reducers/data';
+import { SiteDataProvider } from './context/SiteDataContext';
 
-const store = createStore(
-  reducer,
-  {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 ReactDOM.render(
-  <Provider store={store}>
+  <SiteDataProvider>
     <Bachatealo />
-  </Provider>,
+  </SiteDataProvider>,
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

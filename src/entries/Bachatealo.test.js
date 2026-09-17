@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import Bachatealo from './Bachatealo';
-import reducer from '../reducers/data';
+import { SiteDataProvider } from '../context/SiteDataContext';
 
 let container = null;
 const realMatchMedia = window.matchMedia;
@@ -15,9 +13,9 @@ function mount() {
 
   act(() => {
     ReactDOM.render(
-      <Provider store={createStore(reducer)}>
+      <SiteDataProvider>
         <Bachatealo />
-      </Provider>,
+      </SiteDataProvider>,
       container
     );
   });
@@ -117,4 +115,33 @@ it('hides the events section and its menu link while no event is announced', () 
 
   // The rest of the menu is untouched.
   expect(links.map((a) => a.textContent)).toContain('Fotos');
+});
+
+it('assigns each of the 8 sections to its fixed slot by position, not by name', () => {
+  // Bachatealo's mapping from data.json onto the fixed
+  // portada/hero/history/location/eventos/fotos/videos/footer slots is
+  // purely positional: it walks the normalized sections array by index with
+  // a `cont` counter, not by matching an id or name. This test re-derives
+  // that mapping independently of the code under test by reading the
+  // sectionId/className every content section renders (the two layout
+  // wrapper <section>s never set an id), so a transposition anywhere in the
+  // positional assignment shows up here even where it wouldn't change any
+  // rendered text.
+  const root = mount();
+
+  const sections = [...root.querySelectorAll('section[id]')].map((el) => ({
+    id: el.id,
+    className: el.className,
+  }));
+
+  // Eventos (sectionId "5") is excluded: data.json currently has active: false.
+  expect(sections).toEqual([
+    { id: '1', className: 'Portada' },
+    { id: '2', className: 'Hero' },
+    { id: '3', className: 'History' },
+    { id: '4', className: 'Location' },
+    { id: '6', className: 'Fotos' },
+    { id: '7', className: 'Video' },
+    { id: '8', className: 'Footer' },
+  ]);
 });

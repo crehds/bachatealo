@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state, props) {
-  const title = state.data.entities.data[props.location.data].title;
-  const details = state.data.entities.data[props.location.data].details;
-  return {
-    title,
-    ...details,
-  };
-}
+import { useSiteData } from '../context/SiteDataContext';
 
 class Location extends Component {
   render () {
@@ -87,4 +78,11 @@ class Location extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Location);
+function LocationContainer(props) {
+  const { entities } = useSiteData();
+  const title = entities.data[props.location.data].title;
+  const details = entities.data[props.location.data].details;
+  return <Location {...props} title={title} {...details} />;
+}
+
+export default LocationContainer;

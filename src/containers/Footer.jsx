@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state, props) {
-  const title = state.data.entities.data[props.footer.data].title;
-  const details = state.data.entities.data[props.footer.data].details;
-  return {
-    title,
-    details,
-  };
-}
+import { useSiteData } from '../context/SiteDataContext';
 
 class Footer extends Component {
   render() {
@@ -50,4 +41,11 @@ class Footer extends Component {
   }
 }
 
-export default connect(mapStateToProps)(Footer);
+function FooterContainer(props) {
+  const { entities } = useSiteData();
+  const title = entities.data[props.footer.data].title;
+  const details = entities.data[props.footer.data].details;
+  return <Footer {...props} title={title} details={details} />;
+}
+
+export default FooterContainer;
