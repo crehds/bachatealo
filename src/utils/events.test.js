@@ -1,5 +1,6 @@
 import {
   isEventVisible,
+  isGaleriaVisible,
   formatEventDate,
   parseEventDate,
   findEventSection,
@@ -44,6 +45,22 @@ describe('isEventVisible', () => {
     expect(isEventVisible(section({ active: 'false' }), on('2026-03-01'))).toBe(
       false
     );
+  });
+});
+
+describe('isGaleriaVisible', () => {
+  it('shows the gallery once it has been switched on', () => {
+    expect(isGaleriaVisible({ active: true })).toBe(true);
+  });
+
+  it('hides the gallery while it has not been switched on', () => {
+    expect(isGaleriaVisible({ active: false })).toBe(false);
+    expect(isGaleriaVisible({})).toBe(false);
+    expect(isGaleriaVisible(null)).toBe(false);
+  });
+
+  it('does not accept a truthy non-true flag as switched on', () => {
+    expect(isGaleriaVisible({ active: 'true' })).toBe(false);
   });
 });
 
