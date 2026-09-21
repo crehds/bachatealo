@@ -1,20 +1,39 @@
 .History {
-  padding-top: 98px;
+  padding-top: var(--section-padding-top);
 }
 
 .history-container {
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  grid-row-gap: 80px;
+  /* This was written for the 2-column zigzag, where it separates two
+     rows. Since a70422e the section stacks to one column below 640px, so
+     this same gap falls between all four blocks instead of two — 240px
+     of it rather than 80px. --history-row-gap (vars.css) carries the
+     desktop value unchanged and a quarter of it below 640px. */
+  grid-row-gap: var(--history-row-gap);
   text-align: center;
+
+  /* Two columns get too narrow for paragraph text well before the phone
+     tier — around 150px each at 375px, and still cramped at 600. The user
+     read the live site and put the boundary at 640, so that is where the
+     single column starts; the font rules further down keep their own 480
+     step, which is a separate judgement about text size, not layout. The
+     two extra rows a single column creates are implicit and size
+     themselves the same "auto" way the explicit rows above do, so nothing
+     but the column count changes here. */
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 
   & .history-div {
     overflow: hidden;
-    border: inset #898a8e 3px;
-    border-radius: 10px;
+    /* Structural card edge — consolidates yet another one-off grey onto
+       the shared neutral border colour. */
+    border: solid var(--border-width) var(--border);
+    border-radius: var(--radius);
     max-width: inherit;
     max-height: 100%;
 
@@ -25,7 +44,11 @@
     }
     & .history-title {
       padding-bottom: 5px;
-      border: ridge #a41f28 5px;
+      /* This wraps the whole title box on all sides rather than
+         underlining it — "decorating a box", the pattern being removed
+         — so it moves to neutral rather than staying red like the
+         h2 accent bar below. */
+      border: solid var(--border-width) var(--border);
       margin-left: 30%;
       margin-right: 30%;
       padding: 8px;
@@ -48,9 +71,11 @@
       }
 
       & h2 {
-        border-left: 10px;
-        border-left-style: groove;
-        border-left-color: #ff0018;
+        /* An accent bar beside the heading — a heading rule, just on the
+           side instead of underneath — so this keeps the accent colour.
+           The three longhand declarations (width/style/color) collapse
+           into one now that groove is gone. */
+        border-left: solid var(--border-width) var(--accent);
         margin: 0;
         padding: 5px;
         color: #f0f1f1;
@@ -71,7 +96,12 @@
     }
 
     & p {
-      border: solid brown 2px;
+      /* Already solid — only the ad-hoc named colour ("brown") needed
+         tokenising, plus the shared hairline width. */
+      border: solid var(--border-width) var(--border);
+      /* 4px, on a text paragraph box — same category as portada's 3px
+         hover pill: not part of the sixteen-way 10px pattern, left as
+         its own direct value. */
       border-radius: 4px;
       margin: 8px;
       background: #212226;
@@ -93,20 +123,34 @@
     & .history-img {
       width: 100%;
       height: 100%;
+      /* Same candid-photo reasoning as hero/fotos: cover crops to fill
+         rather than stretching the image's natural aspect ratio. */
+      object-fit: cover;
     }
   }
 
   & .history-div:nth-of-type(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+
+    /* This explicit placement is what turns the 2-column zigzag into
+       text/image, image/text — desirable at 2 columns, but at 1 column it
+       would pull this item ahead of the third (text2), reading as
+       text1, img2, img1, text2 instead of natural document order. Auto
+       lets it fall back to plain DOM order, which in a single column is
+       exactly the reading order wanted: text1, img1, text2, img2. */
+    @media screen and (max-width: 640px) {
+      grid-column: auto;
+      grid-row: auto;
+    }
   }
 
   & .history-div:nth-of-type(3) {
     & .history-title h2 {
       border-left: none;
-      border-right: 10px;
-      border-right-style: ridge;
-      border-right-color: #ff0018;
+      /* Mirrors the default h2's left accent bar for this alternating
+         block — same accent colour, same collapse to one declaration. */
+      border-right: solid var(--border-width) var(--accent);
     }
   }
 }

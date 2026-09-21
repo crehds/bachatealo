@@ -1,8 +1,10 @@
 .Galeria {
   padding: 10px;
-  padding-top: 98px;
-  padding-bottom: 40px;
-  color: var(--gray-lighter);
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+  /* Same value as before (--muted-foreground is --gray-lighter) — a pure
+     rename onto the new semantic layer, not a colour change. */
+  color: var(--muted-foreground);
 }
 
 .galeria-title {
@@ -11,13 +13,18 @@
   padding-bottom: 10px;
   font-size: 25px;
   margin-top: 25px;
-  box-shadow: 0px -10px 20px 5px var(--red-dark);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* Blur/spread halved, same rule applied across the rest of the page's
+     shadows — this one already pointed at a token, but carried the same
+     high blur/spread as the ones that didn't. */
+  box-shadow: 0px -10px 10px 3px var(--red-dark);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 
   & h2 {
     margin-top: 0px;
-    border-bottom: groove var(--red-dark) 10px;
+    /* A heading rule — accent already matched --red-dark exactly here;
+       only the bevel needed to go. */
+    border-bottom: solid var(--border-width) var(--accent);
 
     @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
@@ -30,19 +37,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 25px;
-  box-shadow: 0 15px 25px 5px var(--brown-dark);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  box-shadow: 0 15px 13px 3px var(--brown-dark);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
   background: var(--black);
   justify-items: center;
   padding: 20px 0;
 
+  /* 2 columns from here down to 0, with no narrower tier: this section
+     always has exactly 4 items, so 2 columns is already an exact 2x2 —
+     nothing to hide, unlike hero/fotos. A max-width:480px collapse to a
+     single column used to sit here and broke that below 480px for no
+     reason; removed, so this same rule now covers the full range,
+     keeping the grid 2x2 at every width, consistent with hero/fotos'
+     2x2 below 640px rather than a third, narrower-only shape. */
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 480px) {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -56,13 +66,19 @@
   font-family: system-ui;
 
   & div {
-    border: ridge var(--gray-translucent) 4px;
+    /* Photo-tile border — structural, already the exact colour --border
+       now names, so this converts to the token cleanly; only the bevel
+       and its width needed to change. */
+    border: solid var(--border-width) var(--border);
     max-width: 100%;
     max-height: 100%;
 
     & img {
       width: 100%;
       height: 100%;
+      /* Same missing property as hero/fotos, just not yet reported —
+         cover crops to fill the tile rather than stretching. */
+      object-fit: cover;
     }
   }
 }
