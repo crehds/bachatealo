@@ -41,8 +41,15 @@
   --event-padding-bottom: 80px;
   --history-row-gap: 80px;
 
+  /* The 98px above is not only breathing room between sections: the site
+     header is position:fixed at top:0, and the mobile menu it contains
+     opens at top:53px, which is the only measurement of that bar in the
+     code. So the narrow value has a floor - drop it under ~53px and every
+     section heading slides beneath the header. 60px clears it with a
+     little room and still cuts the gap between sections from 138px to
+     80px. Tune from here, but not below the header. */
   @media screen and (max-width: 640px) {
-    --section-padding-top: 40px;
+    --section-padding-top: 60px;
     --section-padding-bottom: 20px;
     --event-padding-bottom: 40px;
     --history-row-gap: 20px;
