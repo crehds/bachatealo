@@ -1,6 +1,9 @@
 .Event {
-  padding-top: 98px;
-  padding-bottom: 80px;
+  padding-top: var(--section-padding-top);
+  /* Event alone never used the shared --section-padding-bottom (40px) —
+     its own value is 80px, unrelated to the other seven sections. See
+     vars.css for why that got its own token instead of folding in. */
+  padding-bottom: var(--event-padding-bottom);
 }
 
 .event-container {

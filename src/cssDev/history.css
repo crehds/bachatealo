@@ -1,5 +1,5 @@
 .History {
-  padding-top: 98px;
+  padding-top: var(--section-padding-top);
 }
 
 .history-container {
@@ -8,7 +8,12 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  grid-row-gap: 80px;
+  /* This was written for the 2-column zigzag, where it separates two
+     rows. Since a70422e the section stacks to one column below 640px, so
+     this same gap falls between all four blocks instead of two — 240px
+     of it rather than 80px. --history-row-gap (vars.css) carries the
+     desktop value unchanged and a quarter of it below 640px. */
+  grid-row-gap: var(--history-row-gap);
   text-align: center;
 
   /* Two columns get too narrow for paragraph text well before the phone

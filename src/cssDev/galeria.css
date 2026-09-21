@@ -1,7 +1,7 @@
 .Galeria {
   padding: 10px;
-  padding-top: 98px;
-  padding-bottom: 40px;
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
   color: var(--gray-lighter);
 }
 

@@ -1,5 +1,5 @@
 .Video {
-  padding-top:98px;
+  padding-top: var(--section-padding-top);
 }
 
 .video-title {

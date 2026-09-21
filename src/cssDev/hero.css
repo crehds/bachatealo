@@ -1,5 +1,5 @@
 .Hero {
-  padding-top:98px;
+  padding-top: var(--section-padding-top);
 }
 
 .hero-container {
