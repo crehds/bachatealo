@@ -19,6 +19,37 @@
   --red-bright-translucent: rgba(255, 0, 24, 0.7);
   --red-orange: #d82c19;
   --black: #0a0b0f;
+  --white: #ffffff;
+
+  /* Semantic layer, mapped onto the palette above rather than replacing
+     it. shadcn's clarity comes from naming roles instead of colours:
+     --border/--foreground/--accent say what a rule is FOR, so the user's
+     next reaction ("too subtle", "borders too light", "make the accent
+     bolder") is answered by repointing one of these five, not by
+     re-finding every site that used a colour directly.
+     --surface is defined for completeness (backgrounds are out of this
+     stage's scope, so nothing below consumes it yet — see the report).
+     --border is the new hairline colour, replacing a dozen-plus ad-hoc
+     greys and the 3D bevel styles they came with. --accent is where the
+     user's reds now live: a single colour for "an active border, a
+     hover, a heading rule" — not wrapped around every box, which is what
+     dated the page. --muted-foreground exists for text roles a later
+     pass can pick up; the one already-token-driven text colour that
+     safely renames to it this pass is noted in the report. */
+  --surface: var(--black);
+  --border: var(--gray-translucent);
+  --foreground: var(--white);
+  --muted-foreground: var(--gray-lighter);
+  --accent: var(--red-dark);
+
+  /* Border width and corner radius, tokenised for the same reason as the
+     five roles above: ridge/groove/inset/outset (the browser's fake-3D
+     bevel, predating shadows and gradients) appeared at more than a
+     dozen sites, several with their own hardcoded width. One hairline
+     width and one corner radius, used everywhere a rule below doesn't
+     say otherwise for a stated reason. */
+  --border-width: 1px;
+  --radius: 10px;
 
   /* Section vertical rhythm. --section-padding-top/--section-padding-bottom
      were the same 98px/40px written seven times across seven files (plus
@@ -71,5 +102,5 @@
   padding:10px;
   padding-top: 2px;
   padding-bottom: var(--section-padding-bottom);
-  color: white;
+  color: var(--foreground);
 }

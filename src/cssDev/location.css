@@ -5,8 +5,11 @@
 .location-container {
   display: grid;
   grid-template-columns: 45% 55%;
-  border: inset #f0f1f1 3px;
-  border-radius: 10px;
+  /* Was a 1990s bevel (inset), plus its own one-off near-white grey. Now
+     a plain hairline in the shared neutral border colour, like every
+     other structural edge on the page. */
+  border: solid var(--border-width) var(--border);
+  border-radius: var(--radius);
   overflow: hidden;
 
   & .location-map {
@@ -38,8 +41,10 @@
     grid-template-rows: repeat(5, auto);
     font-size: 14px;
     padding: 5px;
-    color: white;
-    border: solid brown 2px;
+    color: var(--foreground);
+    /* Already solid — only the ad-hoc named colour ("brown") needed
+       tokenising, plus the same shared width as every other hairline. */
+    border: solid var(--border-width) var(--border);
     border-top: hidden;
     border-bottom: hidden;
     font-family:'Fjalla One', system-ui;

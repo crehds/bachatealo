@@ -3,7 +3,7 @@
 }
 
 .history-container {
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -30,8 +30,10 @@
 
   & .history-div {
     overflow: hidden;
-    border: inset #898a8e 3px;
-    border-radius: 10px;
+    /* Structural card edge — consolidates yet another one-off grey onto
+       the shared neutral border colour. */
+    border: solid var(--border-width) var(--border);
+    border-radius: var(--radius);
     max-width: inherit;
     max-height: 100%;
 
@@ -42,7 +44,11 @@
     }
     & .history-title {
       padding-bottom: 5px;
-      border: ridge #a41f28 5px;
+      /* This wraps the whole title box on all sides rather than
+         underlining it — "decorating a box", the pattern being removed
+         — so it moves to neutral rather than staying red like the
+         h2 accent bar below. */
+      border: solid var(--border-width) var(--border);
       margin-left: 30%;
       margin-right: 30%;
       padding: 8px;
@@ -65,9 +71,11 @@
       }
 
       & h2 {
-        border-left: 10px;
-        border-left-style: groove;
-        border-left-color: #ff0018;
+        /* An accent bar beside the heading — a heading rule, just on the
+           side instead of underneath — so this keeps the accent colour.
+           The three longhand declarations (width/style/color) collapse
+           into one now that groove is gone. */
+        border-left: solid var(--border-width) var(--accent);
         margin: 0;
         padding: 5px;
         color: #f0f1f1;
@@ -88,7 +96,12 @@
     }
 
     & p {
-      border: solid brown 2px;
+      /* Already solid — only the ad-hoc named colour ("brown") needed
+         tokenising, plus the shared hairline width. */
+      border: solid var(--border-width) var(--border);
+      /* 4px, on a text paragraph box — same category as portada's 3px
+         hover pill: not part of the sixteen-way 10px pattern, left as
+         its own direct value. */
       border-radius: 4px;
       margin: 8px;
       background: #212226;
@@ -135,9 +148,9 @@
   & .history-div:nth-of-type(3) {
     & .history-title h2 {
       border-left: none;
-      border-right: 10px;
-      border-right-style: ridge;
-      border-right-color: #ff0018;
+      /* Mirrors the default h2's left accent bar for this alternating
+         block — same accent colour, same collapse to one declaration. */
+      border-right: solid var(--border-width) var(--accent);
     }
   }
 }

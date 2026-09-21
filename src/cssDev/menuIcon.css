@@ -82,7 +82,7 @@
   z-index: 4;
   left:5px;
   top:5px;
-  color: white;
+  color: var(--foreground);
 }
 
 .burguer-button:focus-visible {
