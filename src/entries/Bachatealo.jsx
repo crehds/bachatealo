@@ -3,13 +3,14 @@ import HandleError from '../containers/Handle-error.jsx';
 import History from '../containers/History.jsx';
 import Location from '../containers/Location.jsx';
 import Event from '../containers/Eventos.jsx';
+import Galeria from '../containers/Galeria.jsx';
 import Fotos from '../containers/Fotos.jsx';
 import Video from '../containers/Video.jsx';
 import Footer from '../containers/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
 import { useSiteData } from '../context/SiteDataContext';
-import { isEventVisible } from '../utils/events';
+import { isEventVisible, isGaleriaVisible } from '../utils/events';
 import '../cssDev/App.css';
 
 class Bachatealo extends Component {
@@ -20,10 +21,12 @@ class Bachatealo extends Component {
       history,
       location,
       eventos,
+      galeria,
       fotos,
       videos,
       footer,
       showEvents,
+      showGaleria,
     } = this.props;
     return (
       <HandleError>
@@ -32,6 +35,7 @@ class Bachatealo extends Component {
           <History history={history} />
           <Location location={location} />
           {showEvents && <Event eventos={eventos} />}
+          {showGaleria && <Galeria galeria={galeria} />}
           <Fotos fotos={fotos} />
           <Video videos={videos} />
           <Footer footer={footer} />
@@ -50,6 +54,7 @@ const SECTION_KEYS = [
   'history',
   'location',
   'eventos',
+  'galeria',
   'fotos',
   'videos',
   'footer',
@@ -109,8 +114,16 @@ function BachatealoContainer(props) {
   const sections = matchSectionsById(results);
 
   const showEvents = isEventVisible(entities.data[sections.eventos.data]);
+  const showGaleria = isGaleriaVisible(entities.data[sections.galeria.data]);
 
-  return <Bachatealo {...props} {...sections} showEvents={showEvents} />;
+  return (
+    <Bachatealo
+      {...props}
+      {...sections}
+      showEvents={showEvents}
+      showGaleria={showGaleria}
+    />
+  );
 }
 
 export default BachatealoContainer;
