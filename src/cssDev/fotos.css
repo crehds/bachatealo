@@ -11,11 +11,13 @@
   /* Blur/spread halved site-wide to calm the shadows down without losing
      them; see vars.css for the token this hex became. */
   box-shadow: 0px -10px 10px 3px var(--red-bright);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
   & h2 {
     margin-top: 0px;
-    border-bottom: groove #a41f28 10px;
+    /* A heading rule — where the accent colour belongs. Bevel dropped
+       for a solid hairline. */
+    border-bottom: solid var(--border-width) var(--accent);
     @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
       font-size: 27px;
@@ -29,8 +31,8 @@
   grid-template-rows: repeat(2, auto);
   grid-row-gap: 25px;
   box-shadow: 0 15px 13px 3px var(--brown-dark);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
   background: var(--black);
   justify-items: center;
 
@@ -51,7 +53,9 @@
 
   /*Fotos media component*/
   & div {
-    border: ridge #56575b 4px;
+    /* Each photo tile's own border — structural (delineates the tile),
+       already neutral (gray-dark, not red), so stays neutral. */
+    border: solid var(--border-width) var(--border);
     display: flex;
     max-width: 70%;
     max-height: 100%;

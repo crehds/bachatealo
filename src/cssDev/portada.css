@@ -111,7 +111,13 @@
   box-shadow: 0px 0px 4px 5px var(--red-bright);
 
   & a {
-    border:outset #ff0018 5px;
+    /* Exactly the case the accent colour is for: a hover state. Kept
+       red, unlike every border that was just wrapping a box; the bevel
+       still goes, in favour of a solid hairline. */
+    border: solid var(--border-width) var(--accent);
+    /* 3px, on a small hover pill — not part of the sixteen-way 10px
+       corner-radius pattern the rest of the page uses, so left as its
+       own direct value rather than folded onto --radius. */
     border-radius: 3px;
     background: #590f15;
   }

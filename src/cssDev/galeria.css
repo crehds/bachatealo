@@ -2,7 +2,9 @@
   padding: 10px;
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
-  color: var(--gray-lighter);
+  /* Same value as before (--muted-foreground is --gray-lighter) — a pure
+     rename onto the new semantic layer, not a colour change. */
+  color: var(--muted-foreground);
 }
 
 .galeria-title {
@@ -15,12 +17,14 @@
      shadows — this one already pointed at a token, but carried the same
      high blur/spread as the ones that didn't. */
   box-shadow: 0px -10px 10px 3px var(--red-dark);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 
   & h2 {
     margin-top: 0px;
-    border-bottom: groove var(--red-dark) 10px;
+    /* A heading rule — accent already matched --red-dark exactly here;
+       only the bevel needed to go. */
+    border-bottom: solid var(--border-width) var(--accent);
 
     @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
@@ -34,8 +38,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 25px;
   box-shadow: 0 15px 13px 3px var(--brown-dark);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
   background: var(--black);
   justify-items: center;
   padding: 20px 0;
@@ -62,7 +66,10 @@
   font-family: system-ui;
 
   & div {
-    border: ridge var(--gray-translucent) 4px;
+    /* Photo-tile border — structural, already the exact colour --border
+       now names, so this converts to the token cleanly; only the bevel
+       and its width needed to change. */
+    border: solid var(--border-width) var(--border);
     max-width: 100%;
     max-height: 100%;
 

@@ -4,7 +4,9 @@
 
 .hero-container {
   display: grid;
-  border:groove var(--gray-light) 5px;
+  /* Outer edge of the whole mosaic — structural, so it survives as a
+     hairline rather than dropping to nothing. */
+  border: solid var(--border-width) var(--border);
   grid-template-columns: repeat(3, minmax(80px, 1fr));
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
@@ -36,7 +38,11 @@
 }
 
 .hero-container div {
-  border:outset var(--red-dark) 3px;
+  /* This was red wrapping every single tile — nine of them — exactly the
+     "surface" use of red the redesign moves away from. Neutral now; red
+     lives at accent uses (a hover, a heading rule) elsewhere on the
+     page. */
+  border: solid var(--border-width) var(--border);
   max-width: inherit;
   max-height: inherit;
   /* animation: appear 2s ease-in; */
