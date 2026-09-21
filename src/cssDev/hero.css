@@ -11,6 +11,14 @@
 
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(3, auto);
+    /* Nine images at 3 across is too tight on a phone (the tablet band is
+       comfortable enough at ~240px/column to leave alone); 2 across leaves
+       a lone ninth image on its own last row, which is expected, not a bug
+       to fill. Rows are left at repeat(3, auto): the two extra rows this
+       creates are implicit and size themselves the same "auto" way the
+       explicit ones already do, so nothing but the column count needs to
+       change here. */
+    grid-template-columns: repeat(2, minmax(80px, 1fr));
   }
   /* Tier 480 — matches the old --extra-small (screen and (max-width: 480px)) exactly, same range, no change. */
 
@@ -24,9 +32,15 @@
 }
 
 .hero-container div img {
-  box-shadow: 3px 3px 10px var(--red-dark);
+  /* Blur/spread halved site-wide to calm the shadows down without losing
+     them — see vars.css's neighbouring section files for the same rule. */
+  box-shadow: 3px 3px 5px var(--red-dark);
   width:100%;
   height: 100%;
+  /* Forcing width/height to 100% without this discarded every image's
+     natural aspect ratio. cover crops to fill the tile rather than
+     stretching — right for a mosaic of candid photos like this one. */
+  object-fit: cover;
   vertical-align: top;
 }
 

@@ -11,6 +11,17 @@
   grid-row-gap: 80px;
   text-align: center;
 
+  /* Two columns at 375px is roughly 150px each before margins — too
+     narrow for paragraph text, which is why the two rules below already
+     shrink its font at this same width. A single column reads as the
+     vertical division this section needs on a phone; the two extra rows
+     this creates are implicit and size themselves the same "auto" way the
+     explicit rows above already do, so nothing but the column count needs
+     to change here. */
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+
   & .history-div {
     overflow: hidden;
     border: inset #898a8e 3px;
@@ -93,12 +104,26 @@
     & .history-img {
       width: 100%;
       height: 100%;
+      /* Same candid-photo reasoning as hero/fotos: cover crops to fill
+         rather than stretching the image's natural aspect ratio. */
+      object-fit: cover;
     }
   }
 
   & .history-div:nth-of-type(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+
+    /* This explicit placement is what turns the 2-column zigzag into
+       text/image, image/text — desirable at 2 columns, but at 1 column it
+       would pull this item ahead of the third (text2), reading as
+       text1, img2, img1, text2 instead of natural document order. Auto
+       lets it fall back to plain DOM order, which in a single column is
+       exactly the reading order wanted: text1, img1, text2, img2. */
+    @media screen and (max-width: 480px) {
+      grid-column: auto;
+      grid-row: auto;
+    }
   }
 
   & .history-div:nth-of-type(3) {
