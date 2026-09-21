@@ -1,6 +1,9 @@
 .Event {
-  padding-top: 98px;
-  padding-bottom: 80px;
+  padding-top: var(--section-padding-top);
+  /* Event alone never used the shared --section-padding-bottom (40px) —
+     its own value is 80px, unrelated to the other seven sections. See
+     vars.css for why that got its own token instead of folding in. */
+  padding-bottom: var(--event-padding-bottom);
 }
 
 .event-container {
@@ -17,7 +20,9 @@
 
   /* div imagen*/
   & .event .event-image {
-    box-shadow: 0px 5px 30px 5px #a41f28;
+    /* Blur/spread halved site-wide to calm the shadows down without
+       losing them; see vars.css for the tokens these hexes became. */
+    box-shadow: 0px 5px 15px 3px var(--red-dark);
     border-top: 5px ridge #2e2324;
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -30,7 +35,7 @@
     border: 5px ridge #2e2324;
     border-bottom: hidden;
     border-right: hidden;
-    box-shadow: 5px 5px 20px #a41f28;
+    box-shadow: 5px 5px 10px var(--red-dark);
     padding: 3px;
     padding-top: 10px;
     background: #2e2324;
@@ -65,7 +70,7 @@
     align-items: center;
     padding: 7px;
     border-bottom: 6px inset #a1a1a1;
-    box-shadow: 0 0 20px #d82c19;
+    box-shadow: 0 0 10px var(--red-orange);
     background-color: #590f15;
     border-left: 5px ridge #2e2324;
     max-height: 100%;

@@ -1,5 +1,5 @@
 .Video {
-  padding-top:98px;
+  padding-top: var(--section-padding-top);
 }
 
 .video-title {
@@ -8,7 +8,9 @@
   font-size: 26px;
   margin-top: 25px;
   font-family: 'Pacifico',system-ui;
-  box-shadow: 0px -10px 20px 5px #ff0018;
+  /* Blur/spread halved site-wide to calm the shadows down without losing
+     them; see vars.css for the token this hex became. */
+  box-shadow: 0px -10px 10px 3px var(--red-bright);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: #212226;

@@ -11,10 +11,49 @@
   --gray-translucent: rgba(111, 115, 114, 0.7);
   --gray-light: #A1A1A1;
   --gray-lighter: #A7A9AC;
+  --gray-dark: #56575b;
   --brown-dark: #2E2324;
   --red-translucent: rgba(210, 6, 6, 0.4);
   --red-dark: #a41f28;
+  --red-bright: #ff0018;
+  --red-bright-translucent: rgba(255, 0, 24, 0.7);
+  --red-orange: #d82c19;
   --black: #0a0b0f;
+
+  /* Section vertical rhythm. --section-padding-top/--section-padding-bottom
+     were the same 98px/40px written seven times across seven files (plus
+     once more as galeria's own copy of the shared rule below, since it
+     isn't part of that rule's selector list) — retuning either meant
+     editing every file that used it. --event-padding-bottom exists
+     because Event alone never used the shared 40px; it has its own 80px,
+     unrelated to the other seven, so it gets its own token rather than
+     folding into --section-padding-bottom and losing that difference.
+     Desktop values below are exactly what shipped before this token
+     existed — nothing above 640px moves a pixel. Below 640px, the user
+     read the real site and found 138px of empty space between sections
+     (98 top + 40 bottom) and, inside History specifically, 80px between
+     every stacked block once that section went to one column — cut down
+     here: roughly 41% for the shared top padding, half for both bottom
+     paddings, a quarter for History's row gap. This block is the one
+     place to change any of it, for the whole page, at either size. */
+  --section-padding-top: 98px;
+  --section-padding-bottom: 40px;
+  --event-padding-bottom: 80px;
+  --history-row-gap: 80px;
+
+  /* The 98px above is not only breathing room between sections: the site
+     header is position:fixed at top:0, and the mobile menu it contains
+     opens at top:53px, which is the only measurement of that bar in the
+     code. So the narrow value has a floor - drop it under ~53px and every
+     section heading slides beneath the header. 60px clears it with a
+     little room and still cuts the gap between sections from 138px to
+     80px. Tune from here, but not below the header. */
+  @media screen and (max-width: 640px) {
+    --section-padding-top: 60px;
+    --section-padding-bottom: 20px;
+    --event-padding-bottom: 40px;
+    --history-row-gap: 20px;
+  }
 }
 
 /* Was the --containerGrid custom property set, applied via `@apply
@@ -31,6 +70,6 @@
 .Portada, .Hero, .History, .Fotos, .Video, .Event, .Location, .Footer {
   padding:10px;
   padding-top: 2px;
-  padding-bottom: 40px;
+  padding-bottom: var(--section-padding-bottom);
   color: white;
 }

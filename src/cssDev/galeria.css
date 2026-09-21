@@ -1,7 +1,7 @@
 .Galeria {
   padding: 10px;
-  padding-top: 98px;
-  padding-bottom: 40px;
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
   color: var(--gray-lighter);
 }
 
@@ -11,7 +11,10 @@
   padding-bottom: 10px;
   font-size: 25px;
   margin-top: 25px;
-  box-shadow: 0px -10px 20px 5px var(--red-dark);
+  /* Blur/spread halved, same rule applied across the rest of the page's
+     shadows — this one already pointed at a token, but carried the same
+     high blur/spread as the ones that didn't. */
+  box-shadow: 0px -10px 10px 3px var(--red-dark);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
@@ -30,19 +33,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 25px;
-  box-shadow: 0 15px 25px 5px var(--brown-dark);
+  box-shadow: 0 15px 13px 3px var(--brown-dark);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: var(--black);
   justify-items: center;
   padding: 20px 0;
 
+  /* 2 columns from here down to 0, with no narrower tier: this section
+     always has exactly 4 items, so 2 columns is already an exact 2x2 —
+     nothing to hide, unlike hero/fotos. A max-width:480px collapse to a
+     single column used to sit here and broke that below 480px for no
+     reason; removed, so this same rule now covers the full range,
+     keeping the grid 2x2 at every width, consistent with hero/fotos'
+     2x2 below 640px rather than a third, narrower-only shape. */
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 480px) {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -63,6 +69,9 @@
     & img {
       width: 100%;
       height: 100%;
+      /* Same missing property as hero/fotos, just not yet reported —
+         cover crops to fill the tile rather than stretching. */
+      object-fit: cover;
     }
   }
 }

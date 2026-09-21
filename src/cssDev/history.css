@@ -1,5 +1,5 @@
 .History {
-  padding-top: 98px;
+  padding-top: var(--section-padding-top);
 }
 
 .history-container {
@@ -8,8 +8,25 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 10px;
-  grid-row-gap: 80px;
+  /* This was written for the 2-column zigzag, where it separates two
+     rows. Since a70422e the section stacks to one column below 640px, so
+     this same gap falls between all four blocks instead of two — 240px
+     of it rather than 80px. --history-row-gap (vars.css) carries the
+     desktop value unchanged and a quarter of it below 640px. */
+  grid-row-gap: var(--history-row-gap);
   text-align: center;
+
+  /* Two columns get too narrow for paragraph text well before the phone
+     tier — around 150px each at 375px, and still cramped at 600. The user
+     read the live site and put the boundary at 640, so that is where the
+     single column starts; the font rules further down keep their own 480
+     step, which is a separate judgement about text size, not layout. The
+     two extra rows a single column creates are implicit and size
+     themselves the same "auto" way the explicit rows above do, so nothing
+     but the column count changes here. */
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 
   & .history-div {
     overflow: hidden;
@@ -93,12 +110,26 @@
     & .history-img {
       width: 100%;
       height: 100%;
+      /* Same candid-photo reasoning as hero/fotos: cover crops to fill
+         rather than stretching the image's natural aspect ratio. */
+      object-fit: cover;
     }
   }
 
   & .history-div:nth-of-type(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+
+    /* This explicit placement is what turns the 2-column zigzag into
+       text/image, image/text — desirable at 2 columns, but at 1 column it
+       would pull this item ahead of the third (text2), reading as
+       text1, img2, img1, text2 instead of natural document order. Auto
+       lets it fall back to plain DOM order, which in a single column is
+       exactly the reading order wanted: text1, img1, text2, img2. */
+    @media screen and (max-width: 640px) {
+      grid-column: auto;
+      grid-row: auto;
+    }
   }
 
   & .history-div:nth-of-type(3) {
