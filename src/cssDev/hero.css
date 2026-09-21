@@ -9,16 +9,27 @@
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
 
+  /* 640px, not 480: the first cut was inferred from column-width math:
+     480 was wrong, the user opened the real site and found it already
+     read badly below 640. Empirical beats inferred, so this moved.
+     Nine images, 2 visible columns, but only 4 shown: the user wants an
+     exact 2x2, not "2 columns and however many rows that takes" — the
+     fifth image on is hidden outright rather than reflowed onto a third
+     row. display:none removes a child from grid placement entirely, so
+     the unused third row of the row-template below simply collapses to
+     nothing; nothing there needed to change. Hiding alone would still
+     download all nine — see Media.jsx's loading="lazy" for the half of
+     this fix that actually saves the bytes. */
+  @media screen and (max-width: 640px) {
+    grid-template-columns: repeat(2, minmax(80px, 1fr));
+
+    & div:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(3, auto);
-    /* Nine images at 3 across is too tight on a phone (the tablet band is
-       comfortable enough at ~240px/column to leave alone); 2 across leaves
-       a lone ninth image on its own last row, which is expected, not a bug
-       to fill. Rows are left at repeat(3, auto): the two extra rows this
-       creates are implicit and size themselves the same "auto" way the
-       explicit ones already do, so nothing but the column count needs to
-       change here. */
-    grid-template-columns: repeat(2, minmax(80px, 1fr));
   }
   /* Tier 480 — matches the old --extra-small (screen and (max-width: 480px)) exactly, same range, no change. */
 

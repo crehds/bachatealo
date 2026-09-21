@@ -11,14 +11,15 @@
   grid-row-gap: 80px;
   text-align: center;
 
-  /* Two columns at 375px is roughly 150px each before margins — too
-     narrow for paragraph text, which is why the two rules below already
-     shrink its font at this same width. A single column reads as the
-     vertical division this section needs on a phone; the two extra rows
-     this creates are implicit and size themselves the same "auto" way the
-     explicit rows above already do, so nothing but the column count needs
-     to change here. */
-  @media screen and (max-width: 480px) {
+  /* Two columns get too narrow for paragraph text well before the phone
+     tier — around 150px each at 375px, and still cramped at 600. The user
+     read the live site and put the boundary at 640, so that is where the
+     single column starts; the font rules further down keep their own 480
+     step, which is a separate judgement about text size, not layout. The
+     two extra rows a single column creates are implicit and size
+     themselves the same "auto" way the explicit rows above do, so nothing
+     but the column count changes here. */
+  @media screen and (max-width: 640px) {
     grid-template-columns: 1fr;
   }
 
@@ -120,7 +121,7 @@
        text1, img2, img1, text2 instead of natural document order. Auto
        lets it fall back to plain DOM order, which in a single column is
        exactly the reading order wanted: text1, img1, text2, img2. */
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 640px) {
       grid-column: auto;
       grid-row: auto;
     }

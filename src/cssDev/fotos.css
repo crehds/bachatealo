@@ -34,10 +34,19 @@
   background: var(--black);
   justify-items: center;
 
-  /* Three across is too tight on a phone; the tablet band stays at 3,
-     which measures comfortably wide enough to leave alone. */
-  @media screen and (max-width: 480px) {
+  /* 640px, not 480 — same empirical correction as hero.css's, from the
+     same real-site check; see hero.css for the full reasoning. The tablet
+     band stays at 3, which measures comfortably wide enough to leave
+     alone. Six photos, but only 4 shown, exact 2x2: the fifth and sixth
+     are hidden outright, matching hero's "no third row" choice — and
+     Media.jsx's loading="lazy" is what stops the hidden two from being
+     downloaded anyway. */
+  @media screen and (max-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
+
+    & div:nth-child(n + 5) {
+      display: none;
+    }
   }
 
   /*Fotos media component*/

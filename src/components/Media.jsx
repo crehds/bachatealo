@@ -7,7 +7,9 @@ class Media extends PureComponent {
     return (
       <div className={className}>
         {/* Per-image alt text belongs in src/data.json alongside each media entry once someone writes real descriptions */}
-        <img src={BASE_URL + src} alt={alt || ''} />
+        {/* Lazy so a display:none tile (e.g. hero/fotos images hidden on a
+            phone) is never fetched at all, not just hidden after download. */}
+        <img src={BASE_URL + src} alt={alt || ''} loading="lazy" />
       </div>
     );
   }
