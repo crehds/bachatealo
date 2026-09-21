@@ -15,6 +15,7 @@ it('orders sections exactly as declared in data.json', () => {
     '6',
     '7',
     '8',
+    '9',
   ]);
 });
 
@@ -39,6 +40,11 @@ it('wires each section to its data id and, where present, its media ids', () => 
     },
     '7': { sectionId: '7', data: 'videos', media: ['18', '19'] },
     '8': { sectionId: '8', data: 'footer' },
+    '9': {
+      sectionId: '9',
+      data: 'galeria',
+      media: ['20', '21', '22', '23'],
+    },
   });
 });
 
@@ -53,6 +59,7 @@ it('injects the parent sectionId into every data entity', () => {
   expect(sectionIdOf('fotos')).toBe('6');
   expect(sectionIdOf('videos')).toBe('7');
   expect(sectionIdOf('footer')).toBe('8');
+  expect(sectionIdOf('galeria')).toBe('9');
 });
 
 it('injects the parent sectionId into every media entity', () => {
@@ -66,4 +73,5 @@ it('injects the parent sectionId into every media entity', () => {
     expect(sectionIdOf(id)).toBe('6')
   );
   ['18', '19'].forEach((id) => expect(sectionIdOf(id)).toBe('7'));
+  ['20', '21', '22', '23'].forEach((id) => expect(sectionIdOf(id)).toBe('9'));
 });

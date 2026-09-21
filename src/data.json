@@ -233,6 +233,46 @@
           ]
         }
       }
+    },
+    {
+      "sectionId": "9",
+      "data": {
+        "id": "galeria",
+        "description": "Eventos pasados",
+        "title": "Eventos pasados",
+        "active": false,
+        "placeholderNote": "PLANTILLA: sección de ejemplo, no contenido real. Permanece oculta mientras \"active\" sea false. Antes de publicar, reemplazar en cada elemento de \"media\" su \"title\" (nombre real del evento), \"date\" (fecha real en formato AAAA-MM-DD) y \"alt\" (descripción real de la foto para lectores de pantalla), y cambiar \"src\" por una foto real. Recién al final, cuando todo el contenido sea real, cambiar \"active\" a true para publicar la sección."
+      },
+      "media": [
+        {
+          "id": "20",
+          "src": "/images/paraHero/3.webp",
+          "title": "PLANTILLA - Evento anterior 1 (completar)",
+          "date": "2017-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "21",
+          "src": "/images/paraHero/8.webp",
+          "title": "PLANTILLA - Evento anterior 2 (completar)",
+          "date": "2019-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "22",
+          "src": "/images/paraHero/1.webp",
+          "title": "PLANTILLA - Evento anterior 3 (completar)",
+          "date": "2018-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "23",
+          "src": "/images/paraHero/9.webp",
+          "title": "PLANTILLA - Evento anterior 4 (completar)",
+          "date": "2020-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        }
+      ]
     }
   ]
 }

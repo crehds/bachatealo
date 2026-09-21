@@ -43,6 +43,16 @@ export function isEventVisible(eventSection, today = new Date()) {
   return date >= startOfToday;
 }
 
+// The gallery is a retrospective, not an announcement, so it has nothing to
+// expire against — no isEventVisible-style date half-life applies here. It
+// defaults to hidden: the shipped template carries placeholder names and
+// reused photos, and nothing should let that reach a real visitor until
+// someone has put real content in and switched it on deliberately, the same
+// on-switch shape isEventVisible already uses for its own flag.
+export function isGaleriaVisible(gallerySection) {
+  return Boolean(gallerySection) && gallerySection.active === true;
+}
+
 export function formatEventDate(iso) {
   const date = parseEventDate(iso);
 
