@@ -36,10 +36,11 @@
   @media screen and (max-width: 768px) {
     position:fixed;
     /* A translucent layer over page content, not a panel within it — the
-       same role as the fixed header, so both now share one --overlay
-       value. Real change here: opacity 0.9 to 0.8 and the tint moves
-       from this near-black charcoal to plain black, matching the
-       header's own overlay exactly. */
+       same role as the fixed header, so both share one --overlay value.
+       The opacity this menu had, 0.9, is what that token holds: the
+       gallery and video imagery scroll behind this at full viewport, and
+       at 0.8 they bled through twice as much. Only the tint moved, from
+       a near-black charcoal to plain black. */
     background: var(--overlay);
     z-index: 3;
     top:53px;

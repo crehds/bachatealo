@@ -39,9 +39,11 @@
   left:0;
   right:0;
   z-index: 1000;
-  /* The canonical --overlay value — translucent, over page content, not
-     a panel within it. menuIcon.css's mobile-menu overlay now converges
-     on this same value; see there for what that changes. */
+  /* Translucent, over page content, not a panel within it. This header
+     and the mobile menu share one --overlay value now. Real change here:
+     this bar was rgba(0,0,0,0.8) and the token settled at 0.9, so it is a
+     shade darker than it used to be — the menu needed the extra opacity
+     and sharing the role means sharing the value. */
   background: var(--overlay);
   max-height: 100%;
 }

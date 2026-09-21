@@ -128,12 +128,8 @@
        is a floor for metadata, not for text someone has to read on the
        smallest screen there is. Losing two pixels of taper costs nothing;
        losing a pixel of legibility where it is already hardest costs the
-       reader. Both bands sit on sm. */
-    @media screen and (max-width: 480px) {
-      font-size: var(--font-size-sm);
-    }
-
-    @media screen and (min-width: 481px) and (max-width: 768px) {
+       reader. Both bands sit on sm, so they are one band now. */
+    @media screen and (max-width: 768px) {
       font-size: var(--font-size-sm);
     }
   }
