@@ -14,7 +14,9 @@
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
   /* A panel distinct from the page's own background, not the page
-     background itself — --surface-elevated, not --surface. */
+     background itself — --surface-elevated, not --surface. This is also a
+     real colour move, not just a rename: #212226 became #2e2324, folding
+     two near-identical dark tones into one. */
   background: var(--surface-elevated);
 
   & h2 {

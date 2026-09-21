@@ -122,13 +122,15 @@
     font-size: var(--font-size-md);
     max-height: 100%;
 
-    /* This was 11px here and 13px in the band above: text stepping down
-       as the screen narrows. 11 sat exactly one pixel from both 10 and 12,
-       so snapping it to the nearer step was a coin toss that happened to
-       land on the same step as its neighbour and flatten the taper. The
-       scale has a rung below; the step down survives on it. */
+    /* This was 11px here and 13px in the band above, stepping down as the
+       screen narrows, and the taper was briefly rebuilt on the xs rung to
+       keep that shape. That was wrong: this is reading copy, and xs (10px)
+       is a floor for metadata, not for text someone has to read on the
+       smallest screen there is. Losing two pixels of taper costs nothing;
+       losing a pixel of legibility where it is already hardest costs the
+       reader. Both bands sit on sm. */
     @media screen and (max-width: 480px) {
-      font-size: var(--font-size-xs);
+      font-size: var(--font-size-sm);
     }
 
     @media screen and (min-width: 481px) and (max-width: 768px) {
