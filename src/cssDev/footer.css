@@ -1,6 +1,10 @@
 .Footer {
   padding-bottom: 10px;
-  background: #2e2324;
+  /* Same panel role as video's title bar and eventos' cards — the whole
+     section sits directly on the page, with no intermediate base layer
+     of its own, so this is --surface-elevated too. Zero colour change:
+     was already --brown-dark's own value. */
+  background: var(--surface-elevated);
 }
 
 .footer-container {
@@ -15,7 +19,7 @@
 
   & .footer-details {
     padding: 10px;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
 
     & h2 {
       margin-top: 0px;

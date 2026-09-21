@@ -11,7 +11,7 @@
   text-align: center;
   font-family: 'Boogaloo';
   padding-bottom: 10px;
-  font-size: 25px;
+  font-size: var(--font-size-lg);
   margin-top: 25px;
   /* Blur/spread halved, same rule applied across the rest of the page's
      shadows — this one already pointed at a token, but carried the same
@@ -28,7 +28,7 @@
 
     @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
-      font-size: 27px;
+      font-size: var(--font-size-lg);
     }
   }
 }
@@ -40,7 +40,7 @@
   box-shadow: 0 15px 13px 3px var(--brown-dark);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  background: var(--black);
+  background: var(--surface);
   justify-items: center;
   padding: 20px 0;
 
@@ -90,6 +90,6 @@
 
 .galeria-item-date {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--font-size-base);
   color: var(--gray-light);
 }

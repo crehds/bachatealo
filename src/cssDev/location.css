@@ -39,7 +39,7 @@
     /* grid-template-columns: auto; */
     grid-template-columns: 20% 80%;
     grid-template-rows: repeat(5, auto);
-    font-size: 14px;
+    font-size: var(--font-size-base);
     padding: 5px;
     color: var(--foreground);
     /* Already solid — only the ad-hoc named colour ("brown") needed
@@ -64,11 +64,11 @@
     }
 
     @media screen and (max-width: 768px) {
-      font-size: 12px;
+      font-size: var(--font-size-sm);
     }
 
     @media screen and (max-width: 480px) {
-      font-size: 10px;
+      font-size: var(--font-size-xs);
     }
 
   }
