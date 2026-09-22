@@ -2,12 +2,20 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // CRA derived process.env.PUBLIC_URL from package.json's "homepage" field;
-// Vite has no equivalent inference, so the deployed subpath is set
-// explicitly here instead. src/utils/baseUrl.js reads this back out via
+// Vite has no equivalent inference, so the deployed path is set explicitly
+// here instead. src/utils/baseUrl.js reads this back out via
 // import.meta.env.BASE_URL for the same string-concatenation call sites
 // CRA's PUBLIC_URL used to serve.
+//
+// "/" because the site is served from the ROOT of an organisation GitHub
+// Pages site (https://bachatealo.github.io/). GitHub gives exactly one root
+// per account: a repo named <account>.github.io is served at that root,
+// while every other repo under the same account is a project page served at
+// <account>.github.io/<repo>/ and would need that subpath spelled out here
+// instead. Getting this wrong is not subtle — every asset 404s and the page
+// renders blank.
 export default defineConfig({
-  base: '/bachatealo/',
+  base: '/',
   plugins: [react()],
   build: {
     // deploy (package.json) runs `gh-pages -d build`, and that directory
