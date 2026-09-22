@@ -90,24 +90,20 @@
            heading isn't that. */
         color: var(--foreground);
 
-        /* Left as percentages in this pass, deliberately: these are
-           relative to an inherited size, so snapping them onto the
-           absolute --font-size scale would change what they compute to
-           by an amount that depends on their context, not a flat delta
-           like every px value in this pass got. That reading is its own
-           task, not a bulk conversion — flagged as the follow-up. */
-        @media screen and (min-width: 769px) and (max-width: 1024px) {
-          font-size: 95%;
-        }
-
-        @media screen and (min-width: 481px) and (max-width: 768px) {
-          font-size: 90%;
-        }
-
-        /* Same --history-title vs --nano collision as above, same pick. */
-        @media screen and (max-width: 480px) {
-          font-size: 80%;
-        }
+        /* One step at every width, replacing the 95/90/80% ladder the
+           earlier pass deliberately left for this reading.
+           The ladder never measured what its author meant. A percentage
+           font-size resolves against the PARENT's size, not against the
+           element's own: the parent is .history-title, which inherits the
+           body's 16px, so 95% computed to 15.2px — not 95% of this h2's
+           24px browser default. Crossing 1024px dropped the heading from
+           24px to 15.2px, a 37% collapse at a single breakpoint, and by
+           480px it reached 12.8px. With the paragraph below now at 14px,
+           that left the heading SMALLER than its own body copy, which is
+           an inverted hierarchy rather than a size choice.
+           Measured, not assumed: 24 / 15.2 / 14.4 / 12.8px across the
+           four tiers. */
+        font-size: var(--font-size-md);
       }
     }
 
@@ -136,14 +132,19 @@
       font-family: system-ui;
       text-align: justify;
       align-self: center;
-      @media screen and (min-width: 481px) and (max-width: 768px) {
-        font-size: 70%;
-      }
-
-      /* Same --history-title vs --nano collision as above, same pick. */
-      @media screen and (max-width: 480px) {
-        font-size: 50%;
-      }
+      /* One step at every width. Measured before changing: this was the
+         body's inherited 16px above 768px, 70% (11.2px) to 768, and 50%
+         (8px) below 480 — so the longest body copy on the page rendered
+         at half the size of the nav links, on the screen where it most
+         needs reading. Body text has no reason to shrink with the
+         viewport, so the ladder goes entirely rather than being snapped
+         to a smaller scale step: --font-size-xs (10px) is this project's
+         floor for metadata, not for prose.
+         --font-size-base over the alternatives after reading all three at
+         390px: 12px pushes the justified text into visible word gaps in a
+         column this narrow, and 16px reads well but costs noticeably more
+         scrolling for the same passage. */
+      font-size: var(--font-size-base);
     }
 
     & .history-img {
