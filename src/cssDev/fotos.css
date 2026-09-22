@@ -6,7 +6,7 @@
   text-align: center;
   font-family: 'Boogaloo';
   padding-bottom: 10px;
-  font-size: 25px;
+  font-size: var(--font-size-lg);
   margin-top: 25px;
   /* Blur/spread halved site-wide to calm the shadows down without losing
      them; see vars.css for the token this hex became. */
@@ -20,7 +20,7 @@
     border-bottom: solid var(--border-width) var(--accent);
     @media screen and (max-width: 1024px) {
       margin-bottom: 15px;
-      font-size: 27px;
+      font-size: var(--font-size-lg);
     }
   }
 }
@@ -33,7 +33,7 @@
   box-shadow: 0 15px 13px 3px var(--brown-dark);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  background: var(--black);
+  background: var(--surface);
   justify-items: center;
 
   /* 640px, not 480 — same empirical correction as hero.css's, from the

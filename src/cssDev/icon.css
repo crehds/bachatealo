@@ -21,7 +21,7 @@
  line-height: 1;
  /* Líneas agregadas por mi */
  text-decoration: none;
- font-size: 50px;
+ font-size: var(--font-size-xl);
  color: var(--foreground);
  width: 40px;
  height: 40px;
