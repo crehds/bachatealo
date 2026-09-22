@@ -114,6 +114,16 @@
   --border-width: 1px;
   --radius: 10px;
 
+  /* The page had no horizontal-centring container anywhere — every
+     section's inner container was max-width:100% (i.e. "don't exceed my
+     parent," which is already full-bleed), so on a wide viewport content
+     ran edge to edge. One measure, used by every section's own inner
+     container (see the consolidated rule below), rather than a value
+     re-guessed per section. 1200px is a reading-width pick, not derived
+     from an existing value — nothing on the page used an absolute
+     max-width before this. */
+  --content-width: 1200px;
+
   /* Section vertical rhythm. --section-padding-top/--section-padding-bottom
      were the same 98px/40px written seven times across seven files (plus
      once more as galeria's own copy of the shared rule below, since it
@@ -153,9 +163,47 @@
 /* Was the --containerGrid custom property set, applied via `@apply
    --containerGrid;` in each of these 4 rules. Custom property sets never
    shipped in any browser, so the native replacement is one rule whose
-   selector lists everyone who used it. */
-.hero-container, .history-container, .fotos.container, .video.container {
-  max-width: 100%;
+   selector lists everyone who used it.
+
+   Extended in the layout-centring pass to also cover location, galeria,
+   event and footer's own inner containers — never part of the old
+   --containerGrid set, but structurally the same thing: a section's
+   single inner container, sized to the page. All eight now share one measure,
+   --content-width, replacing the old unconstrained max-width:100%, and
+   are centred via margin-left/right:auto rather than margin-inline —
+   vite.config.mjs pins cssTarget to safari14, and margin-inline only
+   shipped in Safari 14.1.
+
+   height:100% is pre-existing, but its REACH is not unchanged: it carried
+   over for the original four and the four added here receive it for the
+   first time. Checked rather than assumed — .Location, .Galeria, .Event
+   and .Footer each declare only padding (plus a background on .Footer);
+   none sets height, display or position, so each is a plain auto-height
+   block and the CSS2.1 percentage-height rule resolves this to auto on
+   all four. Inert on all eight today, kept rather than split for no gain.
+
+   .header.container is deliberately NOT here and gets no measure at all.
+   It is position:fixed, whose containing block is the viewport, so
+   height:100% would size it to the full viewport height instead of
+   falling back to auto. And it carries the bar's background (--overlay)
+   on the same box as its content, so capping its width shrinks the
+   translucent bar and leaves the page scrolling past uncovered in the
+   gutters either side.
+
+   Carrying a background is NOT by itself disqualifying, and it would be
+   wrong to read this as "the capped eight have no background".
+   .galeria.container, .fotos.container and .video.container each carry
+   one and are capped here on purpose: they are ordinary in-flow panels,
+   and a panel that narrows and centres reads as a card. What makes the
+   header different is that it is a fixed overlay whose whole job is to
+   cover the content scrolling behind it, so a gap either side defeats
+   the point. Giving the header a measure means separating bar from
+   content first, which is a JSX change and a pass of its own. */
+.hero-container, .history-container, .fotos.container, .video.container,
+.location-container, .galeria.container, .event-container, .footer-container {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
 }
 

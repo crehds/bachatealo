@@ -13,8 +13,8 @@
      "shared foundation" role, not mixed into "components".
    - base: body.css — the only file styling the document itself
      (`body`, `.visually-hidden`) rather than a section or widget.
-   - layout: home-layout.css — the one file that is purely page-level
-     structure (`.home-layout`), not a specific component.
+   - layout: home-layout.css and header-layout.css — page-level structure
+     (`.home-layout`, `.header-layout`), not a specific component.
    - components: everything else. This is most of the 14 files because
      most of them *are* a specific, named UI piece — a page section
      (portada, hero, history, fotos, video, eventos, location, footer),
@@ -29,6 +29,7 @@
 @import "./icon.css" layer(components);
 @import "./menuIcon.css" layer(components);
 @import "./home-layout.css" layer(layout);
+@import "./header-layout.css" layer(layout);
 @import "./portada.css" layer(components);
 @import "./hero.css" layer(components);
 @import "./history.css" layer(components);
