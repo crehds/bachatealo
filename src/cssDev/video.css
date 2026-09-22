@@ -46,8 +46,11 @@
   border-bottom-right-radius: var(--radius);
 
   @media screen and (max-width: 1024px) {
+    /* One column here, and no row template: the videos come from
+       data.json via album.map(), so grid derives one implicit `auto` row
+       per video. The template used to hardcode two, which only matched
+       because there happen to be two videos today. */
     grid-template-columns: auto;
-    grid-template-rows: repeat(2, auto);
 
     & figure {
       max-width: 70%;
