@@ -49,9 +49,11 @@
     box-shadow: 5px 5px 10px var(--red-dark);
     padding: 3px;
     padding-top: 10px;
-    background: #2e2324;
+    /* Was already --brown-dark's own value, so this is the same panel
+       role as video's title bar or footer — --surface-elevated. */
+    background: var(--surface-elevated);
     font-family: 'Pacifico';
-    font-size: 28px;
+    font-size: var(--font-size-lg);
     max-height: 100%;
 
     & h2 {
@@ -62,11 +64,13 @@
          applying: --event's declaration already sat later in the source
          than --small's, so 28px already won the 481-645px overlap today —
          this pick only changes 646-768px, where 35px was previously the
-         only rule reaching that far. */
+         only rule reaching that far. Both 28s are now --font-size-lg
+         (27px) — a 1px move, invisible on screen, that keeps this pair
+         equal exactly as the comment above requires. */
       @media screen and (max-width: 768px) {
         margin-top: 25px;
         margin-bottom: 25px;
-        font-size: 28px;
+        font-size: var(--font-size-lg);
       }
     }
   }
@@ -84,7 +88,12 @@
        shared neutral border colour. */
     border-bottom: solid var(--border-width) var(--border);
     box-shadow: 0 0 10px var(--red-orange);
-    background-color: #590f15;
+    /* Red here carried no meaning of its own — not a hover, not marking
+       anything — just a colour choice for a static details panel, so it
+       moves to the same neutral --surface-elevated as the title card
+       above rather than to --surface-accent. Real colour change:
+       #590f15 to --brown-dark's #2e2324. */
+    background-color: var(--surface-elevated);
     border-left: solid var(--border-width) var(--border);
     max-height: 100%;
 
@@ -110,15 +119,18 @@
   }
 
   & .event .event-flexcontainer {
-    font-size: 20px;
+    font-size: var(--font-size-md);
     max-height: 100%;
 
-    @media screen and (max-width: 480px) {
-      font-size: 11px;
-    }
-
-    @media screen and (min-width: 481px) and (max-width: 768px) {
-      font-size: 13px;
+    /* This was 11px here and 13px in the band above, stepping down as the
+       screen narrows, and the taper was briefly rebuilt on the xs rung to
+       keep that shape. That was wrong: this is reading copy, and xs (10px)
+       is a floor for metadata, not for text someone has to read on the
+       smallest screen there is. Losing two pixels of taper costs nothing;
+       losing a pixel of legibility where it is already hardest costs the
+       reader. Both bands sit on sm, so they are one band now. */
+    @media screen and (max-width: 768px) {
+      font-size: var(--font-size-sm);
     }
   }
 

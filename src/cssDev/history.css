@@ -52,7 +52,12 @@
       margin-left: 30%;
       margin-right: 30%;
       padding: 8px;
-      background: #a3000f;
+      /* Red here reads as a colour choice for a static title box, not a
+         hover or a heading rule — same judgement as eventos' description
+         panel, so it moves to --surface-elevated. Real colour change:
+         #a3000f to --brown-dark's #2e2324, and this now matches the
+         paragraph box below it, which was already headed there. */
+      background: var(--surface-elevated);
 
       @media screen and (min-width: 481px) and (max-width: 768px) {
         margin-left: 27%;
@@ -78,8 +83,19 @@
         border-left: solid var(--border-width) var(--accent);
         margin: 0;
         padding: 5px;
-        color: #f0f1f1;
+        /* Read as foreground, not muted: this is the heading's own text,
+           full emphasis, not secondary content — #f0f1f1 was already
+           within 2% of white. Not one of the three sites named for
+           --muted-foreground; that role is for de-emphasised text, and a
+           heading isn't that. */
+        color: var(--foreground);
 
+        /* Left as percentages in this pass, deliberately: these are
+           relative to an inherited size, so snapping them onto the
+           absolute --font-size scale would change what they compute to
+           by an amount that depends on their context, not a flat delta
+           like every px value in this pass got. That reading is its own
+           task, not a bulk conversion — flagged as the follow-up. */
         @media screen and (min-width: 769px) and (max-width: 1024px) {
           font-size: 95%;
         }
@@ -104,7 +120,17 @@
          its own direct value. */
       border-radius: 4px;
       margin: 8px;
-      background: #212226;
+      /* A panel distinct from the page background — --surface-elevated,
+         not --surface. Real colour change: #212226 to --brown-dark's
+         #2e2324, consolidating the last of the near-black family onto
+         one value. */
+      background: var(--surface-elevated);
+      /* Not converted: read as this paragraph's own primary reading
+         text, not de-emphasised/secondary content, so --muted-foreground
+         (visibly darker, --gray-lighter) would be the wrong role here —
+         it would dim the section's main body copy. Closer to
+         --foreground than --muted-foreground but not an exact match for
+         either; left as its own value rather than force either. */
       color: #d4d5d6;
       padding: 8px 10px;
       font-family: system-ui;

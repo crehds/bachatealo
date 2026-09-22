@@ -35,7 +35,13 @@
 
   @media screen and (max-width: 768px) {
     position:fixed;
-    background: rgba(33,34,38,.9);
+    /* A translucent layer over page content, not a panel within it — the
+       same role as the fixed header, so both share one --overlay value.
+       The opacity this menu had, 0.9, is what that token holds: the
+       gallery and video imagery scroll behind this at full viewport, and
+       at 0.8 they bled through twice as much. Only the tint moved, from
+       a near-black charcoal to plain black. */
+    background: var(--overlay);
     z-index: 3;
     top:53px;
     left:-100vw;
@@ -69,12 +75,22 @@
   -webkit-appearance: none;
   border: none;
   padding: 0;
+  /* Left in rem, deliberately: a considered, root-relative choice (this
+     sizes the icon glyph inside the button and respects the visitor's
+     own font-size preference) rather than a stray px value that drifted
+     from having no scale — not the accumulation problem this pass fixes,
+     so not forced onto the px-based --font-size scale. */
   font-size: 1rem;
   cursor: pointer;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color:rgba(87, 33, 33, 0.8);
+  /* The site's one meaningfully "accent as surface" case that's
+     translucent rather than opaque — this button floats over scrolling
+     content, so it keeps its own alpha rather than routing through
+     --surface-accent (opaque). Zero colour change: exact match for
+     --maroon-translucent. */
+  background-color: var(--maroon-translucent);
   display: none;
   position: fixed;
   line-height: 40px;

@@ -20,6 +20,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Left as-is, deliberately: fluid, viewport-relative sizing is a
+     different kind of choice from a stray px value, not the accumulation
+     problem this pass fixes. Traced what actually renders at this size:
+     every descendant with visible text (.menu, .menu li, the menu link)
+     sets its own explicit font-size, so this value is inherited by
+     nothing currently on screen — it looks vestigial from the original
+     CRA boilerplate rather than load-bearing. Left untouched anyway:
+     removing an unused property is a behaviour change I wasn't asked to
+     make in a pass about tokenising sizes that ARE used, not about
+     deleting ones that (as far as I can trace) aren't. */
   font-size: calc(10px + 2vmin);
   margin: 0;
   padding: 0;
@@ -29,19 +39,24 @@
   left:0;
   right:0;
   z-index: 1000;
-  background: rgba(0,0,0, 0.8);
+  /* Translucent, over page content, not a panel within it. This header
+     and the mobile menu share one --overlay value now. Real change here:
+     this bar was rgba(0,0,0,0.8) and the token settled at 0.9, so it is a
+     shade darker than it used to be — the menu needed the extra opacity
+     and sharing the role means sharing the value. */
+  background: var(--overlay);
   max-height: 100%;
 }
 
 .menu {
-  font-size: 19px;
+  font-size: var(--font-size-md);
   display: flex;
   justify-content: center;
   padding: 0;
   font-family: 'Fjalla One',sans-serif;
 
   @media screen and (max-width: 1024px) {
-    font-size: 15px
+    font-size: var(--font-size-base);
   }
 
 }
@@ -101,7 +116,9 @@
 }
 
 .menu ul li a {
-  color: #a7a9ac;
+  /* Confirmed muted text: a secondary nav label, dimmer than a heading
+     by design. Exact match for --gray-lighter — zero colour change. */
+  color: var(--muted-foreground);
   text-decoration: none;
 }
 
@@ -119,7 +136,10 @@
        corner-radius pattern the rest of the page uses, so left as its
        own direct value rather than folded onto --radius. */
     border-radius: 3px;
-    background: #590f15;
+    /* An interactive hover fill — meaningful, not arbitrary, so it stays
+       red via --surface-accent rather than moving to neutral. Exact
+       match for --maroon — zero colour change. */
+    background: var(--surface-accent);
   }
 
   @media screen and (max-width: 768px) {
