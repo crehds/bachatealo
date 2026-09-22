@@ -83,6 +83,10 @@
   margin-left: 70px;
   margin-right: 70px;
   font-weight: bold;
+  /* Declared on the resting state, not on :hover, so leaving fades out
+     at the same rate entering fades in. On :hover it would only apply on
+     the way in and snap on the way out. */
+  transition: box-shadow 150ms ease-out;
 
   /* --prueba2 (1024-1205, 40px) and --prueba (1206-1326, 60px) collided
      here; the user picked 40px — the value tuned for the narrow end of
@@ -120,6 +124,19 @@
      by design. Exact match for --gray-lighter — zero colour change. */
   color: var(--muted-foreground);
   text-decoration: none;
+  /* The hover state below paints this same border and a fill. Declaring
+     the border here, transparent, keeps the box one size in and out of
+     hover: previously the border appeared from nothing and widened the
+     link by 2px at the moment of entry, so the label shifted. Now only
+     the colour crosses, and the geometry never moves. */
+  border: solid var(--border-width) transparent;
+  border-radius: 3px;
+  /* Named properties rather than `all`: the hover changes exactly these
+     three, and `all` would also animate anything a later rule adds. */
+  transition:
+    border-color 150ms ease-out,
+    background-color 150ms ease-out,
+    box-shadow 150ms ease-out;
 }
 
 .menu ul li:hover {
@@ -128,14 +145,10 @@
   box-shadow: 0px 0px 4px 5px var(--red-bright);
 
   & a {
-    /* Exactly the case the accent colour is for: a hover state. Kept
-       red, unlike every border that was just wrapping a box; the bevel
-       still goes, in favour of a solid hairline. */
-    border: solid var(--border-width) var(--accent);
-    /* 3px, on a small hover pill — not part of the sixteen-way 10px
-       corner-radius pattern the rest of the page uses, so left as its
-       own direct value rather than folded onto --radius. */
-    border-radius: 3px;
+    /* Only the colours change here. Width, style and radius are declared
+       on the base rule above, so this crosses from transparent to the
+       accent without resizing anything. */
+    border-color: var(--accent);
     /* An interactive hover fill — meaningful, not arbitrary, so it stays
        red via --surface-accent rather than moving to neutral. Exact
        match for --maroon — zero colour change. */
@@ -146,4 +159,15 @@
     box-shadow: none;
   }
 
+}
+
+/* The nav's motion, for anyone who asked their system for less of it.
+   Both the link and its list item settle straight into the hover state
+   with no travel. hero.css and fotos.css carry the same courtesy for
+   their photo animations; the nav had none until now. */
+@media (prefers-reduced-motion: reduce) {
+  .menu li,
+  .menu ul li a {
+    transition: none;
+  }
 }
