@@ -88,12 +88,11 @@
        shared neutral border colour. */
     border-bottom: solid var(--border-width) var(--border);
     box-shadow: 0 0 10px var(--red-orange);
-    /* Red here carried no meaning of its own — not a hover, not marking
-       anything — just a colour choice for a static details panel, so it
-       moves to the same neutral --surface-elevated as the title card
-       above rather than to --surface-accent. Real colour change:
-       #590f15 to --brown-dark's #2e2324. */
-    background-color: var(--surface-elevated);
+    /* A static details panel carrying the site's red — not a hover, so
+       --surface-brand rather than --surface-accent, though both resolve
+       to the same #590f15 this panel always had. The type pass repainted
+       it --brown-dark; restored under the colour constraint. */
+    background-color: var(--surface-brand);
     border-left: solid var(--border-width) var(--border);
     max-height: 100%;
 
