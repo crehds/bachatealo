@@ -174,25 +174,31 @@
    vite.config.mjs pins cssTarget to safari14, and margin-inline only
    shipped in Safari 14.1.
 
-   height:100% carries over unchanged for the eight below: none of their
-   parent sections (.Hero, .History, .Fotos, .Video, .Location, .Galeria,
-   .Event, .Footer) declare an explicit height, so per the CSS2.1
-   percentage-height rule this resolves to auto on every one of them — an
-   inert no-op today, kept for consistency with the original four rather
-   than for effect.
+   height:100% is pre-existing, but its REACH is not unchanged: it carried
+   over for the original four and the four added here receive it for the
+   first time. Checked rather than assumed — .Location, .Galeria, .Event
+   and .Footer each declare only padding (plus a background on .Footer);
+   none sets height, display or position, so each is a plain auto-height
+   block and the CSS2.1 percentage-height rule resolves this to auto on
+   all four. Inert on all eight today, kept rather than split for no gain.
 
-   .header.container is deliberately NOT here and gets no measure at all,
-   for two independent reasons. It is position:fixed, whose containing
-   block is the viewport, so height:100% would size it to the full
-   viewport height instead of falling back to auto. And — the reason it
-   stays unconstrained rather than getting its own pair — it carries the
-   bar's background (--overlay) on the same box as its content, so
-   capping its width shrinks the translucent bar to the measure and
-   leaves the page scrolling past uncovered in the gutters either side.
-   Every other section here is background-less, which is why the measure
-   is safe on them and not on this one. Giving the header a measure means
-   separating bar from content first, which is a JSX change and a pass of
-   its own. */
+   .header.container is deliberately NOT here and gets no measure at all.
+   It is position:fixed, whose containing block is the viewport, so
+   height:100% would size it to the full viewport height instead of
+   falling back to auto. And it carries the bar's background (--overlay)
+   on the same box as its content, so capping its width shrinks the
+   translucent bar and leaves the page scrolling past uncovered in the
+   gutters either side.
+
+   Carrying a background is NOT by itself disqualifying, and it would be
+   wrong to read this as "the capped eight have no background".
+   .galeria.container, .fotos.container and .video.container each carry
+   one and are capped here on purpose: they are ordinary in-flow panels,
+   and a panel that narrows and centres reads as a card. What makes the
+   header different is that it is a fixed overlay whose whole job is to
+   cover the content scrolling behind it, so a gap either side defeats
+   the point. Giving the header a measure means separating bar from
+   content first, which is a JSX change and a pass of its own. */
 .hero-container, .history-container, .fotos.container, .video.container,
 .location-container, .galeria.container, .event-container, .footer-container {
   max-width: var(--content-width);
