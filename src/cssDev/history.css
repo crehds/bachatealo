@@ -52,12 +52,12 @@
       margin-left: 30%;
       margin-right: 30%;
       padding: 8px;
-      /* Red here reads as a colour choice for a static title box, not a
-         hover or a heading rule — same judgement as eventos' description
-         panel, so it moves to --surface-elevated. Real colour change:
-         #a3000f to --brown-dark's #2e2324, and this now matches the
-         paragraph box below it, which was already headed there. */
-      background: var(--surface-elevated);
+      /* A static title box carrying the site's red — same role as
+         eventos' details panel, one step brighter. The type pass
+         repainted it --brown-dark; restored to the #a3000f it always
+         had, so it deliberately does NOT match the neutral paragraph
+         box below it. */
+      background: var(--surface-brand-bright);
 
       @media screen and (min-width: 481px) and (max-width: 768px) {
         margin-left: 27%;

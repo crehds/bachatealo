@@ -20,14 +20,18 @@
   --red-orange: #d82c19;
   --black: #0a0b0f;
   --white: #ffffff;
-  /* The two sites where red carries real meaning as a surface (not just
-     a colour choice) rather than as an accent line — a hover fill and,
-     translucently, the button that opens the mobile menu. Named for what
-     they are, parallel to --red-translucent/--red-bright-translucent
-     above, rather than reused from an existing red that happens to be
-     close but isn't this value. */
+  /* The reds that are surfaces rather than accent lines: a hover fill,
+     the translucent button that opens the mobile menu, and the two
+     static panels that carry the site's colour. Named for what they
+     are, parallel to --red-translucent/--red-bright-translucent above,
+     rather than reused from an existing red that happens to be close
+     but isn't this value.
+     --red-deep is the one the type pass dropped from the palette
+     entirely: that stage repainted history's title box neutral, and
+     #a3000f exists nowhere else, so restoring it needs its own entry. */
   --maroon: #590f15;
   --maroon-translucent: rgba(87, 33, 33, 0.8);
+  --red-deep: #a3000f;
 
   /* Semantic layer, mapped onto the palette above rather than replacing
      it. shadcn's clarity comes from naming roles instead of colours:
@@ -49,28 +53,35 @@
   --accent: var(--red-dark);
 
   /* --surface was defined in stage one and consumed nothing — backgrounds
-     were out of scope then. This stage gives it three siblings, one per
-     role the actual sites need rather than one token forced to cover all
-     of them:
+     were out of scope then. It now has five siblings, one per role the
+     actual sites need rather than one token forced to cover all of
+     them:
      --surface is the base page/section background (was var(--black)
      directly in three places).
-     --surface-elevated is a panel or card sitting on that base — video's
-     title bar and grid, a paragraph's own background, a title card, the
-     footer. Two of its seven sites were red before this pass (eventos'
-     description panel, history's title-box): read as a colour choice
-     carrying no meaning beyond "red is the site's colour", not a hover
-     or a heading, so they move here rather than to --accent — see the
-     report.
+     --surface-elevated is a NEUTRAL panel or card sitting on that base
+     — video's title bar and grid, a paragraph's own background, the
+     footer, eventos' title card.
      --overlay is a translucent layer over page content, not a panel
      within it — the fixed header and the slide-out mobile menu. Both
-     converge on one value; the report says exactly what that moves for
-     the menu.
-     --surface-accent is the one role where red-as-surface does carry
-     meaning: an interactive, accent-tinted surface for a hover state.
+     converge on one value, which moves the menu from 0.8 to 0.9 and the
+     header off its own near-black.
+     --surface-accent is the role where red-as-surface carries
+     INTERACTIVE meaning: an accent-tinted surface for a hover state.
      The mobile menu's own toggle button reads the same way but stays on
      --maroon-translucent directly rather than through this token, since
      it's translucent (the button floats over scrolling content) where
-     this role's other use is opaque — see the report. */
+     this role's other use is opaque.
+     --surface-brand and --surface-brand-bright are the STATIC panels
+     that carry the site's red identity — eventos' details panel and
+     history's title box. The type pass read both as "red with no
+     meaning attached" and repainted them --surface-elevated's brown;
+     the standing constraint on this redesign is that it changes
+     everything EXCEPT colour, so each returns to its own original
+     value. They are two near-identical dark reds rather than one shared
+     token because the stylesheet had them that way, and collapsing them
+     is a colour decision — out of scope here. They share a value with
+     --surface-accent and --red-deep respectively, which is a role
+     pointing at a palette entry, not a duplicate palette entry. */
   --surface: var(--black);
   --surface-elevated: var(--brown-dark);
   /* 0.9, not 0.8: this sits behind the full-viewport mobile menu with the
@@ -79,6 +90,8 @@
      fixed header shares the token and is a shade darker for it. */
   --overlay: rgba(0, 0, 0, 0.9);
   --surface-accent: var(--maroon);
+  --surface-brand: var(--maroon);
+  --surface-brand-bright: var(--red-deep);
 
   /* Type scale: six steps, chosen from where the page's own 26 font-size
      declarations actually clustered (not an idealised scale imposed on
