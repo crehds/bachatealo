@@ -16,12 +16,13 @@
    - layout: home-layout.css — page-level structure (`.home-layout`), not
      a specific component. Its sibling wrapper `.header-layout` has no
      stylesheet at all; Header-layout.jsx records why.
-   - components: everything else. This is most of the 14 files because
-     most of them *are* a specific, named UI piece — a page section
-     (portada, hero, history, fotos, video, eventos, location, footer),
-     an animation belonging to one of them (animationPortada), or the
-     icon font system feeding the nav menu and footer icons (icon,
-     menuIcon). Keeping icon/menuIcon whole in one layer (rather than
+   - components: everything else, and most of them *are* a specific,
+     named UI piece — a page section (portada, hero, history, fotos,
+     video, eventos, location, footer) or the icon font system feeding
+     the nav menu and footer icons (icon, menuIcon). No file count here
+     on purpose: two files have left this layer already, and a number in
+     a comment goes stale without anything failing to say so.
+     Keeping icon/menuIcon whole in one layer (rather than
      splitting their @font-face + base icon class into "base") avoids
      slicing files that don't need slicing for this pass. */
 @layer tokens, base, layout, components;
@@ -38,6 +39,5 @@
 @import "./body.css" layer(base);
 @import "./eventos.css" layer(components);
 @import "./galeria.css" layer(components);
-@import "./animationPortada.css" layer(components);
 @import "./location.css" layer(components);
 @import "./footer.css" layer(components);

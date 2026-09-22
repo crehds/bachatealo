@@ -40,7 +40,13 @@
   grid-template-rows: auto;
   grid-gap: 10px;
   padding:0;
-  margin:0;
+  /* No margin reset here. A div carries no margin by default, so the old
+     `margin:0` reset nothing — but it did silently win over the shared
+     `margin-left/right:auto` in vars.css, because this file sits in the
+     `components` layer and vars.css in `tokens`, and a later layer beats
+     an earlier one whatever the specificity. That left this panel capped
+     at --content-width but pinned to the left edge, so every pixel of
+     leftover width piled up on one side and grew with the viewport. */
   background: var(--surface-elevated);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
@@ -51,12 +57,6 @@
        per video. The template used to hardcode two, which only matched
        because there happen to be two videos today. */
     grid-template-columns: auto;
-
-    & figure {
-      max-width: 70%;
-      left: 15%;
-    }
-
   }
 
   & div {
@@ -68,6 +68,17 @@
       position: relative;
       left:5%;
       margin:0;
+
+      /* This narrowing used to live in the max-width:1024px block above,
+         written as `& figure` directly under .video.container — which
+         resolves to `.video.container figure` (0,1,1) and always lost to
+         this rule's `.video.container div figure` (0,1,2). It never
+         applied at any width. Nested here it shares that specificity and
+         comes later, so it now does what it always claimed to. */
+      @media screen and (max-width: 1024px) {
+        max-width: 70%;
+        left: 15%;
+      }
 
       & div {
         border-radius: var(--radius);
