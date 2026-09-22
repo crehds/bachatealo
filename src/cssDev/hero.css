@@ -45,7 +45,6 @@
   border: solid var(--border-width) var(--border);
   max-width: inherit;
   max-height: inherit;
-  /* animation: appear 2s ease-in; */
 }
 
 .hero-container div img {
@@ -61,8 +60,59 @@
   vertical-align: top;
 }
 
+/* Matches the shape fotos.css already had right (its own
+   `animation: appear` tile rule): the animation names its 0% opacity
+   itself, and the element carries no base opacity of its own.
+   That difference WAS the bug. This is a client-rendered app, so nothing
+   appears without JavaScript either way - the point is narrower and
+   still real: the tiles used to need a SECOND, separate JavaScript step
+   after React had already rendered them. They sat in the DOM at a base
+   `opacity: 0`, and only a componentDidMount -> nine setTimeouts ->
+   inline style.opacity chain in Hero.jsx ever took it away. Anything
+   that broke that chain - a throw in the lifecycle, a timer throttled in
+   a background tab - left correctly-rendered images permanently
+   invisible, with no CSS anywhere able to recover them. Now the render
+   is enough. `backwards` fill applies the 0% frame during the delay, so
+   the stagger survives without the tile being invisible by default, and
+   a browser that ignores the animation entirely just shows the photo.
+   60ms apart, not the 500ms the timers used. Nine tiles at 500ms put the
+   last one at 4s and the finished mosaic at 5.5s once its 1.5s fade
+   ended; this puts it at 1.08s. */
 .photo__hero {
-  opacity: 0;
+  animation: appear 0.6s ease-out backwards;
+}
+
+.photo__hero:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.photo__hero:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.photo__hero:nth-child(4) {
+  animation-delay: 0.18s;
+}
+.photo__hero:nth-child(5) {
+  animation-delay: 0.24s;
+}
+.photo__hero:nth-child(6) {
+  animation-delay: 0.30s;
+}
+.photo__hero:nth-child(7) {
+  animation-delay: 0.36s;
+}
+.photo__hero:nth-child(8) {
+  animation-delay: 0.42s;
+}
+.photo__hero:nth-child(9) {
+  animation-delay: 0.48s;
+}
+
+/* A decorative entrance is exactly what this query is for: the photos
+   are the content, the fade is not. */
+@media (prefers-reduced-motion: reduce) {
+  .photo__hero {
+    animation: none;
+  }
 }
 @keyframes appear {
   0% {
