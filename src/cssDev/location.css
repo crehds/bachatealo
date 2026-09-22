@@ -37,8 +37,12 @@
     /* max-height: 100%; */
     /* justify-content: space-between; */
     /* grid-template-columns: auto; */
+    /* No explicit rows on purpose: the label/value pairs are rendered from
+       data.json, so their count belongs to the data, not to this file. Grid
+       derives the rows implicitly at the same `auto` height an explicit
+       template would give them. The template used to say five while the
+       markup rendered six. */
     grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(5, auto);
     font-size: var(--font-size-base);
     padding: 5px;
     color: var(--foreground);
@@ -90,14 +94,6 @@
     }
 
   }
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-
-    & .location-container-map .location-map {
-      padding-top: 40%;
-    }
-
-  }
-
   @media screen and (min-width: 481px) and (max-width: 768px) {
 
     & .location-container-map .location-map {
