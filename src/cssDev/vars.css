@@ -133,7 +133,7 @@
      unrelated to the other seven, so it gets its own token rather than
      folding into --section-padding-bottom and losing that difference.
      Desktop values below are exactly what shipped before this token
-     existed — nothing above 640px moves a pixel. Below 640px, the user
+     existed — nothing above 768px moves a pixel. Below 768px, the user
      read the real site and found 138px of empty space between sections
      (98 top + 40 bottom) and, inside History specifically, 80px between
      every stacked block once that section went to one column — cut down
@@ -152,7 +152,7 @@
      section heading slides beneath the header. 60px clears it with a
      little room and still cuts the gap between sections from 138px to
      80px. Tune from here, but not below the header. */
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     --section-padding-top: 60px;
     --section-padding-bottom: 20px;
     --event-padding-bottom: 40px;

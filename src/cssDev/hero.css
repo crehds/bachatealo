@@ -11,9 +11,11 @@
   grid-template-rows: repeat(3, auto);
   grid-gap: 1px;
 
-  /* 640px, not 480: the first cut was inferred from column-width math:
+  /* 768px, not 480: the first cut was inferred from column-width math:
      480 was wrong, the user opened the real site and found it already
-     read badly below 640. Empirical beats inferred, so this moved.
+     read badly below the old 640 cutoff. Empirical beats inferred, so
+     this moved — later widened to 768 when the project's five
+     breakpoints were consolidated to 480/768/1024.
      Nine images, 2 visible columns, but only 4 shown: the user wants an
      exact 2x2, not "2 columns and however many rows that takes" — the
      fifth image on is hidden outright rather than reflowed onto a third
@@ -22,7 +24,7 @@
      nothing; nothing there needed to change. Hiding alone would still
      download all nine — see Media.jsx's loading="lazy" for the half of
      this fix that actually saves the bytes. */
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(80px, 1fr));
 
     & div:nth-child(n + 5) {
