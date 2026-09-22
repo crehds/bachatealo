@@ -1,0 +1,22 @@
+{
+  // This project has no Worker script: it is a static site, so there is no
+  // "main" field and Cloudflare serves the built files directly. The build
+  // that fills "directory" is the one vite.config.mjs emits.
+  "name": "bachatealo",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    // "build", not the "dist" Vite defaults to — vite.config.mjs pins
+    // outDir to this name, inherited from the CRA layout the project was
+    // migrated off. The two have to agree or the deploy ships nothing.
+    "directory": "./build",
+    // The site is a single page with no router: every nav link is an
+    // in-document anchor ("#1", "#5", ... , taken from data.json and
+    // resolved by Header/Menu), so it never reaches the server as a path
+    // and there is no route for this setting to swallow. That means an
+    // unknown path is genuinely not found, and saying so is correct:
+    // "single-page-application" would answer every typo with the homepage
+    // and a 200, which is a soft 404 and reads to crawlers as duplicate
+    // content at infinitely many URLs.
+    "not_found_handling": "none"
+  }
+}
