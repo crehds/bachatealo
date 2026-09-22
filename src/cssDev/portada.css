@@ -80,24 +80,24 @@
 .menu li {
   font-family: 'Source Sans Pro', system-ui;
   display:inline-block;
-  margin-left: 70px;
-  margin-right: 70px;
+  /* 40px, applying from 1025px up with nothing above it — which is what
+     the media query that used to sit below always claimed to do, and
+     never did. b97ac02 wrote it to merge two colliding bands, --prueba2
+     (1024-1205, 40px) and --prueba (1206-1326, 60px). 40 won because it
+     is tuned for the narrow end of the merged band and cannot overflow
+     right after the 1024 tier hands off, where 60 could. Its comment
+     said the merge lifted the old 1326px ceiling; the same commit wrote
+     `max-width: 1280px` into the query, so past 1280 the margin went on
+     reverting to a 70px base the comment promised it would not. Holding
+     the value here is that fix, and it retires the 1280px breakpoint on
+     the way: the project steps at 480/768/1024 and nowhere else. */
+  margin-left: 40px;
+  margin-right: 40px;
   font-weight: bold;
   /* Declared on the resting state, not on :hover, so leaving fades out
      at the same rate entering fades in. On :hover it would only apply on
      the way in and snap on the way out. */
   transition: box-shadow 150ms ease-out;
-
-  /* --prueba2 (1024-1205, 40px) and --prueba (1206-1326, 60px) collided
-     here; the user picked 40px — the value tuned for the narrow end of
-     the merged band, so it can't overflow right after the 1024 tier
-     hands off, where 60px could. This now covers 1025px and up with no
-     cap, unlike the old --prueba's 1326px ceiling: past that width the
-     margin no longer reverts to the 70px base. */
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     margin-left: 30px;
