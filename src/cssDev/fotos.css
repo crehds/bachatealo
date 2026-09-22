@@ -61,6 +61,13 @@
     max-height: 100%;
     animation: appear 2s ease-in;
 
+    /* Same reasoning as hero's: the tiles are the content, the fade is
+       decoration. Note this rule never needed hero's fix - it carries no
+       base opacity, so it was always safe without JavaScript. */
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+
     & :hover {
       box-shadow: 3px 3px 10px 5px var(--gray-dark);
     }
