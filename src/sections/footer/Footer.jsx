@@ -4,11 +4,11 @@ import { useSiteData } from '../../context/SiteDataContext';
 class Footer extends Component {
   render() {
     const {
-      titleFooter,
+      heading,
       name,
-      numero,
-      correo,
-      redesSociales,
+      phone,
+      email,
+      socialLinks,
     } = this.props.details;
     return (
       <section className="Footer" id={this.props.footer.sectionId}>
@@ -16,19 +16,19 @@ class Footer extends Component {
         <div className="footer-container">
           {/*Datos del programador*/}
           <div className="footer-details">
-            <h2>{titleFooter}</h2>
+            <h2>{heading}</h2>
             <p>{name}</p>
-            <p>{numero}</p>
-            <p>{correo}</p>
+            <p>{phone}</p>
+            <p>{email}</p>
           </div>
-          {/*Redes sociales del programador*/}
+          {/* The developer's social links */}
           <div className="footer-icons">
-            {redesSociales.map((red) =>
+            {socialLinks.map((link) =>
               <a
-                key={red.id}
-                href={red.href}
-                className={red.description}
-                aria-label={red.name}
+                key={link.id}
+                href={link.href}
+                className={link.description}
+                aria-label={link.name}
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -7,7 +7,7 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // A small, render-safe fixture: enough for every one of the 9 section
 // containers to mount without crashing (History needs exactly two media
 // entries, since it reads them by fixed index rather than mapping; Footer
-// needs a `redesSociales` array since it maps over it directly), entirely
+// needs a `socialLinks` array since it maps over it directly), entirely
 // independent of the real data.json's size or content.
 //
 // The events section stays inactive here (a separate, already-tested concern — see
@@ -31,7 +31,7 @@ vi.mock('../schemas/index', () => ({
         footer: {
           id: 'footer',
           title: 'Footer title',
-          details: { redesSociales: [] },
+          details: { socialLinks: [] },
         },
       },
       media: {

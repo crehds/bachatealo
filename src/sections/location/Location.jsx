@@ -5,11 +5,11 @@ class Location extends Component {
   render () {
     const {
       googleMap,
-      direccion,
-      referencia,
-      dias,
-      horario,
-      generos,
+      address,
+      landmark,
+      days,
+      hours,
+      genres,
       facebook,
     } = this.props;
     return (
@@ -38,31 +38,31 @@ class Location extends Component {
               <p>{this.props.title}</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{direccion}</p>
+              <p>:&nbsp;&nbsp;{address}</p>
             </div>
             <div className="description-left">
               <p>Referencia</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{referencia}</p>
+              <p>:&nbsp;&nbsp;{landmark}</p>
             </div>
             <div className="description-left">
               <p>Días</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{dias}</p>
+              <p>:&nbsp;&nbsp;{days}</p>
             </div>
             <div className="description-left">
               <p>Horario</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{horario}</p>
+              <p>:&nbsp;&nbsp;{hours}</p>
             </div>
             <div className="description-left">
               <p>Géneros</p>
             </div>
             <div className="description-right">
-              <p>:&nbsp;&nbsp;{generos}</p>
+              <p>:&nbsp;&nbsp;{genres}</p>
             </div>
             <div className="description-left">
               <p>Facebook</p>

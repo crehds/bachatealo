@@ -114,11 +114,11 @@
         "details": {
           "id": "1",
           "googleMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
-          "direccion": "  Municipalidad de los olivos, Rotonda",
-          "referencia": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
-          "dias": "  Martes, Jueves, Sábado",
-          "horario": "  8 pm a 12 pm",
-          "generos": " bachata, salsa",
+          "address": "  Municipalidad de los olivos, Rotonda",
+          "landmark": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
+          "days": "  Martes, Jueves, Sábado",
+          "hours": "  8 pm a 12 pm",
+          "genres": " bachata, salsa",
           "facebook": " bachatealo"
         }
       }
@@ -201,11 +201,11 @@
         "title": "Footer",
         "details": {
           "id": "4",
-          "titleFooter": "Programación y diseño",
+          "heading": "Programación y diseño",
           "name": "Carlos Rodríguez",
-          "numero": "960265942",
-          "correo": "carlos15erh@gmail.com",
-          "redesSociales": [
+          "phone": "960265942",
+          "email": "carlos15erh@gmail.com",
+          "socialLinks": [
             {
               "id": "1",
               "description": "icon1-facebook",
