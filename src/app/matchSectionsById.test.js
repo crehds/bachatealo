@@ -6,12 +6,12 @@ import { matchSectionsById } from './App';
 
 describe('matchSectionsById', () => {
   it('matches every section to its key by data.id, regardless of array order', () => {
-    // Deliberately not in portada/hero/history/... order — this is exactly
+    // Deliberately not in header/hero/history/... order — this is exactly
     // the input shape the old position-based `cont` loop got wrong.
     const shuffled = [
       { sectionId: '8', data: 'footer' },
       { sectionId: '3', data: 'history' },
-      { sectionId: '1', data: 'Portada' },
+      { sectionId: '1', data: 'Header' },
       { sectionId: '6', data: 'photos' },
       { sectionId: '9', data: 'gallery' },
       { sectionId: '2', data: 'Hero' },
@@ -22,7 +22,7 @@ describe('matchSectionsById', () => {
 
     const sections = matchSectionsById(shuffled);
 
-    expect(sections.portada.sectionId).toBe('1');
+    expect(sections.header.sectionId).toBe('1');
     expect(sections.hero.sectionId).toBe('2');
     expect(sections.history.sectionId).toBe('3');
     expect(sections.location.sectionId).toBe('4');
@@ -33,9 +33,9 @@ describe('matchSectionsById', () => {
     expect(sections.footer.sectionId).toBe('8');
   });
 
-  it('matches ids case-insensitively, since data.json already mixes Portada/Hero with lower-case ids', () => {
+  it('matches ids case-insensitively, since data.json already mixes Header/Hero with lower-case ids', () => {
     const sections = matchSectionsById([
-      { sectionId: '1', data: 'PORTADA' },
+      { sectionId: '1', data: 'HEADER' },
       { sectionId: '2', data: 'hero' },
       { sectionId: '3', data: 'History' },
       { sectionId: '4', data: 'location' },
@@ -46,7 +46,7 @@ describe('matchSectionsById', () => {
       { sectionId: '8', data: 'footer' },
     ]);
 
-    expect(sections.portada.sectionId).toBe('1');
+    expect(sections.header.sectionId).toBe('1');
     expect(sections.hero.sectionId).toBe('2');
     expect(sections.history.sectionId).toBe('3');
     expect(sections.gallery.sectionId).toBe('9');
@@ -54,7 +54,7 @@ describe('matchSectionsById', () => {
 
   it('ignores a section whose id matches no known key, without disturbing the other nine', () => {
     const withUnknown = [
-      { sectionId: '1', data: 'Portada' },
+      { sectionId: '1', data: 'Header' },
       { sectionId: '2', data: 'Hero' },
       { sectionId: '3', data: 'history' },
       { sectionId: '4', data: 'location' },
@@ -71,7 +71,7 @@ describe('matchSectionsById', () => {
     const sections = matchSectionsById(withUnknown);
 
     expect(sections['unknown-section']).toBeUndefined();
-    expect(sections.portada.sectionId).toBe('1');
+    expect(sections.header.sectionId).toBe('1');
     expect(sections.hero.sectionId).toBe('2');
     expect(sections.history.sectionId).toBe('3');
     expect(sections.location.sectionId).toBe('4');
@@ -84,7 +84,7 @@ describe('matchSectionsById', () => {
 
   it('throws a clear error when data.json has no section for a required key', () => {
     const missingFooter = [
-      { sectionId: '1', data: 'Portada' },
+      { sectionId: '1', data: 'Header' },
       { sectionId: '2', data: 'Hero' },
       { sectionId: '3', data: 'history' },
       { sectionId: '4', data: 'location' },

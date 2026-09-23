@@ -1,6 +1,6 @@
 .Footer {
   padding-bottom: 10px;
-  /* Same panel role as video's title bar and eventos' cards — the whole
+  /* Same panel role as video's title bar and events' cards — the whole
      section sits directly on the page, with no intermediate base layer
      of its own, so this is --surface-elevated too. Zero colour change:
      was already --brown-dark's own value. */

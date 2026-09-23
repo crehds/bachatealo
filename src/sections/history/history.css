@@ -55,7 +55,7 @@
       margin-right: 30%;
       padding: 8px;
       /* A static title box carrying the site's red — same role as
-         eventos' details panel, one step brighter. The type pass
+         events' details panel, one step brighter. The type pass
          repainted it --brown-dark; restored to the #a3000f it always
          had, so it deliberately does NOT match the neutral paragraph
          box below it. */
@@ -113,7 +113,7 @@
       /* Already solid — only the ad-hoc named colour ("brown") needed
          tokenising, plus the shared hairline width. */
       border: solid var(--border-width) var(--border);
-      /* 4px, on a text paragraph box — same category as portada's 3px
+      /* 4px, on a text paragraph box — same category as header's 3px
          hover pill: not part of the sixteen-way 10px pattern, left as
          its own direct value. */
       border-radius: 4px;
@@ -152,7 +152,7 @@
     & .history-img {
       width: 100%;
       height: 100%;
-      /* Same candid-photo reasoning as hero/fotos: cover crops to fill
+      /* Same candid-photo reasoning as hero/photos: cover crops to fill
          rather than stretching the image's natural aspect ratio. */
       object-fit: cover;
     }

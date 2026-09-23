@@ -20,11 +20,11 @@ it('orders sections exactly as declared in data.json', () => {
 });
 
 it('wires each section to its data id and, where present, its media ids', () => {
-  // A section with no media array in data.json (portada, location, events,
+  // A section with no media array in data.json (header, location, events,
   // footer) omits the `media` key entirely rather than defaulting it to an
   // empty array — that absence is part of the shape.
   expect(siteData.entities.section).toEqual({
-    '1': { sectionId: '1', data: 'Portada' },
+    '1': { sectionId: '1', data: 'Header' },
     '2': {
       sectionId: '2',
       data: 'Hero',
@@ -51,7 +51,7 @@ it('wires each section to its data id and, where present, its media ids', () => 
 it('injects the parent sectionId into every data entity', () => {
   const sectionIdOf = (id) => siteData.entities.data[id].sectionId;
 
-  expect(sectionIdOf('Portada')).toBe('1');
+  expect(sectionIdOf('Header')).toBe('1');
   expect(sectionIdOf('Hero')).toBe('2');
   expect(sectionIdOf('history')).toBe('3');
   expect(sectionIdOf('location')).toBe('4');

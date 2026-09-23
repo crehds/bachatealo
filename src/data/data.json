@@ -3,9 +3,9 @@
     {
       "sectionId": "1",
       "data": {
-        "id": "Portada",
-        "description": "Portada",
-        "title": "Portada",
+        "id": "Header",
+        "description": "Header",
+        "title": "Header",
         "menu": [
           {
             "id": "1",
@@ -38,7 +38,7 @@
             "title": "Videos"
           }
         ],
-        "imgPortada": "/images/paraPortada/logo.svg"
+        "logo": "/images/paraPortada/logo.svg"
       }
     },
     {

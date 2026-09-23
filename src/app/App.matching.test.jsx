@@ -20,7 +20,7 @@ vi.mock('../data/schema', () => ({
   default: {
     entities: {
       data: {
-        Portada: { id: 'Portada', menu: [], imgPortada: '' },
+        Header: { id: 'Header', menu: [], logo: '' },
         Hero: { id: 'Hero' },
         history: { id: 'history' },
         location: { id: 'location', title: 'Location title', details: {} },
@@ -62,7 +62,7 @@ vi.mock('../data/schema', () => ({
       section: {
         8: { sectionId: '8', data: 'footer' },
         3: { sectionId: '3', data: 'history', media: ['h1', 'h2'] },
-        1: { sectionId: '1', data: 'Portada' },
+        1: { sectionId: '1', data: 'Header' },
         6: { sectionId: '6', data: 'photos', media: [] },
         2: { sectionId: '2', data: 'Hero', media: [] },
         5: { sectionId: '5', data: 'events' },
@@ -115,7 +115,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
   );
 
   expect(rendered).toEqual([
-    { id: '1', className: 'Portada' },
+    { id: '1', className: 'Header' },
     { id: '2', className: 'Hero' },
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },

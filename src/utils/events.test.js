@@ -83,7 +83,7 @@ describe('findEventSection', () => {
     const events = { id: 'events', title: 'Último evento' };
     const entities = {
       data: {
-        Portada: { id: 'Portada', title: 'Portada' },
+        Header: { id: 'Header', title: 'Header' },
         events,
         footer: { id: 'footer', title: 'Footer' },
       },
@@ -95,7 +95,7 @@ describe('findEventSection', () => {
   it('returns undefined when no entity has id "events"', () => {
     const entities = {
       data: {
-        Portada: { id: 'Portada', title: 'Portada' },
+        Header: { id: 'Header', title: 'Header' },
         footer: { id: 'footer', title: 'Footer' },
       },
     };
