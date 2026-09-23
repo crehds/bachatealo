@@ -237,7 +237,7 @@
     {
       "sectionId": "9",
       "data": {
-        "id": "galeria",
+        "id": "gallery",
         "description": "Eventos pasados",
         "title": "Eventos pasados",
         "active": false,

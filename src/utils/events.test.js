@@ -1,6 +1,6 @@
 import {
   isEventVisible,
-  isGaleriaVisible,
+  isGalleryVisible,
   formatEventDate,
   parseEventDate,
   findEventSection,
@@ -48,19 +48,19 @@ describe('isEventVisible', () => {
   });
 });
 
-describe('isGaleriaVisible', () => {
+describe('isGalleryVisible', () => {
   it('shows the gallery once it has been switched on', () => {
-    expect(isGaleriaVisible({ active: true })).toBe(true);
+    expect(isGalleryVisible({ active: true })).toBe(true);
   });
 
   it('hides the gallery while it has not been switched on', () => {
-    expect(isGaleriaVisible({ active: false })).toBe(false);
-    expect(isGaleriaVisible({})).toBe(false);
-    expect(isGaleriaVisible(null)).toBe(false);
+    expect(isGalleryVisible({ active: false })).toBe(false);
+    expect(isGalleryVisible({})).toBe(false);
+    expect(isGalleryVisible(null)).toBe(false);
   });
 
   it('does not accept a truthy non-true flag as switched on', () => {
-    expect(isGaleriaVisible({ active: 'true' })).toBe(false);
+    expect(isGalleryVisible({ active: 'true' })).toBe(false);
   });
 });
 

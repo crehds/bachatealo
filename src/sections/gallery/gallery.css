@@ -1,4 +1,4 @@
-.Galeria {
+.Gallery {
   padding: 10px;
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
@@ -7,7 +7,7 @@
   color: var(--muted-foreground);
 }
 
-.galeria-title {
+.gallery-title {
   text-align: center;
   font-family: 'Boogaloo';
   padding-bottom: 10px;
@@ -33,7 +33,7 @@
   }
 }
 
-.galeria.container {
+.gallery.container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 25px;
@@ -56,8 +56,8 @@
   }
 }
 
-/*Galeria media component*/
-.galeria-item {
+/* Media component tiles */
+.gallery-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,12 +83,12 @@
   }
 }
 
-.galeria-item-title {
+.gallery-item-title {
   margin: 10px 0 2px;
   font-weight: bold;
 }
 
-.galeria-item-date {
+.gallery-item-date {
   margin: 0;
   font-size: var(--font-size-base);
   color: var(--gray-light);

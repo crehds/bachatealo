@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import Galeria from './Galeria';
-import { SiteDataProvider } from '../context/SiteDataContext';
+import Gallery from './Gallery';
+import { SiteDataProvider } from '../../context/SiteDataContext';
 
 // Mounting the full app (Bachatealo.test.jsx) only ever exercises this
 // container through the real, already-chronological data.json. This file
@@ -10,33 +10,33 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // out of order — a component that rendered media in array order rather than
 // sorting by date would pass every other test in the suite and only fail
 // here.
-vi.mock('../schemas/index', () => ({
+vi.mock('../../schemas/index', () => ({
   default: {
     entities: {
       data: {
-        galeria: {
-          id: 'galeria',
+        gallery: {
+          id: 'gallery',
           title: 'Eventos pasados',
         },
       },
       media: {
         20: {
           id: '20',
-          src: '/images/test-galeria-1.webp',
+          src: '/images/test-gallery-1.webp',
           title: 'Evento de prueba 1',
           date: '2020-05-10',
           alt: 'Descripcion de prueba 1',
         },
         21: {
           id: '21',
-          src: '/images/test-galeria-2.webp',
+          src: '/images/test-gallery-2.webp',
           title: 'Evento de prueba 2',
           date: '2018-03-01',
           alt: 'Descripcion de prueba 2',
         },
         22: {
           id: '22',
-          src: '/images/test-galeria-3.webp',
+          src: '/images/test-gallery-3.webp',
           title: 'Evento de prueba 3',
           date: '2019-11-20',
           alt: 'Descripcion de prueba 3',
@@ -61,15 +61,15 @@ afterEach(() => {
 // The fixture's media array is deliberately NOT in date order (20: 2020,
 // 21: 2018, 22: 2019), so a naive implementation that renders in array
 // order fails the sort test below without needing a second, separate case.
-function renderGaleria() {
+function renderGallery() {
   container = document.createElement('div');
   document.body.appendChild(container);
 
   act(() => {
     ReactDOM.render(
       <SiteDataProvider>
-        <Galeria
-          galeria={{ data: 'galeria', sectionId: '9', media: ['20', '21', '22'] }}
+        <Gallery
+          gallery={{ data: 'gallery', sectionId: '9', media: ['20', '21', '22'] }}
         />
       </SiteDataProvider>,
       container
@@ -78,17 +78,17 @@ function renderGaleria() {
 }
 
 it('renders the section title and id', () => {
-  renderGaleria();
+  renderGallery();
 
-  const section = container.querySelector('section.Galeria');
+  const section = container.querySelector('section.Gallery');
   expect(section.id).toBe('9');
   expect(section.querySelector('h2').textContent).toBe('Eventos pasados');
 });
 
 it('sorts the gallery chronologically, oldest first, regardless of media array order', () => {
-  renderGaleria();
+  renderGallery();
 
-  const titles = [...container.querySelectorAll('.galeria-item-title')].map(
+  const titles = [...container.querySelectorAll('.gallery-item-title')].map(
     (el) => el.textContent
   );
 
@@ -102,9 +102,9 @@ it('sorts the gallery chronologically, oldest first, regardless of media array o
 });
 
 it("renders each item's formatted date alongside its name", () => {
-  renderGaleria();
+  renderGallery();
 
-  const dates = [...container.querySelectorAll('.galeria-item-date')].map(
+  const dates = [...container.querySelectorAll('.gallery-item-date')].map(
     (el) => el.textContent
   );
 
@@ -120,7 +120,7 @@ it("renders each item's formatted date alongside its name", () => {
 });
 
 it('passes each item alt text through to its rendered image', () => {
-  renderGaleria();
+  renderGallery();
 
   const altTexts = [...container.querySelectorAll('img')].map((img) =>
     img.getAttribute('alt')

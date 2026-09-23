@@ -38,6 +38,6 @@
 @import "../sections/videos/video.css" layer(components);
 @import "./body.css" layer(base);
 @import "../sections/events/events.css" layer(components);
-@import "./galeria.css" layer(components);
+@import "../sections/gallery/gallery.css" layer(components);
 @import "../sections/location/location.css" layer(components);
 @import "../sections/footer/footer.css" layer(components);

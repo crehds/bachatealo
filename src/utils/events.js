@@ -49,7 +49,7 @@ export function isEventVisible(eventSection, today = new Date()) {
 // reused photos, and nothing should let that reach a real visitor until
 // someone has put real content in and switched it on deliberately, the same
 // on-switch shape isEventVisible already uses for its own flag.
-export function isGaleriaVisible(gallerySection) {
+export function isGalleryVisible(gallerySection) {
   return Boolean(gallerySection) && gallerySection.active === true;
 }
 

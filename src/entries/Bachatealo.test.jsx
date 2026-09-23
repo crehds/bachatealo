@@ -120,12 +120,12 @@ it('hides the events section and its menu link while no event is announced', () 
 
 it('hides the past-events gallery while data.json has not switched it on', () => {
   // The gallery ships as a template: its media entries are placeholder
-  // names and reused photos, not real history. data.json's galeria.active
+  // names and reused photos, not real history. data.json's gallery.active
   // is false today specifically so that never reaches a real visitor —
   // this is the test that keeps it that way.
   const root = mount();
 
-  expect(root.querySelector('section.Galeria')).toBeNull();
+  expect(root.querySelector('section.Gallery')).toBeNull();
   expect(root.textContent).not.toContain('PLANTILLA');
 });
 

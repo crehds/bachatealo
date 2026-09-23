@@ -3,14 +3,14 @@ import HandleError from '../containers/Handle-error.jsx';
 import History from '../sections/history/History.jsx';
 import Location from '../sections/location/Location.jsx';
 import Event from '../sections/events/Events.jsx';
-import Galeria from '../containers/Galeria.jsx';
+import Gallery from '../sections/gallery/Gallery.jsx';
 import Photos from '../sections/photos/Photos.jsx';
 import Video from '../sections/videos/Video.jsx';
 import Footer from '../sections/footer/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
 import { useSiteData } from '../context/SiteDataContext';
-import { isEventVisible, isGaleriaVisible } from '../utils/events';
+import { isEventVisible, isGalleryVisible } from '../utils/events';
 import '../cssDev/App.css';
 
 class Bachatealo extends Component {
@@ -21,12 +21,12 @@ class Bachatealo extends Component {
       history,
       location,
       events,
-      galeria,
+      gallery,
       photos,
       videos,
       footer,
       showEvents,
-      showGaleria,
+      showGallery,
     } = this.props;
     return (
       <HandleError>
@@ -35,7 +35,7 @@ class Bachatealo extends Component {
           <History history={history} />
           <Location location={location} />
           {showEvents && <Event events={events} />}
-          {showGaleria && <Galeria galeria={galeria} />}
+          {showGallery && <Gallery gallery={gallery} />}
           <Photos photos={photos} />
           <Video videos={videos} />
           <Footer footer={footer} />
@@ -54,7 +54,7 @@ const SECTION_KEYS = [
   'history',
   'location',
   'events',
-  'galeria',
+  'gallery',
   'photos',
   'videos',
   'footer',
@@ -114,14 +114,14 @@ function BachatealoContainer(props) {
   const sections = matchSectionsById(results);
 
   const showEvents = isEventVisible(entities.data[sections.events.data]);
-  const showGaleria = isGaleriaVisible(entities.data[sections.galeria.data]);
+  const showGallery = isGalleryVisible(entities.data[sections.gallery.data]);
 
   return (
     <Bachatealo
       {...props}
       {...sections}
       showEvents={showEvents}
-      showGaleria={showGaleria}
+      showGallery={showGallery}
     />
   );
 }

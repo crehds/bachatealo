@@ -42,7 +42,7 @@ it('wires each section to its data id and, where present, its media ids', () => 
     '8': { sectionId: '8', data: 'footer' },
     '9': {
       sectionId: '9',
-      data: 'galeria',
+      data: 'gallery',
       media: ['20', '21', '22', '23'],
     },
   });
@@ -59,7 +59,7 @@ it('injects the parent sectionId into every data entity', () => {
   expect(sectionIdOf('photos')).toBe('6');
   expect(sectionIdOf('videos')).toBe('7');
   expect(sectionIdOf('footer')).toBe('8');
-  expect(sectionIdOf('galeria')).toBe('9');
+  expect(sectionIdOf('gallery')).toBe('9');
 });
 
 it('injects the parent sectionId into every media entity', () => {

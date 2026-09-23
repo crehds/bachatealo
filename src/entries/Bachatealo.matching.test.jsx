@@ -11,11 +11,11 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // independent of the real data.json's size or content.
 //
 // The events section stays inactive here (a separate, already-tested concern — see
-// Bachatealo.test.jsx), but galeria is deliberately switched on with three
+// Bachatealo.test.jsx), but gallery is deliberately switched on with three
 // dated media entries: it lets this same fixture also stand in for "the
 // flag is on", proving Bachatealo actually wires the gallery's data through
 // end to end rather than just deciding whether to render it. Deep coverage
-// of the sort/format/alt behaviour itself lives in Galeria.test.jsx.
+// of the sort/format/alt behaviour itself lives in Gallery.test.jsx.
 vi.mock('../schemas/index', () => ({
   default: {
     entities: {
@@ -25,7 +25,7 @@ vi.mock('../schemas/index', () => ({
         history: { id: 'history' },
         location: { id: 'location', title: 'Location title', details: {} },
         events: { id: 'events', active: false },
-        galeria: { id: 'galeria', title: 'Galeria title', active: true },
+        gallery: { id: 'gallery', title: 'Gallery title', active: true },
         photos: { id: 'photos', title: 'Photos title' },
         videos: { id: 'videos', title: 'Videos title' },
         footer: {
@@ -40,23 +40,23 @@ vi.mock('../schemas/index', () => ({
         g1: {
           id: 'g1',
           src: '/g1.jpg',
-          title: 'Galeria item 1',
+          title: 'Gallery item1',
           date: '2020-06-01',
-          alt: 'Galeria alt 1',
+          alt: 'Gallery alt1',
         },
         g2: {
           id: 'g2',
           src: '/g2.jpg',
-          title: 'Galeria item 2',
+          title: 'Gallery item2',
           date: '2018-02-15',
-          alt: 'Galeria alt 2',
+          alt: 'Gallery alt2',
         },
         g3: {
           id: 'g3',
           src: '/g3.jpg',
-          title: 'Galeria item 3',
+          title: 'Gallery item3',
           date: '2019-09-30',
-          alt: 'Galeria alt 3',
+          alt: 'Gallery alt3',
         },
       },
       section: {
@@ -66,7 +66,7 @@ vi.mock('../schemas/index', () => ({
         6: { sectionId: '6', data: 'photos', media: [] },
         2: { sectionId: '2', data: 'Hero', media: [] },
         5: { sectionId: '5', data: 'events' },
-        9: { sectionId: '9', data: 'galeria', media: ['g1', 'g2', 'g3'] },
+        9: { sectionId: '9', data: 'gallery', media: ['g1', 'g2', 'g3'] },
         7: { sectionId: '7', data: 'videos', media: [] },
         4: { sectionId: '4', data: 'location' },
       },
@@ -107,7 +107,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
   // content section's own id/className off the DOM, independent of the
   // code under test. The events section (sectionId "5") is inactive here,
   // so it's expected to be absent — that's a separate, already-tested
-  // concern, not what this test is checking. Galeria (sectionId "9") is
+  // concern, not what this test is checking. Gallery (sectionId "9") is
   // active in this fixture, so it is expected to appear, between location
   // and photos.
   const rendered = [...container.querySelectorAll('section[id]')].map(
@@ -119,7 +119,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
     { id: '2', className: 'Hero' },
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },
-    { id: '9', className: 'Galeria' },
+    { id: '9', className: 'Gallery' },
     { id: '6', className: 'Photos' },
     { id: '7', className: 'Video' },
     { id: '8', className: 'Footer' },
@@ -143,22 +143,22 @@ it('renders the gallery sorted oldest first, with each name/date/alt, once data.
   // at all, and the props Bachatealo passes down are the real entities,
   // not e.g. the bare media ids. Fixture order is g1 (2020), g2 (2018), g3
   // (2019); oldest-first is g2, g3, g1. Deeper permutations of this same
-  // sort/format/alt behaviour are Galeria.test.jsx's job, not this one's.
-  const titles = [...container.querySelectorAll('.galeria-item-title')].map(
+  // sort/format/alt behaviour are Gallery.test.jsx's job, not this one's.
+  const titles = [...container.querySelectorAll('.gallery-item-title')].map(
     (el) => el.textContent
   );
-  const dates = [...container.querySelectorAll('.galeria-item-date')].map(
+  const dates = [...container.querySelectorAll('.gallery-item-date')].map(
     (el) => el.textContent
   );
   const alts = [
-    ...container.querySelectorAll('section.Galeria img'),
+    ...container.querySelectorAll('section.Gallery img'),
   ].map((img) => img.getAttribute('alt'));
 
-  expect(titles).toEqual(['Galeria item 2', 'Galeria item 3', 'Galeria item 1']);
+  expect(titles).toEqual(['Gallery item2', 'Gallery item3', 'Gallery item1']);
   expect(dates).toEqual([
     '15 de febrero de 2018',
     '30 de setiembre de 2019',
     '1 de junio de 2020',
   ]);
-  expect(alts).toEqual(['Galeria alt 2', 'Galeria alt 3', 'Galeria alt 1']);
+  expect(alts).toEqual(['Gallery alt2', 'Gallery alt3', 'Gallery alt1']);
 });
