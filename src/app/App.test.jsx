@@ -222,3 +222,49 @@ it('resolves media entities through the seam for hero, history, photo, and video
   expectAlbumMatchesDeclaredOrder(srcsOf('.photos.container img'), 'photos');
   expectAlbumMatchesDeclaredOrder(srcsOf('.video.container iframe'), 'videos');
 });
+
+it('renders location and footer details from their data.json keys', () => {
+  // Both sections read their fields by name: address, landmark, days, hours
+  // and genres in Location; heading, phone and email in Footer. A key
+  // misspelled on either side destructures to undefined and renders an
+  // empty element — no throw, and nothing else in this suite looks at these
+  // values, so the whole rename could land wrong and stay green. The native
+  // review named exactly that gap; this is it closed.
+  //
+  // The expectation is read out of data.json rather than frozen as literals,
+  // for the same reason as the media check above: changing the opening hours
+  // should not fail a test about whether the keys line up.
+  const root = mount();
+
+  const detailsOf = (sectionDataId) =>
+    rawData.sections.find((section) => section.data.id === sectionDataId).data
+      .details;
+
+  // Values render as ":  <value>" beside their Spanish label, and
+  // several carry leading spaces in data.json, so both sides are trimmed.
+  const location = detailsOf('location');
+  const renderedLocation = [
+    ...root.querySelectorAll('.location-description .description-right p'),
+  ].map((p) => p.textContent.replace(/^:\s*/, '').trim());
+
+  expect(renderedLocation).toEqual([
+    location.address.trim(),
+    location.landmark.trim(),
+    location.days.trim(),
+    location.hours.trim(),
+    location.genres.trim(),
+    location.facebook.trim(),
+  ]);
+
+  const footer = detailsOf('footer');
+  const renderedFooter = [
+    ...root.querySelectorAll('.footer-details h2, .footer-details p'),
+  ].map((el) => el.textContent);
+
+  expect(renderedFooter).toEqual([
+    footer.heading,
+    footer.name,
+    footer.phone,
+    footer.email,
+  ]);
+});
