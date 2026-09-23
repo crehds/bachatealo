@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HandleError from '../containers/Handle-error.jsx';
-import History from '../containers/History.jsx';
+import History from '../sections/history/History.jsx';
 import Location from '../containers/Location.jsx';
 import Event from '../containers/Eventos.jsx';
 import Galeria from '../containers/Galeria.jsx';

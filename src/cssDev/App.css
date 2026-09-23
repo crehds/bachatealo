@@ -33,7 +33,7 @@
 @import "./home-layout.css" layer(layout);
 @import "./portada.css" layer(components);
 @import "./hero.css" layer(components);
-@import "./history.css" layer(components);
+@import "../sections/history/history.css" layer(components);
 @import "./fotos.css" layer(components);
 @import "./video.css" layer(components);
 @import "./body.css" layer(base);
