@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useSiteData } from '../context/SiteDataContext';
+import { useSiteData } from '../../context/SiteDataContext';
 
 class Location extends Component {
   render () {

@@ -35,9 +35,9 @@
 @import "./hero.css" layer(components);
 @import "../sections/history/history.css" layer(components);
 @import "./fotos.css" layer(components);
-@import "./video.css" layer(components);
+@import "../sections/videos/video.css" layer(components);
 @import "./body.css" layer(base);
 @import "./eventos.css" layer(components);
 @import "./galeria.css" layer(components);
-@import "./location.css" layer(components);
-@import "./footer.css" layer(components);
+@import "../sections/location/location.css" layer(components);
+@import "../sections/footer/footer.css" layer(components);

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import HandleError from '../containers/Handle-error.jsx';
 import History from '../sections/history/History.jsx';
-import Location from '../containers/Location.jsx';
+import Location from '../sections/location/Location.jsx';
 import Event from '../containers/Eventos.jsx';
 import Galeria from '../containers/Galeria.jsx';
 import Fotos from '../containers/Fotos.jsx';
-import Video from '../containers/Video.jsx';
-import Footer from '../containers/Footer.jsx';
+import Video from '../sections/videos/Video.jsx';
+import Footer from '../sections/footer/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
 import { useSiteData } from '../context/SiteDataContext';
