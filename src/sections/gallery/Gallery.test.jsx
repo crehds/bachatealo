@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Gallery from './Gallery';
-import { SiteDataProvider } from '../../context/SiteDataContext';
+import { SiteDataProvider } from '../../data/SiteDataContext';
 
 // Mounting the full app (Bachatealo.test.jsx) only ever exercises this
 // container through the real, already-chronological data.json. This file
@@ -10,7 +10,7 @@ import { SiteDataProvider } from '../../context/SiteDataContext';
 // out of order — a component that rendered media in array order rather than
 // sorting by date would pass every other test in the suite and only fail
 // here.
-vi.mock('../../schemas/index', () => ({
+vi.mock('../../data/schema', () => ({
   default: {
     entities: {
       data: {

@@ -1,4 +1,4 @@
-import api from '../data.json';
+import api from './data.json';
 
 // Rebuilds, without normalizr, the exact shape it used to produce here:
 // entities.data / entities.media keyed by their own id (each with the

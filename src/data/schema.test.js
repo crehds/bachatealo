@@ -1,4 +1,4 @@
-import siteData from './index';
+import siteData from './schema';
 
 // These expectations are hand-authored from reading src/data.json, not
 // produced by calling this module — that would make this test worthless

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import './cssProd/index.css';
 import Bachatealo from './entries/Bachatealo';
 import * as serviceWorker from './serviceWorker';
-import { SiteDataProvider } from './context/SiteDataContext';
+import { SiteDataProvider } from './data/SiteDataContext';
 
 ReactDOM.render(
   <SiteDataProvider>

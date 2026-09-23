@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Media from '../../shared/ui/Media.jsx';
-import { useSiteData } from '../../context/SiteDataContext';
+import { useSiteData } from '../../data/SiteDataContext';
 import { formatEventDate } from '../../utils/events';
 
 class Gallery extends Component {

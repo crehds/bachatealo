@@ -9,7 +9,7 @@ import Video from '../sections/videos/Video.jsx';
 import Footer from '../sections/footer/Footer.jsx';
 import Header from '../containers/Header.jsx';
 import HomeLayout from '../components/Home-layout.jsx';
-import { useSiteData } from '../context/SiteDataContext';
+import { useSiteData } from '../data/SiteDataContext';
 import { isEventVisible, isGalleryVisible } from '../utils/events';
 import '../cssDev/App.css';
 

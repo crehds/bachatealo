@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Header from './Header';
-import { SiteDataProvider } from '../context/SiteDataContext';
-import mockedSchema from '../schemas/index';
+import { SiteDataProvider } from '../data/SiteDataContext';
+import mockedSchema from '../data/schema';
 
 // Header's container looks up the shared events entity via
 // findEventSection(entities) and uses it to filter the events link out of
@@ -18,7 +18,7 @@ const menu = [
   { id: '5', href: '#6', title: 'Fotos' },
 ];
 
-vi.mock('../schemas/index', () => ({
+vi.mock('../data/schema', () => ({
   default: {
     entities: {
       data: {

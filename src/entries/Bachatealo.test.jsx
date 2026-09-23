@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Bachatealo from './Bachatealo';
-import { SiteDataProvider } from '../context/SiteDataContext';
-import rawData from '../data.json';
+import { SiteDataProvider } from '../data/SiteDataContext';
+import rawData from '../data/data.json';
 
 let container = null;
 const realMatchMedia = window.matchMedia;

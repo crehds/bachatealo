@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Events from './Events';
-import { SiteDataProvider } from '../../context/SiteDataContext';
+import { SiteDataProvider } from '../../data/SiteDataContext';
 
 // The events section is inactive in the shipped data.json, so mounting the
 // full app (Bachatealo.test.js) never exercises this container's own entity
@@ -12,7 +12,7 @@ import { SiteDataProvider } from '../../context/SiteDataContext';
 // supply a small, controlled fixture and mounts the container directly —
 // a missing entity or a renamed field now fails here instead of passing
 // the suite unnoticed.
-vi.mock('../../schemas/index', () => ({
+vi.mock('../../data/schema', () => ({
   default: {
     entities: {
       data: {

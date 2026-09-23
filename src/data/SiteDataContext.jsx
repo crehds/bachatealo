@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import schema from '../schemas/index';
+import schema from './schema';
 
 // data.json, normalized once at module load and never touched again. This
 // mirrors the old Redux reducer (formerly src/reducers/data.js), which

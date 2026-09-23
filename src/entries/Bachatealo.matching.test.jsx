@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Bachatealo from './Bachatealo';
-import { SiteDataProvider } from '../context/SiteDataContext';
+import { SiteDataProvider } from '../data/SiteDataContext';
 
 // A small, render-safe fixture: enough for every one of the 9 section
 // containers to mount without crashing (History needs exactly two media
@@ -16,7 +16,7 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // flag is on", proving Bachatealo actually wires the gallery's data through
 // end to end rather than just deciding whether to render it. Deep coverage
 // of the sort/format/alt behaviour itself lives in Gallery.test.jsx.
-vi.mock('../schemas/index', () => ({
+vi.mock('../data/schema', () => ({
   default: {
     entities: {
       data: {

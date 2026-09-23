@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useSiteData } from '../../context/SiteDataContext';
+import { useSiteData } from '../../data/SiteDataContext';
 import { BASE_URL } from '../../utils/baseUrl';
 
 class History extends Component {
