@@ -161,6 +161,16 @@
 
 }
 
+.menu ul li a[aria-current] {
+  /* The scroll-spy's current link gets exactly the hover state's colours.
+     Keyed off aria-current itself rather than a separate class, so the
+     accessible "current section" state and the visual one can never
+     drift apart. No glow here: that box-shadow is a hover-only
+     affordance on the <li>, not part of what "current" means. */
+  border-color: var(--accent);
+  background: var(--surface-accent);
+}
+
 /* The nav's motion, for anyone who asked their system for less of it.
    Both the link and its list item settle straight into the hover state
    with no travel. hero.css and photos.css carry the same courtesy for

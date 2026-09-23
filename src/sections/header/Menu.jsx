@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Menu({ menu, isOpen, onToggle }) {
+function Menu({ menu, isOpen, onToggle, activeHref }) {
   return (
     <nav className={isOpen ? 'menu is-active' : 'menu'}>
       <button
@@ -15,7 +15,15 @@ function Menu({ menu, isOpen, onToggle }) {
       <ul id="menu-list">
         {menu.map((item) => (
           <li key={item.id}>
-            <a href={item.href}>{item.title}</a>
+            {/* undefined, never 'false': the attribute's mere presence is
+                what the CSS keys off, so an inactive link must carry no
+                aria-current at all. */}
+            <a
+              href={item.href}
+              aria-current={item.href === activeHref ? 'true' : undefined}
+            >
+              {item.title}
+            </a>
           </li>
         ))}
       </ul>
