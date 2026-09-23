@@ -10,7 +10,7 @@ import { SiteDataProvider } from '../context/SiteDataContext';
 // needs a `redesSociales` array since it maps over it directly), entirely
 // independent of the real data.json's size or content.
 //
-// Eventos stays inactive here (a separate, already-tested concern — see
+// The events section stays inactive here (a separate, already-tested concern — see
 // Bachatealo.test.jsx), but galeria is deliberately switched on with three
 // dated media entries: it lets this same fixture also stand in for "the
 // flag is on", proving Bachatealo actually wires the gallery's data through
@@ -24,7 +24,7 @@ vi.mock('../schemas/index', () => ({
         Hero: { id: 'Hero' },
         history: { id: 'history' },
         location: { id: 'location', title: 'Location title', details: {} },
-        eventos: { id: 'eventos', active: false },
+        events: { id: 'events', active: false },
         galeria: { id: 'galeria', title: 'Galeria title', active: true },
         photos: { id: 'photos', title: 'Photos title' },
         videos: { id: 'videos', title: 'Videos title' },
@@ -65,7 +65,7 @@ vi.mock('../schemas/index', () => ({
         1: { sectionId: '1', data: 'Portada' },
         6: { sectionId: '6', data: 'photos', media: [] },
         2: { sectionId: '2', data: 'Hero', media: [] },
-        5: { sectionId: '5', data: 'eventos' },
+        5: { sectionId: '5', data: 'events' },
         9: { sectionId: '9', data: 'galeria', media: ['g1', 'g2', 'g3'] },
         7: { sectionId: '7', data: 'videos', media: [] },
         4: { sectionId: '4', data: 'location' },
@@ -105,7 +105,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
 
   // Same technique as Bachatealo.test.jsx's positional test: read each
   // content section's own id/className off the DOM, independent of the
-  // code under test. Eventos (sectionId "5") is inactive in this fixture,
+  // code under test. The events section (sectionId "5") is inactive here,
   // so it's expected to be absent — that's a separate, already-tested
   // concern, not what this test is checking. Galeria (sectionId "9") is
   // active in this fixture, so it is expected to appear, between location

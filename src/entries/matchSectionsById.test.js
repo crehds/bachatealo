@@ -15,7 +15,7 @@ describe('matchSectionsById', () => {
       { sectionId: '6', data: 'photos' },
       { sectionId: '9', data: 'galeria' },
       { sectionId: '2', data: 'Hero' },
-      { sectionId: '5', data: 'eventos' },
+      { sectionId: '5', data: 'events' },
       { sectionId: '7', data: 'videos' },
       { sectionId: '4', data: 'location' },
     ];
@@ -26,7 +26,7 @@ describe('matchSectionsById', () => {
     expect(sections.hero.sectionId).toBe('2');
     expect(sections.history.sectionId).toBe('3');
     expect(sections.location.sectionId).toBe('4');
-    expect(sections.eventos.sectionId).toBe('5');
+    expect(sections.events.sectionId).toBe('5');
     expect(sections.galeria.sectionId).toBe('9');
     expect(sections.photos.sectionId).toBe('6');
     expect(sections.videos.sectionId).toBe('7');
@@ -39,7 +39,7 @@ describe('matchSectionsById', () => {
       { sectionId: '2', data: 'hero' },
       { sectionId: '3', data: 'History' },
       { sectionId: '4', data: 'location' },
-      { sectionId: '5', data: 'eventos' },
+      { sectionId: '5', data: 'events' },
       { sectionId: '9', data: 'GALERIA' },
       { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },
@@ -58,7 +58,7 @@ describe('matchSectionsById', () => {
       { sectionId: '2', data: 'Hero' },
       { sectionId: '3', data: 'history' },
       { sectionId: '4', data: 'location' },
-      { sectionId: '5', data: 'eventos' },
+      { sectionId: '5', data: 'events' },
       { sectionId: '9', data: 'galeria' },
       { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },
@@ -75,7 +75,7 @@ describe('matchSectionsById', () => {
     expect(sections.hero.sectionId).toBe('2');
     expect(sections.history.sectionId).toBe('3');
     expect(sections.location.sectionId).toBe('4');
-    expect(sections.eventos.sectionId).toBe('5');
+    expect(sections.events.sectionId).toBe('5');
     expect(sections.galeria.sectionId).toBe('9');
     expect(sections.photos.sectionId).toBe('6');
     expect(sections.videos.sectionId).toBe('7');
@@ -88,7 +88,7 @@ describe('matchSectionsById', () => {
       { sectionId: '2', data: 'Hero' },
       { sectionId: '3', data: 'history' },
       { sectionId: '4', data: 'location' },
-      { sectionId: '5', data: 'eventos' },
+      { sectionId: '5', data: 'events' },
       { sectionId: '9', data: 'galeria' },
       { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },

@@ -28,7 +28,7 @@ export function isEventVisible(eventSection, today = new Date()) {
     return false;
   }
 
-  const date = parseEventDate(eventSection.evento && eventSection.evento.fecha);
+  const date = parseEventDate(eventSection.event && eventSection.event.date);
 
   if (!date) {
     return false;
@@ -71,6 +71,6 @@ export function formatEventDate(iso) {
 // section exists at all, so the lookup lives here rather than in either.
 export function findEventSection(entities) {
   return Object.values(entities.data).find(
-    (entity) => entity.id === 'eventos'
+    (entity) => entity.id === 'events'
   );
 }

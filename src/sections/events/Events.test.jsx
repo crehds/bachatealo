@@ -1,31 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import Eventos from './Eventos';
-import { SiteDataProvider } from '../context/SiteDataContext';
+import Events from './Events';
+import { SiteDataProvider } from '../../context/SiteDataContext';
 
-// Eventos is inactive in the shipped data.json, so mounting the full app
-// (Bachatealo.test.js) never exercises this container's own entity lookup
-// (entities.data[props.eventos.data]) or its destructuring of
-// title/evento/imgEvento. SiteDataProvider always sources real data.json
+// The events section is inactive in the shipped data.json, so mounting the
+// full app (Bachatealo.test.js) never exercises this container's own entity
+// lookup (entities.data[props.events.data]) or its destructuring of
+// title/event/eventImage. SiteDataProvider always sources real data.json
 // content with no override point, so this file mocks the schema module to
 // supply a small, controlled fixture and mounts the container directly —
 // a missing entity or a renamed field now fails here instead of passing
 // the suite unnoticed.
-vi.mock('../schemas/index', () => ({
+vi.mock('../../schemas/index', () => ({
   default: {
     entities: {
       data: {
-        eventos: {
-          id: 'eventos',
+        events: {
+          id: 'events',
           title: 'Próximo evento',
-          evento: {
-            fecha: '2030-06-15',
-            lugar: 'Test Venue',
-            inicio: '8:00 pm',
-            contacto: '999-999-999',
+          event: {
+            date: '2030-06-15',
+            venue: 'Test Venue',
+            start: '8:00 pm',
+            contact: '999-999-999',
           },
-          imgEvento: '/images/test-event.webp',
+          eventImage: '/images/test-event.webp',
         },
       },
       media: {},
@@ -52,7 +52,7 @@ it("renders the looked-up entity's title, event details, and image", () => {
   act(() => {
     ReactDOM.render(
       <SiteDataProvider>
-        <Eventos eventos={{ data: 'eventos', sectionId: '5' }} />
+        <Events events={{ data: 'events', sectionId: '5' }} />
       </SiteDataProvider>,
       container
     );
@@ -62,9 +62,10 @@ it("renders the looked-up entity's title, event details, and image", () => {
   expect(section.id).toBe('5');
   expect(section.querySelector('h2').textContent).toBe('Próximo evento');
 
-  // Both rows come from the same `evento` object; asserting labels and
+  // Both rows come from the same `event` object; asserting labels and
   // values together pins the field-to-row mapping, not just that some text
-  // rendered somewhere.
+  // rendered somewhere. The labels stay Spanish because the visitor reads
+  // them — only the keys behind them are English.
   const [labels, values] = [
     ...container.querySelectorAll('.event-flexcontainer'),
   ].map((el) => [...el.querySelectorAll('p')].map((p) => p.textContent));

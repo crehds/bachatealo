@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HandleError from '../containers/Handle-error.jsx';
 import History from '../sections/history/History.jsx';
 import Location from '../sections/location/Location.jsx';
-import Event from '../containers/Eventos.jsx';
+import Event from '../sections/events/Events.jsx';
 import Galeria from '../containers/Galeria.jsx';
 import Photos from '../sections/photos/Photos.jsx';
 import Video from '../sections/videos/Video.jsx';
@@ -20,7 +20,7 @@ class Bachatealo extends Component {
       hero,
       history,
       location,
-      eventos,
+      events,
       galeria,
       photos,
       videos,
@@ -34,7 +34,7 @@ class Bachatealo extends Component {
           <Header portada={portada} hero={hero} />
           <History history={history} />
           <Location location={location} />
-          {showEvents && <Event eventos={eventos} />}
+          {showEvents && <Event events={events} />}
           {showGaleria && <Galeria galeria={galeria} />}
           <Photos photos={photos} />
           <Video videos={videos} />
@@ -53,7 +53,7 @@ const SECTION_KEYS = [
   'hero',
   'history',
   'location',
-  'eventos',
+  'events',
   'galeria',
   'photos',
   'videos',
@@ -67,7 +67,7 @@ const SECTION_KEYS = [
 // rendering every section's container.
 //
 // Two of today's ids (Portada, Hero) are capitalized while the rest
-// (history, location, eventos, photos, videos, footer) are not, and the
+// (history, location, events, photos, videos, footer) are not, and the
 // slot keys above are all lower-case. Matching case-insensitively means a
 // data.json author never has to remember which two ids are special-cased —
 // any reasonable capitalization of a known name just works. The cost is
@@ -113,7 +113,7 @@ function BachatealoContainer(props) {
   const results = sectionIds.map((sectionId) => entities.section[sectionId]);
   const sections = matchSectionsById(results);
 
-  const showEvents = isEventVisible(entities.data[sections.eventos.data]);
+  const showEvents = isEventVisible(entities.data[sections.events.data]);
   const showGaleria = isGaleriaVisible(entities.data[sections.galeria.data]);
 
   return (

@@ -126,17 +126,17 @@
     {
       "sectionId": "5",
       "data": {
-        "id": "eventos",
+        "id": "events",
         "description": "Eventos",
         "title": "Último evento",
         "active": false,
-        "evento": {
-          "fecha": "2019-12-21",
-          "lugar": "Municipalidad de los olivos",
-          "inicio": "7:00 pm",
-          "contacto": "993-382-261"
+        "event": {
+          "date": "2019-12-21",
+          "venue": "Municipalidad de los olivos",
+          "start": "7:00 pm",
+          "contact": "993-382-261"
         },
-        "imgEvento": "/images/paraEventos/eventos.webp"
+        "eventImage": "/images/paraEventos/eventos.webp"
       }
     },
     {
