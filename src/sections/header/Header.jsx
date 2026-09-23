@@ -4,6 +4,7 @@ import Section from '../../shared/ui/Section.jsx';
 import { useSiteData } from '../../data/SiteDataContext';
 import { BASE_URL } from '../../utils/baseUrl';
 import { findEventSection, isEventVisible } from '../../utils/events';
+import useActiveSection from './useActiveSection';
 
 // This section renders the page's real <header>: the logo and the nav.
 // It used to be called Portada while a separate container called Header
@@ -67,6 +68,7 @@ class Header extends Component {
             menu={this.props.menu}
             isOpen={this.state.isMenuOpen}
             onToggle={this.toggleMenu}
+            activeHref={this.props.activeHref}
           />
         </header>
       </Section>
@@ -94,7 +96,12 @@ function HeaderContainer(props) {
 
   const logo = entities.data[props.header.data].logo;
 
-  return <Header {...props} menu={menu} logo={logo} />;
+  // Scroll-spy is DOM/listener wiring, not view state, so it lives in a
+  // hook here rather than as more state on the class component below.
+  const hrefs = menu.map((item) => item.href);
+  const activeHref = useActiveSection(hrefs);
+
+  return <Header {...props} menu={menu} logo={logo} activeHref={activeHref} />;
 }
 
 export default HeaderContainer;
