@@ -7,7 +7,8 @@ import Gallery from '../sections/gallery/Gallery.jsx';
 import Photos from '../sections/photos/Photos.jsx';
 import Video from '../sections/videos/Video.jsx';
 import Footer from '../sections/footer/Footer.jsx';
-import Header from '../containers/Header.jsx';
+import Header from '../sections/header/Header.jsx';
+import Hero from '../sections/hero/Hero.jsx';
 import HomeLayout from './HomeLayout.jsx';
 import { useSiteData } from '../data/SiteDataContext';
 import { isEventVisible, isGalleryVisible } from '../utils/events';
@@ -16,7 +17,7 @@ import './layers.css';
 class Bachatealo extends Component {
   render() {
     const {
-      portada,
+      header,
       hero,
       history,
       location,
@@ -31,7 +32,8 @@ class Bachatealo extends Component {
     return (
       <HandleError>
         <HomeLayout>
-          <Header portada={portada} hero={hero} />
+          <Header header={header} />
+          <Hero hero={hero} />
           <History history={history} />
           <Location location={location} />
           {showEvents && <Event events={events} />}
@@ -49,7 +51,7 @@ class Bachatealo extends Component {
 // spelled out — matchSectionsById and the missing-key check below both
 // read from this instead of duplicating it.
 const SECTION_KEYS = [
-  'portada',
+  'header',
   'hero',
   'history',
   'location',
@@ -61,17 +63,17 @@ const SECTION_KEYS = [
 ];
 
 // Matches each normalized section to its fixed slot by identity
-// (data.json's own `data.id`, e.g. "Portada", "history") instead of by
+// (data.json's own `data.id`, e.g. "Header", "history") instead of by
 // array position. Exported so this — the part of the file most likely to
 // go wrong again — is testable on its own, with plain fixtures, without
 // rendering every section's container.
 //
-// Two of today's ids (Portada, Hero) are capitalized while the rest
+// Two of today's ids (Header, Hero) are capitalized while the rest
 // (history, location, events, photos, videos, footer) are not, and the
 // slot keys above are all lower-case. Matching case-insensitively means a
 // data.json author never has to remember which two ids are special-cased —
 // any reasonable capitalization of a known name just works. The cost is
-// that "Portada" and "portada" become indistinguishable, which nothing
+// that "Header" and "header" become indistinguishable, which nothing
 // here needs to tell apart.
 //
 // A section whose id matches no known key is ignored, not misassigned —

@@ -1,4 +1,4 @@
-.Portada {
+.Header {
   padding-bottom: 5px;
   text-align: center;
 }
@@ -13,7 +13,7 @@
   }
 }
 
-.header.container {
+.header-bar.container {
   max-height: 100%;
   display: flex;
   padding: 20px;
@@ -163,7 +163,7 @@
 
 /* The nav's motion, for anyone who asked their system for less of it.
    Both the link and its list item settle straight into the hover state
-   with no travel. hero.css and fotos.css carry the same courtesy for
+   with no travel. hero.css and photos.css carry the same courtesy for
    their photo animations; the nav had none until now. */
 @media (prefers-reduced-motion: reduce) {
   .menu li,
