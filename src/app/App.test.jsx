@@ -131,7 +131,7 @@ it('hides the past-events gallery while data.json has not switched it on', () =>
 
 it('assigns each of the 8 sections to its fixed slot by position, not by name', () => {
   // Bachatealo's mapping from data.json onto the fixed
-  // portada/hero/history/location/eventos/photos/videos/footer slots is
+  // header/hero/history/location/events/photos/videos/footer slots is
   // purely positional: it walks the normalized sections array by index with
   // a `cont` counter, not by matching an id or name. This test re-derives
   // that mapping independently of the code under test by reading the
@@ -140,14 +140,14 @@ it('assigns each of the 8 sections to its fixed slot by position, not by name', 
   // positional assignment shows up here even where it wouldn't change any
   // rendered text.
   //
-  // Only eventos (sectionId "5") is conditional on content (data.json's
+  // Only the events section (sectionId "5") is conditional on content (data.json's
   // active flag); the other 7 slots always render. The floor below is
   // deliberately independent of the render it checks: an earlier version
   // derived "expected" by filtering the contract with the very ids read
   // out of `actual`, which made a regression that drops every section's
   // id attribute pass vacuously (actual === [] === expected). Asserting
   // the 7 stable ids against a fixed literal closes that hole, while
-  // eventos' own slot is still checked only when content actually shows
+  // its own slot is still checked only when content actually shows
   // it — so this keeps the content-decoupling without hardcoding a
   // visible subset that content changes could invalidate.
   const root = mount();
@@ -163,7 +163,7 @@ it('assigns each of the 8 sections to its fixed slot by position, not by name', 
   );
 
   expect(stableSlots).toEqual([
-    { id: '1', className: 'Portada' },
+    { id: '1', className: 'Header' },
     { id: '2', className: 'Hero' },
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },
@@ -172,16 +172,16 @@ it('assigns each of the 8 sections to its fixed slot by position, not by name', 
     { id: '8', className: 'Footer' },
   ]);
 
-  // Eventos is conditional: only when it actually renders does its slot
+  // The events section is conditional: only when it actually renders does its slot
   // get checked, but when it does, it must sit exactly between location
   // (id "4") and photos (id "6") — its contract position.
-  const eventosIndex = actual.findIndex((section) => section.id === '5');
-  if (eventosIndex !== -1) {
+  const eventsIndex = actual.findIndex((section) => section.id === '5');
+  if (eventsIndex !== -1) {
     const locationIndex = actual.findIndex((section) => section.id === '4');
     const photosIndex = actual.findIndex((section) => section.id === '6');
-    expect(actual[eventosIndex].className).toBe('Event');
-    expect(eventosIndex).toBe(locationIndex + 1);
-    expect(photosIndex).toBe(eventosIndex + 1);
+    expect(actual[eventsIndex].className).toBe('Event');
+    expect(eventsIndex).toBe(locationIndex + 1);
+    expect(photosIndex).toBe(eventsIndex + 1);
   }
 });
 

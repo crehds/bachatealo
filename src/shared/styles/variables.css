@@ -60,7 +60,7 @@
      directly in three places).
      --surface-elevated is a NEUTRAL panel or card sitting on that base
      — video's title bar and grid, a paragraph's own background, the
-     footer, eventos' title card.
+     footer, events' title card.
      --overlay is a translucent layer over page content, not a panel
      within it — the fixed header and the slide-out mobile menu. Both
      converge on one value, which moves the menu from 0.8 to 0.9 and the
@@ -72,7 +72,7 @@
      it's translucent (the button floats over scrolling content) where
      this role's other use is opaque.
      --surface-brand and --surface-brand-bright are the STATIC panels
-     that carry the site's red identity — eventos' details panel and
+     that carry the site's red identity — events' details panel and
      history's title box. The type pass read both as "red with no
      meaning attached" and repainted them --surface-elevated's brown;
      the standing constraint on this redesign is that it changes
@@ -209,7 +209,7 @@
 
 /* Was the --component custom property set, applied via `@apply
    --component;` in each of these 8 rules — same reasoning as above. */
-.Portada, .Hero, .History, .Photos, .Video, .Event, .Location, .Footer {
+.Header, .Hero, .History, .Photos, .Video, .Event, .Location, .Footer {
   padding:10px;
   padding-top: 2px;
   padding-bottom: var(--section-padding-bottom);

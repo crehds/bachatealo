@@ -14,10 +14,13 @@
    - base: body.css — the only file styling the document itself
      (`body`, `.visually-hidden`) rather than a section or widget.
    - layout: home-layout.css — page-level structure (`.home-layout`), not
-     a specific component. Its sibling wrapper `.header-layout` has no
-     stylesheet at all; Header-layout.jsx records why.
+     a specific component. It used to have a sibling, `.header-layout`,
+     which wrapped the header and hero sections and carried no rule in any
+     stylesheet. Nothing selected through it either — there is not a single
+     direct-child selector in this project — so it is gone and those two
+     sections sit directly under .home-layout now.
    - components: everything else, and most of them *are* a specific,
-     named UI piece — a page section (portada, hero, history, photos,
+     named UI piece — a page section (header, hero, history, photos,
      video, events, location, footer) or the icon font system feeding
      the nav menu and footer icons (icon, menuIcon). No file count here
      on purpose: two files have left this layer already, and a number in
@@ -31,8 +34,8 @@
 @import "../shared/styles/icons.css" layer(components);
 @import "../shared/styles/menu-icons.css" layer(components);
 @import "./home-layout.css" layer(layout);
-@import "../cssDev/portada.css" layer(components);
-@import "../cssDev/hero.css" layer(components);
+@import "../sections/header/header.css" layer(components);
+@import "../sections/hero/hero.css" layer(components);
 @import "../sections/history/history.css" layer(components);
 @import "../sections/photos/photos.css" layer(components);
 @import "../sections/videos/video.css" layer(components);

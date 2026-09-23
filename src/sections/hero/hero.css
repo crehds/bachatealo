@@ -62,7 +62,7 @@
   vertical-align: top;
 }
 
-/* Matches the shape fotos.css already had right (its own
+/* Matches the shape photos.css already had right (its own
    `animation: appear` tile rule): the animation names its 0% opacity
    itself, and the element carries no base opacity of its own.
    That difference WAS the bug. This is a client-rendered app, so nothing
