@@ -27,16 +27,16 @@
      slicing files that don't need slicing for this pass. */
 @layer tokens, base, layout, components;
 
-@import "./vars.css" layer(tokens);
-@import "./icon.css" layer(components);
-@import "./menuIcon.css" layer(components);
+@import "../shared/styles/variables.css" layer(tokens);
+@import "../shared/styles/icons.css" layer(components);
+@import "../shared/styles/menu-icons.css" layer(components);
 @import "./home-layout.css" layer(layout);
 @import "./portada.css" layer(components);
 @import "./hero.css" layer(components);
 @import "../sections/history/history.css" layer(components);
 @import "../sections/photos/photos.css" layer(components);
 @import "../sections/videos/video.css" layer(components);
-@import "./body.css" layer(base);
+@import "../shared/styles/base.css" layer(base);
 @import "../sections/events/events.css" layer(components);
 @import "../sections/gallery/gallery.css" layer(components);
 @import "../sections/location/location.css" layer(components);

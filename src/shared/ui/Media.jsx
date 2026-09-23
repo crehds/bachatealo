@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BASE_URL } from '../utils/baseUrl';
+import { BASE_URL } from '../../utils/baseUrl';
 
 class Media extends PureComponent {
   render() {

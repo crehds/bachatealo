@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Media from '../../components/Media.jsx';
+import Media from '../../shared/ui/Media.jsx';
 import { useSiteData } from '../../context/SiteDataContext';
 import { formatEventDate } from '../../utils/events';
 
