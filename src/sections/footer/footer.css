@@ -1,0 +1,52 @@
+.Footer {
+  padding-bottom: 10px;
+  /* Same panel role as video's title bar and eventos' cards — the whole
+     section sits directly on the page, with no intermediate base layer
+     of its own, so this is --surface-elevated too. Zero colour change:
+     was already --brown-dark's own value. */
+  background: var(--surface-elevated);
+}
+
+.footer-container {
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  align-items: center;
+  text-align: center;
+
+  & .footer-details {
+    padding: 10px;
+    font-size: var(--font-size-sm);
+
+    & h2 {
+      margin-top: 0px;
+    }
+
+    & p {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+  }
+
+  & .footer-icons .platzi {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    margin: 0 10px;
+    /* Relative to this file, so it moves when this file moves. Vite does
+       not fail on a url() it cannot resolve — it emits the string as
+       written and the image 404s in production, silently. */
+    background-image: url("../../assets/platzilogo.svg");
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+    text-align: center;
+  }
+  
+}

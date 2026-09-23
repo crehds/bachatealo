@@ -1,6 +1,6 @@
 import {
   isEventVisible,
-  isGaleriaVisible,
+  isGalleryVisible,
   formatEventDate,
   parseEventDate,
   findEventSection,
@@ -8,7 +8,7 @@ import {
 
 const section = (overrides) => ({
   active: true,
-  evento: { fecha: '2026-03-10' },
+  event: { date: '2026-03-10' },
   ...overrides,
 });
 
@@ -34,9 +34,9 @@ describe('isEventVisible', () => {
   });
 
   it('treats a missing or malformed date as nothing to announce', () => {
-    expect(isEventVisible(section({ evento: {} }), on('2026-03-01'))).toBe(false);
+    expect(isEventVisible(section({ event: {} }), on('2026-03-01'))).toBe(false);
     expect(
-      isEventVisible(section({ evento: { fecha: 'pronto' } }), on('2026-03-01'))
+      isEventVisible(section({ event: { date: 'pronto' } }), on('2026-03-01'))
     ).toBe(false);
     expect(isEventVisible(null, on('2026-03-01'))).toBe(false);
   });
@@ -48,19 +48,19 @@ describe('isEventVisible', () => {
   });
 });
 
-describe('isGaleriaVisible', () => {
+describe('isGalleryVisible', () => {
   it('shows the gallery once it has been switched on', () => {
-    expect(isGaleriaVisible({ active: true })).toBe(true);
+    expect(isGalleryVisible({ active: true })).toBe(true);
   });
 
   it('hides the gallery while it has not been switched on', () => {
-    expect(isGaleriaVisible({ active: false })).toBe(false);
-    expect(isGaleriaVisible({})).toBe(false);
-    expect(isGaleriaVisible(null)).toBe(false);
+    expect(isGalleryVisible({ active: false })).toBe(false);
+    expect(isGalleryVisible({})).toBe(false);
+    expect(isGalleryVisible(null)).toBe(false);
   });
 
   it('does not accept a truthy non-true flag as switched on', () => {
-    expect(isGaleriaVisible({ active: 'true' })).toBe(false);
+    expect(isGalleryVisible({ active: 'true' })).toBe(false);
   });
 });
 
@@ -79,20 +79,20 @@ describe('formatEventDate', () => {
 });
 
 describe('findEventSection', () => {
-  it('returns the data entity whose id is "eventos"', () => {
-    const eventos = { id: 'eventos', title: 'Último evento' };
+  it('returns the data entity whose id is "events"', () => {
+    const events = { id: 'events', title: 'Último evento' };
     const entities = {
       data: {
         Portada: { id: 'Portada', title: 'Portada' },
-        eventos,
+        events,
         footer: { id: 'footer', title: 'Footer' },
       },
     };
 
-    expect(findEventSection(entities)).toBe(eventos);
+    expect(findEventSection(entities)).toBe(events);
   });
 
-  it('returns undefined when no entity has id "eventos"', () => {
+  it('returns undefined when no entity has id "events"', () => {
     const entities = {
       data: {
         Portada: { id: 'Portada', title: 'Portada' },

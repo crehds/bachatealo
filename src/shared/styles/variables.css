@@ -1,0 +1,217 @@
+:root {
+  /* Renamed from placeholder Spanish/Spanglish names (--gray, --prueba,
+     --white, --black, --redLow, --redprueba, --negroprueba1, --rojoapagado)
+     to names that tell the truth about the value. --white and --black were
+     outright false: #A7A9AC is a light grey, #2E2324 is a dark brown, not
+     white or black. --redprueba and --rojoapagado were the same value
+     (#a41f28) under two names in two languages — collapsed into one token,
+     --red-dark. --negroprueba1 (#0a0b0f) is the one that's actually
+     perceptually black, so it now carries that name. Values are unchanged;
+     only names and this token's identity moved. */
+  --gray-translucent: rgba(111, 115, 114, 0.7);
+  --gray-light: #A1A1A1;
+  --gray-lighter: #A7A9AC;
+  --gray-dark: #56575b;
+  --brown-dark: #2E2324;
+  --red-translucent: rgba(210, 6, 6, 0.4);
+  --red-dark: #a41f28;
+  --red-bright: #ff0018;
+  --red-bright-translucent: rgba(255, 0, 24, 0.7);
+  --red-orange: #d82c19;
+  --black: #0a0b0f;
+  --white: #ffffff;
+  /* The reds that are surfaces rather than accent lines: a hover fill,
+     the translucent button that opens the mobile menu, and the two
+     static panels that carry the site's colour. Named for what they
+     are, parallel to --red-translucent/--red-bright-translucent above,
+     rather than reused from an existing red that happens to be close
+     but isn't this value.
+     --red-deep is the one the type pass dropped from the palette
+     entirely: that stage repainted history's title box neutral, and
+     #a3000f exists nowhere else, so restoring it needs its own entry. */
+  --maroon: #590f15;
+  --maroon-translucent: rgba(87, 33, 33, 0.8);
+  --red-deep: #a3000f;
+
+  /* Semantic layer, mapped onto the palette above rather than replacing
+     it. shadcn's clarity comes from naming roles instead of colours:
+     --border/--foreground/--accent say what a rule is FOR, so the user's
+     next reaction ("too subtle", "borders too light", "make the accent
+     bolder") is answered by repointing one of these, not by re-finding
+     every site that used a colour directly.
+     --border is the hairline colour from stage one, replacing a
+     dozen-plus ad-hoc greys and the 3D bevel styles they came with.
+     --accent is where the user's reds now live: "an active border, a
+     hover, a heading rule" — not wrapped around every box.
+     --muted-foreground exists for text roles a later pass can pick up;
+     the sites read this stage are in the report, one converted here.
+     The surface roles below are new this stage — see the report for why
+     each site landed where it did. */
+  --border: var(--gray-translucent);
+  --foreground: var(--white);
+  --muted-foreground: var(--gray-lighter);
+  --accent: var(--red-dark);
+
+  /* --surface was defined in stage one and consumed nothing — backgrounds
+     were out of scope then. It now has five siblings, one per role the
+     actual sites need rather than one token forced to cover all of
+     them:
+     --surface is the base page/section background (was var(--black)
+     directly in three places).
+     --surface-elevated is a NEUTRAL panel or card sitting on that base
+     — video's title bar and grid, a paragraph's own background, the
+     footer, eventos' title card.
+     --overlay is a translucent layer over page content, not a panel
+     within it — the fixed header and the slide-out mobile menu. Both
+     converge on one value, which moves the menu from 0.8 to 0.9 and the
+     header off its own near-black.
+     --surface-accent is the role where red-as-surface carries
+     INTERACTIVE meaning: an accent-tinted surface for a hover state.
+     The mobile menu's own toggle button reads the same way but stays on
+     --maroon-translucent directly rather than through this token, since
+     it's translucent (the button floats over scrolling content) where
+     this role's other use is opaque.
+     --surface-brand and --surface-brand-bright are the STATIC panels
+     that carry the site's red identity — eventos' details panel and
+     history's title box. The type pass read both as "red with no
+     meaning attached" and repainted them --surface-elevated's brown;
+     the standing constraint on this redesign is that it changes
+     everything EXCEPT colour, so each returns to its own original
+     value. They are two near-identical dark reds rather than one shared
+     token because the stylesheet had them that way, and collapsing them
+     is a colour decision — out of scope here. They share a value with
+     --surface-accent and --red-deep respectively, which is a role
+     pointing at a palette entry, not a duplicate palette entry. */
+  --surface: var(--black);
+  --surface-elevated: var(--brown-dark);
+  /* 0.9, not 0.8: this sits behind the full-viewport mobile menu with the
+     gallery and video imagery scrolling underneath it. At 0.8 that content
+     bleeds through at twice the rate and the menu labels fight it. The
+     fixed header shares the token and is a shade darker for it. */
+  --overlay: rgba(0, 0, 0, 0.9);
+  --surface-accent: var(--maroon);
+  --surface-brand: var(--maroon);
+  --surface-brand-bright: var(--red-deep);
+
+  /* Type scale: six steps, chosen from where the page's own 26 font-size
+     declarations actually clustered (not an idealised scale imposed on
+     top) so mapping every value onto its nearest step moves each as
+     little as possible. Every value's mapping and delta is in the
+     report; none of the per-value comments below repeat that table. */
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 20px;
+  --font-size-lg: 27px;
+  --font-size-xl: 50px;
+
+  /* Border width and corner radius, tokenised for the same reason as the
+     five roles above: ridge/groove/inset/outset (the browser's fake-3D
+     bevel, predating shadows and gradients) appeared at more than a
+     dozen sites, several with their own hardcoded width. One hairline
+     width and one corner radius, used everywhere a rule below doesn't
+     say otherwise for a stated reason. */
+  --border-width: 1px;
+  --radius: 10px;
+
+  /* The page had no horizontal-centring container anywhere — every
+     section's inner container was max-width:100% (i.e. "don't exceed my
+     parent," which is already full-bleed), so on a wide viewport content
+     ran edge to edge. One measure, used by every section's own inner
+     container (see the consolidated rule below), rather than a value
+     re-guessed per section. 1200px is a reading-width pick, not derived
+     from an existing value — nothing on the page used an absolute
+     max-width before this. */
+  --content-width: 1200px;
+
+  /* Section vertical rhythm. --section-padding-top/--section-padding-bottom
+     were the same 98px/40px written seven times across seven files (plus
+     once more as gallery's own copy of the shared rule below, since it
+     isn't part of that rule's selector list) — retuning either meant
+     editing every file that used it. --event-padding-bottom exists
+     because Event alone never used the shared 40px; it has its own 80px,
+     unrelated to the other seven, so it gets its own token rather than
+     folding into --section-padding-bottom and losing that difference.
+     Desktop values below are exactly what shipped before this token
+     existed — nothing above 768px moves a pixel. Below 768px, the user
+     read the real site and found 138px of empty space between sections
+     (98 top + 40 bottom) and, inside History specifically, 80px between
+     every stacked block once that section went to one column — cut down
+     here: roughly 41% for the shared top padding, half for both bottom
+     paddings, a quarter for History's row gap. This block is the one
+     place to change any of it, for the whole page, at either size. */
+  --section-padding-top: 98px;
+  --section-padding-bottom: 40px;
+  --event-padding-bottom: 80px;
+  --history-row-gap: 80px;
+
+  /* The 98px above is not only breathing room between sections: the site
+     header is position:fixed at top:0, and the mobile menu it contains
+     opens at top:53px, which is the only measurement of that bar in the
+     code. So the narrow value has a floor - drop it under ~53px and every
+     section heading slides beneath the header. 60px clears it with a
+     little room and still cuts the gap between sections from 138px to
+     80px. Tune from here, but not below the header. */
+  @media screen and (max-width: 768px) {
+    --section-padding-top: 60px;
+    --section-padding-bottom: 20px;
+    --event-padding-bottom: 40px;
+    --history-row-gap: 20px;
+  }
+}
+
+/* Was the --containerGrid custom property set, applied via `@apply
+   --containerGrid;` in each of these 4 rules. Custom property sets never
+   shipped in any browser, so the native replacement is one rule whose
+   selector lists everyone who used it.
+
+   Extended in the layout-centring pass to also cover location, gallery,
+   event and footer's own inner containers — never part of the old
+   --containerGrid set, but structurally the same thing: a section's
+   single inner container, sized to the page. All eight now share one measure,
+   --content-width, replacing the old unconstrained max-width:100%, and
+   are centred via margin-left/right:auto rather than margin-inline —
+   vite.config.mjs pins cssTarget to safari14, and margin-inline only
+   shipped in Safari 14.1.
+
+   height:100% is pre-existing, but its REACH is not unchanged: it carried
+   over for the original four and the four added here receive it for the
+   first time. Checked rather than assumed — .Location, .Gallery, .Event
+   and .Footer each declare only padding (plus a background on .Footer);
+   none sets height, display or position, so each is a plain auto-height
+   block and the CSS2.1 percentage-height rule resolves this to auto on
+   all four. Inert on all eight today, kept rather than split for no gain.
+
+   .header.container is deliberately NOT here and gets no measure at all.
+   It is position:fixed, whose containing block is the viewport, so
+   height:100% would size it to the full viewport height instead of
+   falling back to auto. And it carries the bar's background (--overlay)
+   on the same box as its content, so capping its width shrinks the
+   translucent bar and leaves the page scrolling past uncovered in the
+   gutters either side.
+
+   Carrying a background is NOT by itself disqualifying, and it would be
+   wrong to read this as "the capped eight have no background".
+   .gallery.container, .photos.container and .video.container each carry
+   one and are capped here on purpose: they are ordinary in-flow panels,
+   and a panel that narrows and centres reads as a card. What makes the
+   header different is that it is a fixed overlay whose whole job is to
+   cover the content scrolling behind it, so a gap either side defeats
+   the point. Giving the header a measure means separating bar from
+   content first, which is a JSX change and a pass of its own. */
+.hero-container, .history-container, .photos.container, .video.container,
+.location-container, .gallery.container, .event-container, .footer-container {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+/* Was the --component custom property set, applied via `@apply
+   --component;` in each of these 8 rules — same reasoning as above. */
+.Portada, .Hero, .History, .Photos, .Video, .Event, .Location, .Footer {
+  padding:10px;
+  padding-top: 2px;
+  padding-bottom: var(--section-padding-bottom);
+  color: var(--foreground);
+}

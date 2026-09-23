@@ -1,0 +1,43 @@
+/* Layer order declared once, upfront: later layers win over earlier ones
+   regardless of selector specificity, and anything layered loses to
+   anything left unlayered — so every import below is deliberately
+   assigned to a layer, none left unlayered, and this order is chosen so
+   cross-layer battles resolve exactly the way today's plain source-order
+   cascade already resolves them (verified: see the part-2a comparison).
+
+   - tokens: vars.css — custom properties, plus the two selector-list
+     rules that replaced the old --component/--containerGrid custom
+     property sets. Those rules are shared scaffolding every section
+     below overrides for at least one property (e.g. padding-top,
+     padding-bottom), so they belong with the rest of this file's
+     "shared foundation" role, not mixed into "components".
+   - base: body.css — the only file styling the document itself
+     (`body`, `.visually-hidden`) rather than a section or widget.
+   - layout: home-layout.css — page-level structure (`.home-layout`), not
+     a specific component. Its sibling wrapper `.header-layout` has no
+     stylesheet at all; Header-layout.jsx records why.
+   - components: everything else, and most of them *are* a specific,
+     named UI piece — a page section (portada, hero, history, photos,
+     video, events, location, footer) or the icon font system feeding
+     the nav menu and footer icons (icon, menuIcon). No file count here
+     on purpose: two files have left this layer already, and a number in
+     a comment goes stale without anything failing to say so.
+     Keeping icon/menuIcon whole in one layer (rather than
+     splitting their @font-face + base icon class into "base") avoids
+     slicing files that don't need slicing for this pass. */
+@layer tokens, base, layout, components;
+
+@import "../shared/styles/variables.css" layer(tokens);
+@import "../shared/styles/icons.css" layer(components);
+@import "../shared/styles/menu-icons.css" layer(components);
+@import "./home-layout.css" layer(layout);
+@import "../cssDev/portada.css" layer(components);
+@import "../cssDev/hero.css" layer(components);
+@import "../sections/history/history.css" layer(components);
+@import "../sections/photos/photos.css" layer(components);
+@import "../sections/videos/video.css" layer(components);
+@import "../shared/styles/base.css" layer(base);
+@import "../sections/events/events.css" layer(components);
+@import "../sections/gallery/gallery.css" layer(components);
+@import "../sections/location/location.css" layer(components);
+@import "../sections/footer/footer.css" layer(components);
