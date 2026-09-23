@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import Section from './Section.jsx';
-import Media from './Media.jsx';
+import Section from '../shared/ui/Section.jsx';
+import Media from '../shared/ui/Media.jsx';
 
 // Below 640px hero.css hides every tile from the fifth on
 // (`div:nth-child(n + 5) { display: none }`), so these four are the ones

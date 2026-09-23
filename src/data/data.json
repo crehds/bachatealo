@@ -1,0 +1,278 @@
+{
+  "sections": [
+    {
+      "sectionId": "1",
+      "data": {
+        "id": "Portada",
+        "description": "Portada",
+        "title": "Portada",
+        "menu": [
+          {
+            "id": "1",
+            "href": "#1",
+            "title": "Inicio"
+          },
+          {
+            "id": "2",
+            "href": "#3",
+            "title": "¿Quiénes somos?"
+          },
+          {
+            "id": "3",
+            "href": "#4",
+            "title": "Encuéntranos"
+          },
+          {
+            "id": "4",
+            "href": "#5",
+            "title": "Eventos"
+          },
+          {
+            "id": "5",
+            "href": "#6",
+            "title": "Fotos"
+          },
+          {
+            "id": "6",
+            "href": "#7",
+            "title": "Videos"
+          }
+        ],
+        "imgPortada": "/images/paraPortada/logo.svg"
+      }
+    },
+    {
+      "sectionId": "2",
+      "data": {
+        "id": "Hero",
+        "description": "Hero",
+        "title": "Hero"
+      },
+      "media": [
+        {
+          "src": "/images/paraHero/7.webp",
+          "id": "1"
+        },
+        {
+          "src": "/images/paraHero/3.webp",
+          "id": "2"
+        },
+        {
+          "src": "/images/paraHero/9.webp",
+          "id": "3"
+        },
+        {
+          "src": "/images/paraHero/5.webp",
+          "id": "4"
+        },
+        {
+          "src": "/images/paraHero/1.webp",
+          "id": "5"
+        },
+        {
+          "src": "/images/paraHero/6.webp",
+          "id": "6"
+        },
+        {
+          "src": "/images/paraHero/2.webp",
+          "id": "7"
+        },
+        {
+          "src": "/images/paraHero/8.webp",
+          "id": "8"
+        },
+        {
+          "src": "/images/paraHero/4.webp",
+          "id": "9"
+        }
+      ]
+    },
+    {
+      "sectionId": "3",
+      "data": {
+        "id": "history",
+        "description": "History",
+        "title": "History"
+      },
+      "media": [
+        {
+          "src": "/images/paraHistory/for_history.webp",
+          "id": "10"
+        },
+        {
+          "src": "/images/paraHistory/history_actual.webp",
+          "id": "11"
+        }
+      ]
+    },
+    {
+      "sectionId": "4",
+      "data": {
+        "id": "location",
+        "description": "Location",
+        "title": "Ubicación",
+        "details": {
+          "id": "1",
+          "googleMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.751916764291!2d-77.07334038561879!3d-11.991652494141654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce5bd20c7b79%3A0x8c32944c21a8f61e!2sPlaza+de+Armas+de+Los+Olivos%2C+Jr.C%C3%A9sar+Vallejo%2C+Los+Olivos+15301!5e0!3m2!1ses!2spe!4v1544216183284",
+          "address": "  Municipalidad de los olivos, Rotonda",
+          "landmark": "Cruce de Av. Carlos Izaguirre y Av. Antúnez de Mayolo",
+          "days": "  Martes, Jueves, Sábado",
+          "hours": "  8 pm a 12 pm",
+          "genres": " bachata, salsa",
+          "facebook": " bachatealo"
+        }
+      }
+    },
+    {
+      "sectionId": "5",
+      "data": {
+        "id": "events",
+        "description": "Eventos",
+        "title": "Último evento",
+        "active": false,
+        "event": {
+          "date": "2019-12-21",
+          "venue": "Municipalidad de los olivos",
+          "start": "7:00 pm",
+          "contact": "993-382-261"
+        },
+        "eventImage": "/images/paraEventos/eventos.webp"
+      }
+    },
+    {
+      "sectionId": "6",
+      "data": {
+        "id": "photos",
+        "description": "Fotos",
+        "title": "Momentos Destacados..."
+      },
+      "media": [
+        {
+          "src": "/images/paraHero/7.webp",
+          "id": "12"
+        },
+        {
+          "src": "/images/paraHero/6.webp",
+          "id": "13"
+        },
+        {
+          "src": "/images/paraHero/9.webp",
+          "id": "14"
+        },
+        {
+          "src": "/images/paraHero/4.webp",
+          "id": "15"
+        },
+        {
+          "src": "/images/paraHero/5.webp",
+          "id": "16"
+        },
+        {
+          "src": "/images/paraHero/2.webp",
+          "id": "17"
+        }
+      ]
+    },
+    {
+      "sectionId": "7",
+      "data": {
+        "id": "videos",
+        "description": "Videos",
+        "title": "Recuerdos..."
+      },
+      "media": [
+        {
+          "id": "18",
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225802351319283%2F&show_text=false&width=560"
+        },
+        {
+          "id": "19",
+          "title": "video",
+          "src": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbachatealo%2Fvideos%2F225816234651228%2F&show_text=0&width=560"
+        }
+      ]
+    },
+    {
+      "sectionId": "8",
+      "data": {
+        "id": "footer",
+        "description": "Footer",
+        "title": "Footer",
+        "details": {
+          "id": "4",
+          "heading": "Programación y diseño",
+          "name": "Carlos Rodríguez",
+          "phone": "960265942",
+          "email": "carlos15erh@gmail.com",
+          "socialLinks": [
+            {
+              "id": "1",
+              "description": "icon1-facebook",
+              "href": "https://www.facebook.com/checa.rh",
+              "name": "Facebook"
+            },
+            {
+              "id": "2",
+              "description": "icon1-twitter",
+              "href": "https://twitter.com/crehds1",
+              "name": "Twitter"
+            },
+            {
+              "id": "3",
+              "description": "icon1-github",
+              "href": "https://github.com/crehds/bachatealo",
+              "name": "GitHub"
+            },
+            {
+              "id": "4",
+              "description": "platzi",
+              "href": "https://platzi.com/@Crehds/",
+              "name": "Platzi"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sectionId": "9",
+      "data": {
+        "id": "gallery",
+        "description": "Eventos pasados",
+        "title": "Eventos pasados",
+        "active": false,
+        "placeholderNote": "PLANTILLA: sección de ejemplo, no contenido real. Permanece oculta mientras \"active\" sea false. Antes de publicar, reemplazar en cada elemento de \"media\" su \"title\" (nombre real del evento), \"date\" (fecha real en formato AAAA-MM-DD) y \"alt\" (descripción real de la foto para lectores de pantalla), y cambiar \"src\" por una foto real. Recién al final, cuando todo el contenido sea real, cambiar \"active\" a true para publicar la sección."
+      },
+      "media": [
+        {
+          "id": "20",
+          "src": "/images/paraHero/3.webp",
+          "title": "PLANTILLA - Evento anterior 1 (completar)",
+          "date": "2017-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "21",
+          "src": "/images/paraHero/8.webp",
+          "title": "PLANTILLA - Evento anterior 2 (completar)",
+          "date": "2019-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "22",
+          "src": "/images/paraHero/1.webp",
+          "title": "PLANTILLA - Evento anterior 3 (completar)",
+          "date": "2018-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        },
+        {
+          "id": "23",
+          "src": "/images/paraHero/9.webp",
+          "title": "PLANTILLA - Evento anterior 4 (completar)",
+          "date": "2020-01-01",
+          "alt": "PLANTILLA: describir aquí la foto real de este evento (quiénes aparecen, qué se ve)."
+        }
+      ]
+    }
+  ]
+}

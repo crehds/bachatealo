@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './Menu.jsx';
-import Section from './Section.jsx';
+import Section from '../shared/ui/Section.jsx';
 import { BASE_URL } from '../utils/baseUrl';
 
 function Portada(props) {

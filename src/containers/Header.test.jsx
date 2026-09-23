@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Header from './Header';
-import { SiteDataProvider } from '../context/SiteDataContext';
-import mockedSchema from '../schemas/index';
+import { SiteDataProvider } from '../data/SiteDataContext';
+import mockedSchema from '../data/schema';
 
 // Header's container looks up the shared events entity via
 // findEventSection(entities) and uses it to filter the events link out of
@@ -18,7 +18,7 @@ const menu = [
   { id: '5', href: '#6', title: 'Fotos' },
 ];
 
-vi.mock('../schemas/index', () => ({
+vi.mock('../data/schema', () => ({
   default: {
     entities: {
       data: {
@@ -44,7 +44,7 @@ afterEach(() => {
     container.remove();
     container = null;
   }
-  delete mockedSchema.entities.data.eventos;
+  delete mockedSchema.entities.data.events;
 });
 
 function mount() {
@@ -67,8 +67,8 @@ function menuLinkTitles(root) {
   return [...root.querySelectorAll('#menu-list a')].map((a) => a.textContent);
 }
 
-it('passes the menu through unchanged when no eventos entity exists at all', () => {
-  // No entities.data.eventos at all — not inactive, absent. findEventSection
+it('passes the menu through unchanged when no events entity exists at all', () => {
+  // No entities.data.events at all — not inactive, absent. findEventSection
   // returns undefined here (proved directly in events.test.js); there is no
   // sectionId left to filter against, so nothing should be removed.
   const root = mount();
@@ -77,8 +77,8 @@ it('passes the menu through unchanged when no eventos entity exists at all', () 
 });
 
 it('filters the events link out of the menu while its section is hidden', () => {
-  mockedSchema.entities.data.eventos = {
-    id: 'eventos',
+  mockedSchema.entities.data.events = {
+    id: 'events',
     sectionId: '5',
     active: false,
   };
