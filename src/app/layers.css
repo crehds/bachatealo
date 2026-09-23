@@ -31,8 +31,8 @@
 @import "../shared/styles/icons.css" layer(components);
 @import "../shared/styles/menu-icons.css" layer(components);
 @import "./home-layout.css" layer(layout);
-@import "./portada.css" layer(components);
-@import "./hero.css" layer(components);
+@import "../cssDev/portada.css" layer(components);
+@import "../cssDev/hero.css" layer(components);
 @import "../sections/history/history.css" layer(components);
 @import "../sections/photos/photos.css" layer(components);
 @import "../sections/videos/video.css" layer(components);

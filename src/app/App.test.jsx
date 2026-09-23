@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import Bachatealo from './Bachatealo';
+import Bachatealo from './App';
 import { SiteDataProvider } from '../data/SiteDataContext';
 import rawData from '../data/data.json';
 

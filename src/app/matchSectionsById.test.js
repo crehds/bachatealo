@@ -1,4 +1,4 @@
-import { matchSectionsById } from './Bachatealo';
+import { matchSectionsById } from './App';
 
 // These fixtures only need a `data` id string; matchSectionsById passes
 // each matched entry through unchanged, so nothing beyond `.data` (and

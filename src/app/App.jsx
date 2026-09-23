@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HandleError from '../containers/Handle-error.jsx';
+import HandleError from './ErrorBoundary.jsx';
 import History from '../sections/history/History.jsx';
 import Location from '../sections/location/Location.jsx';
 import Event from '../sections/events/Events.jsx';
@@ -8,10 +8,10 @@ import Photos from '../sections/photos/Photos.jsx';
 import Video from '../sections/videos/Video.jsx';
 import Footer from '../sections/footer/Footer.jsx';
 import Header from '../containers/Header.jsx';
-import HomeLayout from '../components/Home-layout.jsx';
+import HomeLayout from './HomeLayout.jsx';
 import { useSiteData } from '../data/SiteDataContext';
 import { isEventVisible, isGalleryVisible } from '../utils/events';
-import '../cssDev/App.css';
+import './layers.css';
 
 class Bachatealo extends Component {
   render() {

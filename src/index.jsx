@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import './cssProd/index.css';
-import Bachatealo from './entries/Bachatealo';
+import Bachatealo from './app/App';
 import * as serviceWorker from './serviceWorker';
 import { SiteDataProvider } from './data/SiteDataContext';
 
