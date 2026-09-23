@@ -220,3 +220,35 @@ it('removes its scroll and resize listeners on unmount', () => {
 
   removeEventListenerSpy.mockRestore();
 });
+
+it('does not treat a page that cannot scroll as scrolled to the bottom', () => {
+  // A page no taller than the viewport satisfies innerHeight + scrollY >=
+  // scrollHeight at scroll position 0, so a bare bottom check would light
+  // the lowest link even though the first section is the one under the bar.
+  setScrollHeight(window.innerHeight);
+  setRect('1', 0);
+  addSection('4', 300);
+  addSection('6', 600);
+  setRect('header-bar', 0, 60);
+
+  const root = mount();
+  runFrame();
+
+  expect(activeLinkTitles(root)).toEqual(['Inicio']);
+});
+
+it('still lights the lowest link once a page that does scroll reaches its bottom', () => {
+  // The guard above must not switch the bottom rule off: section 6 never
+  // reaches the bar here, and the bottom of the page is the only way in.
+  setScrollHeight(window.innerHeight + 1000);
+  window.scrollY = 1000;
+  setRect('1', -1000);
+  addSection('4', -200);
+  addSection('6', 400);
+  setRect('header-bar', 0, 60);
+
+  const root = mount();
+  runFrame();
+
+  expect(activeLinkTitles(root)).toEqual(['Fotos']);
+});

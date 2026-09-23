@@ -17,9 +17,13 @@ function computeActiveHref(hrefs) {
   const bar = document.querySelector('.header-bar');
   const line = bar ? bar.getBoundingClientRect().bottom : 0;
 
+  // Only a page that actually scrolls can be at its bottom: one no taller
+  // than the viewport passes the second check at scroll position 0, and
+  // would light the lowest link before the visitor has moved at all.
+  const { scrollHeight } = document.documentElement;
   const atBottom =
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 2;
+    scrollHeight > window.innerHeight &&
+    window.innerHeight + window.scrollY >= scrollHeight - 2;
 
   return pickActiveHref(readTargets(hrefs), line, atBottom);
 }
