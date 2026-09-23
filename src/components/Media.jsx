@@ -7,7 +7,7 @@ class Media extends PureComponent {
     return (
       <div className={className}>
         {/* Per-image alt text belongs in src/data.json alongside each media entry once someone writes real descriptions */}
-        {/* Lazy by default so a display:none tile (the hero and fotos images
+        {/* Lazy by default so a display:none tile (the hero and photos images
             hidden on a phone) has a chance of never being fetched rather than
             being downloaded and then hidden. This is a hint, not a guarantee:
             the spec lets a browser load a deferred image whenever it likes,

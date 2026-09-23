@@ -26,7 +26,7 @@ vi.mock('../schemas/index', () => ({
         location: { id: 'location', title: 'Location title', details: {} },
         eventos: { id: 'eventos', active: false },
         galeria: { id: 'galeria', title: 'Galeria title', active: true },
-        fotos: { id: 'fotos', title: 'Fotos title' },
+        photos: { id: 'photos', title: 'Photos title' },
         videos: { id: 'videos', title: 'Videos title' },
         footer: {
           id: 'footer',
@@ -63,7 +63,7 @@ vi.mock('../schemas/index', () => ({
         8: { sectionId: '8', data: 'footer' },
         3: { sectionId: '3', data: 'history', media: ['h1', 'h2'] },
         1: { sectionId: '1', data: 'Portada' },
-        6: { sectionId: '6', data: 'fotos', media: [] },
+        6: { sectionId: '6', data: 'photos', media: [] },
         2: { sectionId: '2', data: 'Hero', media: [] },
         5: { sectionId: '5', data: 'eventos' },
         9: { sectionId: '9', data: 'galeria', media: ['g1', 'g2', 'g3'] },
@@ -109,7 +109,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
   // so it's expected to be absent — that's a separate, already-tested
   // concern, not what this test is checking. Galeria (sectionId "9") is
   // active in this fixture, so it is expected to appear, between location
-  // and fotos.
+  // and photos.
   const rendered = [...container.querySelectorAll('section[id]')].map(
     (el) => ({ id: el.id, className: el.className })
   );
@@ -120,7 +120,7 @@ it('assigns each section to its slot by data.id, even when data.json lists them 
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },
     { id: '9', className: 'Galeria' },
-    { id: '6', className: 'Fotos' },
+    { id: '6', className: 'Photos' },
     { id: '7', className: 'Video' },
     { id: '8', className: 'Footer' },
   ]);

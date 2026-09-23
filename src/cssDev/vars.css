@@ -192,14 +192,14 @@
 
    Carrying a background is NOT by itself disqualifying, and it would be
    wrong to read this as "the capped eight have no background".
-   .galeria.container, .fotos.container and .video.container each carry
+   .galeria.container, .photos.container and .video.container each carry
    one and are capped here on purpose: they are ordinary in-flow panels,
    and a panel that narrows and centres reads as a card. What makes the
    header different is that it is a fixed overlay whose whole job is to
    cover the content scrolling behind it, so a gap either side defeats
    the point. Giving the header a measure means separating bar from
    content first, which is a JSX change and a pass of its own. */
-.hero-container, .history-container, .fotos.container, .video.container,
+.hero-container, .history-container, .photos.container, .video.container,
 .location-container, .galeria.container, .event-container, .footer-container {
   max-width: var(--content-width);
   margin-left: auto;
@@ -209,7 +209,7 @@
 
 /* Was the --component custom property set, applied via `@apply
    --component;` in each of these 8 rules — same reasoning as above. */
-.Portada, .Hero, .History, .Fotos, .Video, .Event, .Location, .Footer {
+.Portada, .Hero, .History, .Photos, .Video, .Event, .Location, .Footer {
   padding:10px;
   padding-top: 2px;
   padding-bottom: var(--section-padding-bottom);

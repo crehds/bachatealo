@@ -131,7 +131,7 @@ it('hides the past-events gallery while data.json has not switched it on', () =>
 
 it('assigns each of the 8 sections to its fixed slot by position, not by name', () => {
   // Bachatealo's mapping from data.json onto the fixed
-  // portada/hero/history/location/eventos/fotos/videos/footer slots is
+  // portada/hero/history/location/eventos/photos/videos/footer slots is
   // purely positional: it walks the normalized sections array by index with
   // a `cont` counter, not by matching an id or name. This test re-derives
   // that mapping independently of the code under test by reading the
@@ -167,28 +167,28 @@ it('assigns each of the 8 sections to its fixed slot by position, not by name', 
     { id: '2', className: 'Hero' },
     { id: '3', className: 'History' },
     { id: '4', className: 'Location' },
-    { id: '6', className: 'Fotos' },
+    { id: '6', className: 'Photos' },
     { id: '7', className: 'Video' },
     { id: '8', className: 'Footer' },
   ]);
 
   // Eventos is conditional: only when it actually renders does its slot
   // get checked, but when it does, it must sit exactly between location
-  // (id "4") and fotos (id "6") — its contract position.
+  // (id "4") and photos (id "6") — its contract position.
   const eventosIndex = actual.findIndex((section) => section.id === '5');
   if (eventosIndex !== -1) {
     const locationIndex = actual.findIndex((section) => section.id === '4');
-    const fotosIndex = actual.findIndex((section) => section.id === '6');
+    const photosIndex = actual.findIndex((section) => section.id === '6');
     expect(actual[eventosIndex].className).toBe('Event');
     expect(eventosIndex).toBe(locationIndex + 1);
-    expect(fotosIndex).toBe(eventosIndex + 1);
+    expect(photosIndex).toBe(eventosIndex + 1);
   }
 });
 
 it('resolves media entities through the seam for hero, history, photo, and video sections', () => {
-  // The hero/fotos/video albums and the two history images all moved their
+  // The hero/photos/video albums and the two history images all moved their
   // entities.media[mediaId] lookup off the redux store during the seam
-  // refactor (Header.jsx, Fotos.jsx, Video.jsx, History.jsx). A wrong key
+  // refactor (Header.jsx, Photos.jsx, Video.jsx, History.jsx). A wrong key
   // there resolves to undefined rather than throwing, so nothing before
   // this asserted on the rendered result.
   //
@@ -219,6 +219,6 @@ it('resolves media entities through the seam for hero, history, photo, and video
   // (this.props[0]/this.props[1]), not a mapped list, but the declared
   // order check is the same shape.
   expectAlbumMatchesDeclaredOrder(srcsOf('.history-img'), 'history');
-  expectAlbumMatchesDeclaredOrder(srcsOf('.fotos.container img'), 'fotos');
+  expectAlbumMatchesDeclaredOrder(srcsOf('.photos.container img'), 'photos');
   expectAlbumMatchesDeclaredOrder(srcsOf('.video.container iframe'), 'videos');
 });

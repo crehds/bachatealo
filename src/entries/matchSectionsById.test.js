@@ -12,7 +12,7 @@ describe('matchSectionsById', () => {
       { sectionId: '8', data: 'footer' },
       { sectionId: '3', data: 'history' },
       { sectionId: '1', data: 'Portada' },
-      { sectionId: '6', data: 'fotos' },
+      { sectionId: '6', data: 'photos' },
       { sectionId: '9', data: 'galeria' },
       { sectionId: '2', data: 'Hero' },
       { sectionId: '5', data: 'eventos' },
@@ -28,7 +28,7 @@ describe('matchSectionsById', () => {
     expect(sections.location.sectionId).toBe('4');
     expect(sections.eventos.sectionId).toBe('5');
     expect(sections.galeria.sectionId).toBe('9');
-    expect(sections.fotos.sectionId).toBe('6');
+    expect(sections.photos.sectionId).toBe('6');
     expect(sections.videos.sectionId).toBe('7');
     expect(sections.footer.sectionId).toBe('8');
   });
@@ -41,7 +41,7 @@ describe('matchSectionsById', () => {
       { sectionId: '4', data: 'location' },
       { sectionId: '5', data: 'eventos' },
       { sectionId: '9', data: 'GALERIA' },
-      { sectionId: '6', data: 'fotos' },
+      { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },
       { sectionId: '8', data: 'footer' },
     ]);
@@ -60,7 +60,7 @@ describe('matchSectionsById', () => {
       { sectionId: '4', data: 'location' },
       { sectionId: '5', data: 'eventos' },
       { sectionId: '9', data: 'galeria' },
-      { sectionId: '6', data: 'fotos' },
+      { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },
       { sectionId: '8', data: 'footer' },
       // Not a section this component renders at all — an id that matches
@@ -77,7 +77,7 @@ describe('matchSectionsById', () => {
     expect(sections.location.sectionId).toBe('4');
     expect(sections.eventos.sectionId).toBe('5');
     expect(sections.galeria.sectionId).toBe('9');
-    expect(sections.fotos.sectionId).toBe('6');
+    expect(sections.photos.sectionId).toBe('6');
     expect(sections.videos.sectionId).toBe('7');
     expect(sections.footer.sectionId).toBe('8');
   });
@@ -90,7 +90,7 @@ describe('matchSectionsById', () => {
       { sectionId: '4', data: 'location' },
       { sectionId: '5', data: 'eventos' },
       { sectionId: '9', data: 'galeria' },
-      { sectionId: '6', data: 'fotos' },
+      { sectionId: '6', data: 'photos' },
       { sectionId: '7', data: 'videos' },
       // no footer
     ];

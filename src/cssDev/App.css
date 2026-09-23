@@ -17,7 +17,7 @@
      a specific component. Its sibling wrapper `.header-layout` has no
      stylesheet at all; Header-layout.jsx records why.
    - components: everything else, and most of them *are* a specific,
-     named UI piece — a page section (portada, hero, history, fotos,
+     named UI piece — a page section (portada, hero, history, photos,
      video, eventos, location, footer) or the icon font system feeding
      the nav menu and footer icons (icon, menuIcon). No file count here
      on purpose: two files have left this layer already, and a number in
@@ -34,7 +34,7 @@
 @import "./portada.css" layer(components);
 @import "./hero.css" layer(components);
 @import "../sections/history/history.css" layer(components);
-@import "./fotos.css" layer(components);
+@import "../sections/photos/photos.css" layer(components);
 @import "../sections/videos/video.css" layer(components);
 @import "./body.css" layer(base);
 @import "./eventos.css" layer(components);

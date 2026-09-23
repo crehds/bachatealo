@@ -35,7 +35,7 @@ it('wires each section to its data id and, where present, its media ids', () => 
     '5': { sectionId: '5', data: 'eventos' },
     '6': {
       sectionId: '6',
-      data: 'fotos',
+      data: 'photos',
       media: ['12', '13', '14', '15', '16', '17'],
     },
     '7': { sectionId: '7', data: 'videos', media: ['18', '19'] },
@@ -56,7 +56,7 @@ it('injects the parent sectionId into every data entity', () => {
   expect(sectionIdOf('history')).toBe('3');
   expect(sectionIdOf('location')).toBe('4');
   expect(sectionIdOf('eventos')).toBe('5');
-  expect(sectionIdOf('fotos')).toBe('6');
+  expect(sectionIdOf('photos')).toBe('6');
   expect(sectionIdOf('videos')).toBe('7');
   expect(sectionIdOf('footer')).toBe('8');
   expect(sectionIdOf('galeria')).toBe('9');

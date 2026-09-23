@@ -4,7 +4,7 @@ import History from '../sections/history/History.jsx';
 import Location from '../sections/location/Location.jsx';
 import Event from '../containers/Eventos.jsx';
 import Galeria from '../containers/Galeria.jsx';
-import Fotos from '../containers/Fotos.jsx';
+import Photos from '../sections/photos/Photos.jsx';
 import Video from '../sections/videos/Video.jsx';
 import Footer from '../sections/footer/Footer.jsx';
 import Header from '../containers/Header.jsx';
@@ -22,7 +22,7 @@ class Bachatealo extends Component {
       location,
       eventos,
       galeria,
-      fotos,
+      photos,
       videos,
       footer,
       showEvents,
@@ -36,7 +36,7 @@ class Bachatealo extends Component {
           <Location location={location} />
           {showEvents && <Event eventos={eventos} />}
           {showGaleria && <Galeria galeria={galeria} />}
-          <Fotos fotos={fotos} />
+          <Photos photos={photos} />
           <Video videos={videos} />
           <Footer footer={footer} />
         </HomeLayout>
@@ -55,7 +55,7 @@ const SECTION_KEYS = [
   'location',
   'eventos',
   'galeria',
-  'fotos',
+  'photos',
   'videos',
   'footer',
 ];
@@ -67,7 +67,7 @@ const SECTION_KEYS = [
 // rendering every section's container.
 //
 // Two of today's ids (Portada, Hero) are capitalized while the rest
-// (history, location, eventos, fotos, videos, footer) are not, and the
+// (history, location, eventos, photos, videos, footer) are not, and the
 // slot keys above are all lower-case. Matching case-insensitively means a
 // data.json author never has to remember which two ids are special-cased —
 // any reasonable capitalization of a known name just works. The cost is
